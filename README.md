@@ -6,3 +6,9 @@
 Paper is [here]
 
 Figures and whatnot [here]
+
+Clean-post-processing data is [here]
+
+Raw data collection files are [here]
+
+Code to go from raw files to clean files + clean files to figures and whatnot [here]
