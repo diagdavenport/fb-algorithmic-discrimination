@@ -5,7 +5,7 @@
 
 Paper is [here]
 
-Figures and whatnot [here]
+Figures and whatnot [here](https://github.com/diagdavenport/fb-algorithmic-discrimination/tree/main/Output/Graphs)
 
 Clean-post-processing data is [here]
 
