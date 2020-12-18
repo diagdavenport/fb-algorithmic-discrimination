@@ -16,4 +16,4 @@ Raw data collection files are [here](https://github.com/diagdavenport/fb-algorit
 
 Code to go from raw files to clean files + clean files to figures and whatnot [here](https://github.com/diagdavenport/fb-algorithmic-discrimination/tree/main/Scripts)
 
-Our empirical data is about Facebook, but we believe our findings generalize to all recommendation systems. Examples can be found [here](https://docs.google.com/spreadsheets/d/12AD_KNlMbiCj-wLliADPvOoaFzuGN1azS8RjHxIClw8/edit?usp=sharing)
+Our empirical results focus on Facebook, but we believe our findings generalize to all recommendation systems. Examples can be found [here](https://docs.google.com/spreadsheets/d/12AD_KNlMbiCj-wLliADPvOoaFzuGN1azS8RjHxIClw8/edit?usp=sharing)
