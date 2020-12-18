@@ -1,0 +1,548 @@
+---
+title: "Generate clean US data"
+author: "ddd"
+date: "11/7/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(dplyr)
+library(lubridate)
+library(arsenal)
+library(qwraps2)
+```
+
+```{r standardize the cleaning functions}
+
+
+```
+
+* go back and delete dashes
+* Mutual friends Tom edit
+* decide what to do with unclassifiable race posts
+
+# NF 
+
+```{r utils}
+
+to.char.list <- c("participant_id", "post_tenure", "nf_group..y.n.", "event..y.n.")
+
+```
+
+```{r Wave 1 - CDR}
+
+
+participant.log.cdr1 <- read.csv("/Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Data/Raw/CDR/Wave 1 Participant Log.csv")
+
+participant.log.cdr1$source <- "CDR 1"
+participant.log.cdr1$participant_id <- as.character(participant.log.cdr1$participant_id)
+
+newsfeed.df.cdr1 <- read.csv("/Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Data/Raw/CDR/Wave 1 NF.csv")
+newsfeed.df.cdr1$source <- "CDR 1"
+
+for (var in to.char.list) {
+  newsfeed.df.cdr1[[var]] <- as.character(newsfeed.df.cdr1[[var]])  
+}
+
+nrow(participant.log.cdr1) - length(unique(participant.log.cdr1$participant_id))
+
+```
+
+```{r HDSL 1}
+
+participant.log.hdsl <- read.csv("/Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Data/Raw/HDSL/Facebook Study Master Sheet - HDSL - Participant log.csv")
+
+participant.log.hdsl$source <- "HDSL"
+participant.log.hdsl$participant_id <- as.character(participant.log.hdsl$participant_id)
+
+newsfeed.df.hdsl <- read.csv("/Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Data/Raw/HDSL/Facebook Study Master Sheet - HDSL - NF.csv")
+newsfeed.df.hdsl$source <- "HDSL"
+
+for (var in to.char.list) {
+  newsfeed.df.hdsl[[var]] <- as.character(newsfeed.df.hdsl[[var]])  
+}
+
+nrow(participant.log.hdsl) - length(unique(participant.log.hdsl$participant_id))
+
+```
+
+```{r Wave 2 - CDR - recent activity}
+
+participant.log.cdr2 <- read.csv("/Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Data/Raw/CDR/Wave 2 Participant Log.csv")
+
+participant.log.cdr2$source <- "CDR 2"
+participant.log.cdr2$participant_id <- as.character(participant.log.cdr2$participant_id)
+
+newsfeed.df.cdr2 <- read.csv("/Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Data/Raw/CDR/Wave 2 NF.csv")
+newsfeed.df.cdr2$source <- "CDR 2"
+
+for (var in to.char.list) {
+  newsfeed.df.cdr2[[var]] <- as.character(newsfeed.df.cdr2[[var]])  
+}
+
+nrow(participant.log.cdr2) - length(unique(participant.log.cdr2$participant_id))
+
+```
+
+```{r Wave 3 - CDR - connectedness}
+
+participant.log.cdr3 <- read.csv("/Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Data/Raw/CDR/Wave 3 Participant Log.csv")
+
+participant.log.cdr3$source <- "CDR 3"
+participant.log.cdr3$participant_id <- as.character(participant.log.cdr3$participant_id)
+
+newsfeed.df.cdr3 <- read.csv("/Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Data/Raw/CDR/Wave 3 NF.csv")
+newsfeed.df.cdr3$source <- "CDR 3"
+
+for (var in to.char.list) {
+  if(var %in% colnames(newsfeed.df.cdr3)) {
+    newsfeed.df.cdr3[[var]] <- as.character(newsfeed.df.cdr3[[var]])  
+  }
+}
+
+nrow(participant.log.cdr3) - length(unique(participant.log.cdr3$participant_id))
+
+```
+
+```{r Wave 4 - CDR - about}
+
+participant.log.cdr4 <- read.csv("/Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Data/Raw/CDR/Wave 4 Participant Log.csv")
+
+participant.log.cdr4$source <- "CDR 4"
+participant.log.cdr4$participant_id <- as.character(participant.log.cdr4$participant_id)
+
+newsfeed.df.cdr4 <- read.csv("/Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Data/Raw/CDR/Wave 4 NF.csv")
+newsfeed.df.cdr4$source <- "CDR 4"
+
+for (var in to.char.list) {
+  if(var %in% colnames(newsfeed.df.cdr3)) {
+  newsfeed.df.cdr4[[var]] <- as.character(newsfeed.df.cdr4[[var]])  
+  }
+}
+
+nrow(participant.log.cdr4) - length(unique(participant.log.cdr4$participant_id))
+
+```
+
+```{r combine}
+
+newsfeed.combined.raw <- bind_rows(newsfeed.df.cdr1,
+                                   newsfeed.df.hdsl,
+                                   newsfeed.df.cdr2,
+                                   newsfeed.df.cdr3,
+                                   newsfeed.df.cdr4)
+
+p.log.combined.raw <- bind_rows(participant.log.cdr1,
+                                participant.log.hdsl,
+                                participant.log.cdr2,
+                                participant.log.cdr3,
+                                participant.log.cdr4)
+
+newsfeed.combined.raw <- newsfeed.combined.raw %>% filter(participant_id != "")
+p.log.combined.raw <- p.log.combined.raw %>% filter(participant_id != "")
+ 
+merged.combined.raw <- merge(p.log.combined.raw, newsfeed.combined.raw, by = c("participant_id", "source"))
+
+(length(unique(newsfeed.combined.raw$participant_id)) - length(unique(merged.combined.raw$participant_id)))/nrow(p.log.combined.raw)
+
+nrow(p.log.combined.raw)
+
+(nrow(newsfeed.combined.raw) - nrow(merged.combined.raw))/nrow(newsfeed.combined.raw)
+
+table(p.log.combined.raw$source)
+
+```
+
+```{r combine and clean}
+
+# delete useless columns
+merged.combined.raw$X <- NULL
+merged.combined.raw$X.1 <- NULL
+merged.combined.raw$X.2 <- NULL
+merged.combined.raw$Mutual.Friends..Tom.Edit. <- NULL
+
+# ignore the phantom row if there's no RA_id
+#merged.combined.raw <- merged.combined.raw %>% filter(RA_id != "")
+
+# remove commas and safely convert factor to numeric
+  merged.combined.raw$total_friends <- as.numeric(gsub(",", "", merged.combined.raw$total_friends))
+  #as.numeric(levels(participant.log$total_friends))[participant.log$total_friends] .... if it happens to come through as a factor
+  
+# deal with gender variations
+  merged.combined.raw$subject_gender_RA <- tolower(merged.combined.raw$subject_gender_RA)
+  
+# deal with race variations
+    merged.combined.raw$subject_race_RA <- tolower(merged.combined.raw$subject_race_RA)
+
+# ignore phantom rows
+merged.combined.raw <- merged.combined.raw[!is.na(merged.combined.raw$preference..1.7.) & !is.na(merged.combined.raw$participant_id),] # to be considered, the row needs to have a participant ID and a preference recorded
+
+# clean up names
+  colnames(merged.combined.raw) <- c("participant.id",
+                             "source",
+                             "RA_id",
+                             "date",
+                             "start_time",
+                             "end_time",
+                             "subject_race_RA",
+                             "subject_gender_RA",
+                             "total_friends",
+                             "p_log_notes",
+                             "study_about",
+                  
+                   "nf.order", 
+                   "preference",
+                   "post.tenure",
+                   "tenure.units",
+                   "human",
+                   "nf.group",
+                   "unrest",
+                   "event",
+                   "poster.nf.race.1.ra",
+                   "poster.nf.race.2.ra",
+                   "poster.nf.gender",
+                   "nf.ra.notes",
+                   "familiarity",
+                   "relationship",
+                   "common.friends"
+                   )
+
+  merged.combined.raw$poster.nf.race.1.ra <- tolower(merged.combined.raw$poster.nf.race.1.ra)
+  merged.combined.raw$poster.nf.race.2.ra <- tolower(merged.combined.raw$poster.nf.race.2.ra)
+  merged.combined.raw$poster.nf.gender <- tolower(merged.combined.raw$poster.nf.gender)
+
+# drop more phantom rows
+  
+  merged.combined.raw <- merged.combined.raw %>% filter(poster.nf.race.1.ra != 'wjoye')
+  
+  merged.combined.raw$poster.nf.race.1.ra <- ifelse(merged.combined.raw$poster.nf.race.1.ra %in% c("black or african american", "black", "black or afemalerican amaleerican"), "black or african american", merged.combined.raw$poster.nf.race.1.ra)
+
+merged.combined.raw$poster.nf.race.1.ra <- ifelse(merged.combined.raw$poster.nf.race.1.ra %in% c("asian", "black or african american", "hispanic", "white"), merged.combined.raw$poster.nf.race.1.ra, "other")
+  
+merged.combined.raw$race.in.group <- ((merged.combined.raw$poster.nf.race.1.ra == merged.combined.raw$subject_race_RA) | (merged.combined.raw$poster.nf.race.2.ra == merged.combined.raw$subject_race_RA))
+merged.combined.raw$gender.in.group <- merged.combined.raw$poster.nf.gender == merged.combined.raw$subject_gender_RA
+
+merged.combined.raw <- merged.combined.raw %>% filter(subject_race_RA != "")
+merged.combined.raw <- merged.combined.raw %>% filter(preference <= 7)
+
+merged.combined.raw <- merged.combined.raw %>% filter(nf.order <= 60)
+
+merged.combined.raw$date <- paste0(merged.combined.raw$date, "/2020")
+merged.combined.raw$date <- mdy(merged.combined.raw$date) 
+
+merged.combined.raw$primary.id <- paste0(merged.combined.raw$date, merged.combined.raw$participant.id)
+
+length(unique(merged.combined.raw$primary.id))
+
+write.csv(merged.combined.raw, file = "/Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Data/Clean US Data NF.csv")
+  
+```
+
+
+# PYMK
+
+```{r CDR}
+
+pymk.df <- read.csv("/Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Data/Raw/CDR/PYMK.csv")
+pymk.df$source <- "CDR 1"
+
+```
+
+```{r HDSL}
+
+pymk.df.hdsl <- read.csv("/Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Data/Raw/HDSL/Facebook Study Master Sheet - HDSL - PYMK.csv")
+pymk.df.hdsl$source <- "HDSL"
+
+```
+
+```{r combine n clean}
+
+pymk.combined.raw <- bind_rows(pymk.df.hdsl,
+                                   pymk.df)
+
+pymk.combined.raw <- pymk.combined.raw[!is.na(pymk.combined.raw$familiarity..1.7.) & !is.na(pymk.combined.raw$participant_id), 1:9] # to be considered, the row needs to have a participant ID and a preference recorded
+
+# clean up names
+  colnames(pymk.combined.raw) <- c("participant_id", 
+                   "pymk.order", 
+                   "familiarity",
+                   "mutual.friends",
+                   "poster.pymk.race.1.ra",
+                   "poster.pymk.race.2.ra",
+                   "poster.pymk.gender",
+                   "pymk.ra.notes",
+                   "source")
+
+  pymk.combined.raw$poster.pymk.race.1.ra <- tolower(pymk.combined.raw$poster.pymk.race.1.ra)
+  pymk.combined.raw$poster.pymk.race.2.ra <- tolower(pymk.combined.raw$poster.pymk.race.2.ra)
+  pymk.combined.raw$poster.pymk.gender <- tolower(pymk.combined.raw$poster.pymk.gender)
+
+# drop more phantom rows
+  
+  pymk.combined.raw <- pymk.combined.raw %>% filter(participant_id != "")
+  
+  merged.combined.raw <- merge(p.log.combined.raw, pymk.combined.raw, by = c("participant_id", "source"))
+
+     merged.combined.raw$poster.pymk.race.1.ra <- ifelse(merged.combined.raw$poster.pymk.race.1.ra %in% c("asian", "black or african american", "hispanic", "white"), merged.combined.raw$poster.pymk.race.1.ra, "other")
+     
+     merged.combined.raw$poster.pymk.race.2.ra <- ifelse(merged.combined.raw$poster.pymk.race.2.ra %in% c("asian", "black or african american", "hispanic", "white"), merged.combined.raw$poster.pymk.race.2.ra, "other")
+   
+   merged.combined.raw$subject_race_RA <- tolower(merged.combined.raw$subject_race_RA)
+   merged.combined.raw$subject_gender_RA <- tolower(merged.combined.raw$subject_gender_RA)
+
+  merged.combined.raw$race.in.group <- ((merged.combined.raw$poster.pymk.race.1.ra == merged.combined.raw$subject_race_RA) | (merged.combined.raw$poster.pymk.race.2.ra == merged.combined.raw$subject_race_RA))
+merged.combined.raw$gender.in.group <- merged.combined.raw$poster.pymk.gender == merged.combined.raw$subject_gender_RA
+
+merged.combined.raw$primary.id <- paste0(merged.combined.raw$date, merged.combined.raw$participant_id)
+
+merged.combined.raw <- merged.combined.raw %>% filter(familiarity <= 7)
+
+  write.csv(merged.combined.raw, file = "/Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Data/Clean US Data PYMK.csv")
+  
+  dim(merged.combined.raw)
+  
+  length(unique(merged.combined.raw$participant_id))
+```
+
+# Recent
+
+```{r}
+
+recent.cdr.1 <- read.csv("/Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Data/Raw/CDR/Recent 1.csv")
+recent.cdr.1$source <- "CDR 2"
+
+recent.cdr.2 <- read.csv("/Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Data/Raw/CDR/Recent 2.csv")
+recent.cdr.2$source <- "CDR 4"
+
+recent.combined.raw <- bind_rows(recent.cdr.1, recent.cdr.2)
+
+recent.combined.raw <- recent.combined.raw[!is.na(recent.combined.raw$react) & !is.na(recent.combined.raw$participant_id), 1:11] # to be considered, the row needs to have a participant ID and a preference recorded
+
+# clean up names
+  colnames(recent.combined.raw) <- c("participant_id", 
+                   "recent.order", 
+                   "react",
+                   "comment",
+                   "post_tenure",
+                   "tenure_units",
+                   "human",
+                   "poster.recent.race",
+                   "poster.recent.gender",
+                   "notes",
+                   "source")
+
+  recent.combined.raw$poster.recent.race <- tolower(recent.combined.raw$poster.recent.race)
+  recent.combined.raw$poster.recent.gender <- tolower(recent.combined.raw$poster.recent.gender)
+
+# drop more phantom rows
+  recent.combined.raw <- recent.combined.raw %>% filter(participant_id != "")
+  recent.combined.raw$participant_id <- as.character(recent.combined.raw$participant_id)
+   recent.combined.raw <- merge(p.log.combined.raw, recent.combined.raw, by = c("participant_id", "source"), all = F)
+   
+   recent.combined.raw$poster.recent.race <- ifelse(recent.combined.raw$poster.recent.race %in% c("asian", "black or african american", "hispanic", "white"), recent.combined.raw$poster.recent.race, "other")
+   
+   recent.combined.raw$subject_race_RA <- tolower(recent.combined.raw$subject_race_RA)
+   recent.combined.raw$subject_gender_RA <- tolower(recent.combined.raw$subject_gender_RA)
+
+    recent.combined.raw$race.in.group <- ((recent.combined.raw$poster.recent.race == recent.combined.raw$subject_race_RA))
+    recent.combined.raw$gender.in.group <- recent.combined.raw$poster.recent.gender == recent.combined.raw$subject_gender_RA
+
+  write.csv(recent.combined.raw, file = "/Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Data/Clean US Data Recent.csv")
+  
+  length(unique(recent.combined.raw$participant_id))
+```
+
+# Qualtrics data
+
+```{r Wave 1 - CDR 2}
+
+nf.data.raw <- read.csv("/Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Data/Clean US Data NF.csv")
+
+nf.data <- nf.data.raw %>% select(primary.id,
+                              subject_gender_RA,
+                              subject_race_RA)
+
+nf.data <- unique(nf.data)
+nf.data <- nf.data %>% dplyr::rename(uni.id = primary.id)
+
+qualtrics1 <- read.csv("/Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Data/Qualtrics/FB Standard.csv")
+
+qualtrics2 <- read.csv("/Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Data/Qualtrics/FB Network Structure.csv")
+
+combined.qualtrics <- bind_rows(qualtrics1, qualtrics2)
+
+combined.qualtrics$date <- date(combined.qualtrics$StartDate)
+
+combined.qualtrics <- combined.qualtrics %>% filter(Status == "IP Address" &
+                                                      Finished == "True" &
+                                                      Q2 != "")
+
+combined.qualtrics$primary.id <- paste0(combined.qualtrics$date, combined.qualtrics$subject_id)
+
+merged <- merge(combined.qualtrics, nf.data, by.x = "primary.id", by.y = "uni.id", all.x = F, all.y = T)
+
+merged <- merged %>% dplyr::rename(self.race = Q3,
+                                   self.race.free = Q4,
+                                   gender = Q5,
+                                   age = Q6,
+                                   education = Q7,
+                                   covid.usage = Q9,
+                                   last.login = Q10,
+                                   pre.covid.usage = Q11)
+
+merged$self.race <- as.character(merged$self.race)
+merged$self.race <- ifelse(grepl(",",merged$self.race),"Two or more",merged$self.race)
+
+dim(merged)
+
+write.csv(merged, file = "/Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Data/Clean qualtrics data.csv")
+
+```
+
+```{r}
+
+my_controls <- tableby.control(
+  test = T,
+  total = T,
+  numeric.test = "kwt", cat.test = "chisq",
+  numeric.stats = "meansd",
+  cat.stats = c("countpct"),
+  stats.labels = list(
+    meansd = "Mean (SD)"
+  )
+)
+
+participant.data <- merged %>% select(self.race,
+                             gender,
+                             age,
+                             education,
+                             covid.usage,
+                             last.login,
+                             pre.covid.usage,
+                             subject_race_RA,
+                             subject_gender_RA)
+
+nf.data <- nf.data.raw %>% select(subject_race_RA,
+                             subject_gender_RA,
+                             total_friends,
+                             nf.order,
+                             preference,
+                             tenure.units,
+                             human,
+                             nf.group,
+                             unrest,
+                             poster.nf.race.1.ra,
+                             poster.nf.race.2.ra,
+                             poster.nf.gender)
+
+
+
+```
+
+```{r}
+
+options(qwraps2_markup = "markdown")
+participant.data <- as.data.frame(participant.data)
+
+summary_statistics <-
+  list(
+    "Age" =
+      list(
+        "mean (sd)" = ~qwraps2::mean_sd(age, na_rm = TRUE, show_n = "never")
+      ),
+    "Educational Attainment" =
+      list(
+        "No college degree" = ~qwraps2::n_perc(na.omit(education) %in% c("Associate's degree",
+                                                                         "Did not graduate high school",
+                                                                         "Graduated high school",
+                                                                         "Some college, no degree")),
+        "Bachelor's degree" = ~qwraps2::n_perc(na.omit(education) %in% "Bachelor's degree"),
+        "Graduate degree" = ~qwraps2::n_perc(na.omit(education) %in% c("Doctoral degree",
+                                                                         "Master's degree",
+                                                                       "Professional degree"))),
+
+    "Gender" =
+      list(
+        "Female" = ~qwraps2::n_perc(na.omit(gender) %in% c("Female")),
+        "Male" = ~qwraps2::n_perc(na.omit(gender) %in% "Male"),
+        "Non-binary" = ~qwraps2::n_perc(na.omit(gender) %in% c("Non-binary"))
+      ),
+    
+    "Pre-COVID FB Usage" =
+      list(
+        "Hourly" = ~qwraps2::n_perc(na.omit(pre.covid.usage) %in% "A few times an hour"),
+        "Daily" = ~qwraps2::n_perc(na.omit(pre.covid.usage) %in% "A few times a day"),
+        "Weekly" = ~qwraps2::n_perc(na.omit(pre.covid.usage) %in% "A few times a week"),
+        "Monthly" = ~qwraps2::n_perc(na.omit(pre.covid.usage) %in% "A few times a month"),
+        "Yearly" = ~qwraps2::n_perc(na.omit(pre.covid.usage) %in% "A few times a year"),
+        "Never" = ~qwraps2::n_perc(na.omit(pre.covid.usage) %in% "Never")
+  ),
+    
+    "COVID FB Usage" =
+      list(
+        "Hourly" = ~qwraps2::n_perc(na.omit(covid.usage) %in% "A few times an hour"),
+        "Daily" = ~qwraps2::n_perc(na.omit(covid.usage) %in% "A few times a day"),
+        "Weekly" = ~qwraps2::n_perc(na.omit(covid.usage) %in% "A few times a week"),
+        "Monthly" = ~qwraps2::n_perc(na.omit(covid.usage) %in% "A few times a month"),
+        "Yearly" = ~qwraps2::n_perc(na.omit(covid.usage) %in% "A few times a year"),
+        "Never" = ~qwraps2::n_perc(na.omit(covid.usage) %in% "Never")
+  ),
+    
+    "Race Self-Identification" =
+      list(
+        "Asian" = ~qwraps2::n_perc(na.omit(self.race) %in% "Asian"),
+        "Black/AA" = ~qwraps2::n_perc(na.omit(self.race) %in% "Black or African American"),
+        "Hispanic" = ~qwraps2::n_perc(na.omit(self.race) %in% "Hispanic"),
+        "White" = ~qwraps2::n_perc(na.omit(self.race) %in% "White"),
+        "Multi-racial" = ~qwraps2::n_perc(na.omit(self.race) %in% "Two or more"),
+        "Other" = ~qwraps2::n_perc(na.omit(self.race) %in% "Other")
+  )
+)
+
+whole <- summary_table(participant.data, summary_statistics)
+by_group <- summary_table(dplyr::group_by(participant.data, subject_race_RA), summary_statistics)
+
+cbind(whole, by_group)
+
+#summary_table(as.table(rbind(table(participant.data$subject_race_RA)/nrow(participant.data), by_group)))
+
+```
+
+```{r}
+
+options(qwraps2_markup = "markdown")
+nf.data$race.in.group <- ((as.character(nf.data$poster.nf.race.1.ra) == as.character(nf.data$subject_race_RA)) | (as.character(nf.data$poster.nf.race.2.ra) == as.character(nf.data$subject_race_RA)))
+nf.data <- as.data.frame(nf.data %>% filter(human == 1))
+
+summary_statistics <-
+  list(
+    "Friends" =
+      list(
+        "Median (IQR)" = ~qwraps2::median_iqr(total_friends, na_rm = TRUE, show_n = "never")
+      ),
+        "Preference" =
+      list(
+        "Median (IQR)"  = ~qwraps2::median_iqr(preference, na_rm = TRUE, show_n = "never")
+      ),
+    "In-group" =
+      list(
+        "Mean (IQR)" = ~mean(race.in.group, na_rm = TRUE)
+      ),
+    "Poster Race" =
+      list(
+        "Asian" = ~qwraps2::n_perc(na.omit(poster.nf.race.1.ra) %in% "asian"),
+        "Black/AA" = ~qwraps2::n_perc(na.omit(poster.nf.race.1.ra) %in% "black or african american"),
+        "Hispanic" = ~qwraps2::n_perc(na.omit(poster.nf.race.1.ra) %in% "hispanic"),
+        "Other" = ~qwraps2::n_perc(na.omit(poster.nf.race.1.ra) %in% "other"),
+        "White" = ~qwraps2::n_perc(na.omit(poster.nf.race.1.ra) %in% "white"))
+)
+
+whole <- summary_table(nf.data, summary_statistics)
+by_group <- summary_table(dplyr::group_by(nf.data, subject_race_RA), summary_statistics)
+
+cbind(whole, by_group)
+
+#summary_table(as.table(rbind(table(participant.data$subject_race_RA)/nrow(participant.data), by_group)))
+
+```
