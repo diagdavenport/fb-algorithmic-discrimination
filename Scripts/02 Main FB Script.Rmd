@@ -1138,6 +1138,8 @@ heat.df <- m.newsfeed.df.all %>% filter(complete_time_rank <= 60) %>%
 ggplot(heat.df, aes(norm.quartile, nf.order, fill= per)) + 
   geom_tile(aes(fill = per)) + scale_y_reverse() + facet_grid(.~race.in.group, margins = T)
 
+dev.copy(jpeg,'Output/Graphs/Audit/Heatmaps/US NF 4 x 60.jpg')
+dev.off()
 
 ### PYMK
 
@@ -1935,6 +1937,10 @@ ggplot(l.dat, aes(x=norm.quartile, y=mean.rating, colour=race.in.group, group=ra
    scale_linetype_discrete(name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup"))
+
+dev.copy(jpeg,'Output/Graphs/Audit/Ranking line graphs/US NF norm pref by median rank by group.jpg')
+dev.off()
+
 
 ```
 
