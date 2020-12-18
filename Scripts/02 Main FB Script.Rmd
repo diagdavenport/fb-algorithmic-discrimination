@@ -28,34 +28,19 @@ theme_set(theme_tufte())
 options(dplyr.summarise.inform=F)
 options(ggplot2.continuous.colour="viridis")
 options(ggplot2.continuous.fill = "viridis")
-```
 
-```{r example}
-
-df.out <- data.frame(x = rnorm(800, mean = 0), identity = "Outgroup")
-inner <- data.frame(x = rnorm(800, mean = 1), identity = "Ingroup")
-
-complete <- rbind(df.out, inner)
-
-mu <- ddply(complete, "identity", summarise, grp.mean=mean(x, na.rm = T))
-
-ggplot(complete, aes(x=x, color=identity)) +
-  geom_density() + geom_vline(data=mu, aes(xintercept=grp.mean, color=identity),
-             linetype="dashed") + xlab("Hypothetical Revealed Preference Index") +
-  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
-                       name="Poster Identity",
-                       breaks=c("Outgroup", "Ingroup"),
-                       labels=c("Outgroup", "Ingroup"))
+knitr::opts_knit$set(root.dir = '/Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown')
 
 ```
+
 
 ```{r call in the data}
 
-m.newsfeed.df.all <- read.csv("/Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Data/Clean US Data NF.csv")
+m.newsfeed.df.all <- read.csv("Temp/Clean US Data NF.csv")
 
-m.pymk.df.all <- read.csv("/Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Data/Clean US Data PYMK.csv")
+m.pymk.df.all <- read.csv("Temp/Clean US Data PYMK.csv")
 
-m.qual.df.all <- read.csv("/Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Data/Clean qualtrics data.csv")
+m.qual.df.all <- read.csv("Temp/Clean qualtrics data.csv")
 
 ```
 
@@ -267,6 +252,9 @@ ggplot(l.dat, aes(x=factor(chron_group), fill = race.in.group, y=rate)) +
                    breaks = c("1","2","3","4","5","0"),
                     labels=c("11-20","21-30", "31-40", "41-50", "51-60", "Top 10"))
 
+dev.copy(jpeg,'Output/Graphs/Audit/Misranking relative to expectation/myplot.jpg')
+dev.off()
+
 newsfeed.df.w.logins <- newsfeed.df.w.logins %>% filter(time_rank <= 60)
 
 newsfeed.df.w.logins$chron_group <- trunc(newsfeed.df.w.logins$time_rank/10)
@@ -293,6 +281,8 @@ ggplot(l.dat, aes(x=norm.quartile, fill = race.in.group, y=rate)) +
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + facet_wrap(.~clean.login)
 
+dev.copy(jpeg,'Output/Graphs/Audit/Misranking relative to expectation/myplot.jpg')
+dev.off()
 
 l.dat <- newsfeed.with.misranks %>% group_by(race.in.group, preference) %>% dplyr::summarise(rate = mean(chron.misrank, na.rm = T), sd = sd(chron.misrank, na.rm = T), n= n()) 
 
@@ -307,6 +297,8 @@ ggplot(l.dat, aes(x=preference, fill = race.in.group, y=rate)) +
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup"))
 
+dev.copy(jpeg,'Output/Graphs/Audit/Misranking relative to expectation/myplot.jpg')
+dev.off()
 
 l.dat <- newsfeed.with.misranks %>% group_by(race.in.group, norm.quartile) %>% dplyr::summarise(rate = mean(chron.misrank, na.rm = T), sd = sd(chron.misrank, na.rm = T), n= n()) 
 
@@ -321,8 +313,8 @@ ggplot(l.dat, aes(x=norm.quartile, fill = race.in.group, y=rate)) +
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup"))
 
-ggplot(newsfeed.with.misranks, aes(x=norm.pctle, y=chron.misrank)) + 
-  geom_point() + geom_smooth(method = 'lm')
+dev.copy(jpeg,'Output/Graphs/Audit/Misranking relative to expectation/myplot.jpg')
+dev.off()
 
 ```
 
