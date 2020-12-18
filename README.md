@@ -9,7 +9,7 @@ Figures and whatnot [here](https://github.com/diagdavenport/fb-algorithmic-discr
 
 Clean-post-processing data is [here](https://github.com/diagdavenport/fb-algorithmic-discrimination/tree/main/Temp)
 
-Raw data collection files are [here]Ihttps://github.com/diagdavenport/fb-algorithmic-discrimination/tree/main/Data)
+Raw data collection files are [here](https://github.com/diagdavenport/fb-algorithmic-discrimination/tree/main/Data)
 
 Code to go from raw files to clean files + clean files to figures and whatnot [here](https://github.com/diagdavenport/fb-algorithmic-discrimination/tree/main/Scripts)
 
