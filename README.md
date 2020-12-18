@@ -1,5 +1,6 @@
 # fb-algorithmic-discrimination
- data, code, and results for ADLM 2021
+
+![text](https://github.com/diagdavenport/fb-algorithmic-discrimination/blob/main/Output/Graphs/Audit/Ranking%20line%20graphs/US%20NF%20norm%20pref%20by%20median%20rank%20by%20group.jpg)
  
  This repository is the online home for [name of FB project] 
 
