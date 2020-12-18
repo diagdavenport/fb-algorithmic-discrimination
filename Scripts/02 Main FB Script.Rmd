@@ -252,7 +252,7 @@ ggplot(l.dat, aes(x=factor(chron_group), fill = race.in.group, y=rate)) +
                    breaks = c("1","2","3","4","5","0"),
                     labels=c("11-20","21-30", "31-40", "41-50", "51-60", "Top 10"))
 
-dev.copy(jpeg,'Output/Graphs/Audit/Misranking relative to expectation/myplot.jpg')
+dev.copy(jpeg,'Output/Graphs/Audit/Misranking relative to expectation/US NF by chronological rank.jpg')
 dev.off()
 
 newsfeed.df.w.logins <- newsfeed.df.w.logins %>% filter(time_rank <= 60)
@@ -281,7 +281,7 @@ ggplot(l.dat, aes(x=norm.quartile, fill = race.in.group, y=rate)) +
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + facet_wrap(.~clean.login)
 
-dev.copy(jpeg,'Output/Graphs/Audit/Misranking relative to expectation/myplot.jpg')
+dev.copy(jpeg,'Output/Graphs/Audit/Misranking relative to expectation/US NF by chronological rank by last login.jpg')
 dev.off()
 
 l.dat <- newsfeed.with.misranks %>% group_by(race.in.group, preference) %>% dplyr::summarise(rate = mean(chron.misrank, na.rm = T), sd = sd(chron.misrank, na.rm = T), n= n()) 
@@ -297,7 +297,7 @@ ggplot(l.dat, aes(x=preference, fill = race.in.group, y=rate)) +
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup"))
 
-dev.copy(jpeg,'Output/Graphs/Audit/Misranking relative to expectation/myplot.jpg')
+dev.copy(jpeg,'Output/Graphs/Audit/Misranking relative to expectation/US NF by raw preference.jpg')
 dev.off()
 
 l.dat <- newsfeed.with.misranks %>% group_by(race.in.group, norm.quartile) %>% dplyr::summarise(rate = mean(chron.misrank, na.rm = T), sd = sd(chron.misrank, na.rm = T), n= n()) 
@@ -313,16 +313,16 @@ ggplot(l.dat, aes(x=norm.quartile, fill = race.in.group, y=rate)) +
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup"))
 
-dev.copy(jpeg,'Output/Graphs/Audit/Misranking relative to expectation/myplot.jpg')
+dev.copy(jpeg,'Output/Graphs/Audit/Misranking relative to expectation/US NF by norm preference.jpg')
 dev.off()
 
 ```
 
 ```{r export working data}
 
-write.csv(m.newsfeed.df.all, file = "/Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Data/NF working data.csv")
+write.csv(m.newsfeed.df.all, file = "Temp/NF working data.csv")
 
-write.csv(m.pymk.df.all, file = "/Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Data/PYMK working data.csv")
+write.csv(m.pymk.df.all, file = "Temp/PYMK working data.csv")
 
 ```
 
@@ -463,6 +463,8 @@ ggplot(l.dat, aes(x=factor(connect.group), fill = race.in.group, y=rate)) +
                    breaks = c("1","2","3","4","5","0"),
                     labels=c("11-20","21-30", "31-40", "41-50", "51-60", "Top 10"))
 
+dev.copy(jpeg,'Output/Graphs/Audit/Misranking relative to expectation/US PYMK by mutual friend ranking.jpg')
+dev.off()
 ```
 
 ```{r misrank calc nf}
