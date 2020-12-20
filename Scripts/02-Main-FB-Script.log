@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  20 DEC 2020 13:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  20 DEC 2020 13:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1670,13 +1670,13 @@ Package pdftex.def Info: 02-Main-FB-Script_files/figure-latex/Recent Activity a
 ttempt 2-1.pdf  used on input line 392.
 (pdftex.def)             Requested size: 457.72984pt x 316.19493pt.
 <02-Main-FB-Script_files/figure-latex/re alex imas-1.pdf, id=952, 454.69875pt x
- 304.13625pt>
+ 301.125pt>
 File: 02-Main-FB-Script_files/figure-latex/re alex imas-1.pdf Graphic file (typ
 e pdf)
 <use 02-Main-FB-Script_files/figure-latex/re alex imas-1.pdf>
 Package pdftex.def Info: 02-Main-FB-Script_files/figure-latex/re alex imas-1.pd
 f  used on input line 463.
-(pdftex.def)             Requested size: 454.70456pt x 304.14014pt.
+(pdftex.def)             Requested size: 454.70456pt x 301.12885pt.
 <02-Main-FB-Script_files/figure-latex/re alex imas-2.pdf, id=953, 454.69875pt x
  300.12125pt>
 File: 02-Main-FB-Script_files/figure-latex/re alex imas-2.pdf Graphic file (typ
@@ -1692,32 +1692,32 @@ Underfull \hbox (badness 10000) in paragraph at lines 463--465
 
 [44 <./02-Main-FB-Script_files/figure-latex/Recent Activity attempt 2-1.pdf>] [
 45] [46 <./02-Main-FB-Script_files/figure-latex/re alex imas-1.pdf> <./02-Main-
-FB-Script_files/figure-latex/re alex imas-2.pdf>] [47]
-<02-Main-FB-Script_files/figure-latex/pymk evolution-1.pdf, id=997, 451.6875pt 
-x 316.18124pt>
+FB-Script_files/figure-latex/re alex imas-2.pdf>] [47] [48]
+<02-Main-FB-Script_files/figure-latex/pymk evolution-1.pdf, id=1002, 451.6875pt
+ x 316.18124pt>
 File: 02-Main-FB-Script_files/figure-latex/pymk evolution-1.pdf Graphic file (t
 ype pdf)
 <use 02-Main-FB-Script_files/figure-latex/pymk evolution-1.pdf>
 Package pdftex.def Info: 02-Main-FB-Script_files/figure-latex/pymk evolution-1.
 pdf  used on input line 783.
 (pdftex.def)             Requested size: 451.71394pt x 316.19975pt.
-<02-Main-FB-Script_files/figure-latex/norm fam by group-1.pdf, id=998, 434.6237
-5pt x 315.1775pt>
+<02-Main-FB-Script_files/figure-latex/norm fam by group-1.pdf, id=1003, 434.623
+75pt x 315.1775pt>
 File: 02-Main-FB-Script_files/figure-latex/norm fam by group-1.pdf Graphic file
  (type pdf)
 <use 02-Main-FB-Script_files/figure-latex/norm fam by group-1.pdf>
 Package pdftex.def Info: 02-Main-FB-Script_files/figure-latex/norm fam by group
 -1.pdf  used on input line 785.
 (pdftex.def)             Requested size: 434.6492pt x 315.19595pt.
-<02-Main-FB-Script_files/figure-latex/norm fam by group-2.pdf, id=999, 453.695p
-t x 316.18124pt>
+<02-Main-FB-Script_files/figure-latex/norm fam by group-2.pdf, id=1004, 453.695
+pt x 316.18124pt>
 File: 02-Main-FB-Script_files/figure-latex/norm fam by group-2.pdf Graphic file
  (type pdf)
 <use 02-Main-FB-Script_files/figure-latex/norm fam by group-2.pdf>
 Package pdftex.def Info: 02-Main-FB-Script_files/figure-latex/norm fam by group
 -2.pdf  used on input line 786.
 (pdftex.def)             Requested size: 453.6939pt x 316.18047pt.
-<02-Main-FB-Script_files/figure-latex/norm fam by group-3.pdf, id=1000, 451.687
+<02-Main-FB-Script_files/figure-latex/norm fam by group-3.pdf, id=1005, 451.687
 5pt x 316.18124pt>
 File: 02-Main-FB-Script_files/figure-latex/norm fam by group-3.pdf Graphic file
  (type pdf)
@@ -1735,8 +1735,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 785--788
 []
  []
 
-[48 <./02-Main-FB-Script_files/figure-latex/pymk evolution-1.pdf>] [49] [50] [5
-1] [52 <./02-Main-FB-Script_files/figure-latex/norm fam by group-1.pdf>]
+[49 <./02-Main-FB-Script_files/figure-latex/pymk evolution-1.pdf>] [50] [51] [5
+2 <./02-Main-FB-Script_files/figure-latex/norm fam by group-1.pdf>]
 <02-Main-FB-Script_files/figure-latex/PYMK ranking against raw likert panel-1.p
 df, id=1041, 445.665pt x 316.18124pt>
 File: 02-Main-FB-Script_files/figure-latex/PYMK ranking against raw likert pane
@@ -1875,7 +1875,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1050.
 Here is how much of TeX's memory you used:
  12467 strings out of 492649
  205552 string characters out of 6129622
- 313573 words of memory out of 5000000
+ 312574 words of memory out of 5000000
  16071 multiletter control sequences out of 15000+600000
  53550 words of font info for 74 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1894,7 +1894,7 @@ ype1/public/lm/lmr7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/
 lm/lmri10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmsy10.
 pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/l
 ocal/texlive/2018/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on 02-Main-FB-Script.pdf (63 pages, 4112615 bytes).
+Output written on 02-Main-FB-Script.pdf (63 pages, 4112780 bytes).
 PDF statistics:
  1261 PDF objects out of 1440 (max. 8388607)
  834 compressed objects within 9 object streams

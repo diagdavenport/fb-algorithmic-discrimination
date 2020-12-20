@@ -347,7 +347,8 @@ mdl3 <- lm(new.rank ~ race.in.group + I(100*norm.pctle) + time_rank, data = news
 stargazer(mdl1.1, mdl1.2, mdl1.3,
           mdl2.1, mdl2.2, mdl2.3,
           mdl3,
-          omit.stat = c("f",    "ser"), digits = 6)
+          omit.stat = c("f",    "ser"), digits = 6,
+          out = "Output/Tex/Powerset regressions/US NF powerset.tex")
 
 mdl1.1 <- lm(new.rank ~ race.in.group, data = m.pymk.df.all)
 mdl1.2 <- lm(new.rank ~ I(100*norm.pctle), data = m.pymk.df.all)
@@ -362,7 +363,8 @@ mdl3 <- lm(new.rank ~ race.in.group + I(100*norm.pctle) + friend_rank, data = m.
 stargazer(mdl1.1, mdl1.2, mdl1.3,
           mdl2.1, mdl2.2, mdl2.3,
           mdl3,
-          omit.stat = c("f",    "ser"), digits = 6)
+          omit.stat = c("f",    "ser"), digits = 6,
+          out = "Output/Tex/Powerset regressions/US PYMK mutual friends powerset.tex")
 
 mdl1.1 <- lm(new.rank ~ race.in.group, data = m.pymk.df.all)
 mdl1.2 <- lm(new.rank ~ I(100*norm.pctle), data = m.pymk.df.all)
@@ -377,7 +379,8 @@ mdl3 <- lm(new.rank ~ race.in.group + I(100*norm.pctle) + pct_friend_rank, data 
 stargazer(mdl1.1, mdl1.2, mdl1.3,
           mdl2.1, mdl2.2, mdl2.3,
           mdl3,
-          omit.stat = c("f",    "ser"), digits = 6)
+          omit.stat = c("f",    "ser"), digits = 6,
+          out = "Output/Tex/Powerset regressions/US PYMK pct mutual friends powerset.tex")
 
 ```
 ### control correlations
@@ -405,7 +408,8 @@ dimnames(x) <- list(c("NF Rank, Time", "PYMK Rank, Pct Friends"), c("Pearson", "
 
 ## create Tex-Code
 stargazer(x, title = "Correlations 1",
-          notes = "Correlation matrix for benchmarks")
+          notes = "Correlation matrix for benchmarks",
+          out = "Output/Tex/Correlations/benchmark correlations.tex")
 
 ```
 
@@ -434,7 +438,8 @@ dimnames(x) <- list(c("NF Rank, Preference", "PYMK Rank, Familiarity"), c("Pears
 
 ## create Tex-Code
 stargazer(x, title = "Correlations 2",
-          notes = "Correlation matrix for preferences")
+          notes = "Correlation matrix for preferences",
+          out = "Output/Tex/Correlations/preference correlations.tex")
 
 ```
 
@@ -2231,7 +2236,8 @@ med <- lm(nf.order ~ race.in.group*factor(in.group.med.split) + I(100*norm.pctle
 
 stargazer(pctle, qrtle, med,
           omit.stat = c("f",    "ser"), object.names = TRUE,
-          title = "In-group Baseline Heterogeneity Results - NF")
+          title = "In-group Baseline Heterogeneity Results - NF",
+          out = "Output/Tex/Heterogeneity/US NF ingroup base rate heterogeneity.tex")
 ```
 
 
@@ -2275,7 +2281,8 @@ med <- lm(nf.order ~ race.in.group*factor(jens.med.split) + I(100*norm.pctle), d
 
 stargazer(pctle, qrtle, med,
           omit.stat = c("f",    "ser"), object.names = TRUE,
-          title = "Diff in mean in-out liking Heterogeneity Results - NF")
+          title = "Diff in mean in-out liking Heterogeneity Results - NF",
+          out = "Output/Tex/Heterogeneity/US NF explicit ingroup bias heterogeneity.tex")
 
 ```
 
@@ -2310,7 +2317,8 @@ med <- lm(pymk.order ~ race.in.group*factor(in.group.med.split) + I(100*norm.pct
 
 stargazer(pctle, qrtle, med,
           omit.stat = c("f",    "ser"), object.names = TRUE,
-          title = "In-group Baseline Heterogeneity Results - PYMK")
+          title = "In-group Baseline Heterogeneity Results - PYMK",
+          out = "Output/Tex/Heterogeneity/US PYMK ingroup base rate heterogeneity.tex")
 ```
 
 ```{r jens measure liking difference - PYMK, results = 'asis'}
@@ -2329,7 +2337,8 @@ med <- lm(pymk.order ~ race.in.group*factor(jens.med.split) + I(100*norm.pctle),
 
 stargazer(pctle, qrtle, med,
           omit.stat = c("f",    "ser"), object.names = TRUE,
-          title = "Diff in mean in-out liking Heterogeneity Results - PYMK")
+          title = "Diff in mean in-out liking Heterogeneity Results - PYMK",
+          out = "Output/Tex/Heterogeneity/US PYMK explicit ingroup bias heterogeneity.tex")
 
 ```
 
@@ -2756,7 +2765,8 @@ hispanic.mdl <- lm(nf.order ~ I(100*norm.pctle) + race.in.group, data = m.newsfe
 
 stargazer(all.mdl, asian.mdl, black.mdl, hispanic.mdl, white.mdl,
           omit.stat = c("f",    "ser"), object.names = TRUE,
-          title = "Primary NF Rank Results")
+          title = "Primary NF Rank Results",
+          out = "Output/Tex/Main results/US NF primary results by race.tex")
 
 all.mdl <- lm(top10 ~ I(100*norm.pctle) + race.in.group, data = m.newsfeed.df.all)
 asian.mdl <- lm(top10 ~ I(100*norm.pctle) + race.in.group, data = m.newsfeed.df.all %>% filter(subject_race_RA == "asian"))
@@ -2766,7 +2776,8 @@ hispanic.mdl <- lm(top10 ~ I(100*norm.pctle) + race.in.group, data = m.newsfeed.
 
 stargazer(all.mdl, asian.mdl, black.mdl, hispanic.mdl, white.mdl,
           omit.stat = c("f",    "ser"), object.names = TRUE,
-          title = "Primary NF Top 10 Results")
+          title = "Primary NF Top 10 Results",
+          out = "Output/Tex/TopN LHS/US NF top10 results by race.tex")
 
 ###############
 
@@ -2782,7 +2793,8 @@ hispanic.mdl <- lm(pymk.order ~ I(100*norm.pctle) + race.in.group, data = m.pymk
 
 stargazer(all.mdl, asian.mdl, black.mdl, hispanic.mdl, white.mdl,
           omit.stat = c("f",    "ser"), object.names = TRUE,
-          title = "Primary PYMK Rank Results")
+          title = "Primary PYMK Rank Results",
+          out = "Output/Tex/Main results/US PYMK primary results by race.tex")
 
 all.mdl <- lm(top10 ~ I(100*norm.pctle) + race.in.group, data = m.pymk.df.all)
 asian.mdl <- lm(top10 ~ I(100*norm.pctle) + race.in.group, data = m.pymk.df.all %>% filter(subject_race_RA == "asian"))
@@ -2792,7 +2804,8 @@ hispanic.mdl <- lm(top10 ~ I(100*norm.pctle) + race.in.group, data = m.pymk.df.a
 
 stargazer(all.mdl, asian.mdl, black.mdl, hispanic.mdl, white.mdl,
           omit.stat = c("f",    "ser"), object.names = TRUE,
-          title = "Primary PYMK Top 10 Results")
+          title = "Primary PYMK Top 10 Results",
+          out = "Output/Tex/TopN LHS/US PYMK top10 by race.tex")
 
 ```
 
@@ -2806,7 +2819,8 @@ hispanic.mdl <- lm(nf.order ~ factor(norm.decile) + race.in.group, data = m.news
 
 stargazer(all.mdl, asian.mdl, black.mdl, hispanic.mdl, white.mdl,
           omit.stat = c("f",    "ser"), object.names = TRUE,
-          title = "Secondary NF Rank Results (Robustness for nonlinear in preference)")
+          title = "Secondary NF Rank Results (Robustness for nonlinear in preference)",
+          out = "Output/Tex/Robustness RHS/US NF norm decile results by race.tex")
 
 m.newsfeed.df.all$subject.poc <- m.newsfeed.df.all$subject_race_RA != "white"
 m.newsfeed.df.all$poster.poc <- m.newsfeed.df.all$poster.nf.race.1.ra != "white"
@@ -2821,7 +2835,8 @@ hispanic.mdl <- lm(nf.order ~ I(100*norm.pctle) + same.race.alt, data = m.newsfe
 
 stargazer(all.mdl, asian.mdl, black.mdl, hispanic.mdl, white.mdl,
           omit.stat = c("f",    "ser"), object.names = TRUE,
-          title = "Secondary NF Rank Results (Robustness for white vs not white)")
+          title = "Secondary NF Rank Results (Robustness for white vs not white)",
+          out = "Output/Tex/Robustness RHS/US NF ingroup defined by poc or not.tex")
 
 ```
 
