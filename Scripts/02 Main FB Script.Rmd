@@ -110,11 +110,15 @@ m.pymk.df.all <- m.pymk.df.all %>% group_by(primary.id, RA_id) %>%
 # Paper Figures
 
 ```{r Prep data for figures}
-m1 <- m.newsfeed.df.all %>% group_by(primary.id) %>% dplyr::summarise(m.pref = mean(preference, na.rm = T), count = n())
+m1 <- m.newsfeed.df.all %>% group_by(primary.id) %>% dplyr::summarise(m.pref = mean(preference, na.rm = T),
+                                                                      count = n(),
+                                                                      sd.pref = sd(preference, na.rm = T))
 
 m.3 <- merge(m.newsfeed.df.all, m1, by = c("primary.id"))
 
-m.3$norm.pref <- m.3$preference/m.3$m.pref
+m.3$norm.pref <- ifelse(m.3$sd.pref %in% c(0,NA),
+                        (m.3$preference - m.3$m.pref)/1e6, #basically force it to be close to zero
+                        (m.3$preference - m.3$m.pref)/m.3$sd.pref)
 
 m.3$norm.pref.round <- round(m.3$norm.pref, digits = 1)
 
@@ -155,11 +159,14 @@ m.newsfeed.df.all$norm.quartile2 <- ifelse(m.newsfeed.df.all$norm.quartile2 < 4,
 
 ```{r clean pymk.m}
 clean.m.pymk.df.all <- m.pymk.df.all
-m1 <- m.pymk.df.all %>% group_by(primary.id) %>% dplyr::summarise(m.fam = mean(familiarity))
+m1 <- m.pymk.df.all %>% group_by(primary.id) %>% dplyr::summarise(m.fam = mean(familiarity, na.rm = T),
+                                                                  sd.fam = sd(familiarity, na.rm = T))
 
 m.3 <- merge(m.pymk.df.all, m1, by = "primary.id")
 
-m.3$norm.fam <- m.3$familiarity/m.3$m.fam
+m.3$norm.fam <- ifelse(m.3$sd.fam  %in% c(0,NA),
+                       (m.3$familiarity - m.3$m.fam)/1e6, # get it close to zero
+                       (m.3$familiarity - m.3$m.fam)/m.3$sd.fam)
 
 m.pymk.df.all <- m.3
 
@@ -235,7 +242,6 @@ newsfeed.df.w.logins <- merge(newsfeed.with.misranks,
 
 newsfeed.with.misranks <- newsfeed.with.misranks %>% filter(time_rank <= 60)
 
-
 l.dat <- newsfeed.with.misranks %>% group_by(race.in.group, chron_group) %>% dplyr::summarise(rate = mean(chron.misrank, na.rm = T), sd = sd(chron.misrank, na.rm = T), n= n()) 
 
 l.dat$ci <- (l.dat$sd/sqrt(l.dat$n))*1.96
@@ -252,7 +258,7 @@ ggplot(l.dat, aes(x=factor(chron_group), fill = race.in.group, y=rate)) +
                    breaks = c("1","2","3","4","5","0"),
                     labels=c("11-20","21-30", "31-40", "41-50", "51-60", "Top 10"))
 
-dev.copy(jpeg,'Output/Graphs/Audit/Misranking relative to expectation/US NF by chronological rank.jpg')
+dev.copy(jpeg,'Output/Graphs/Audit/Misranking relative to expectation/Chronological expectation/US NF by chronological rank.jpg')
 dev.off()
 
 newsfeed.df.w.logins <- newsfeed.df.w.logins %>% filter(time_rank <= 60)
@@ -281,7 +287,7 @@ ggplot(l.dat, aes(x=norm.quartile, fill = race.in.group, y=rate)) +
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + facet_wrap(.~clean.login)
 
-dev.copy(jpeg,'Output/Graphs/Audit/Misranking relative to expectation/US NF by chronological rank by last login.jpg')
+dev.copy(jpeg,'Output/Graphs/Audit/Misranking relative to expectation/Chronological expectation/US NF by chronological rank by last login.jpg')
 dev.off()
 
 l.dat <- newsfeed.with.misranks %>% group_by(race.in.group, preference) %>% dplyr::summarise(rate = mean(chron.misrank, na.rm = T), sd = sd(chron.misrank, na.rm = T), n= n()) 
@@ -297,7 +303,7 @@ ggplot(l.dat, aes(x=preference, fill = race.in.group, y=rate)) +
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup"))
 
-dev.copy(jpeg,'Output/Graphs/Audit/Misranking relative to expectation/US NF by raw preference.jpg')
+dev.copy(jpeg,'Output/Graphs/Audit/Misranking relative to expectation/Chronological expectation/US NF by raw preference.jpg')
 dev.off()
 
 l.dat <- newsfeed.with.misranks %>% group_by(race.in.group, norm.quartile) %>% dplyr::summarise(rate = mean(chron.misrank, na.rm = T), sd = sd(chron.misrank, na.rm = T), n= n()) 
@@ -313,7 +319,7 @@ ggplot(l.dat, aes(x=norm.quartile, fill = race.in.group, y=rate)) +
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup"))
 
-dev.copy(jpeg,'Output/Graphs/Audit/Misranking relative to expectation/US NF by norm preference.jpg')
+dev.copy(jpeg,'Output/Graphs/Audit/Misranking relative to expectation/Chronological expectation/US NF by norm preference.jpg')
 dev.off()
 
 ```
@@ -463,7 +469,7 @@ ggplot(l.dat, aes(x=factor(connect.group), fill = race.in.group, y=rate)) +
                    breaks = c("1","2","3","4","5","0"),
                     labels=c("11-20","21-30", "31-40", "41-50", "51-60", "Top 10"))
 
-dev.copy(jpeg,'Output/Graphs/Audit/Misranking relative to expectation/US PYMK by mutual friend ranking.jpg')
+dev.copy(jpeg,'Output/Graphs/Audit/Misranking relative to expectation/Mutual friends expectation/US PYMK by mutual friend ranking.jpg')
 dev.off()
 ```
 
@@ -528,6 +534,9 @@ ggplot(newsfeed.with.misranks, aes(x=new.metric, fill=race.in.group)) +
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup"))
 
+dev.copy(jpeg,'Output/Graphs/Audit/Misranking relative to expectation/Stated preference expectation/US NF distribution of misranking by group.jpg')
+dev.off()
+
 l.dat <- newsfeed.with.misranks %>% group_by(race.in.group) %>% dplyr::summarise(rate = mean(new.metric, na.rm = T), sd = sd(new.metric, na.rm = T), n= n()) 
 
 l.dat$ci <- (l.dat$sd/sqrt(l.dat$n))*1.96
@@ -561,6 +570,9 @@ ggplot(l.dat, aes(x=factor(preference), y=rate, fill = race.in.group)) +
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup"))
+
+dev.copy(jpeg,'Output/Graphs/Audit/Misranking relative to expectation/Stated preference expectation/US NF by raw preference.jpg')
+dev.off()
 
 ggplot(l.dat %>% filter(preference == 1 & race.in.group == F), aes(x=preference, y=rate, fill = race.in.group)) + 
   geom_bar(stat="identity", position="dodge") + 
@@ -610,6 +622,9 @@ ggplot(l.dat, aes(x=factor(norm.quartile), y=rate, fill = race.in.group)) +
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup"))
+
+dev.copy(jpeg,'Output/Graphs/Audit/Misranking relative to expectation/Stated preference expectation/US NF by norm preference.jpg')
+dev.off()
 
 ```
 
@@ -706,6 +721,8 @@ ggplot(pymk.with.misranks, aes(x=new.metric, fill=race.in.group)) +
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup"))
 
+
+
 l.dat <- pymk.with.misranks %>% group_by(race.in.group) %>% dplyr::summarise(rate = mean(new.metric, na.rm = T), sd = sd(new.metric, na.rm = T), n= n()) 
 
 l.dat$ci <- (l.dat$sd/sqrt(l.dat$n))*1.96
@@ -739,6 +756,9 @@ ggplot(l.dat, aes(x=factor(familiarity), y=rate, fill = race.in.group)) +
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup"))
+
+dev.copy(jpeg,'Output/Graphs/Audit/Misranking relative to expectation/Stated preference expectation/US PYMK by raw preference.jpg')
+dev.off()
 
 ggplot(l.dat %>% filter(familiarity == 1 & race.in.group == F), aes(x=familiarity, y=rate, fill = race.in.group)) + 
   geom_bar(stat="identity", position="dodge") + 
@@ -790,6 +810,9 @@ ggplot(l.dat, aes(x=norm.quartile, y=rate, fill = race.in.group)) +
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup"))
 
+dev.copy(jpeg,'Output/Graphs/Audit/Misranking relative to expectation/Stated preference expectation/US PYMK by norm preference.jpg')
+dev.off()
+
 ```
 
 
@@ -822,6 +845,9 @@ ggplot(l.dat, aes(x=nf.order.round, y=prob.same.race)) +
                    breaks = c("1","2","3","4","5","0"),
                     labels=c("11-20","21-30", "31-40", "41-50", "51-60", "Top 10")) +
   coord_flip()
+
+dev.copy(jpeg,'Output/Graphs/Audit/Misranking relative to expectation/Stated preference expectation/US NF ingroup rate by ranking.jpg')
+dev.off()
 
 ggplot(l.dat, aes(x=nf.order.round, y=prob.same.race-.5)) + 
     geom_errorbar(aes(ymin=prob.same.race-ci-.5, ymax=prob.same.race+ci-.5), colour="black", width=.1, position=pd) + geom_hline(yintercept = mean(m.newsfeed.df.all$race.in.group), color="blue", linetype="dashed", size=1) + labs(title = "Newsfeed preference for user's race (US)", subtitle = "Same-race posts get sorted closer to the top") + xlab("FB Newsfeed Ranking (groups of 10)") + ylab("Rate of same-race posts") + geom_line(position=pd) +
@@ -873,6 +899,9 @@ ggplot(as.data.frame(l.dat),
   scale_fill_manual(values=c("red", "blue", "deeppink", "green", "snow")) +
   scale_alpha_manual(values = c(0,0,0,0,.5), guide=F)
 
+dev.copy(jpeg,'Output/Graphs/Audit/Sankey flows/US NF chronology to actual by norm preference.jpg')
+dev.off()
+
 
 l.dat <- m.newsfeed.df.all %>% group_by(norm.quartile, new.order4, race.in.group) %>% dplyr::summarise(freq = n())
 
@@ -887,6 +916,9 @@ ggplot(as.data.frame(l.dat),
   geom_label(stat = "stratum", aes(label = after_stat(stratum))) +
   scale_x_discrete(limits = c("Norm Quartile", "Actual NF Ranking"), expand = c(.05, .05)) + theme(legend.position="bottom") + 
   scale_fill_manual(values=c("red", "blue", "snow"))
+
+dev.copy(jpeg,'Output/Graphs/Audit/Sankey flows/US NF norm preference to actual by ingroup.jpg')
+dev.off()
 
 l.dat <- m.newsfeed.df.all %>% group_by(chron.order4, new.order4, race.in.group) %>% dplyr::summarise(freq = n())
 
@@ -904,6 +936,8 @@ ggplot(as.data.frame(l.dat),
   scale_x_discrete(limits = c("Chronological Group", "Actual NF Ranking"), expand = c(.05, .05)) + theme(legend.position="bottom") + 
   scale_fill_manual(values=c("red", "blue", "snow"))
 
+dev.copy(jpeg,'Output/Graphs/Audit/Sankey flows/US NF chronology to actual by ingroup.jpg')
+dev.off()
 
 l.dat <- m.newsfeed.df.all %>% group_by(chron.order4, new.order4) %>% dplyr::summarise(freq = n())
 
@@ -1130,6 +1164,9 @@ heat.df <- m.newsfeed.df.all %>% filter(complete_time_rank <= 60) %>%
 ggplot(heat.df, aes(complete_time_rank, nf.order.round, fill= per)) + 
   geom_tile(aes(fill = per)) + scale_x_reverse() + scale_y_reverse() + facet_grid(race.in.group ~ norm.quartile, margins = T)
 
+dev.copy(jpeg,'Output/Graphs/Audit/Heatmaps/US NF chronology by norm quartile by ingroup.jpg')
+dev.off()
+
 heat.df <- m.newsfeed.df.all %>% filter(complete_time_rank <= 60) %>%
   group_by(nf.order, race.in.group, norm.quartile) %>% dplyr::summarize(count = n()) %>%
   group_by(race.in.group, norm.quartile) %>%
@@ -1140,7 +1177,7 @@ heat.df <- m.newsfeed.df.all %>% filter(complete_time_rank <= 60) %>%
 ggplot(heat.df, aes(norm.quartile, nf.order, fill= per)) + 
   geom_tile(aes(fill = per)) + scale_y_reverse() + facet_grid(.~race.in.group, margins = T)
 
-dev.copy(jpeg,'Output/Graphs/Audit/Heatmaps/US NF 4 x 60.jpg')
+dev.copy(jpeg,'Output/Graphs/Audit/Heatmaps/US NF norm quartile by ingroup.jpg')
 dev.off()
 
 ### PYMK
@@ -1155,6 +1192,9 @@ heat.df <- m.pymk.df.all %>% filter(pct_friend_rank <= 60) %>%
 ggplot(heat.df, aes(pct_friend_rank, pymk.order.round, fill= per)) + 
   geom_tile(aes(fill = per)) + scale_x_reverse() + scale_y_reverse() + facet_grid(race.in.group ~ norm.quartile, margins = T)
 
+dev.copy(jpeg,'Output/Graphs/Audit/Heatmaps/US PYMK percent friends rank by norm quartile by ingroup.jpg')
+dev.off()
+
 heat.df <- m.pymk.df.all %>% filter(pct_friend_rank <= 60) %>%
   group_by(pymk.order, race.in.group, norm.quartile) %>% dplyr::summarize(count = n()) %>%
   group_by(race.in.group, norm.quartile) %>%
@@ -1164,6 +1204,27 @@ heat.df <- m.pymk.df.all %>% filter(pct_friend_rank <= 60) %>%
 
 ggplot(heat.df, aes(norm.quartile, pymk.order, fill= per)) + 
   geom_tile(aes(fill = per)) + scale_y_reverse() + facet_grid(.~race.in.group, margins = T)
+
+dev.copy(jpeg,'Output/Graphs/Audit/Heatmaps/US PYMK norm quartile by ingroup.jpg')
+dev.off()
+
+ggplot(m.newsfeed.df.all %>% filter(complete_time_rank <= 60), aes(x=complete_time_rank, nf.order.round)) + stat_density_2d(
+  geom = "raster",
+  aes(fill = after_stat(density)),
+  contour = FALSE
+) + scale_fill_viridis_c() + facet_grid(race.in.group~norm.quartile, margins = T)  + scale_x_reverse() + scale_y_reverse()
+
+ggplot(m.newsfeed.df.all %>% filter(complete_time_rank <= 60), aes(x=complete_time_rank, nf.order)) + stat_density_2d(
+  geom = "raster",
+  aes(fill = after_stat(density)),
+  contour = FALSE
+) + scale_fill_viridis_c() + facet_grid(race.in.group~norm.quartile, margins = T)  + scale_x_reverse() + scale_y_reverse()
+
+ggplot(m.pymk.df.all %>% filter(pct_friend_rank <= 60), aes(x=pct_friend_rank, pymk.order)) + stat_density_2d(
+  geom = "raster",
+  aes(fill = after_stat(density)),
+  contour = FALSE
+) + scale_fill_viridis_c() + facet_grid(race.in.group~norm.quartile, margins = T)  + scale_x_reverse() + scale_y_reverse()
 
 ```
 
@@ -1259,12 +1320,20 @@ botright <- ggplot(l.dat, aes(x=preference, y=prob15)) +
                        labels=c("Outgroup", "Ingroup")) + theme(legend.position = "none")
 
 topleft
+dev.copy(jpeg,'Output/Graphs/Audit/Ranking line graphs/US NF slots above median by raw preference.jpg')
+dev.off()
 
 topright
+dev.copy(jpeg,'Output/Graphs/Audit/Ranking line graphs/US NF prob top 5 by raw preference.jpg')
+dev.off()
 
 botleft
+dev.copy(jpeg,'Output/Graphs/Audit/Ranking line graphs/US NF prob top 10 by raw preference.jpg')
+dev.off()
 
 botright
+dev.copy(jpeg,'Output/Graphs/Audit/Ranking line graphs/US NF prob top 15 by raw preference.jpg')
+dev.off()
 
 ```
 
@@ -1360,149 +1429,63 @@ botright <- ggplot(l.dat, aes(x=norm.quartile, y=prob15)) +
                        labels=c("Outgroup", "Ingroup")) + theme(legend.position = "none")
 
 topleft
+dev.copy(jpeg,'Output/Graphs/Audit/Ranking line graphs/US NF slots above median by norm preference.jpg')
+dev.off()
+
 topright
+dev.copy(jpeg,'Output/Graphs/Audit/Ranking line graphs/US NF prob top 5 by norm preference.jpg')
+dev.off()
+
 botleft
+dev.copy(jpeg,'Output/Graphs/Audit/Ranking line graphs/US NF prob top 10 by norm preference.jpg')
+dev.off()
+
 botright
+dev.copy(jpeg,'Output/Graphs/Audit/Ranking line graphs/US NF prob top 15 by norm preference.jpg')
+dev.off()
 
 ```
 
-
-```{r Outcomes by norm pref 2}
-# 
-# common.x.lab <- "User self-reported normalized preference \nquartile (4=most preferred)"
-# 
-# l.dat <- m.newsfeed.df.all %>% group_by(norm.quartile2) %>% dplyr::summarise(mean.rating = mean(nf.order, na.rm = T), sd = sd(nf.order, na.rm = T), n= n()) 
-# 
-# l.dat$mean.rating <- (l.dat$mean.rating - 30.5)*-1
-# 
-# l.dat$ci <- (l.dat$sd/sqrt(l.dat$n))*1.96
-# pd <- position_dodge(0.01)
-# 
-# topleft <- ggplot(l.dat, aes(x=norm.quartile2, y=mean.rating)) +
-#   geom_errorbar(aes(ymin=mean.rating-ci, ymax=mean.rating+ci), width=.1, position=pd) + 
-#   geom_point(position=pd, size=3) +
-#   geom_line(position=pd) + labs(title = "Newsfeed Ranking by Preference (US)") + 
-#   ylab("Mean number of slots \nabove median rank") + 
-#   xlab(common.x.lab)
-# 
-# m.newsfeed.df.all$top5  <- m.newsfeed.df.all$nf.order <= 5
-# m.newsfeed.df.all$top10  <- m.newsfeed.df.all$nf.order <= 10
-# m.newsfeed.df.all$top15  <- m.newsfeed.df.all$nf.order <= 15
-# 
-# l.dat <- m.newsfeed.df.all %>% group_by(norm.quartile2) %>% dplyr::summarise(prob5 = mean(top5, na.rm = T), sd = sd(top5, na.rm = T), n= n()) 
-# 
-# l.dat$ci <- (l.dat$sd/sqrt(l.dat$n))*1.96
-# pd <- position_dodge(0.01)
-# 
-# topright <- ggplot(l.dat, aes(x=norm.quartile2, y=prob5)) +
-#   geom_errorbar(aes(ymin=prob5-ci, ymax=prob5+ci), width=.1, position=pd) + 
-#   geom_point(position=pd, size=3) +
-#   geom_line(position=pd) + 
-#   labs(title = "Newsfeed Top 5 by Preference (US)") + 
-#   ylab("Pr(Top 5)") + 
-#   xlab(common.x.lab) +
-#   scale_colour_manual(values=c("#CC79A7", "#009E73"), 
-#                        name="Poster Identity",
-#                        breaks=c("FALSE", "TRUE"),
-#                        labels=c("Outgroup", "Ingroup")) + 
-#    scale_shape_discrete(name="Poster Identity",
-#                        breaks=c("FALSE", "TRUE"),
-#                        labels=c("Outgroup", "Ingroup")) + 
-#    scale_linetype_discrete(name="Poster Identity",
-#                        breaks=c("FALSE", "TRUE"),
-#                        labels=c("Outgroup", "Ingroup")) + theme(legend.position = "none")
-# 
-# l.dat <- m.newsfeed.df.all %>% group_by(norm.quartile2) %>% dplyr::summarise(prob10 = mean(top10, na.rm = T), sd = sd(top10, na.rm = T), n= n()) 
-# 
-# l.dat$ci <- (l.dat$sd/sqrt(l.dat$n))*1.96
-# pd <- position_dodge(0.01)
-# 
-# botleft <- ggplot(l.dat, aes(x=norm.quartile2, y=prob10)) +
-#   geom_errorbar(aes(ymin=prob10-ci, ymax=prob10+ci), width=.1, position=pd) + 
-#   geom_point(position=pd, size=3) +
-#   geom_line(position=pd) + 
-#   labs(title = "Newsfeed Top 10 by Preference (US)") + 
-#   ylab("Pr(Top 10)") + 
-#   xlab(common.x.lab) +
-#   scale_colour_manual(values=c("#CC79A7", "#009E73"), 
-#                        name="Poster Identity",
-#                        breaks=c("FALSE", "TRUE"),
-#                        labels=c("Outgroup", "Ingroup")) + 
-#    scale_shape_discrete(name="Poster Identity",
-#                        breaks=c("FALSE", "TRUE"),
-#                        labels=c("Outgroup", "Ingroup")) + 
-#    scale_linetype_discrete(name="Poster Identity",
-#                        breaks=c("FALSE", "TRUE"),
-#                        labels=c("Outgroup", "Ingroup")) + theme(legend.position = "none")
-# 
-# l.dat <- m.newsfeed.df.all %>% group_by(norm.quartile2) %>% dplyr::summarise(prob15 = mean(top15, na.rm = T), sd = sd(top15, na.rm = T), n= n()) 
-# 
-# l.dat$ci <- (l.dat$sd/sqrt(l.dat$n))*1.96
-# pd <- position_dodge(0.01)
-# 
-# botright <- ggplot(l.dat, aes(x=norm.quartile2, y=prob15)) +
-#   geom_errorbar(aes(ymin=prob15-ci, ymax=prob15+ci), width=.1, position=pd) + 
-#   geom_point(position=pd, size=3) +
-#   geom_line(position=pd) + 
-#   labs(title = "Newsfeed Top 15 by Preference (US)") + 
-#   ylab("Pr(Top 15)") + 
-#   xlab(common.x.lab) +
-#   scale_colour_manual(values=c("#CC79A7", "#009E73"), 
-#                        name="Poster Identity",
-#                        breaks=c("FALSE", "TRUE"),
-#                        labels=c("Outgroup", "Ingroup")) + 
-#    scale_shape_discrete(name="Poster Identity",
-#                        breaks=c("FALSE", "TRUE"),
-#                        labels=c("Outgroup", "Ingroup")) + 
-#    scale_linetype_discrete(name="Poster Identity",
-#                        breaks=c("FALSE", "TRUE"),
-#                        labels=c("Outgroup", "Ingroup")) + theme(legend.position = "none")
-# 
-# ggarrange(topleft, topright, botleft, botright,
-#           labels = c("A", "B", "C", "D"),
-#           ncol = 2, nrow = 2)
-
-```
 
 ```{r Distribution of algo rank by group}
-
-mu <- ddply(m.newsfeed.df.all, "race.in.group", summarise, grp.mean=mean(nf.order, na.rm = T), grp.var = var(nf.order, na.rm = T))
-
-tl <- ggplot(m.newsfeed.df.all, aes(x=nf.order, color=race.in.group)) +
-  geom_density(aes(linetype=race.in.group, color="black")) + 
-  geom_vline(data=mu, aes(xintercept=grp.mean, color="black", linetype = race.in.group)) + 
-  xlab("Newsfeed ranking \n(1=top rank, 60=bottom rank)") +
-  labs(title = "Distribution of algorithm ranking by race")  + 
-  scale_color_viridis(discrete = TRUE, option = "B") +
-  scale_fill_viridis(discrete = TRUE, option = "B") + coord_flip(ylim = c(0.005, 0.019)) + 
-  scale_x_reverse() + guides(color=FALSE)
-
-tr <- ggplot(m.newsfeed.df.all, aes(x=nf.order, fill=race.in.group)) + 
-  geom_histogram(aes(y=..density..), binwidth = 3, boundary = 0, alpha=0.7, position="identity") + 
-  coord_flip() + scale_x_reverse() + labs(title = "bins = 20") + 
-  geom_vline(data=mu, aes(xintercept=grp.mean, color="black", linetype = race.in.group)) +
-  scale_color_viridis(discrete = TRUE, option = "C") +
-  scale_fill_viridis(discrete = TRUE, option = "C") + xlab("") + guides(color=FALSE)
-
-bl <- ggplot(m.newsfeed.df.all, aes(x=nf.order, fill=race.in.group)) + 
-  geom_histogram(aes(y=..density..), binwidth = 6, boundary = 0, alpha=0.7, position="identity") + 
-  coord_flip() + scale_x_reverse() + labs(title = "bins = 10") + geom_vline(data=mu, aes(xintercept=grp.mean, color=race.in.group)) + scale_color_viridis(discrete = TRUE, option = "B") +
-  scale_fill_viridis(discrete = TRUE, option = "B") + xlab("Newsfeed ranking \n(1=top rank, 60=bottom rank)")
-
-br <- ggplot(m.newsfeed.df.all, aes(x=nf.order, fill=race.in.group)) + 
-  geom_histogram(aes(y=..density..), binwidth = 12, boundary = 0, alpha=0.7, position="identity") + 
-  coord_flip() + scale_x_reverse() + labs(title = "bins = 5") + geom_vline(data=mu, aes(xintercept=grp.mean, color=race.in.group)) + xlab("")
-
-ggarrange(tl, tr, bl, br,
-          labels = c("A", "B", "C", "D"),
-          ncol = 2, nrow = 2)
-
-ggplot(m.newsfeed.df.all, aes(x=nf.order, fill=race.in.group)) + 
-  geom_histogram(aes(y=..density..), binwidth = 1, boundary = 60, alpha=0.7, position="identity") + 
-  coord_flip() + scale_x_reverse() + labs(title = "bins = 10") + geom_vline(data=mu, aes(xintercept=grp.mean, color=race.in.group)) + scale_color_viridis(discrete = TRUE, option = "B") +
-  scale_fill_viridis(discrete = TRUE, option = "B") + xlab("Newsfeed ranking \n(1=top rank, 60=bottom rank)")
-
-ggplot(m.newsfeed.df.all, aes(x=nf.order)) + stat_ecdf(aes(colour=race.in.group), bins=10)
+# 
+# mu <- ddply(m.newsfeed.df.all, "race.in.group", summarise, grp.mean=mean(nf.order, na.rm = T), grp.var = var(nf.order, na.rm = T))
+# 
+# tl <- ggplot(m.newsfeed.df.all, aes(x=nf.order, color=race.in.group)) +
+#   geom_density(aes(linetype=race.in.group, color="black")) + 
+#   geom_vline(data=mu, aes(xintercept=grp.mean, color="black", linetype = race.in.group)) + 
+#   xlab("Newsfeed ranking \n(1=top rank, 60=bottom rank)") +
+#   labs(title = "Distribution of algorithm ranking by race")  + 
+#   scale_color_viridis(discrete = TRUE, option = "B") +
+#   scale_fill_viridis(discrete = TRUE, option = "B") + coord_flip(ylim = c(0.005, 0.019)) + 
+#   scale_x_reverse() + guides(color=FALSE)
+# 
+# tr <- ggplot(m.newsfeed.df.all, aes(x=nf.order, fill=race.in.group)) + 
+#   geom_histogram(aes(y=..density..), binwidth = 3, boundary = 0, alpha=0.7, position="identity") + 
+#   coord_flip() + scale_x_reverse() + labs(title = "bins = 20") + 
+#   geom_vline(data=mu, aes(xintercept=grp.mean, color="black", linetype = race.in.group)) +
+#   scale_color_viridis(discrete = TRUE, option = "C") +
+#   scale_fill_viridis(discrete = TRUE, option = "C") + xlab("") + guides(color=FALSE)
+# 
+# bl <- ggplot(m.newsfeed.df.all, aes(x=nf.order, fill=race.in.group)) + 
+#   geom_histogram(aes(y=..density..), binwidth = 6, boundary = 0, alpha=0.7, position="identity") + 
+#   coord_flip() + scale_x_reverse() + labs(title = "bins = 10") + geom_vline(data=mu, aes(xintercept=grp.mean, color=race.in.group)) + scale_color_viridis(discrete = TRUE, option = "B") +
+#   scale_fill_viridis(discrete = TRUE, option = "B") + xlab("Newsfeed ranking \n(1=top rank, 60=bottom rank)")
+# 
+# br <- ggplot(m.newsfeed.df.all, aes(x=nf.order, fill=race.in.group)) + 
+#   geom_histogram(aes(y=..density..), binwidth = 12, boundary = 0, alpha=0.7, position="identity") + 
+#   coord_flip() + scale_x_reverse() + labs(title = "bins = 5") + geom_vline(data=mu, aes(xintercept=grp.mean, color=race.in.group)) + xlab("")
+# 
+# ggarrange(tl, tr, bl, br,
+#           labels = c("A", "B", "C", "D"),
+#           ncol = 2, nrow = 2)
+# 
+# ggplot(m.newsfeed.df.all, aes(x=nf.order, fill=race.in.group)) + 
+#   geom_histogram(aes(y=..density..), binwidth = 1, boundary = 60, alpha=0.7, position="identity") + 
+#   coord_flip() + scale_x_reverse() + labs(title = "bins = 10") + geom_vline(data=mu, aes(xintercept=grp.mean, color=race.in.group)) + scale_color_viridis(discrete = TRUE, option = "B") +
+#   scale_fill_viridis(discrete = TRUE, option = "B") + xlab("Newsfeed ranking \n(1=top rank, 60=bottom rank)")
+# 
+# ggplot(m.newsfeed.df.all, aes(x=nf.order)) + stat_ecdf(aes(colour=race.in.group), bins=10)
 ```
 
 ```{r Excess ingroup}
@@ -1571,6 +1554,9 @@ ggplot(dat, aes(x = nf.order.round, y = excess)) + geom_bar(stat = "identity") +
                     labels=c("11-20","21-30", "31-40", "41-50", "51-60", "Top 10")) +
   coord_flip()
 
+dev.copy(jpeg,'Output/Graphs/Audit/Excess mass/US NF excess mass by ranking group.jpg')
+dev.off()
+
 # ggarrange(l, r,
 #           labels = c("A", "B"),
 #           ncol = 2, nrow = 1)
@@ -1626,7 +1612,6 @@ ggplot(m.newsfeed.df.all, aes(x=preference, fill=race.in.group, color = race.in.
   scale_fill_viridis(discrete = TRUE)
 
 ```
-
 
 ```{r Raw Likert Panel by Group}
 
@@ -1733,8 +1718,12 @@ ggarrange(topleft, topright, botleft, botright,
           labels = c("A", "B", "C", "D"),
           ncol = 2, nrow = 2)
 
-topright
+dev.copy(jpeg,'Output/Graphs/Audit/Ranking line graphs/US NF all outcomes panel by raw preference by ingroup.jpg')
+dev.off()
 
+topright
+dev.copy(jpeg,'Output/Graphs/Audit/Ranking line graphs/US NF prob top 5 by raw preference by ingroup.jpg')
+dev.off()
 
 ```
 
@@ -1842,9 +1831,12 @@ botright <- ggplot(l.dat, aes(x=norm.quartile, y=prob15, colour=race.in.group, g
 ggarrange(topleft, topright, botleft, botright,
           labels = c("A", "B", "C", "D"),
           ncol = 2, nrow = 2)
-
+dev.copy(jpeg,'Output/Graphs/Audit/Ranking line graphs/US NF all outcomes panel by norm preference by ingroup.jpg')
+dev.off()
 
 topleft
+dev.copy(jpeg,'Output/Graphs/Audit/Ranking line graphs/US NF slots above median rank by raw preference by ingroup.jpg')
+dev.off()
 
 ```
 
@@ -1878,6 +1870,9 @@ ggplot(l.dat, aes(x=factor(chron_group), y=mean.rating, colour=race.in.group, gr
                    breaks = c("1","2","3","4","5","0"),
                     labels=c("11-20","21-30", "31-40", "41-50", "51-60", "Top 10"))
 
+dev.copy(jpeg,'Output/Graphs/Audit/Ranking line graphs/US NF slots above median rank by chronology by ingroup.jpg')
+dev.off()
+
 ```
 
 ```{r slow roll out of main graph nf}
@@ -1892,7 +1887,7 @@ pd <- position_dodge(0.01)
 ggplot(l.dat %>% filter(norm.quartile == 1 & race.in.group == F), aes(x=norm.quartile, y=mean.rating, colour=race.in.group, group=race.in.group)) +
   geom_errorbar(aes(ymin=mean.rating-ci, ymax=mean.rating+ci, colour=race.in.group), width=.1, position=pd) + 
   geom_point(aes(shape = race.in.group), position=pd, size=3) +
-  geom_line( aes(linetype=race.in.group, color=race.in.group) , position=pd) + labs(title = "Newsfeed Ranking by Preference (US)") + ylim(c(-2, 6)) + xlim(c(.9,4.1)) +
+  geom_line( aes(linetype=race.in.group, color=race.in.group) , position=pd) + labs(title = "Newsfeed Ranking by Preference (US)") + xlim(c(.9,4.1)) +
   ylab("Mean number of slots \nabove median rank") + 
   xlab(common.x.lab) +
   scale_colour_manual(values=c("#CC79A7", "#009E73"), 
@@ -1955,25 +1950,26 @@ ggplot(m.newsfeed.df.all %>% filter(preference == 1 & norm.pref  == .92 ),
        aes(x=preference, y=norm.pref)) + ylim(c(0,2)) + xlim(c(1,7)) +
   geom_point(size=2) + ylab("Mean-centered rating (rating/mean(rating))") + xlab("Stated Preference Rating (7=most preferred)")
 
-ggplot(m.newsfeed.df.all %>% filter((preference == 1 & norm.pref  == .92 ) |
-                                     (preference == 2 & norm.pref  == 1 ) |
-                                      (nf.order == 3 & primary.id  == "2020-04-242762" ) |
-                                      (nf.order == 45 & primary.id  == "2020-06-097691" ) |
-                                      (nf.order == 43 & primary.id  == "2020-06-233043" ) |
-                                      (preference == 6 & norm.pref  == 1 ) |
-                                      (nf.order == 12 & primary.id  == "2020-07-242463" )) ,  
-       aes(x=factor(preference), y=norm.pref)) + ylim(c(0,2))  +
-  geom_point(size=2) + ylab("Mean-centered rating (rating/mean(rating))") + xlab("Stated Preference Rating (7=most preferred)")
+# ggplot(m.newsfeed.df.all %>% filter((preference == 1 & norm.pref  == .92 ) |
+#                                      (preference == 2 & norm.pref  == 1 ) |
+#                                       (nf.order == 3 & primary.id  == "2020-04-242762" ) |
+#                                       (nf.order == 45 & primary.id  == "2020-06-097691" ) |
+#                                       (nf.order == 43 & primary.id  == "2020-06-233043" ) |
+#                                       (preference == 6 & norm.pref  == 1 ) |
+#                                       (nf.order == 12 & primary.id  == "2020-07-242463" )) ,  
+#        aes(x=factor(preference), y=norm.pref)) + ylim(c(0,2))  +
+#   geom_point(size=2) + ylab("Mean-centered rating (rating/mean(rating))") + xlab("Stated Preference Rating (7=most preferred)")
+# 
 
+ggplot(m.newsfeed.df.all, aes(x=factor(preference), y=norm.pref)) + ylim(c(-2.5, 2.5)) +
+  geom_point(size=2, alpha = 0.005) + ylab("within-subject z score (norm preference)") + xlab("Stated Preference Rating (7=most preferred)")
 
-ggplot(m.newsfeed.df.all, aes(x=factor(preference), y=norm.pref)) + ylim(c(0,2)) +
-  geom_point(size=2, alpha = 0.005) + ylab("Mean-centered rating (rating/mean(rating))") + xlab("Stated Preference Rating (7=most preferred)")
+dev.copy(jpeg,'Output/Graphs/Audit/Stated preferences/US NF convert raw preferences to norm preferences.jpg')
+dev.off()
 
 ggplot(m.newsfeed.df.all, aes(x=factor(preference), y=norm.pctle)) +
   geom_point(size=2, alpha = 0.005)
 
-ggplot(m.newsfeed.df.all, aes(x=factor(preference), y=norm.pctle2)) +
-  geom_point(size=2, alpha = 0.006)
 ```
 
 ```{r NF Rank by Prob of in group}
@@ -2004,7 +2000,7 @@ ggplot(l.dat, aes(x=race.in.group, y=mean.rating)) +
   geom_bar(stat="identity", position=pd) + 
     geom_errorbar(aes(ymin=mean.rating-ci, ymax=mean.rating+ci), colour="black", width=.1, position=pd) + labs(title = "Raw Reported Preference by Race Group", subtitle = "Same-race posts are slightly more preferred") + ylab("Mean Rating")
 
-mu <- ddply(m.newsfeed.df.all, "race.in.group", summarise, grp.mean=mean(norm.pref), grp.var = var(norm.pref))
+mu <- ddply(m.newsfeed.df.all, "race.in.group", summarise, grp.mean=mean(norm.pref, na.rm = T), grp.var = var(norm.pref))
 
 #t.test(m.newsfeed.df.all %>% filter(race.in.group == T) %>% dplyr::select(preference), m.newsfeed.df.all %>% filter(race.in.group == F) %>% dplyr::select(preference))
 
@@ -2012,7 +2008,7 @@ var(m.newsfeed.df.all %>% dplyr::select(preference))
 
 ggplot(m.newsfeed.df.all, aes(x=norm.pref, color=race.in.group)) +
   geom_density() + geom_vline(data=mu, aes(xintercept=grp.mean, color=race.in.group),
-             linetype="dashed") + xlim(c(0,2)) + xlab("Stated Preference (normalized)") + labs(title = "Distribution of normalized preference by race", subtitle = "Same-race posts are not rated as more preferred by the user")  +
+             linetype="dashed") + xlab("Stated Preference (normalized)") + labs(title = "Distribution of normalized preference by race", subtitle = "Same-race posts are not rated as more preferred by the user")  +
   scale_colour_manual(values=c("#CC79A7", "#009E73"), 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
@@ -2022,11 +2018,17 @@ ggplot(m.newsfeed.df.all, aes(x=norm.pref, color=race.in.group)) +
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup"))
 
-ggplot(m.newsfeed.df.all, aes(x=norm.pref)) + stat_ecdf(aes(colour=race.in.group)) + xlim(c(0,2)) + xlab("Stated Preference (normalized)") + labs(title = "Cumulative distribution of normalized preference by race", subtitle = "Same-race posts are not rated as more preferred by the user") +
+dev.copy(jpeg,'Output/Graphs/Audit/Stated preferences/US NF pdf norm preferences by ingroup.jpg')
+dev.off()
+
+ggplot(m.newsfeed.df.all, aes(x=norm.pref)) + stat_ecdf(aes(colour=race.in.group)) + xlab("Stated Preference (normalized)") + labs(title = "Cumulative distribution of normalized preference by race", subtitle = "Same-race posts are not rated as more preferred by the user") +
   scale_colour_manual(values=c("#CC79A7", "#009E73"), 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
-                       labels=c("Outgroup", "Ingroup")) 
+                       labels=c("Outgroup", "Ingroup"))
+
+dev.copy(jpeg,'Output/Graphs/Audit/Stated preferences/US NF cdf norm preferences by ingroup.jpg')
+dev.off()
 
 in.dist <- m.newsfeed.df.all %>% filter(race.in.group == T) %>% dplyr::select(norm.pref)
 out.dist <- m.newsfeed.df.all %>% filter(race.in.group == F) %>% dplyr::select(norm.pref)
@@ -2039,115 +2041,78 @@ t.test(in.dist$norm.pref, out.dist$norm.pref)
 
 
 ```{r}
-l.dat <- m.newsfeed.df.all %>% group_by(norm.quartile, race.in.group) %>% dplyr::summarise(mean.rating = mean(nf.order, na.rm = T), sd = sd(nf.order, na.rm = T), n= n()) 
-
-left <- ggplot(m.newsfeed.df.all, aes(x=race.in.group, y=nf.order)) + 
-  geom_boxplot() + scale_y_reverse()  + coord_cartesian(ylim = c(46, 14)) + labs(title = "Distribution of Newsfeed Ranking by \nPoster Identity (US)") + ylab("Average FB Newsfeed ranking (1=top rank, 60=bottom rank)") +
-   xlab("Poster Identity") + scale_x_discrete(labels= c("Outgroup", "Ingroup"))
-
-right <- ggplot(m.newsfeed.df.all, aes(x=factor(norm.quartile), y=nf.order)) + 
-  geom_boxplot() + scale_y_reverse()  + coord_cartesian(ylim = c(46, 14)) + labs(title = "Distribution of Newsfeed Ranking by \nPreference (US)") + 
-  ylab("") + 
-  xlab("User self-reported preferences about posts \n(4=most preferred quartile)")
-
-ggarrange(left, right, 
-          labels = c("A", "B"),
-          ncol = 2, nrow = 1)
-
-l.dat <- m.newsfeed.df.all %>% group_by(race.in.group) %>% dplyr::summarise(mean.rating = mean(nf.order, na.rm = T), sd = sd(nf.order, na.rm = T), n= n())
-
-l.dat$ci <- (l.dat$sd/sqrt(l.dat$n))*1.96
-pd <- position_dodge(0.01)
-
-left <- ggplot(l.dat, aes(x=race.in.group, y=mean.rating)) + 
-    geom_errorbar(aes(ymin=mean.rating-ci, ymax=mean.rating+ci), colour="black", width=.1, position=pd) + geom_point(position=pd, size=3) + scale_y_reverse() + labs(title = "Distribution of Newsfeed Ranking by \nPreference (US)") + 
-  ylab("") + 
-  xlab("User self-reported preferences about posts \n(4=most preferred quartile)") + scale_y_reverse() + labs(title = "Distribution of Newsfeed Ranking by \nPoster Identity (US)") + ylab("Average FB Newsfeed ranking (1=top rank, 60=bottom rank)") +
-   xlab("Poster Identity") + scale_x_discrete(labels= c("Outgroup", "Ingroup")) +
-  coord_cartesian(ylim = c(32, 27))
-
-l.dat <- m.newsfeed.df.all %>% group_by(norm.quartile) %>% dplyr::summarise(mean.rating = mean(nf.order, na.rm = T), sd = sd(nf.order, na.rm = T), n= n()) 
-
-l.dat$ci <- (l.dat$sd/sqrt(l.dat$n))*1.96
-pd <- position_dodge(0.01)
-
-right <- ggplot(l.dat, aes(x=factor(norm.quartile), y=mean.rating)) + 
-  geom_errorbar(aes(ymin=mean.rating-ci, ymax=mean.rating+ci), colour="black", width=.1, position=pd) + 
-  geom_point(position=pd, size=3) + 
-  scale_y_reverse()  +  
-  labs(title = "Distribution of Newsfeed Ranking by \nPreference (US)") + 
-  ylab("") + 
-  xlab("User self-reported preferences about posts \n(4=most preferred quartile)") + coord_cartesian(ylim = c(32, 27))
-
-ggarrange(left, right, 
-          labels = c("A", "B"),
-          ncol = 2, nrow = 1)
-
-l.dat <- m.newsfeed.df.all %>% group_by(norm.quartile, race.in.group) %>% dplyr::summarise(mean.rating = mean(nf.order, na.rm = T), sd = sd(nf.order, na.rm = T), n= n()) 
-
-l.dat$ci <- (l.dat$sd/sqrt(l.dat$n))*1.96
-pd <- position_dodge(0.01)
-
-ggplot(l.dat, aes(x=norm.quartile, y=mean.rating, colour=race.in.group, group=race.in.group)) +
-  geom_errorbar(aes(ymin=mean.rating-ci, ymax=mean.rating+ci, colour=race.in.group), width=.1, position=pd) + 
-  geom_point(aes(shape = race.in.group), position=pd, size=3) +
-  geom_line( aes(linetype=race.in.group, color=race.in.group) , position=pd) + labs(title = "Newsfeed Ranking by Preference (US)", subtitle = "Same-race posts need to meet a lower bar to get closer to the top") + 
-  ylab("Average FB Newsfeed ranking (1=top rank, 60=bottom rank)") + 
-  xlab("User self-reported preferences about posts \n(4=most preferred quartile, 1 = least preferred quartile)") +
-  scale_y_reverse() + 
-  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
-                       name="Poster Identity",
-                       breaks=c("FALSE", "TRUE"),
-                       labels=c("Outgroup", "Ingroup")) + 
-   scale_shape_discrete(name="Poster Identity",
-                       breaks=c("FALSE", "TRUE"),
-                       labels=c("Outgroup", "Ingroup")) + 
-   scale_linetype_discrete(name="Poster Identity",
-                       breaks=c("FALSE", "TRUE"),
-                       labels=c("Outgroup", "Ingroup"))
+# l.dat <- m.newsfeed.df.all %>% group_by(norm.quartile, race.in.group) %>% dplyr::summarise(mean.rating = mean(nf.order, na.rm = T), sd = sd(nf.order, na.rm = T), n= n()) 
+# 
+# left <- ggplot(m.newsfeed.df.all, aes(x=race.in.group, y=nf.order)) + 
+#   geom_boxplot() + scale_y_reverse()  + coord_cartesian(ylim = c(46, 14)) + labs(title = "Distribution of Newsfeed Ranking by \nPoster Identity (US)") + ylab("Average FB Newsfeed ranking (1=top rank, 60=bottom rank)") +
+#    xlab("Poster Identity") + scale_x_discrete(labels= c("Outgroup", "Ingroup"))
+# 
+# right <- ggplot(m.newsfeed.df.all, aes(x=factor(norm.quartile), y=nf.order)) + 
+#   geom_boxplot() + scale_y_reverse()  + coord_cartesian(ylim = c(46, 14)) + labs(title = "Distribution of Newsfeed Ranking by \nPreference (US)") + 
+#   ylab("") + 
+#   xlab("User self-reported preferences about posts \n(4=most preferred quartile)")
+# 
+# ggarrange(left, right, 
+#           labels = c("A", "B"),
+#           ncol = 2, nrow = 1)
+# 
+# l.dat <- m.newsfeed.df.all %>% group_by(race.in.group) %>% dplyr::summarise(mean.rating = mean(nf.order, na.rm = T), sd = sd(nf.order, na.rm = T), n= n())
+# 
+# l.dat$ci <- (l.dat$sd/sqrt(l.dat$n))*1.96
+# pd <- position_dodge(0.01)
+# 
+# left <- ggplot(l.dat, aes(x=race.in.group, y=mean.rating)) + 
+#     geom_errorbar(aes(ymin=mean.rating-ci, ymax=mean.rating+ci), colour="black", width=.1, position=pd) + geom_point(position=pd, size=3) + scale_y_reverse() + labs(title = "Distribution of Newsfeed Ranking by \nPreference (US)") + 
+#   ylab("") + 
+#   xlab("User self-reported preferences about posts \n(4=most preferred quartile)") + scale_y_reverse() + labs(title = "Distribution of Newsfeed Ranking by \nPoster Identity (US)") + ylab("Average FB Newsfeed ranking (1=top rank, 60=bottom rank)") +
+#    xlab("Poster Identity") + scale_x_discrete(labels= c("Outgroup", "Ingroup")) +
+#   coord_cartesian(ylim = c(32, 27))
+# 
+# l.dat <- m.newsfeed.df.all %>% group_by(norm.quartile) %>% dplyr::summarise(mean.rating = mean(nf.order, na.rm = T), sd = sd(nf.order, na.rm = T), n= n()) 
+# 
+# l.dat$ci <- (l.dat$sd/sqrt(l.dat$n))*1.96
+# pd <- position_dodge(0.01)
+# 
+# right <- ggplot(l.dat, aes(x=factor(norm.quartile), y=mean.rating)) + 
+#   geom_errorbar(aes(ymin=mean.rating-ci, ymax=mean.rating+ci), colour="black", width=.1, position=pd) + 
+#   geom_point(position=pd, size=3) + 
+#   scale_y_reverse()  +  
+#   labs(title = "Distribution of Newsfeed Ranking by \nPreference (US)") + 
+#   ylab("") + 
+#   xlab("User self-reported preferences about posts \n(4=most preferred quartile)") + coord_cartesian(ylim = c(32, 27))
+# 
+# ggarrange(left, right, 
+#           labels = c("A", "B"),
+#           ncol = 2, nrow = 1)
+# 
+# l.dat <- m.newsfeed.df.all %>% group_by(norm.quartile, race.in.group) %>% dplyr::summarise(mean.rating = mean(nf.order, na.rm = T), sd = sd(nf.order, na.rm = T), n= n()) 
+# 
+# l.dat$ci <- (l.dat$sd/sqrt(l.dat$n))*1.96
+# pd <- position_dodge(0.01)
+# 
+# ggplot(l.dat, aes(x=norm.quartile, y=mean.rating, colour=race.in.group, group=race.in.group)) +
+#   geom_errorbar(aes(ymin=mean.rating-ci, ymax=mean.rating+ci, colour=race.in.group), width=.1, position=pd) + 
+#   geom_point(aes(shape = race.in.group), position=pd, size=3) +
+#   geom_line( aes(linetype=race.in.group, color=race.in.group) , position=pd) + labs(title = "Newsfeed Ranking by Preference (US)", subtitle = "Same-race posts need to meet a lower bar to get closer to the top") + 
+#   ylab("Average FB Newsfeed ranking (1=top rank, 60=bottom rank)") + 
+#   xlab("User self-reported preferences about posts \n(4=most preferred quartile, 1 = least preferred quartile)") +
+#   scale_y_reverse() + 
+#   scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+#                        name="Poster Identity",
+#                        breaks=c("FALSE", "TRUE"),
+#                        labels=c("Outgroup", "Ingroup")) + 
+#    scale_shape_discrete(name="Poster Identity",
+#                        breaks=c("FALSE", "TRUE"),
+#                        labels=c("Outgroup", "Ingroup")) + 
+#    scale_linetype_discrete(name="Poster Identity",
+#                        breaks=c("FALSE", "TRUE"),
+#                        labels=c("Outgroup", "Ingroup"))
   
-```
-
-
-```{r Recent Activity}
-# 
-# m.recent.df <- read.csv("/Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Data/Clean US Data Recent.csv")
-# m.recent.df <- m.recent.df %>% filter(human == 1)
-# 
-# # l.dat <- m.recent.df %>% dplyr::summarise(prob.same.race = mean(race.in.group, na.rm = T), sd = sd(race.in.group, na.rm = T), n= n())
-# # l.dat$ci <- (l.dat$sd/sqrt(l.dat$n))*1.96
-# # l.dat$source <- "Top 10 posts users recently interacted with"
-# # 
-# # l.dat2 <- m.newsfeed.df.all %>% filter(nf.order <= 10 & source %in% c("CDR 1", "CDR 4")) %>%
-# #   dplyr::summarise(prob.same.race = mean(race.in.group, na.rm = T), sd = sd(race.in.group, na.rm = T), n= n())
-# # l.dat2$ci <- (l.dat2$sd/sqrt(l.dat2$n))*1.96
-# # l.dat2$source <- "Newsfeed top 10 posts"
-# # 
-# # l.dat3 <- m.newsfeed.df.all %>% ungroup(primary.id) %>% filter(source %in% c("CDR 1", "CDR 4")) %>% dplyr::summarise(prob.same.race = mean(race.in.group, na.rm = T), sd = sd(race.in.group, na.rm = T), n= n())
-# # l.dat3$ci <- (l.dat3$sd/sqrt(l.dat3$n))*1.96
-# # l.dat3$source <- "Newsfeed top 60 posts"
-# # 
-# # l.dat <- rbind(l.dat, l.dat2, l.dat3)
-# 
-# l.dat$source <- factor(l.dat$source,levels = c("Newsfeed top 60 posts", "Newsfeed top 10 posts", "Top 10 posts users recently interacted with"))
-# 
-# # reg.dat <- rbind(m.newsfeed.df2 %>% filter(nf.order <= 10) %>% dplyr::select("race.in.group", "source", "participant.id"), m.recent.df[, c("race.in.group", "source", "participant.id")])
-# # 
-# # m1 <- lm(race.in.group ~ source, data = reg.dat)
-# 
-# pd <- position_dodge(0.1)
-# 
-# ggplot(l.dat, aes(x = source, y=prob.same.race)) + 
-#     geom_bar(stat="identity", position=pd) + scale_fill_brewer(palette="Paired")+
-#   geom_errorbar(aes(ymin=prob.same.race-ci, ymax=prob.same.race+ci), width=.1, position=pd) + labs(title = "Racial preferences in interactions", subtitle = "Algorithm learns that you are far more likely to like/comment on a post from your same-race friends.") + ylab("Share of posts that are in-group") + geom_signif(comparisons = list(c("Newsfeed top 10 posts", "Top 10 posts users recently interacted with")), annotations = "***")
-# 
-# #t.test((m.newsfeed.df2 %>% filter(nf.order <= 10))$race.in.group, m.recent.df$race.in.group)
-
 ```
 
 ```{r Recent Activity attempt 2}
 
-m.recent.df <- read.csv("/Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Data/Clean US Data Recent.csv")
+m.recent.df <- read.csv("Temp/Clean US Data Recent.csv")
 m.recent.df <- m.recent.df %>% filter(human == 1)
 
 recent.summ.all <- m.recent.df %>% dplyr::summarise(prob.same.race = mean(race.in.group, na.rm = T), sd = sd(race.in.group, na.rm = T), n= n())
@@ -2208,6 +2173,9 @@ ggplot(l.dat, aes(x = factor(group), y=prob.same.race, fill = source)) +
   scale_x_discrete(name ="Ranking Group", 
                    breaks = c("1","2","3","4","5","0"),
                     labels=c("11-20","21-30", "31-40", "41-50", "51-60", "Top 10"))
+
+dev.copy(jpeg,'Output/Graphs/Audit/Interactions/US preferences reactions and actual rankings above base rate.jpg')
+dev.off()
 
 #t.test((m.newsfeed.df2 %>% filter(nf.order <= 10))$race.in.group, m.recent.df$race.in.group)
 
@@ -2424,6 +2392,9 @@ ggplot(l.dat, aes(x=pymk.order.round, y=prob.same.race)) +
                     labels=c("11-20","21-30", "31-40", "41-50", "51-60", "Top 10")) +
   coord_flip()
 
+dev.copy(jpeg,'Output/Graphs/Audit/Misranking relative to expectation/Stated preference expectation/US PYMK ingroup rate by ranking.jpg')
+dev.off()
+
 # ggplot(l.dat, aes(x=nf.order.round, y=prob.same.race)) + 
 #     geom_errorbar(aes(ymin=prob.same.race-ci, ymax=prob.same.race+ci), colour="black", width=.1, position=pd) + geom_hline(yintercept = mean(m.newsfeed.df.all$race.in.group), color="blue", linetype="dashed", size=1) + labs(title = "Newsfeed preference for user's race (US)", subtitle = "Same-race posts get sorted closer to the top") + xlab("FB Newsfeed Ranking (groups of 10)") + ylab("Proability of in-group post") + geom_line(position=pd) +
 #     geom_point(position=pd, size=3) + ylim(c(0.54,0.64))
@@ -2440,13 +2411,13 @@ ggplot(l.dat, aes(x=race.in.group, y=mean.rating)) +
   geom_bar(stat="identity", position=pd) + 
     geom_errorbar(aes(ymin=mean.rating-ci, ymax=mean.rating+ci), colour="black", width=.1, position=pd) + labs(title = "Raw Reported Preference by Race Group", subtitle = "Same-race posts are slightly more preferred") + ylab("Mean Rating")
 
-mu <- ddply(m.pymk.df.all, "race.in.group", summarise, grp.mean=mean(norm.fam), grp.var = var(norm.fam))
+mu <- ddply(m.pymk.df.all, "race.in.group", summarise, grp.mean=mean(norm.fam, na.rm = T), grp.var = var(norm.fam))
 
 #t.test(m.newsfeed.df.all %>% filter(race.in.group == T) %>% dplyr::select(preference), m.newsfeed.df.all %>% filter(race.in.group == F) %>% dplyr::select(preference))
 
 ggplot(m.pymk.df.all, aes(x=norm.fam, color=race.in.group)) +
   geom_density() + geom_vline(data=mu, aes(xintercept=grp.mean, color=race.in.group),
-             linetype="dashed") + xlim(c(0,2)) + xlab("Stated Preference (normalized)") + labs(title = "Distribution of normalized preference by race")  +
+             linetype="dashed") + xlab("Stated Preference (normalized)") + labs(title = "Distribution of normalized preference by race")  +
   scale_colour_manual(values=c("#CC79A7", "#009E73"), 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
@@ -2456,11 +2427,17 @@ ggplot(m.pymk.df.all, aes(x=norm.fam, color=race.in.group)) +
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup"))
 
-ggplot(m.pymk.df.all, aes(x=norm.fam)) + stat_ecdf(aes(colour=race.in.group)) + xlim(c(0,2)) + xlab("Stated Preference (normalized)") + labs(title = "Cumulative distribution of normalized preference by race") +
+dev.copy(jpeg,'Output/Graphs/Audit/Stated preferences/US PYMK pdf norm preferences by ingroup.jpg')
+dev.off()
+
+ggplot(m.pymk.df.all, aes(x=norm.fam)) + stat_ecdf(aes(colour=race.in.group)) + xlab("Stated Preference (normalized)") + labs(title = "Cumulative distribution of normalized preference by race") +
   scale_colour_manual(values=c("#CC79A7", "#009E73"), 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) 
+
+dev.copy(jpeg,'Output/Graphs/Audit/Stated preferences/US PYMK cdf norm preferences by ingroup.jpg')
+dev.off()
 
 ```
 
@@ -2557,9 +2534,20 @@ botright <- ggplot(l.dat, aes(x=familiarity, y=prob15)) +
                        labels=c("Outgroup", "Ingroup")) + theme(legend.position = "none")
 
 topleft
+dev.copy(jpeg,'Output/Graphs/Audit/Ranking line graphs/US PYMK slots above median rank by raw preference.jpg')
+dev.off()
+
 topright
+dev.copy(jpeg,'Output/Graphs/Audit/Ranking line graphs/US PYMK prob top 5 by raw preference.jpg')
+dev.off()
+
 botleft
+dev.copy(jpeg,'Output/Graphs/Audit/Ranking line graphs/US PYMK prob top 10 by raw preference.jpg')
+dev.off()
+
 botright
+dev.copy(jpeg,'Output/Graphs/Audit/Ranking line graphs/US PYMK prob top 15 by raw preference.jpg')
+dev.off()
 
 ```
 
@@ -2605,6 +2593,9 @@ ggplot(l.dat, aes(x=norm.quartile, y=mean.rating, colour=race.in.group, group=ra
    scale_linetype_discrete(name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup"))
+
+dev.copy(jpeg,'Output/Graphs/Audit/Ranking line graphs/US PYMK norm pref by median rank by group.jpg')
+dev.off()
 
 ```
 
@@ -2665,6 +2656,8 @@ ggplot(l.dat, aes(x=friend.group, y=mean.rating, colour=race.in.group, group=rac
                    breaks = c("1","2","3","4"),
                     labels=c("0 to 5","6 - 10", "11 - 30", "30+"))
 
+dev.copy(jpeg,'Output/Graphs/Audit/Ranking line graphs/US PYMK slots above median rank by mutual friend count percentile.jpg')
+dev.off()
 
 l.dat <- m.pymk.df.all %>% filter(!is.na(mutual.friends)) %>%
   group_by(mutual.friends.pct.quartile, race.in.group) %>% dplyr::summarise(mean.rating = mean(pymk.order, na.rm = T), sd = sd(pymk.order, na.rm = T), n= n()) 
@@ -2690,6 +2683,9 @@ ggplot(l.dat, aes(x=mutual.friends.pct.quartile, y=mean.rating, colour=race.in.g
    scale_linetype_discrete(name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup"))
+
+dev.copy(jpeg,'Output/Graphs/Audit/Ranking line graphs/US PYMK slots above median rank by mutual friend percentage percentile.jpg')
+dev.off()
 
 ```
 
@@ -2728,6 +2724,8 @@ ggplot(dat, aes(x = pymk.order.round, y = excess)) + geom_bar(stat = "identity")
                     labels=c("11-20","21-30", "31-40", "41-50", "51-60", "Top 10")) +
   coord_flip()
 
+dev.copy(jpeg,'Output/Graphs/Audit/Excess Mass/US PYMK excess mass by ranking group.jpg')
+dev.off()
 
 ```
 
@@ -2824,64 +2822,6 @@ hispanic.mdl <- lm(nf.order ~ I(100*norm.pctle) + same.race.alt, data = m.newsfe
 stargazer(all.mdl, asian.mdl, black.mdl, hispanic.mdl, white.mdl,
           omit.stat = c("f",    "ser"), object.names = TRUE,
           title = "Secondary NF Rank Results (Robustness for white vs not white)")
-
-```
-
-```{r Bring in qualtrics data for appendix data}
-
-own.qualtrics.all <- read.csv("/Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Raw Data/Qualtrics Self Report Data.csv")
-
-# cleaning
-  m.newsfeed.df.all$date <- as.Date(m.newsfeed.df.all$date, format = "%m/%d")
-  own.qualtrics.all$StartDate <- as.Date(own.qualtrics.all$StartDate)
-  
-  own.qualtrics.all <- own.qualtrics.all %>% dplyr::select(subject_id, Q11, StartDate) %>% distinct()
-  
-  m.newsfeed.df.all <- m.newsfeed.df.all %>% filter(!is.na(participant.id))
-  own.qualtrics.all <- own.qualtrics.all %>% filter(!is.na(subject_id))
-
-    merge.results <- merge(m.newsfeed.df.all, own.qualtrics.all, by.x = c("participant.id", "date"),
-                         by.y = c("subject_id", "StartDate"), all.x = T, all.y = F)
-  
-    #assert_that(nrow(merge.results) == nrow(m.newsfeed.df.all))
-    
-```
-
-
-```{r, results='asis'}
-# 
-# all.mdl <- lm(nf.order ~ race.in.group + I(100*norm.pctle), data = merge.results)
-# hourly.checkers <- lm(nf.order ~ I(100*norm.pctle) + race.in.group, data = merge.results %>% filter(Q11 == "A few times an hour"))
-# daily.checkers <- lm(nf.order ~ I(100*norm.pctle) + race.in.group, data = merge.results %>% filter(Q11 == "A few times a day"))
-# weekly.checkers <- lm(nf.order ~ I(100*norm.pctle) + race.in.group, data = merge.results %>% filter(Q11 == "A few times a week"))
-# monthly.checkers <- lm(nf.order ~ I(100*norm.pctle) + race.in.group, data = merge.results %>% filter(Q11 == "A few times a month"))
-# yrly.or.nvr.checkers <- lm(nf.order ~ I(100*norm.pctle) + race.in.group, data = merge.results %>% filter(Q11 %in% c("A few times a year", "Never")))
-# 
-# stargazer(all.mdl, hourly.checkers, daily.checkers, weekly.checkers, monthly.checkers, yrly.or.nvr.checkers,
-#           omit.stat = c("f",    "ser"), object.names = TRUE,
-#           column.labels = c("All", "Hourly", "Daily", "Weekly", "Monthly", "Yearly/Never"),
-#           title = "Secondary NF Rank Results (Heterogeneity by FB usage)")
-# 
-# #########
-# 
-# mdf <- m.newsfeed.df.all %>% filter(source == "CDR - recent activity")
-# recent.clicks <- m.recent.df %>% dplyr::group_by(participant.id) %>% dplyr::summarise(prob.click.same.race = mean(race.in.group, na.rm = T))
-# base.rates <- mdf %>% group_by(participant.id) %>% dplyr::summarise(prob.see.same.race = mean(race.in.group, na.rm = T))
-# 
-# a <- merge(base.rates, recent.clicks, by = "participant.id")
-# m <- merge(mdf, a, by = "participant.id")
-# 
-# m$above.average.clicker <- m$prob.click.same.race > m$prob.see.same.race
-# 
-# ggplot(m, aes(x=prob.see.same.race, y=prob.click.same.race)) + geom_point() + ylab("Pr(Same-race recent activity)") + xlab("Pr(Same-race base rate)") + geom_abline(intercept = 0) + labs(title = "Rate of liking a same-race post versus rate of seeing a same-race post")
-# 
-# all.mdl <- lm(nf.order ~ race.in.group + I(100*norm.pctle), data = m)
-# high.clickers <- lm(nf.order ~ I(100*norm.pctle) + race.in.group, data = m %>% dplyr::filter(above.average.clicker == 1))
-# not.high.clickers <- lm(nf.order ~ I(100*norm.pctle) + race.in.group, data = m %>% filter(above.average.clicker == 0))
-# 
-# stargazer(all.mdl, high.clickers, not.high.clickers,
-#           omit.stat = c("f",    "ser"), object.names = TRUE,
-#           title = "Secondary NF Rank Results (Heterogeneity by click rate relative to base rate)")
 
 ```
 
