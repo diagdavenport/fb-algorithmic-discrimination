@@ -1213,23 +1213,24 @@ ggplot(heat.df, aes(norm.quartile, pymk.order, fill= per)) +
 dev.copy(jpeg,'Output/Graphs/Audit/Heatmaps/US PYMK norm quartile by ingroup.jpg')
 dev.off()
 
-ggplot(m.newsfeed.df.all %>% filter(complete_time_rank <= 60), aes(x=complete_time_rank, nf.order.round)) + stat_density_2d(
-  geom = "raster",
-  aes(fill = after_stat(density)),
-  contour = FALSE
-) + scale_fill_viridis_c() + facet_grid(race.in.group~norm.quartile, margins = T)  + scale_x_reverse() + scale_y_reverse()
-
 ggplot(m.newsfeed.df.all %>% filter(complete_time_rank <= 60), aes(x=complete_time_rank, nf.order)) + stat_density_2d(
   geom = "raster",
   aes(fill = after_stat(density)),
   contour = FALSE
 ) + scale_fill_viridis_c() + facet_grid(race.in.group~norm.quartile, margins = T)  + scale_x_reverse() + scale_y_reverse()
 
+dev.copy(jpeg,'Output/Graphs/Audit/Heatmaps/US NF chron rank by pymk rank by norm quartile - smooth.jpg')
+dev.off()
+
 ggplot(m.pymk.df.all %>% filter(pct_friend_rank <= 60), aes(x=pct_friend_rank, pymk.order)) + stat_density_2d(
   geom = "raster",
   aes(fill = after_stat(density)),
   contour = FALSE
 ) + scale_fill_viridis_c() + facet_grid(race.in.group~norm.quartile, margins = T)  + scale_x_reverse() + scale_y_reverse()
+
+
+dev.copy(jpeg,'Output/Graphs/Audit/Heatmaps/US PYMK pct friends by pymk rank by norm quartile - smooth.jpg')
+dev.off()
 
 ```
 
