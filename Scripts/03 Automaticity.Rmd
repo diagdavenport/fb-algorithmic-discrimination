@@ -1,0 +1,369 @@
+---
+title: "Explore ExIm study FB"
+author: "ddd"
+date: "9/3/2020"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = F)
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(ggthemes)
+theme_set(theme_tufte())
+
+knitr::opts_knit$set(root.dir = '/Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown')
+
+```
+
+```{r import data}
+ 
+exim.raw <- read.csv('Data/Experimental Lab Data/Automaticity/ExIm data.csv')
+
+```
+
+```{r cleaning and organizing}
+ 
+exim.raw$access_pymk <- ifelse(exim.raw$condition1 == "pymk", exim.raw$access1, exim.raw$access2)
+exim.raw$access_nf <- ifelse(exim.raw$condition1 == "like", exim.raw$access1, exim.raw$access2)
+
+exim.raw$cogeffort_pymk <- ifelse(exim.raw$condition1 == "pymk", exim.raw$cog_effort1, exim.raw$cog_effort2)
+exim.raw$cogeffort_nf <- ifelse(exim.raw$condition1 == "like", exim.raw$cog_effort1, exim.raw$cog_effort2)
+
+exim.raw$influence_pymk <- ifelse(exim.raw$condition1 == "pymk", exim.raw$influence1, exim.raw$influence2)
+exim.raw$influence_nf <- ifelse(exim.raw$condition1 == "like", exim.raw$influence1, exim.raw$influence2)
+
+exim.raw$gut_pymk <- ifelse(exim.raw$condition1 == "pymk", exim.raw$gut1, exim.raw$gut2)
+exim.raw$gut_nf <- ifelse(exim.raw$condition1 == "like", exim.raw$gut1, exim.raw$gut2)
+
+exim.raw$careful_pymk <- ifelse(exim.raw$condition1 == "pymk", exim.raw$careful1, exim.raw$careful2)
+exim.raw$careful_nf <- ifelse(exim.raw$condition1 == "like", exim.raw$careful1, exim.raw$careful2)
+
+exim.raw$awareness_pymk <- ifelse(exim.raw$condition1 == "pymk", exim.raw$awareness1, exim.raw$awareness2)
+exim.raw$awareness_nf <- ifelse(exim.raw$condition1 == "like", exim.raw$awareness1, exim.raw$awareness2)
+
+exim.raw$intention_pymk <- ifelse(exim.raw$condition1 == "pymk", exim.raw$intention1, exim.raw$intention2)
+exim.raw$intention_nf <- ifelse(exim.raw$condition1 == "like", exim.raw$intention1, exim.raw$intention2)
+
+exim.raw$control_pymk <- ifelse(exim.raw$condition1 == "pymk", exim.raw$controllability1, exim.raw$controllability2)
+exim.raw$control_nf <- ifelse(exim.raw$condition1 == "like", exim.raw$controllability1, exim.raw$controllability2)
+
+exim.raw$efficiency_pymk <- ifelse(exim.raw$condition1 == "pymk", exim.raw$efficiency1, exim.raw$efficiency2)
+exim.raw$efficiency_nf <- ifelse(exim.raw$condition1 == "like", exim.raw$efficiency1, exim.raw$efficiency2)
+
+exim.raw$speed_pymk <- ifelse(exim.raw$condition1 == "pymk", exim.raw$speed1, exim.raw$speed2)
+exim.raw$speed_nf <- ifelse(exim.raw$condition1 == "like", exim.raw$speed1, exim.raw$speed2)
+
+
+ higher.is.more.automatic <- c("access", "careful", "awareness", "control", "efficiency")
+ 
+ higher.is.less.automatic <-c("cogeffort", "influence", "gut", "intention")
+
+ for (root in higher.is.less.automatic) {
+  exim.raw[[paste0(root, "_nf")]] <- max(exim.raw[[paste0(root, "_nf")]], na.rm = T) + 1 - exim.raw[[paste0(root, "_nf")]]
+  exim.raw[[paste0(root, "_pymk")]] <- max(exim.raw[[paste0(root, "_pymk")]], na.rm = T) + 1 - exim.raw[[paste0(root, "_pymk")]]
+ }
+ 
+```
+
+```{r graphing}
+
+choice.long <- exim.raw %>% dplyr::select(c(ends_with("_nf"), ends_with("_pymk"))) %>% 
+  pivot_longer(everything(),
+   names_pattern = "(.*)_(.*)",
+   names_to = c(".value", ".set"),
+   values_to = "count"
+ )
+
+head(choice.long)
+
+"new_?(.*)_(.)(.*)"
+
+qs <- c("access",
+        "cogeffort",
+        "influence",
+        "gut",
+        "careful",
+        "awareness",
+        "intention",
+        "control",
+        "efficiency",
+        "speed")
+
+choice.long2 <- choice.long %>% 
+  pivot_longer(cols = all_of(qs),
+               names_to = "cat",
+               values_to = "val") %>% dplyr::rename(target = ".set")
+
+temp.l.dat <- choice.long2 %>% group_by(cat)  %>% dplyr::summarise(mean.val = mean(val, na.rm = T), sd = sd(val, na.rm = T), n= n()) 
+
+l.dat <- choice.long2 %>% filter(cat == "speed") %>% group_by(cat, target)  %>% dplyr::summarise(mean.val = mean(val, na.rm = T), sd = sd(val, na.rm = T), n= n()) 
+
+l.dat$ci <- (l.dat$sd/sqrt(l.dat$n))*1.96
+
+ ggplot(l.dat, aes(x = cat, y = mean.val, fill = target)) +
+  geom_col(position = "dodge") +
+   geom_errorbar(aes(ymin=mean.val-ci, ymax=mean.val+ci),
+                 width=.2,                    # Width of the error bars
+                  position=position_dodge(.9))  + theme(axis.text.x = element_text(angle = 45, hjust = 1))
+ 
+ dev.copy(jpeg,'Output/Graphs/Experiments/Automaticity/speed bar chart.jpg')
+dev.off()
+
+m.long <- merge(choice.long2, temp.l.dat, by = c("cat"))
+m.long$z <- (m.long$val - m.long$mean.val)/m.long$sd
+ 
+ label.df <- data.frame(cat = c("access",
+                                "awareness", 
+                                "careful", 
+                                "cogeffort", 
+                                "control", 
+                                "efficiency", 
+                                "gut", 
+                                "influence", 
+                                "intention",
+                                "composite"),
+                       mean.val = c(2.9, 2.8, 1.5, 4, 2.4, 4.4, 1.8, 4.4, 4, 3.1),
+                       target = "nf")
+ 
+automaticity.labels <- c("(Access) Difficult to explain why",
+                                "(Unwareness) Unaware what affected decision", 
+                                "(Careful) Not a careful consideration", 
+                                "(Cog Effort) Lack of forethought", 
+                                "(Control) Inability to resist action urge", 
+                                "(Efficiency) Low cognitive effort", 
+                                "(Gut) Based on gut reaction", 
+                                "(Influence) Infleunced by situation", 
+                                "(Intention) Inability to resist considering",
+                                "Composite Score")
+
+l.dat <- m.long %>% filter(cat != "speed") %>% group_by(cat, target)  %>% dplyr::summarise(mean.z = mean(z, na.rm = T), sd = sd(z, na.rm = T), n= n())
+
+l.dat$ci <- (l.dat$sd/sqrt(l.dat$n))*1.96
+
+ ggplot(l.dat, aes(x = cat, y = mean.z, fill = target)) +
+  geom_col(position = "dodge") +
+   geom_errorbar(aes(ymin=mean.z-ci, ymax=mean.z+ci),
+                 width=.2,                    # Width of the error bars
+                  position=position_dodge(.9))  + theme(axis.text.x = element_text(angle = 45, hjust = 1)) + xlab("Measure") +
+   ylab("Mean-Centered Rescaled Automaticity Rating St. Dev.\n(Higher ratings = more automatic)") + labs(title = "Automaticity Ratings by Target", subtitle = "All dimensions of automaticity indicate that NF behavior is more automatic \nthan PYMK behavior.") +
+   scale_x_discrete(labels= automaticity.labels) +
+  coord_cartesian(ylim = c(0.45, -0.45)) +
+   coord_flip()  +
+   scale_fill_manual(values=c("#CC79A7", "#009E73"),
+                       name="Poster Identity",
+                       breaks=c("nf", "pymk"),
+                       labels=c("Newsfeed", "PYMK"))
+
+l.dat1 <- choice.long2 %>% filter(cat != "speed") %>% group_by(cat, target)  %>% dplyr::summarise(mean.val = mean(val, na.rm = T), sd = sd(val, na.rm = T), n= n()) 
+
+l.dat1$ci <- (l.dat1$sd/sqrt(l.dat1$n))*1.96
+
+l.dat2 <- choice.long2 %>% filter(cat != "speed") %>% group_by(target)  %>% dplyr::summarise(mean.val = mean(val, na.rm = T), sd = sd(val, na.rm = T), n= n()) 
+l.dat2$cat <- "composite"
+l.dat2$ci <- (l.dat2$sd/sqrt(l.dat2$n))*1.96
+
+l.dat <- rbind(as.data.frame(l.dat1), as.data.frame(l.dat2))
+
+# sort the bars by effect size
+l.dat$cat <- factor(l.dat$cat,levels = c("intention", "access", "awareness", "control", "influence", "efficiency", "cogeffort", "gut", "careful", "composite"))
+
+ ggplot(l.dat, aes(x = cat, y = mean.val, fill = target)) +
+  geom_col(position = "dodge", aes(fill = target)) +
+   geom_errorbar(aes(ymin=mean.val-ci, ymax=mean.val+ci),
+                 width=.2,                    # Width of the error bars
+                  position=position_dodge(.9))  +
+   theme(axis.text.x = element_text(angle = 45, hjust = 1)) + xlab("Measure") + 
+   ylab("Mean Rescaled Automaticity Rating\n(Higher ratings = more automatic)") + 
+   labs(title = "Automaticity Ratings by Target", 
+        subtitle = "All dimensions of automaticity indicate that NF behavior is more automatic \nthan PYMK behavior.") +
+   geom_text(data = label.df, 
+             label = c("NS", "**", "***", "***", "***", "***", "***", "***", "NS", "***")) + 
+   scale_x_discrete(labels= automaticity.labels) + coord_flip() +
+   scale_fill_manual(values=c("#CC79A7", "#009E73"), 
+                       name="Target",
+                       breaks=c("nf", "pymk"),
+                       labels=c("Newsfeed", "PYMK"))
+ 
+dev.copy(jpeg,'Output/Graphs/Experiments/Automaticity/composite score and components.jpg')
+dev.off()
+ 
+# pwr.t.test(d = .5, sig.level = .05, power = .8, type = c("paired"))
+
+ 
+```
+
+
+```{r continuous measures - excess mass}
+
+label_names <- list(
+  'access'="(Access) Difficult to explain why",
+  'awareness'="(Unwareness) Unaware what \naffected decision",
+  'intention'="(Intention) Inability to resist considering"
+)
+
+fun_labeller <- function(variable,value){
+  return(label_names[value])
+}
+
+dat <- m.long %>% group_by(val, target, cat) %>% dplyr::summarise(n= n()) %>%
+  pivot_wider(names_from = target, values_from = n, values_fill = 0)
+
+dat <- dat %>% group_by(cat) %>% 
+       mutate(perNF=nf/sum(nf)) %>% 
+       ungroup
+
+dat <- dat %>% group_by(cat) %>% 
+       mutate(perPYMK=pymk/sum(pymk)) %>% 
+       ungroup
+
+dat$excess <- (dat$perNF - dat$perPYMK)/dat$perPYMK
+
+l.dat <- m.long %>% filter(cat != "speed") %>% group_by(cat, target)  %>% dplyr::summarise(mean.z = mean(z, na.rm = T), sd = sd(z, na.rm = T), n= n())
+
+l.dat$ci <- (l.dat$sd/sqrt(l.dat$n))*1.96
+
+ ggplot(choice.long2, aes(x = val, fill = target)) +
+  geom_histogram(aes(y=..density..), bins=7, alpha=0.5, position="nudge") +
+   theme(axis.text.x = element_text(angle = 45, hjust = 1)) + xlab("Measure") +
+   ylab("Response Density") + xlab("Rating (Higher ratings = more automatic)") + labs(title = "Automaticity Ratings by Target") + facet_wrap(~ cat, scales = "free")
+ 
+  dev.copy(jpeg,'Output/Graphs/Experiments/Automaticity/histogram for each measure.jpg')
+dev.off()
+ 
+ wrap.cats <- c("access",
+                "awareness",
+                "intention")
+ 
+dat %>%  filter(cat %in% wrap.cats) %>% ggplot(aes(x = val, y = excess)) + geom_bar(stat = "identity") + ylab("Excess NF Mass %") +
+  xlab("Likert rating (Higher rating = more automatic)") + facet_wrap(~ cat, scales = "free", labeller = fun_labeller)
+
+ dev.copy(jpeg,'Output/Graphs/Experiments/Automaticity/excess mass.jpg')
+dev.off()
+
+choice.long2 %>%  filter(cat %in% wrap.cats) %>%
+  ggplot(aes(x=val)) + stat_ecdf(aes(colour=target)) + facet_wrap(~ cat)
+
+'%!in%' <- function(x,y)!('%in%'(x,y))
+
+choice.long2 %>% filter(cat %!in% c("speed", "careful", "gut")) %>%
+  ggplot(aes(x=val)) + stat_ecdf(aes(colour=target)) + facet_wrap(~ cat, scales = "free")
+
+dev.copy(jpeg,'Output/Graphs/Experiments/Automaticity/cdf for each measure.jpg')
+dev.off()
+
+```
+
+```{r continuous measures - median split}
+
+
+label_names <- list(
+  'cogeffort'="(Cog Effort) \nLack of forethought",
+  'control'="(Control) \nInability to resist action urge",
+  'efficiency'="(Efficiency) \nLow cognitive effort",
+  'influence'="(Influence) \nInfleunced by situation",
+  'access' = "(Access) \nDifficult to explain why",
+  'awareness' = "(Unwareness) \nUnaware what affected decision",
+  'intention' = "(Intention) \nInability to resist considering"
+)
+
+fun_labeller <- function(variable,value){
+  return(label_names[value])
+}
+
+dat <- m.long %>% group_by(cat) %>% 
+       mutate(cat_median = median(val, na.rm = T)) %>% 
+       ungroup
+
+dat$above_median <- dat$val >= dat$cat_median
+
+'%!in%' <- function(x,y)!('%in%'(x,y))
+
+l.dat <- dat %>% filter(cat %!in% c("speed", "careful", "gut")) %>% 
+  group_by(cat, target)  %>% 
+  dplyr::summarise(percent.above = mean(above_median, na.rm = T), sd = sd(above_median, na.rm = T), n= n())
+
+l.dat$ci <- (l.dat$sd/sqrt(l.dat$n))*1.96
+pd <- position_dodge(0.1)
+
+ ggplot(l.dat, aes(x = target, y = percent.above)) +
+  geom_bar(stat="identity", position=pd) +
+   geom_errorbar(aes(ymin=percent.above-ci, ymax=percent.above+ci), colour="black", width=.1, position=pd) +
+   theme(axis.text.x = element_text(angle = 45, hjust = 1)) + xlab("Measure") +
+   ylab("Percent of responses above median") + xlab("") + labs(title = "Median splits of automaticity Ratings by Target") + facet_wrap(~ cat, scales = "free", labeller = fun_labeller)
+ 
+  dev.copy(jpeg,'Output/Graphs/Experiments/Automaticity/bar chart pct above median.jpg')
+dev.off()
+  
+```
+
+```{r binary measures}
+
+label_names <- list(
+  'careful'="(Careful) Not a careful consideration",
+  'gut'="(Gut) Based on gut reaction"
+)
+
+fun_labeller <- function(variable,value){
+  return(label_names[value])
+}
+
+l.dat <- m.long %>% filter(cat %in% c("careful", "gut")) %>% 
+  group_by(cat, target)  %>% 
+  dplyr::summarise(mean = mean(val, na.rm = T), sd = sd(val, na.rm = T), n= n())
+
+l.dat$mean <- l.dat$mean - 1 # push down to make range go from zero to one
+l.dat$ci <- (l.dat$sd/sqrt(l.dat$n))*1.96
+pd <- position_dodge(0.1)
+
+ ggplot(l.dat, aes(x = target, y = mean)) +
+  geom_bar(stat="identity", position=pd) +
+   geom_errorbar(aes(ymin=mean-ci, ymax=mean+ci), colour="black", width=.1, position=pd) +
+   theme(axis.text.x = element_text(angle = 45, hjust = 1)) + xlab("Measure") +
+   ylab("Percent giving more automatic answer") + xlab("") + labs(title = "Rate of Affirming Automaticity by Target") + facet_wrap(~ cat, scales = "free", labeller = fun_labeller)
+ 
+  dev.copy(jpeg,'Output/Graphs/Experiments/Automaticity/bar chart binary measures.jpg')
+dev.off()
+
+```
+
+```{r}
+
+m.long %>% filter(cat == "speed") %>%
+  ggplot(aes(x = val, fill = target)) +
+  geom_histogram(aes(fill = target, y = ..density..), position = "dodge") +
+  labs(title = "Histogram of reported time to decide")
+
+ dev.copy(jpeg,'Output/Graphs/Experiments/Automaticity/speed histogram.jpg')
+dev.off()
+
+m.long %>% filter(cat == "speed") %>%
+  mutate(x_new = ifelse(val > 60, 60, val)) %>% 
+  ggplot(aes(x = x_new, fill = target)) +
+  geom_histogram(aes(fill = target, y = ..density..), position = "dodge") + labs(title = "Histogram of reported time to decide",
+                                                                subtitle = "bin over 60")
+
+ dev.copy(jpeg,'Output/Graphs/Experiments/Automaticity/speed histogram - bin over 60.jpg')
+dev.off()
+
+m.long %>% filter(cat == "speed") %>%
+  mutate(x_new = ifelse(val > 30, 30, val)) %>% 
+  ggplot(aes(x = x_new, fill = target)) +
+  geom_histogram(aes(fill = target, y = ..density..), position = "dodge") + labs(title = "Histogram of reported time to decide",
+                                                                subtitle = "bin over 30")
+
+ dev.copy(jpeg,'Output/Graphs/Experiments/Automaticity/speed histogram - bin over 30.jpg')
+dev.off()
+
+m.long %>% filter(cat == "speed") %>% 
+  mutate(x_new = ifelse(val > 60, 60, val)) %>%
+ggplot(aes(x=x_new)) + stat_ecdf(aes(colour=target))
+
+dev.copy(jpeg,'Output/Graphs/Experiments/Automaticity/speed cdf - bin over 60')
+dev.off()
+
+```
+
