@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  4 JAN 2021 16:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  4 JAN 2021 16:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1274,28 +1274,41 @@ e (type pdf)
 Package pdftex.def Info: 02-Main-FB-Script_files/figure-latex/heatmap four by 6
 0-6.pdf  used on input line 330.
 (pdftex.def)             Requested size: 453.6939pt x 310.15799pt.
+<02-Main-FB-Script_files/figure-latex/heatmap four by 60-7.pdf, id=515, 453.695
+pt x 304.13625pt>
+File: 02-Main-FB-Script_files/figure-latex/heatmap four by 60-7.pdf Graphic fil
+e (type pdf)
+<use 02-Main-FB-Script_files/figure-latex/heatmap four by 60-7.pdf>
+Package pdftex.def Info: 02-Main-FB-Script_files/figure-latex/heatmap four by 6
+0-7.pdf  used on input line 331.
+(pdftex.def)             Requested size: 453.6939pt x 304.1355pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 325--331
+Underfull \hbox (badness 10000) in paragraph at lines 325--332
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 325--331
+Underfull \hbox (badness 10000) in paragraph at lines 325--332
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 325--331
+Underfull \hbox (badness 10000) in paragraph at lines 325--332
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 325--331
+Underfull \hbox (badness 10000) in paragraph at lines 325--332
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 325--331
+Underfull \hbox (badness 10000) in paragraph at lines 325--332
+[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 325--332
 []
  []
 
@@ -1305,193 +1318,193 @@ es/figure-latex/heatmap four by 60-2.pdf> <./02-Main-FB-Script_files/figure-lat
 ex/heatmap four by 60-3.pdf>] [27 <./02-Main-FB-Script_files/figure-latex/heatm
 ap four by 60-4.pdf> <./02-Main-FB-Script_files/figure-latex/heatmap four by 60
 -5.pdf>]
-<02-Main-FB-Script_files/figure-latex/Raw Likert Panel - NF-1.pdf, id=591, 445.
+<02-Main-FB-Script_files/figure-latex/Raw Likert Panel - NF-1.pdf, id=592, 445.
 665pt x 316.18124pt>
 File: 02-Main-FB-Script_files/figure-latex/Raw Likert Panel - NF-1.pdf Graphic 
 file (type pdf)
 <use 02-Main-FB-Script_files/figure-latex/Raw Likert Panel - NF-1.pdf>
 Package pdftex.def Info: 02-Main-FB-Script_files/figure-latex/Raw Likert Panel 
-- NF-1.pdf  used on input line 332.
+- NF-1.pdf  used on input line 333.
 (pdftex.def)             Requested size: 445.6707pt x 316.18529pt.
-<02-Main-FB-Script_files/figure-latex/Raw Likert Panel - NF-2.pdf, id=592, 445.
+<02-Main-FB-Script_files/figure-latex/Raw Likert Panel - NF-2.pdf, id=593, 445.
 665pt x 316.18124pt>
 File: 02-Main-FB-Script_files/figure-latex/Raw Likert Panel - NF-2.pdf Graphic 
 file (type pdf)
 <use 02-Main-FB-Script_files/figure-latex/Raw Likert Panel - NF-2.pdf>
 Package pdftex.def Info: 02-Main-FB-Script_files/figure-latex/Raw Likert Panel 
-- NF-2.pdf  used on input line 333.
+- NF-2.pdf  used on input line 334.
 (pdftex.def)             Requested size: 445.6707pt x 316.18529pt.
-<02-Main-FB-Script_files/figure-latex/Raw Likert Panel - NF-3.pdf, id=593, 445.
+<02-Main-FB-Script_files/figure-latex/Raw Likert Panel - NF-3.pdf, id=594, 445.
 665pt x 316.18124pt>
 File: 02-Main-FB-Script_files/figure-latex/Raw Likert Panel - NF-3.pdf Graphic 
 file (type pdf)
 <use 02-Main-FB-Script_files/figure-latex/Raw Likert Panel - NF-3.pdf>
 Package pdftex.def Info: 02-Main-FB-Script_files/figure-latex/Raw Likert Panel 
-- NF-3.pdf  used on input line 334.
+- NF-3.pdf  used on input line 335.
 (pdftex.def)             Requested size: 445.6707pt x 316.18529pt.
-<02-Main-FB-Script_files/figure-latex/Raw Likert Panel - NF-4.pdf, id=594, 445.
+<02-Main-FB-Script_files/figure-latex/Raw Likert Panel - NF-4.pdf, id=595, 445.
 665pt x 316.18124pt>
 File: 02-Main-FB-Script_files/figure-latex/Raw Likert Panel - NF-4.pdf Graphic 
 file (type pdf)
 <use 02-Main-FB-Script_files/figure-latex/Raw Likert Panel - NF-4.pdf>
 Package pdftex.def Info: 02-Main-FB-Script_files/figure-latex/Raw Likert Panel 
-- NF-4.pdf  used on input line 335.
+- NF-4.pdf  used on input line 336.
 (pdftex.def)             Requested size: 445.6707pt x 316.18529pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 332--336
+Underfull \hbox (badness 10000) in paragraph at lines 333--337
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 332--336
+Underfull \hbox (badness 10000) in paragraph at lines 333--337
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 332--336
+Underfull \hbox (badness 10000) in paragraph at lines 333--337
 []
  []
 
 [28 <./02-Main-FB-Script_files/figure-latex/heatmap four by 60-6.pdf> <./02-Mai
-n-FB-Script_files/figure-latex/Raw Likert Panel - NF-1.pdf>] [29 <./02-Main-FB-
-Script_files/figure-latex/Raw Likert Panel - NF-2.pdf> <./02-Main-FB-Script_fil
-es/figure-latex/Raw Likert Panel - NF-3.pdf>]
-<02-Main-FB-Script_files/figure-latex/Outcomes by norm pref-1.pdf, id=647, 444.
+n-FB-Script_files/figure-latex/heatmap four by 60-7.pdf>] [29 <./02-Main-FB-Scr
+ipt_files/figure-latex/Raw Likert Panel - NF-1.pdf> <./02-Main-FB-Script_files/
+figure-latex/Raw Likert Panel - NF-2.pdf>]
+<02-Main-FB-Script_files/figure-latex/Outcomes by norm pref-1.pdf, id=650, 444.
 66125pt x 316.18124pt>
 File: 02-Main-FB-Script_files/figure-latex/Outcomes by norm pref-1.pdf Graphic 
 file (type pdf)
 <use 02-Main-FB-Script_files/figure-latex/Outcomes by norm pref-1.pdf>
 Package pdftex.def Info: 02-Main-FB-Script_files/figure-latex/Outcomes by norm 
-pref-1.pdf  used on input line 337.
+pref-1.pdf  used on input line 338.
 (pdftex.def)             Requested size: 444.66016pt x 316.18047pt.
-<02-Main-FB-Script_files/figure-latex/Outcomes by norm pref-2.pdf, id=648, 444.
+<02-Main-FB-Script_files/figure-latex/Outcomes by norm pref-2.pdf, id=651, 444.
 66125pt x 316.18124pt>
 File: 02-Main-FB-Script_files/figure-latex/Outcomes by norm pref-2.pdf Graphic 
 file (type pdf)
 <use 02-Main-FB-Script_files/figure-latex/Outcomes by norm pref-2.pdf>
 Package pdftex.def Info: 02-Main-FB-Script_files/figure-latex/Outcomes by norm 
-pref-2.pdf  used on input line 338.
+pref-2.pdf  used on input line 339.
 (pdftex.def)             Requested size: 444.66016pt x 316.18047pt.
-<02-Main-FB-Script_files/figure-latex/Outcomes by norm pref-3.pdf, id=649, 444.
+<02-Main-FB-Script_files/figure-latex/Outcomes by norm pref-3.pdf, id=652, 444.
 66125pt x 316.18124pt>
 File: 02-Main-FB-Script_files/figure-latex/Outcomes by norm pref-3.pdf Graphic 
 file (type pdf)
 <use 02-Main-FB-Script_files/figure-latex/Outcomes by norm pref-3.pdf>
 Package pdftex.def Info: 02-Main-FB-Script_files/figure-latex/Outcomes by norm 
-pref-3.pdf  used on input line 339.
+pref-3.pdf  used on input line 340.
 (pdftex.def)             Requested size: 444.66016pt x 316.18047pt.
-<02-Main-FB-Script_files/figure-latex/Outcomes by norm pref-4.pdf, id=650, 444.
+<02-Main-FB-Script_files/figure-latex/Outcomes by norm pref-4.pdf, id=653, 444.
 66125pt x 316.18124pt>
 File: 02-Main-FB-Script_files/figure-latex/Outcomes by norm pref-4.pdf Graphic 
 file (type pdf)
 <use 02-Main-FB-Script_files/figure-latex/Outcomes by norm pref-4.pdf>
 Package pdftex.def Info: 02-Main-FB-Script_files/figure-latex/Outcomes by norm 
-pref-4.pdf  used on input line 340.
+pref-4.pdf  used on input line 341.
 (pdftex.def)             Requested size: 444.66016pt x 316.18047pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 337--341
+Underfull \hbox (badness 10000) in paragraph at lines 338--342
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 337--341
+Underfull \hbox (badness 10000) in paragraph at lines 338--342
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 337--341
+Underfull \hbox (badness 10000) in paragraph at lines 338--342
 []
  []
 
-[30 <./02-Main-FB-Script_files/figure-latex/Raw Likert Panel - NF-4.pdf> <./02-
-Main-FB-Script_files/figure-latex/Outcomes by norm pref-1.pdf>] [31 <./02-Main-
-FB-Script_files/figure-latex/Outcomes by norm pref-2.pdf> <./02-Main-FB-Script_
-files/figure-latex/Outcomes by norm pref-3.pdf>]
-<02-Main-FB-Script_files/figure-latex/Excess ingroup-1.pdf, id=689, 457.71pt x 
+[30 <./02-Main-FB-Script_files/figure-latex/Raw Likert Panel - NF-3.pdf> <./02-
+Main-FB-Script_files/figure-latex/Raw Likert Panel - NF-4.pdf>] [31 <./02-Main-
+FB-Script_files/figure-latex/Outcomes by norm pref-1.pdf> <./02-Main-FB-Script_
+files/figure-latex/Outcomes by norm pref-2.pdf>]
+<02-Main-FB-Script_files/figure-latex/Excess ingroup-1.pdf, id=692, 457.71pt x 
 311.1625pt>
 File: 02-Main-FB-Script_files/figure-latex/Excess ingroup-1.pdf Graphic file (t
 ype pdf)
 <use 02-Main-FB-Script_files/figure-latex/Excess ingroup-1.pdf>
 Package pdftex.def Info: 02-Main-FB-Script_files/figure-latex/Excess ingroup-1.
-pdf  used on input line 342.
+pdf  used on input line 343.
 (pdftex.def)             Requested size: 457.71587pt x 311.16649pt.
-<02-Main-FB-Script_files/figure-latex/Excess ingroup-2.pdf, id=690, 445.665pt x
+<02-Main-FB-Script_files/figure-latex/Excess ingroup-2.pdf, id=693, 445.665pt x
  309.155pt>
 File: 02-Main-FB-Script_files/figure-latex/Excess ingroup-2.pdf Graphic file (t
 ype pdf)
 <use 02-Main-FB-Script_files/figure-latex/Excess ingroup-2.pdf>
 Package pdftex.def Info: 02-Main-FB-Script_files/figure-latex/Excess ingroup-2.
-pdf  used on input line 343.
+pdf  used on input line 344.
 (pdftex.def)             Requested size: 445.6707pt x 309.15895pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 342--344
+Underfull \hbox (badness 10000) in paragraph at lines 343--345
 [][]
  []
 
-[32 <./02-Main-FB-Script_files/figure-latex/Outcomes by norm pref-4.pdf> <./02-
-Main-FB-Script_files/figure-latex/Excess ingroup-1.pdf>]
+[32 <./02-Main-FB-Script_files/figure-latex/Outcomes by norm pref-3.pdf> <./02-
+Main-FB-Script_files/figure-latex/Outcomes by norm pref-4.pdf>]
 <02-Main-FB-Script_files/figure-latex/Distribution of raw pref by group-1.pdf, 
-id=709, 453.695pt x 316.18124pt>
+id=712, 453.695pt x 316.18124pt>
 File: 02-Main-FB-Script_files/figure-latex/Distribution of raw pref by group-1.
 pdf Graphic file (type pdf)
 <use 02-Main-FB-Script_files/figure-latex/Distribution of raw pref by group-1.p
 df>
 Package pdftex.def Info: 02-Main-FB-Script_files/figure-latex/Distribution of r
-aw pref by group-1.pdf  used on input line 345.
+aw pref by group-1.pdf  used on input line 346.
 (pdftex.def)             Requested size: 453.6939pt x 316.18047pt.
 <02-Main-FB-Script_files/figure-latex/Distribution of raw pref by group-2.pdf, 
-id=710, 459.7175pt x 303.1325pt>
+id=713, 459.7175pt x 303.1325pt>
 File: 02-Main-FB-Script_files/figure-latex/Distribution of raw pref by group-2.
 pdf Graphic file (type pdf)
 <use 02-Main-FB-Script_files/figure-latex/Distribution of raw pref by group-2.p
 df>
 Package pdftex.def Info: 02-Main-FB-Script_files/figure-latex/Distribution of r
-aw pref by group-2.pdf  used on input line 346.
+aw pref by group-2.pdf  used on input line 347.
 (pdftex.def)             Requested size: 459.72337pt x 303.13638pt.
 <02-Main-FB-Script_files/figure-latex/Distribution of raw pref by group-3.pdf, 
-id=711, 453.695pt x 315.1775pt>
+id=714, 453.695pt x 315.1775pt>
 File: 02-Main-FB-Script_files/figure-latex/Distribution of raw pref by group-3.
 pdf Graphic file (type pdf)
 <use 02-Main-FB-Script_files/figure-latex/Distribution of raw pref by group-3.p
 df>
 Package pdftex.def Info: 02-Main-FB-Script_files/figure-latex/Distribution of r
-aw pref by group-3.pdf  used on input line 347.
+aw pref by group-3.pdf  used on input line 348.
 (pdftex.def)             Requested size: 453.6939pt x 315.17673pt.
 <02-Main-FB-Script_files/figure-latex/Distribution of raw pref by group-4.pdf, 
-id=712, 453.695pt x 315.1775pt>
+id=715, 453.695pt x 315.1775pt>
 File: 02-Main-FB-Script_files/figure-latex/Distribution of raw pref by group-4.
 pdf Graphic file (type pdf)
 <use 02-Main-FB-Script_files/figure-latex/Distribution of raw pref by group-4.p
 df>
 Package pdftex.def Info: 02-Main-FB-Script_files/figure-latex/Distribution of r
-aw pref by group-4.pdf  used on input line 348.
+aw pref by group-4.pdf  used on input line 349.
 (pdftex.def)             Requested size: 453.6939pt x 315.17673pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 345--349
+Underfull \hbox (badness 10000) in paragraph at lines 346--350
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 345--349
+Underfull \hbox (badness 10000) in paragraph at lines 346--350
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 345--349
+Underfull \hbox (badness 10000) in paragraph at lines 346--350
 []
  []
 
-[33 <./02-Main-FB-Script_files/figure-latex/Excess ingroup-2.pdf> <./02-Main-FB
--Script_files/figure-latex/Distribution of raw pref by group-1.pdf>] [34 <./02-
-Main-FB-Script_files/figure-latex/Distribution of raw pref by group-2.pdf> <./0
-2-Main-FB-Script_files/figure-latex/Distribution of raw pref by group-3.pdf>]
+[33 <./02-Main-FB-Script_files/figure-latex/Excess ingroup-1.pdf> <./02-Main-FB
+-Script_files/figure-latex/Excess ingroup-2.pdf>] [34 <./02-Main-FB-Script_file
+s/figure-latex/Distribution of raw pref by group-1.pdf> <./02-Main-FB-Script_fi
+les/figure-latex/Distribution of raw pref by group-2.pdf>]
 <02-Main-FB-Script_files/figure-latex/Raw Likert Panel by Group-1.pdf, id=756, 
 468.75125pt x 317.185pt>
 File: 02-Main-FB-Script_files/figure-latex/Raw Likert Panel by Group-1.pdf Grap
 hic file (type pdf)
 <use 02-Main-FB-Script_files/figure-latex/Raw Likert Panel by Group-1.pdf>
 Package pdftex.def Info: 02-Main-FB-Script_files/figure-latex/Raw Likert Panel 
-by Group-1.pdf  used on input line 350.
+by Group-1.pdf  used on input line 351.
 (pdftex.def)             Requested size: 468.75009pt x 317.1842pt.
 <02-Main-FB-Script_files/figure-latex/Raw Likert Panel by Group-2.pdf, id=757, 
 447.6725pt x 316.18124pt>
@@ -1499,369 +1512,371 @@ File: 02-Main-FB-Script_files/figure-latex/Raw Likert Panel by Group-2.pdf Grap
 hic file (type pdf)
 <use 02-Main-FB-Script_files/figure-latex/Raw Likert Panel by Group-2.pdf>
 Package pdftex.def Info: 02-Main-FB-Script_files/figure-latex/Raw Likert Panel 
-by Group-2.pdf  used on input line 351.
+by Group-2.pdf  used on input line 352.
 (pdftex.def)             Requested size: 447.68506pt x 316.19011pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 350--352
+Underfull \hbox (badness 10000) in paragraph at lines 351--353
 [][]
  []
 
-[35 <./02-Main-FB-Script_files/figure-latex/Distribution of raw pref by group-4
-.pdf> <./02-Main-FB-Script_files/figure-latex/Raw Likert Panel by Group-1.pdf>]
-<02-Main-FB-Script_files/figure-latex/Norm Likert Panel by Group-1.pdf, id=780,
+[35 <./02-Main-FB-Script_files/figure-latex/Distribution of raw pref by group-3
+.pdf> <./02-Main-FB-Script_files/figure-latex/Distribution of raw pref by group
+-4.pdf>]
+<02-Main-FB-Script_files/figure-latex/Norm Likert Panel by Group-1.pdf, id=782,
  467.7475pt x 302.12875pt>
 File: 02-Main-FB-Script_files/figure-latex/Norm Likert Panel by Group-1.pdf Gra
 phic file (type pdf)
 <use 02-Main-FB-Script_files/figure-latex/Norm Likert Panel by Group-1.pdf>
 Package pdftex.def Info: 02-Main-FB-Script_files/figure-latex/Norm Likert Panel
- by Group-1.pdf  used on input line 353.
+ by Group-1.pdf  used on input line 354.
 (pdftex.def)             Requested size: 467.74634pt x 302.128pt.
-<02-Main-FB-Script_files/figure-latex/Norm Likert Panel by Group-2.pdf, id=781,
+<02-Main-FB-Script_files/figure-latex/Norm Likert Panel by Group-2.pdf, id=783,
  457.71pt x 316.18124pt>
 File: 02-Main-FB-Script_files/figure-latex/Norm Likert Panel by Group-2.pdf Gra
 phic file (type pdf)
 <use 02-Main-FB-Script_files/figure-latex/Norm Likert Panel by Group-2.pdf>
 Package pdftex.def Info: 02-Main-FB-Script_files/figure-latex/Norm Likert Panel
- by Group-2.pdf  used on input line 354.
+ by Group-2.pdf  used on input line 355.
 (pdftex.def)             Requested size: 457.72984pt x 316.19493pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 353--355
+Underfull \hbox (badness 10000) in paragraph at lines 354--356
 [][]
  []
 
-[36 <./02-Main-FB-Script_files/figure-latex/Raw Likert Panel by Group-2.pdf> <.
-/02-Main-FB-Script_files/figure-latex/Norm Likert Panel by Group-1.pdf>]
-<02-Main-FB-Script_files/figure-latex/main graph by time-1.pdf, id=801, 457.71p
+[36 <./02-Main-FB-Script_files/figure-latex/Raw Likert Panel by Group-1.pdf> <.
+/02-Main-FB-Script_files/figure-latex/Raw Likert Panel by Group-2.pdf>]
+<02-Main-FB-Script_files/figure-latex/main graph by time-1.pdf, id=803, 457.71p
 t x 316.18124pt>
 File: 02-Main-FB-Script_files/figure-latex/main graph by time-1.pdf Graphic fil
 e (type pdf)
 <use 02-Main-FB-Script_files/figure-latex/main graph by time-1.pdf>
 Package pdftex.def Info: 02-Main-FB-Script_files/figure-latex/main graph by tim
-e-1.pdf  used on input line 356.
+e-1.pdf  used on input line 357.
 (pdftex.def)             Requested size: 457.72984pt x 316.19493pt.
-[37 <./02-Main-FB-Script_files/figure-latex/Norm Likert Panel by Group-2.pdf> <
-./02-Main-FB-Script_files/figure-latex/main graph by time-1.pdf>]
+[37 <./02-Main-FB-Script_files/figure-latex/Norm Likert Panel by Group-1.pdf> <
+./02-Main-FB-Script_files/figure-latex/Norm Likert Panel by Group-2.pdf>]
 <02-Main-FB-Script_files/figure-latex/slow roll out of main graph nf-1.pdf, id=
-822, 457.71pt x 316.18124pt>
+825, 457.71pt x 316.18124pt>
 File: 02-Main-FB-Script_files/figure-latex/slow roll out of main graph nf-1.pdf
  Graphic file (type pdf)
 <use 02-Main-FB-Script_files/figure-latex/slow roll out of main graph nf-1.pdf>
 
 Package pdftex.def Info: 02-Main-FB-Script_files/figure-latex/slow roll out of 
-main graph nf-1.pdf  used on input line 363.
+main graph nf-1.pdf  used on input line 364.
 (pdftex.def)             Requested size: 457.72984pt x 316.19493pt.
+[38 <./02-Main-FB-Script_files/figure-latex/main graph by time-1.pdf>]
 <02-Main-FB-Script_files/figure-latex/slow roll out of main graph nf-2.pdf, id=
-823, 457.71pt x 316.18124pt>
+837, 457.71pt x 316.18124pt>
 File: 02-Main-FB-Script_files/figure-latex/slow roll out of main graph nf-2.pdf
  Graphic file (type pdf)
 <use 02-Main-FB-Script_files/figure-latex/slow roll out of main graph nf-2.pdf>
 
 Package pdftex.def Info: 02-Main-FB-Script_files/figure-latex/slow roll out of 
-main graph nf-2.pdf  used on input line 370.
+main graph nf-2.pdf  used on input line 371.
 (pdftex.def)             Requested size: 457.72984pt x 316.19493pt.
 <02-Main-FB-Script_files/figure-latex/slow roll out of main graph nf-3.pdf, id=
-824, 457.71pt x 316.18124pt>
+838, 457.71pt x 316.18124pt>
 File: 02-Main-FB-Script_files/figure-latex/slow roll out of main graph nf-3.pdf
  Graphic file (type pdf)
 <use 02-Main-FB-Script_files/figure-latex/slow roll out of main graph nf-3.pdf>
 
 Package pdftex.def Info: 02-Main-FB-Script_files/figure-latex/slow roll out of 
-main graph nf-3.pdf  used on input line 371.
+main graph nf-3.pdf  used on input line 372.
 (pdftex.def)             Requested size: 457.72984pt x 316.19493pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 370--372
+Underfull \hbox (badness 10000) in paragraph at lines 371--373
 [][]
  []
 
-[38 <./02-Main-FB-Script_files/figure-latex/slow roll out of main graph nf-1.pd
+[39 <./02-Main-FB-Script_files/figure-latex/slow roll out of main graph nf-1.pd
 f>]
-<02-Main-FB-Script_files/figure-latex/transparency scatter-1.pdf, id=836, 381.4
+<02-Main-FB-Script_files/figure-latex/transparency scatter-1.pdf, id=850, 381.4
 25pt x 306.14375pt>
 File: 02-Main-FB-Script_files/figure-latex/transparency scatter-1.pdf Graphic f
 ile (type pdf)
 <use 02-Main-FB-Script_files/figure-latex/transparency scatter-1.pdf>
 Package pdftex.def Info: 02-Main-FB-Script_files/figure-latex/transparency scat
-ter-1.pdf  used on input line 373.
+ter-1.pdf  used on input line 374.
 (pdftex.def)             Requested size: 381.44151pt x 306.157pt.
-<02-Main-FB-Script_files/figure-latex/transparency scatter-2.pdf, id=837, 430.6
+<02-Main-FB-Script_files/figure-latex/transparency scatter-2.pdf, id=851, 430.6
 0875pt x 305.14pt>
 File: 02-Main-FB-Script_files/figure-latex/transparency scatter-2.pdf Graphic f
 ile (type pdf)
 <use 02-Main-FB-Script_files/figure-latex/transparency scatter-2.pdf>
 Package pdftex.def Info: 02-Main-FB-Script_files/figure-latex/transparency scat
-ter-2.pdf  used on input line 374.
+ter-2.pdf  used on input line 375.
 (pdftex.def)             Requested size: 430.62082pt x 305.14854pt.
-<02-Main-FB-Script_files/figure-latex/transparency scatter-3.pdf, id=838, 427.5
+<02-Main-FB-Script_files/figure-latex/transparency scatter-3.pdf, id=852, 427.5
 975pt x 305.14pt>
 File: 02-Main-FB-Script_files/figure-latex/transparency scatter-3.pdf Graphic f
 ile (type pdf)
 <use 02-Main-FB-Script_files/figure-latex/transparency scatter-3.pdf>
 Package pdftex.def Info: 02-Main-FB-Script_files/figure-latex/transparency scat
-ter-3.pdf  used on input line 375.
+ter-3.pdf  used on input line 376.
 (pdftex.def)             Requested size: 427.59645pt x 305.13924pt.
 
-Overfull \hbox (344.52953pt too wide) in paragraph at lines 373--376
+Overfull \hbox (344.52953pt too wide) in paragraph at lines 374--377
 [][] []
  []
 
-[39 <./02-Main-FB-Script_files/figure-latex/slow roll out of main graph nf-2.pd
+[40 <./02-Main-FB-Script_files/figure-latex/slow roll out of main graph nf-2.pd
 f> <./02-Main-FB-Script_files/figure-latex/slow roll out of main graph nf-3.pdf
 >]
 <02-Main-FB-Script_files/figure-latex/Distribution of norm pref by group-1.pdf,
- id=857, 433.62pt x 315.1775pt>
+ id=871, 433.62pt x 315.1775pt>
 File: 02-Main-FB-Script_files/figure-latex/Distribution of norm pref by group-1
 .pdf Graphic file (type pdf)
 <use 02-Main-FB-Script_files/figure-latex/Distribution of norm pref by group-1.
 pdf>
 Package pdftex.def Info: 02-Main-FB-Script_files/figure-latex/Distribution of n
-orm pref by group-1.pdf  used on input line 377.
+orm pref by group-1.pdf  used on input line 378.
 (pdftex.def)             Requested size: 433.63878pt x 315.19115pt.
-[40 <./02-Main-FB-Script_files/figure-latex/transparency scatter-1.pdf> <./02-M
+[41 <./02-Main-FB-Script_files/figure-latex/transparency scatter-1.pdf> <./02-M
 ain-FB-Script_files/figure-latex/transparency scatter-2.pdf> <./02-Main-FB-Scri
 pt_files/figure-latex/transparency scatter-3.pdf>]
 <02-Main-FB-Script_files/figure-latex/Distribution of norm pref by group-2.pdf,
- id=891, 453.695pt x 316.18124pt>
+ id=905, 453.695pt x 316.18124pt>
 File: 02-Main-FB-Script_files/figure-latex/Distribution of norm pref by group-2
 .pdf Graphic file (type pdf)
 <use 02-Main-FB-Script_files/figure-latex/Distribution of norm pref by group-2.
 pdf>
 Package pdftex.def Info: 02-Main-FB-Script_files/figure-latex/Distribution of n
-orm pref by group-2.pdf  used on input line 383.
+orm pref by group-2.pdf  used on input line 384.
 (pdftex.def)             Requested size: 453.6939pt x 316.18047pt.
 <02-Main-FB-Script_files/figure-latex/Distribution of norm pref by group-3.pdf,
- id=892, 451.6875pt x 316.18124pt>
+ id=906, 451.6875pt x 316.18124pt>
 File: 02-Main-FB-Script_files/figure-latex/Distribution of norm pref by group-3
 .pdf Graphic file (type pdf)
 <use 02-Main-FB-Script_files/figure-latex/Distribution of norm pref by group-3.
 pdf>
 Package pdftex.def Info: 02-Main-FB-Script_files/figure-latex/Distribution of n
-orm pref by group-3.pdf  used on input line 384.
+orm pref by group-3.pdf  used on input line 385.
 (pdftex.def)             Requested size: 451.71394pt x 316.19975pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 383--385
+Underfull \hbox (badness 10000) in paragraph at lines 384--386
 [][]
  []
 
-[41 <./02-Main-FB-Script_files/figure-latex/Distribution of norm pref by group-
-1.pdf>] [42 <./02-Main-FB-Script_files/figure-latex/Distribution of norm pref b
+[42 <./02-Main-FB-Script_files/figure-latex/Distribution of norm pref by group-
+1.pdf>] [43 <./02-Main-FB-Script_files/figure-latex/Distribution of norm pref b
 y group-2.pdf> <./02-Main-FB-Script_files/figure-latex/Distribution of norm pre
 f by group-3.pdf>]
-<02-Main-FB-Script_files/figure-latex/Recent Activity attempt 2-1.pdf, id=922, 
+<02-Main-FB-Script_files/figure-latex/Recent Activity attempt 2-1.pdf, id=937, 
 457.71pt x 316.18124pt>
 File: 02-Main-FB-Script_files/figure-latex/Recent Activity attempt 2-1.pdf Grap
 hic file (type pdf)
 <use 02-Main-FB-Script_files/figure-latex/Recent Activity attempt 2-1.pdf>
 Package pdftex.def Info: 02-Main-FB-Script_files/figure-latex/Recent Activity a
-ttempt 2-1.pdf  used on input line 391.
+ttempt 2-1.pdf  used on input line 392.
 (pdftex.def)             Requested size: 457.72984pt x 316.19493pt.
-<02-Main-FB-Script_files/figure-latex/re alex imas-1.pdf, id=923, 454.69875pt x
- 302.12875pt>
+<02-Main-FB-Script_files/figure-latex/re alex imas-1.pdf, id=938, 454.69875pt x
+ 301.125pt>
 File: 02-Main-FB-Script_files/figure-latex/re alex imas-1.pdf Graphic file (typ
 e pdf)
 <use 02-Main-FB-Script_files/figure-latex/re alex imas-1.pdf>
 Package pdftex.def Info: 02-Main-FB-Script_files/figure-latex/re alex imas-1.pd
-f  used on input line 462.
-(pdftex.def)             Requested size: 454.69763pt x 302.128pt.
-<02-Main-FB-Script_files/figure-latex/re alex imas-2.pdf, id=924, 454.69875pt x
+f  used on input line 463.
+(pdftex.def)             Requested size: 454.70456pt x 301.12885pt.
+<02-Main-FB-Script_files/figure-latex/re alex imas-2.pdf, id=939, 454.69875pt x
  300.12125pt>
 File: 02-Main-FB-Script_files/figure-latex/re alex imas-2.pdf Graphic file (typ
 e pdf)
 <use 02-Main-FB-Script_files/figure-latex/re alex imas-2.pdf>
 Package pdftex.def Info: 02-Main-FB-Script_files/figure-latex/re alex imas-2.pd
-f  used on input line 463.
+f  used on input line 464.
 (pdftex.def)             Requested size: 454.70456pt x 300.12509pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 462--464
+Underfull \hbox (badness 10000) in paragraph at lines 463--465
 [][]
  []
 
-[43 <./02-Main-FB-Script_files/figure-latex/Recent Activity attempt 2-1.pdf>] [
-44] [45 <./02-Main-FB-Script_files/figure-latex/re alex imas-1.pdf> <./02-Main-
-FB-Script_files/figure-latex/re alex imas-2.pdf>] [46]
-<02-Main-FB-Script_files/figure-latex/pymk evolution-1.pdf, id=969, 451.6875pt 
+[44 <./02-Main-FB-Script_files/figure-latex/Recent Activity attempt 2-1.pdf>] [
+45] [46 <./02-Main-FB-Script_files/figure-latex/re alex imas-1.pdf> <./02-Main-
+FB-Script_files/figure-latex/re alex imas-2.pdf>] [47] [48]
+<02-Main-FB-Script_files/figure-latex/pymk evolution-1.pdf, id=988, 451.6875pt 
 x 316.18124pt>
 File: 02-Main-FB-Script_files/figure-latex/pymk evolution-1.pdf Graphic file (t
 ype pdf)
 <use 02-Main-FB-Script_files/figure-latex/pymk evolution-1.pdf>
 Package pdftex.def Info: 02-Main-FB-Script_files/figure-latex/pymk evolution-1.
-pdf  used on input line 782.
+pdf  used on input line 783.
 (pdftex.def)             Requested size: 451.71394pt x 316.19975pt.
-<02-Main-FB-Script_files/figure-latex/norm fam by group-1.pdf, id=970, 434.6237
+<02-Main-FB-Script_files/figure-latex/norm fam by group-1.pdf, id=989, 434.6237
 5pt x 315.1775pt>
 File: 02-Main-FB-Script_files/figure-latex/norm fam by group-1.pdf Graphic file
  (type pdf)
 <use 02-Main-FB-Script_files/figure-latex/norm fam by group-1.pdf>
 Package pdftex.def Info: 02-Main-FB-Script_files/figure-latex/norm fam by group
--1.pdf  used on input line 784.
+-1.pdf  used on input line 785.
 (pdftex.def)             Requested size: 434.6492pt x 315.19595pt.
-<02-Main-FB-Script_files/figure-latex/norm fam by group-2.pdf, id=971, 453.695p
+<02-Main-FB-Script_files/figure-latex/norm fam by group-2.pdf, id=990, 453.695p
 t x 316.18124pt>
 File: 02-Main-FB-Script_files/figure-latex/norm fam by group-2.pdf Graphic file
  (type pdf)
 <use 02-Main-FB-Script_files/figure-latex/norm fam by group-2.pdf>
 Package pdftex.def Info: 02-Main-FB-Script_files/figure-latex/norm fam by group
--2.pdf  used on input line 785.
+-2.pdf  used on input line 786.
 (pdftex.def)             Requested size: 453.6939pt x 316.18047pt.
-<02-Main-FB-Script_files/figure-latex/norm fam by group-3.pdf, id=972, 451.6875
+<02-Main-FB-Script_files/figure-latex/norm fam by group-3.pdf, id=991, 451.6875
 pt x 316.18124pt>
 File: 02-Main-FB-Script_files/figure-latex/norm fam by group-3.pdf Graphic file
  (type pdf)
 <use 02-Main-FB-Script_files/figure-latex/norm fam by group-3.pdf>
 Package pdftex.def Info: 02-Main-FB-Script_files/figure-latex/norm fam by group
--3.pdf  used on input line 786.
+-3.pdf  used on input line 787.
 (pdftex.def)             Requested size: 451.71394pt x 316.19975pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 784--787
+Underfull \hbox (badness 10000) in paragraph at lines 785--788
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 784--787
+Underfull \hbox (badness 10000) in paragraph at lines 785--788
 []
  []
 
-[47 <./02-Main-FB-Script_files/figure-latex/pymk evolution-1.pdf>] [48] [49] [5
-0] [51 <./02-Main-FB-Script_files/figure-latex/norm fam by group-1.pdf>]
+[49 <./02-Main-FB-Script_files/figure-latex/pymk evolution-1.pdf>] [50] [51] [5
+2 <./02-Main-FB-Script_files/figure-latex/norm fam by group-1.pdf>]
 <02-Main-FB-Script_files/figure-latex/PYMK ranking against raw likert panel-1.p
-df, id=1013, 445.665pt x 316.18124pt>
+df, id=1027, 445.665pt x 316.18124pt>
 File: 02-Main-FB-Script_files/figure-latex/PYMK ranking against raw likert pane
 l-1.pdf Graphic file (type pdf)
 <use 02-Main-FB-Script_files/figure-latex/PYMK ranking against raw likert panel
 -1.pdf>
 Package pdftex.def Info: 02-Main-FB-Script_files/figure-latex/PYMK ranking agai
-nst raw likert panel-1.pdf  used on input line 788.
+nst raw likert panel-1.pdf  used on input line 789.
 (pdftex.def)             Requested size: 445.6707pt x 316.18529pt.
 <02-Main-FB-Script_files/figure-latex/PYMK ranking against raw likert panel-2.p
-df, id=1014, 445.665pt x 316.18124pt>
+df, id=1028, 445.665pt x 316.18124pt>
 File: 02-Main-FB-Script_files/figure-latex/PYMK ranking against raw likert pane
 l-2.pdf Graphic file (type pdf)
 <use 02-Main-FB-Script_files/figure-latex/PYMK ranking against raw likert panel
 -2.pdf>
 Package pdftex.def Info: 02-Main-FB-Script_files/figure-latex/PYMK ranking agai
-nst raw likert panel-2.pdf  used on input line 789.
+nst raw likert panel-2.pdf  used on input line 790.
 (pdftex.def)             Requested size: 445.6707pt x 316.18529pt.
 <02-Main-FB-Script_files/figure-latex/PYMK ranking against raw likert panel-3.p
-df, id=1015, 445.665pt x 316.18124pt>
+df, id=1029, 445.665pt x 316.18124pt>
 File: 02-Main-FB-Script_files/figure-latex/PYMK ranking against raw likert pane
 l-3.pdf Graphic file (type pdf)
 <use 02-Main-FB-Script_files/figure-latex/PYMK ranking against raw likert panel
 -3.pdf>
 Package pdftex.def Info: 02-Main-FB-Script_files/figure-latex/PYMK ranking agai
-nst raw likert panel-3.pdf  used on input line 790.
+nst raw likert panel-3.pdf  used on input line 791.
 (pdftex.def)             Requested size: 445.6707pt x 316.18529pt.
 <02-Main-FB-Script_files/figure-latex/PYMK ranking against raw likert panel-4.p
-df, id=1016, 445.665pt x 316.18124pt>
+df, id=1030, 445.665pt x 316.18124pt>
 File: 02-Main-FB-Script_files/figure-latex/PYMK ranking against raw likert pane
 l-4.pdf Graphic file (type pdf)
 <use 02-Main-FB-Script_files/figure-latex/PYMK ranking against raw likert panel
 -4.pdf>
 Package pdftex.def Info: 02-Main-FB-Script_files/figure-latex/PYMK ranking agai
-nst raw likert panel-4.pdf  used on input line 791.
+nst raw likert panel-4.pdf  used on input line 792.
 (pdftex.def)             Requested size: 445.6707pt x 316.18529pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 788--792
+Underfull \hbox (badness 10000) in paragraph at lines 789--793
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 788--792
+Underfull \hbox (badness 10000) in paragraph at lines 789--793
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 788--792
+Underfull \hbox (badness 10000) in paragraph at lines 789--793
 []
  []
 
-[52 <./02-Main-FB-Script_files/figure-latex/norm fam by group-2.pdf> <./02-Main
--FB-Script_files/figure-latex/norm fam by group-3.pdf>] [53 <./02-Main-FB-Scrip
+[53 <./02-Main-FB-Script_files/figure-latex/norm fam by group-2.pdf> <./02-Main
+-FB-Script_files/figure-latex/norm fam by group-3.pdf>] [54 <./02-Main-FB-Scrip
 t_files/figure-latex/PYMK ranking against raw likert panel-1.pdf> <./02-Main-FB
--Script_files/figure-latex/PYMK ranking against raw likert panel-2.pdf>] [54 <.
+-Script_files/figure-latex/PYMK ranking against raw likert panel-2.pdf>] [55 <.
 /02-Main-FB-Script_files/figure-latex/PYMK ranking against raw likert panel-3.p
 df> <./02-Main-FB-Script_files/figure-latex/PYMK ranking against raw likert pan
 el-4.pdf>]
 <02-Main-FB-Script_files/figure-latex/Unconditional mean diff pymk-1.pdf, id=10
-71, 357.335pt x 316.18124pt>
+86, 357.335pt x 316.18124pt>
 File: 02-Main-FB-Script_files/figure-latex/Unconditional mean diff pymk-1.pdf G
 raphic file (type pdf)
 <use 02-Main-FB-Script_files/figure-latex/Unconditional mean diff pymk-1.pdf>
 Package pdftex.def Info: 02-Main-FB-Script_files/figure-latex/Unconditional mea
-n diff pymk-1.pdf  used on input line 798.
+n diff pymk-1.pdf  used on input line 799.
 (pdftex.def)             Requested size: 357.35048pt x 316.19493pt.
-<02-Main-FB-Script_files/figure-latex/unnamed-chunk-4-1.pdf, id=1072, 457.71pt 
+<02-Main-FB-Script_files/figure-latex/unnamed-chunk-4-1.pdf, id=1087, 457.71pt 
 x 316.18124pt>
 File: 02-Main-FB-Script_files/figure-latex/unnamed-chunk-4-1.pdf Graphic file (
 type pdf)
 <use 02-Main-FB-Script_files/figure-latex/unnamed-chunk-4-1.pdf>
 Package pdftex.def Info: 02-Main-FB-Script_files/figure-latex/unnamed-chunk-4-1
-.pdf  used on input line 800.
+.pdf  used on input line 801.
 (pdftex.def)             Requested size: 457.72984pt x 316.19493pt.
-[55 <./02-Main-FB-Script_files/figure-latex/Unconditional mean diff pymk-1.pdf>
+[56 <./02-Main-FB-Script_files/figure-latex/Unconditional mean diff pymk-1.pdf>
 ]
 <02-Main-FB-Script_files/figure-latex/pymk rankings by mutual friends and ingro
-up-1.pdf, id=1085, 457.71pt x 316.18124pt>
+up-1.pdf, id=1099, 457.71pt x 316.18124pt>
 File: 02-Main-FB-Script_files/figure-latex/pymk rankings by mutual friends and 
 ingroup-1.pdf Graphic file (type pdf)
 <use 02-Main-FB-Script_files/figure-latex/pymk rankings by mutual friends and i
 ngroup-1.pdf>
 Package pdftex.def Info: 02-Main-FB-Script_files/figure-latex/pymk rankings by 
-mutual friends and ingroup-1.pdf  used on input line 802.
+mutual friends and ingroup-1.pdf  used on input line 803.
 (pdftex.def)             Requested size: 457.72984pt x 316.19493pt.
 <02-Main-FB-Script_files/figure-latex/pymk rankings by mutual friends and ingro
-up-2.pdf, id=1086, 457.71pt x 316.18124pt>
+up-2.pdf, id=1100, 457.71pt x 316.18124pt>
 File: 02-Main-FB-Script_files/figure-latex/pymk rankings by mutual friends and 
 ingroup-2.pdf Graphic file (type pdf)
 <use 02-Main-FB-Script_files/figure-latex/pymk rankings by mutual friends and i
 ngroup-2.pdf>
 Package pdftex.def Info: 02-Main-FB-Script_files/figure-latex/pymk rankings by 
-mutual friends and ingroup-2.pdf  used on input line 803.
+mutual friends and ingroup-2.pdf  used on input line 804.
 (pdftex.def)             Requested size: 457.72984pt x 316.19493pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 802--804
+Underfull \hbox (badness 10000) in paragraph at lines 803--805
 [][]
  []
 
-[56 <./02-Main-FB-Script_files/figure-latex/unnamed-chunk-4-1.pdf> <./02-Main-F
+[57 <./02-Main-FB-Script_files/figure-latex/unnamed-chunk-4-1.pdf> <./02-Main-F
 B-Script_files/figure-latex/pymk rankings by mutual friends and ingroup-1.pdf>]
 <02-Main-FB-Script_files/figure-latex/pymk order vs mutual friends-1.pdf, id=11
-05, 444.66125pt x 303.1325pt>
+20, 444.66125pt x 303.1325pt>
 File: 02-Main-FB-Script_files/figure-latex/pymk order vs mutual friends-1.pdf G
 raphic file (type pdf)
 <use 02-Main-FB-Script_files/figure-latex/pymk order vs mutual friends-1.pdf>
 Package pdftex.def Info: 02-Main-FB-Script_files/figure-latex/pymk order vs mut
-ual friends-1.pdf  used on input line 809.
+ual friends-1.pdf  used on input line 810.
 (pdftex.def)             Requested size: 444.66016pt x 303.13176pt.
-<02-Main-FB-Script_files/figure-latex/excess mass pymk-1.pdf, id=1106, 445.665p
+<02-Main-FB-Script_files/figure-latex/excess mass pymk-1.pdf, id=1121, 445.665p
 t x 309.155pt>
 File: 02-Main-FB-Script_files/figure-latex/excess mass pymk-1.pdf Graphic file 
 (type pdf)
 <use 02-Main-FB-Script_files/figure-latex/excess mass pymk-1.pdf>
 Package pdftex.def Info: 02-Main-FB-Script_files/figure-latex/excess mass pymk-
-1.pdf  used on input line 811.
+1.pdf  used on input line 812.
 (pdftex.def)             Requested size: 445.6707pt x 309.15895pt.
-[57 <./02-Main-FB-Script_files/figure-latex/pymk rankings by mutual friends and
+[58 <./02-Main-FB-Script_files/figure-latex/pymk rankings by mutual friends and
  ingroup-2.pdf> <./02-Main-FB-Script_files/figure-latex/pymk order vs mutual fr
 iends-1.pdf>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1049.
-[58 <./02-Main-FB-Script_files/figure-latex/excess mass pymk-1.pdf>] [59] [60] 
-[61] [62]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1049.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1050.
+[59 <./02-Main-FB-Script_files/figure-latex/excess mass pymk-1.pdf>] [60] [61] 
+[62] [63]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1050.
 (./02-Main-FB-Script.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1049.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1049.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1050.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1050.
 
 Package rerunfilecheck Info: File `02-Main-FB-Script.out' has not changed.
 (rerunfilecheck)             Checksum: 1B55FD1967C1981F7F07783B7324F8C5;705.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1049.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1050.
  ) 
 Here is how much of TeX's memory you used:
- 12462 strings out of 492649
- 205254 string characters out of 6129622
- 313517 words of memory out of 5000000
- 16067 multiletter control sequences out of 15000+600000
+ 12467 strings out of 492649
+ 205552 string characters out of 6129622
+ 312570 words of memory out of 5000000
+ 16071 multiletter control sequences out of 15000+600000
  53550 words of font info for 74 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  32i,9n,38p,305b,454s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1879,10 +1894,10 @@ ype1/public/lm/lmr7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/
 lm/lmri10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmsy10.
 pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/l
 ocal/texlive/2018/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on 02-Main-FB-Script.pdf (62 pages, 3988160 bytes).
+Output written on 02-Main-FB-Script.pdf (63 pages, 4008699 bytes).
 PDF statistics:
- 1233 PDF objects out of 1440 (max. 8388607)
- 826 compressed objects within 9 object streams
- 86 named destinations out of 1000 (max. 500000)
- 12784 words of extra memory for PDF output out of 14400 (max. 10000000)
+ 1247 PDF objects out of 1440 (max. 8388607)
+ 834 compressed objects within 9 object streams
+ 87 named destinations out of 1000 (max. 500000)
+ 12789 words of extra memory for PDF output out of 14400 (max. 10000000)
 
