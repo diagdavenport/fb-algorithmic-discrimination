@@ -1,6 +1,6 @@
 
 # comment
-*.DS_Store
+.DS_Store
 
-*.gitattributes
-*.gitignore
+.gitattributes
+.gitignore
