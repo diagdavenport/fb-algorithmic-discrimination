@@ -3,6 +3,8 @@ title: "Facebook Results Memo"
 author: "ddd"
 date: "8/27/2020"
 output: pdf_document
+knit: (function(inputFile, encoding) {
+  rmarkdown::render(inputFile, encoding = encoding, output_dir = "Markdown PDFs") })
 ---
 
 ```{r setup, include=FALSE}
@@ -45,33 +47,6 @@ m.qual.df.all <- read.csv("Temp/Clean qualtrics data.csv")
 ```
 
 ```{r clean time categories}
-
-to.missing <- c("", "`", "rs", "Years", ",")
-to.mins <- c("m", "maleinutes", "min", "mins", "minutes", "Minutes", "minw")
-to.hours <- c("hours", "Hours")
-to.days <- c("days", "Days", "day", "fays")
-
-m.newsfeed.df.all$tenure.units <- as.character(m.newsfeed.df.all$tenure.units)
-
-m.newsfeed.df.all$tenure.units <- ifelse(m.newsfeed.df.all$tenure.units %in% to.missing,
-                                         NA,
-                                         m.newsfeed.df.all$tenure.units)
-
-m.newsfeed.df.all$tenure.units <- ifelse(m.newsfeed.df.all$tenure.units %in% to.mins,
-                                         "mins",
-                                         m.newsfeed.df.all$tenure.units)
-
-m.newsfeed.df.all$tenure.units <- ifelse(m.newsfeed.df.all$tenure.units %in% to.hours,
-                                         "hours",
-                                         m.newsfeed.df.all$tenure.units)
-
-m.newsfeed.df.all$tenure.units <- ifelse(m.newsfeed.df.all$tenure.units %in% to.days,
-                                         "days",
-                                         m.newsfeed.df.all$tenure.units)
-
-table(m.newsfeed.df.all$tenure.units)
-
-m.newsfeed.df.all$post.tenure <- as.numeric(as.character(m.newsfeed.df.all$post.tenure))
 
 m.newsfeed.df.all <- m.newsfeed.df.all %>%
     group_by(primary.id) %>%

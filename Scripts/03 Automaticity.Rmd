@@ -2,9 +2,9 @@
 title: "Explore ExIm study FB"
 author: "ddd"
 date: "9/3/2020"
-output:
-  pdf_document: default
-  html_document: default
+output: pdf_document
+knit: (function(inputFile, encoding) {
+  rmarkdown::render(inputFile, encoding = encoding, output_dir = "Markdown PDFs") })
 ---
 
 ```{r setup, include=FALSE}

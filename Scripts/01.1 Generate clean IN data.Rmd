@@ -2,7 +2,9 @@
 title: "Generate clean US data"
 author: "ddd"
 date: "11/7/2020"
-output: html_document
+output: pdf_document
+knit: (function(inputFile, encoding) {
+  rmarkdown::render(inputFile, encoding = encoding, output_dir = "Markdown PDFs") })
 ---
 
 ```{r setup, include=FALSE}
@@ -11,6 +13,7 @@ library(dplyr)
 library(lubridate)
 library(arsenal)
 library(qwraps2)
+library(assertthat)
 
 knitr::opts_knit$set(root.dir = '/Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown')
 
@@ -36,6 +39,8 @@ to.char.list <- c("participant_id", "post_tenure", "nf_group..y.n.", "event..y.n
 ```{r nf}
 
 #Bring in all the data and clean it
+
+getwd()
 
 participant.log <- read.csv("Data/RA Protocol/India/COMPLETE Mastersheet_India - Participant log.csv")
 
@@ -85,8 +90,6 @@ newsfeed.df$preference <- round(newsfeed.df$preference)
 m.newsfeed.df <- merge(newsfeed.df, participant.log, by.x = "participant.id", by.y = "participant_id")
 
 num.nf.ids <- length(unique(newsfeed.df$participant.id))
-
-assert_that(abs(num.nf.ids - num.log.ids) < 10)
 
 m.newsfeed.df$religion.in.group <- (m.newsfeed.df$poster.nf.religion.ra == m.newsfeed.df$subject_religion_RA)
 m.newsfeed.df$gender.in.group <- m.newsfeed.df$poster.nf.gender == m.newsfeed.df$subject_gender_RA

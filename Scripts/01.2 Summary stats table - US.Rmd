@@ -1,0 +1,511 @@
+---
+title: "01.2 US summary tables"
+author: "ddd"
+date: "1/5/2021"
+output: pdf_document
+knit: (function(inputFile, encoding) {
+  rmarkdown::render(inputFile, encoding = encoding, output_dir = "Markdown PDFs") })
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = F)
+library(dplyr)
+library(lubridate)
+library(arsenal)
+library(qwraps2)
+library(kableExtra)
+
+knitr::opts_knit$set(root.dir = '/Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown')
+
+```
+
+```{r bring in all the data}
+
+participant.data <- read.csv("Temp/Clean US qualtrics data.csv")
+nf.data.raw <- read.csv("Temp/Clean US Data NF.csv")
+pymk.data.raw <- read.csv("Temp/Clean US Data PYMK.csv")
+recent.data.raw <- read.csv("Temp/Clean US Data Recent.csv")
+
+my_controls <- tableby.control(
+  test = T,
+  total = T,
+  numeric.test = "kwt", cat.test = "chisq",
+  numeric.stats = "meansd",
+  cat.stats = c("countpct"),
+  stats.labels = list(
+    meansd = "Mean (SD)"
+  )
+)
+
+```
+
+```{r convert time to days in nf}
+
+nf.data.raw$time.normalizer <- NA
+nf.data.raw$time.normalizer <- ifelse(nf.data.raw$tenure.units == "days",
+                                      1,
+                                      nf.data.raw$time.normalizer)
+
+nf.data.raw$time.normalizer <- ifelse(nf.data.raw$tenure.units == "hours",
+                                      1/24,
+                                      nf.data.raw$time.normalizer)
+
+nf.data.raw$time.normalizer <- ifelse(nf.data.raw$tenure.units == "mins",
+                                      1/(24*60),
+                                      nf.data.raw$time.normalizer)
+
+nf.data.raw$standard.time <- with(nf.data.raw, time.normalizer*post.tenure)
+
+```
+
+```{r}
+
+participant.data <- participant.data %>% select(self.race,
+                             gender,
+                             age,
+                             education,
+                             covid.usage,
+                             last.login,
+                             pre.covid.usage,
+                             subject_race_RA,
+                             subject_gender_RA, source, total_friends,
+                             recorded.posts,
+                             mean.rating,
+                             sd.rating,
+                             median.rating,
+                             pymk.recorded.posts,
+                             pymk.mean.rating,
+                             pymk.sd.rating,
+                             pymk.median.rating,
+                             primary.id)
+
+nf.data <- nf.data.raw %>% select(subject_race_RA,
+                             subject_gender_RA,
+                             total_friends,
+                             nf.order,
+                             preference,
+                             tenure.units,
+                             human,
+                             nf.group,
+                             unrest,
+                             poster.nf.race.1.ra,
+                             poster.nf.race.2.ra,
+                             poster.nf.gender)
+
+
+
+```
+
+```{r, results='asis'}
+# 
+# options(qwraps2_markup = "latex")
+# participant.data <- as.data.frame(participant.data)
+# 
+# summary_statistics <-
+#   list(
+#     "Age" =
+#       list(
+#         "mean (sd)" = ~qwraps2::mean_sd(age, na_rm = TRUE, show_n = "never")
+#       ),
+#     "Educational Attainment" =
+#       list(
+#         "No college degree" = ~qwraps2::n_perc(na.omit(education) %in% c("Associate's degree",
+#                                                                          "Did not graduate high school",
+#                                                                          "Graduated high school",
+#                                                                          "Some college, no degree")),
+#         "Bachelor's degree" = ~qwraps2::n_perc(na.omit(education) %in% "Bachelor's degree"),
+#         "Graduate degree" = ~qwraps2::n_perc(na.omit(education) %in% c("Doctoral degree",
+#                                                                          "Master's degree",
+#                                                                        "Professional degree"))),
+# 
+#     "Gender" =
+#       list(
+#         "Female" = ~qwraps2::n_perc(na.omit(gender) %in% c("Female")),
+#         "Male" = ~qwraps2::n_perc(na.omit(gender) %in% "Male"),
+#         "Non-binary" = ~qwraps2::n_perc(na.omit(gender) %in% c("Non-binary"))
+#       ),
+#     "NF data summary" =
+#       list(
+#         recorded.posts,
+#                              mean.rating,
+#                              sd.rating,
+#                              median.rating
+#       ),
+#     
+#     "Pre-COVID FB Usage" =
+#       list(
+#         "Hourly" = ~qwraps2::n_perc(na.omit(pre.covid.usage) %in% "A few times an hour"),
+#         "Daily" = ~qwraps2::n_perc(na.omit(pre.covid.usage) %in% "A few times a day"),
+#         "Weekly" = ~qwraps2::n_perc(na.omit(pre.covid.usage) %in% "A few times a week"),
+#         "Monthly" = ~qwraps2::n_perc(na.omit(pre.covid.usage) %in% "A few times a month"),
+#         "Yearly" = ~qwraps2::n_perc(na.omit(pre.covid.usage) %in% "A few times a year"),
+#         "Never" = ~qwraps2::n_perc(na.omit(pre.covid.usage) %in% "Never")
+#   ),
+#     
+#     "COVID FB Usage" =
+#       list(
+#         "Hourly" = ~qwraps2::n_perc(na.omit(covid.usage) %in% "A few times an hour"),
+#         "Daily" = ~qwraps2::n_perc(na.omit(covid.usage) %in% "A few times a day"),
+#         "Weekly" = ~qwraps2::n_perc(na.omit(covid.usage) %in% "A few times a week"),
+#         "Monthly" = ~qwraps2::n_perc(na.omit(covid.usage) %in% "A few times a month"),
+#         "Yearly" = ~qwraps2::n_perc(na.omit(covid.usage) %in% "A few times a year"),
+#         "Never" = ~qwraps2::n_perc(na.omit(covid.usage) %in% "Never")
+#   ),
+#     
+#     "Race Self-Identification" =
+#       list(
+#         "Asian" = ~qwraps2::n_perc(na.omit(self.race) %in% "Asian"),
+#         "Black/AA" = ~qwraps2::n_perc(na.omit(self.race) %in% "Black or African American"),
+#         "Hispanic" = ~qwraps2::n_perc(na.omit(self.race) %in% "Hispanic"),
+#         "White" = ~qwraps2::n_perc(na.omit(self.race) %in% "White"),
+#         "Multi-racial" = ~qwraps2::n_perc(na.omit(self.race) %in% "Two or more"),
+#         "Other" = ~qwraps2::n_perc(na.omit(self.race) %in% "Other")
+#   )
+# )
+# 
+# whole <- summary_table(participant.data, summary_statistics)
+# by_group <- summary_table(dplyr::group_by(participant.data, subject_race_RA), summary_statistics)
+# 
+# cbind(whole, by_group)
+# 
+# #summary_table(as.table(rbind(table(participant.data$subject_race_RA)/nrow(participant.data), by_group)))
+
+```
+
+```{r, results = 'asis'}
+
+# options(qwraps2_markup = "latex")
+# nf.data$race.in.group <- ((as.character(nf.data$poster.nf.race.1.ra) == as.character(nf.data$subject_race_RA)) | (as.character(nf.data$poster.nf.race.2.ra) == as.character(nf.data$subject_race_RA)))
+# nf.data <- as.data.frame(nf.data %>% filter(human == 1))
+# 
+# summary_statistics <-
+#   list(
+#     "Friends" =
+#       list(
+#         "Median (IQR)" = ~qwraps2::median_iqr(total_friends, na_rm = TRUE, show_n = "never")
+#       ),
+#         "Preference" =
+#       list(
+#         "Median (IQR)"  = ~qwraps2::median_iqr(preference, na_rm = TRUE, show_n = "never")
+#       ),
+#     "In-group" =
+#       list(
+#         "Mean (IQR)" = ~mean(race.in.group, na_rm = TRUE)
+#       ),
+#     "Poster Race" =
+#       list(
+#         "Asian" = ~qwraps2::n_perc(na.omit(poster.nf.race.1.ra) %in% "asian"),
+#         "Black/AA" = ~qwraps2::n_perc(na.omit(poster.nf.race.1.ra) %in% "black or african american"),
+#         "Hispanic" = ~qwraps2::n_perc(na.omit(poster.nf.race.1.ra) %in% "hispanic"),
+#         "Other" = ~qwraps2::n_perc(na.omit(poster.nf.race.1.ra) %in% "other"),
+#         "White" = ~qwraps2::n_perc(na.omit(poster.nf.race.1.ra) %in% "white"))
+# )
+# 
+#  whole <- summary_table(nf.data, summary_statistics)
+#  by_group <- summary_table(dplyr::group_by(nf.data, subject_race_RA), summary_statistics)
+# 
+# cbind(whole, by_group)
+
+#summary_table(as.table(rbind(table(participant.data$subject_race_RA)/nrow(participant.data), by_group)))
+
+```
+
+# Participants
+
+```{r person data on NF-PYMK-behavior, results='asis'}
+
+options(qwraps2_markup = "latex")
+participant.data <- as.data.frame(participant.data)
+
+summary_statistics <-
+  list(
+    "Sample size" =
+        list(
+         "N" = ~N(primary.id)
+        ),
+    "Race Self-Identification" =
+      list(
+        "Asian" = ~qwraps2::n_perc(na.omit(self.race) %in% "Asian"),
+        "Black/AA" = ~qwraps2::n_perc(na.omit(self.race) %in% "Black or African American"),
+        "Hispanic" = ~qwraps2::n_perc(na.omit(self.race) %in% "Hispanic"),
+        "White" = ~qwraps2::n_perc(na.omit(self.race) %in% "White"),
+        "Multi-racial" = ~qwraps2::n_perc(na.omit(self.race) %in% "Two or more"),
+        "Other" = ~qwraps2::n_perc(na.omit(self.race) %in% "Other")
+  ),
+  "Race RA Identification" =
+      list(
+        "Asian" = ~qwraps2::n_perc(na.omit(subject_race_RA) %in% "asian"),
+        "Black/AA" = ~qwraps2::n_perc(na.omit(subject_race_RA) %in% "black or african american"),
+        "Hispanic" = ~qwraps2::n_perc(na.omit(subject_race_RA) %in% "hispanic"),
+        "White" = ~qwraps2::n_perc(na.omit(subject_race_RA) %in% "white"),
+        "Other" = ~qwraps2::n_perc(na.omit(subject_race_RA) %in% "other")
+  ),
+    "Age" =
+      list(
+        "mean (sd)" = ~qwraps2::mean_sd(age, na_rm = TRUE, show_n = "never")
+      ),
+    "Educational Attainment" =
+      list(
+        "No college degree" = ~qwraps2::n_perc(na.omit(education) %in% c("Associate's degree",
+                                                                         "Did not graduate high school",
+                                                                         "Graduated high school",
+                                                                         "Some college, no degree")),
+        "Bachelor's degree" = ~qwraps2::n_perc(na.omit(education) %in% "Bachelor's degree"),
+        "Graduate degree" = ~qwraps2::n_perc(na.omit(education) %in% c("Doctoral degree",
+                                                                         "Master's degree",
+                                                                       "Professional degree"))),
+
+    "Gender" =
+      list(
+        "Female" = ~qwraps2::n_perc(na.omit(gender) %in% c("Female")),
+        "Male" = ~qwraps2::n_perc(na.omit(gender) %in% "Male"),
+        "Non-binary" = ~qwraps2::n_perc(na.omit(gender) %in% c("Non-binary"))
+      ),
+  "FB Usage" =
+      list(
+        "Hourly" = ~qwraps2::n_perc(na.omit(covid.usage) %in% "A few times an hour"),
+        "Daily" = ~qwraps2::n_perc(na.omit(covid.usage) %in% "A few times a day"),
+        "Weekly" = ~qwraps2::n_perc(na.omit(covid.usage) %in% "A few times a week"),
+        "Monthly" = ~qwraps2::n_perc(na.omit(covid.usage) %in% "A few times a month"),
+        "Yearly" = ~qwraps2::n_perc(na.omit(covid.usage) %in% "A few times a year"),
+        "Never" = ~qwraps2::n_perc(na.omit(covid.usage) %in% "Never")
+  ),
+  
+   "Last login?" =
+      list(
+        "Within the past hour" = ~qwraps2::n_perc(na.omit(last.login) %in% "Within the past hour"),
+        "Within the past day" = ~qwraps2::n_perc(na.omit(last.login) %in% "Within the past day"),
+        "Within the past week" = ~qwraps2::n_perc(na.omit(last.login) %in% "Within the past week"),
+        "Within the past month" = ~qwraps2::n_perc(na.omit(last.login) %in% "Within the past month"),
+        "Within the past year" = ~qwraps2::n_perc(na.omit(last.login) %in% "Within the past year")),
+  
+    "Number of friends" = 
+      list(
+        "mean (sd)" = ~qwraps2::mean_sd(total_friends, na_rm = TRUE, show_n = "never"),
+        "median (IQR)" = ~ qwraps2::median_iqr(total_friends, na_rm = TRUE, show_n = "never")
+      ),
+    "NF data summary" =
+      list(
+        "Average rating - mean (sd)" = ~qwraps2::mean_sd(mean.rating, na_rm = TRUE, show_n = "never"),
+        "SD rating - mean (sd)" = ~qwraps2::mean_sd(sd.rating, na_rm = TRUE, show_n = "never"),
+        "Median rating - mean (sd)" = ~qwraps2::mean_sd(median.rating, na_rm = TRUE, show_n = "never")
+        ),
+    "PYMK data summary" =
+      list(
+        "Average rating - mean (sd)" = ~qwraps2::mean_sd(pymk.mean.rating, na_rm = TRUE, show_n = "never"),
+        "SD rating - mean (sd)" = ~qwraps2::mean_sd(pymk.sd.rating, na_rm = TRUE, show_n = "never"),
+        "Median rating - mean (sd)" = ~qwraps2::mean_sd(pymk.median.rating, na_rm = TRUE, show_n = "never")
+        )
+)
+
+# print(summary_table(participant.data, summary_statistics),
+#       rtitle = "NF Sample", 
+#       align = "lc")
+# 
+# t <- participant.data %>% dplyr::filter(source %in% c("CDR 1", "HDSL"))
+# 
+# print(summary_table(t, summary_statistics),
+#       rtitle = "PYMK Sample", 
+#       align = "lc")
+# 
+# t <- participant.data %>% dplyr::filter(source %in% c("CDR 2", "CDR 4"))
+# 
+# print(summary_table(t, summary_statistics),
+#       rtitle = "Behavior Sample", 
+#       align = "lc")
+
+full <- summary_table(participant.data, summary_statistics)
+
+t <- dplyr::filter(participant.data, source %in% c("CDR 1", "HDSL"))
+pymk.sub <- summary_table(t, summary_statistics)
+
+t1 <- dplyr::filter(participant.data, source %in% c("CDR 2", "CDR 4"))
+beh.sub <- summary_table(t1, summary_statistics)
+
+final.table <- cbind(full, pymk.sub, beh.sub)
+
+colnames(final.table) <- c("NF Sample",
+                           "PYMK Sample",
+                           "Behavior Sample")
+
+final.table
+
+#  whole <- summary_table(nf.data, summary_statistics)
+#  by_group <- summary_table(dplyr::group_by(nf.data, subject_race_RA), summary_statistics)
+# 
+# cbind(whole, by_group)
+
+# # cbind(summary_table(participant.data, summary_statistics),
+# #       summary_table(participant.data %>% dplyr::filter(source %in% c("CDR 1", "HDSL")), summary_statistics),
+# #       summary_table(participant.data %>% dplyr::filter(source %in% c("CDR 2", "CDR 4")), summary_statistics))
+# # 
+# 
+# summary_table(as.table(rbind(table(participant.data$subject_race_RA)/nrow(participant.data), by_group)))
+```
+
+# NF
+
+```{r nf data on NF-PYMK-behavior, results='asis'}
+
+nf.data.raw$clean.race <- with(nf.data.raw, ifelse(human == 1,
+                                                   race.in.group,
+                                                   NA))
+
+nf.data.raw$clean.gender <- with(nf.data.raw, ifelse(human == 1,
+                                                   gender.in.group,
+                                                   NA))
+
+summary_statistics <-
+  list(
+      "Sample size" =
+        list(
+         "N" = ~N(primary.id)
+        ),
+        "Preference" =
+      list(
+        "mean (sd)" = ~qwraps2::mean_sd(preference, na_rm = TRUE, show_n = "never"),
+        "Median (IQR)"  = ~qwraps2::median_iqr(preference, na_rm = TRUE, show_n = "never"),
+        "7s (Most preferred)" = ~qwraps2::perc_n(na.omit(preference) %in% 7),
+        "6s"= ~qwraps2::perc_n(na.omit(preference) == 6),
+        "5s"= ~qwraps2::perc_n(na.omit(preference) == 5),
+        "4s"= ~qwraps2::perc_n(na.omit(preference) == 4),
+        "3s"= ~qwraps2::perc_n(na.omit(preference) == 3),
+        "2s" = ~qwraps2::perc_n(na.omit(preference) == 2),
+        "1s (Least preferred)" = ~qwraps2::perc_n(na.omit(preference) == 1)
+      ),
+    "Primary Poster Race" =
+      list(
+        "Asian" = ~qwraps2::perc_n(na.omit(poster.nf.race.1.ra) %in% "asian"),
+        "Black/AA" = ~qwraps2::perc_n(na.omit(poster.nf.race.1.ra) %in% "black or african american"),
+        "Hispanic" = ~qwraps2::perc_n(na.omit(poster.nf.race.1.ra) %in% "hispanic"),
+        "Other" = ~qwraps2::perc_n(na.omit(poster.nf.race.1.ra) %in% "other"),
+        "White" = ~qwraps2::perc_n(na.omit(poster.nf.race.1.ra) %in% "white"),
+        "Multiple races" = ~qwraps2::perc_n(poster.nf.race.2.ra != "")),
+      "Post Age (Days)" =
+        list(
+        "mean (sd)" = ~qwraps2::mean_sd(standard.time, na_rm = TRUE, show_n = "never"),
+        "Median (IQR)"  = ~qwraps2::median_iqr(standard.time, na_rm = TRUE, show_n = "never")
+        ),
+    "Rates" =
+      list(
+        "Same Race Rate" = ~qwraps2::frmt(mean(clean.race, na.rm = TRUE)),
+        "Same Gender Rate" = ~qwraps2::frmt(mean(clean.gender, na.rm = TRUE)),
+        "Human Rate" = ~qwraps2::frmt(mean(human, na.rm = TRUE)),
+        "Group Post Rate" = ~qwraps2::frmt(mean(nf.group, na.rm = TRUE))
+      )
+)
+
+print(summary_table(nf.data.raw, summary_statistics),
+      rtitle = "NF Sample", 
+      align = "lc")
+
+t <- nf.data.raw %>% dplyr::filter(source %in% c("CDR 1", "HDSL"))
+
+print(summary_table(t, summary_statistics),
+      rtitle = "PYMK Sample", 
+      align = "lc")
+
+t <- nf.data.raw %>% dplyr::filter(source %in% c("CDR 2", "CDR 4"))
+
+print(summary_table(t, summary_statistics),
+      rtitle = "Behavior Sample", 
+      align = "lc")
+
+kbl(summary_table(t, summary_statistics), booktabs = T)
+
+```
+
+# PYMK
+
+```{r pymk data on NF-PYMK-behavior, results='asis'}
+
+pymk.data.raw$total_friends <- as.numeric(as.character(pymk.data.raw$total_friends))
+
+pymk.data.raw$pct.friends <- with(pymk.data.raw, mutual.friends/total_friends)
+
+summary_statistics <-
+  list(
+        "Preference" =
+      list(
+        "mean (sd)" = ~qwraps2::mean_sd(familiarity, na_rm = TRUE, show_n = "never"),
+        "Median (IQR)"  = ~qwraps2::median_iqr(familiarity, na_rm = TRUE, show_n = "never"),
+        "7s (Most preferred)" = ~qwraps2::perc_n(na.omit(familiarity) %in% 7),
+        "6s"= ~qwraps2::perc_n(na.omit(familiarity) == 6),
+        "5s"= ~qwraps2::perc_n(na.omit(familiarity) == 5),
+        "4s"= ~qwraps2::perc_n(na.omit(familiarity) == 4),
+        "3s"= ~qwraps2::perc_n(na.omit(familiarity) == 3),
+        "2s" = ~qwraps2::perc_n(na.omit(familiarity) == 2),
+        "1s (Least preferred)" = ~qwraps2::perc_n(na.omit(familiarity) == 1)
+      ),
+    "Primary Poster Race" =
+      list(
+        "Asian" = ~qwraps2::perc_n(na.omit(poster.pymk.race.1.ra) %in% "asian"),
+        "Black/AA" = ~qwraps2::perc_n(na.omit(poster.pymk.race.1.ra) %in% "black or african american"),
+        "Hispanic" = ~qwraps2::perc_n(na.omit(poster.pymk.race.1.ra) %in% "hispanic"),
+        "Other" = ~qwraps2::perc_n(na.omit(poster.pymk.race.1.ra) %in% "other"),
+        "White" = ~qwraps2::perc_n(na.omit(poster.pymk.race.1.ra) %in% "white"),
+        "Multiple races" = ~qwraps2::perc_n(poster.pymk.race.2.ra != "")),
+      "Mutual friends" =
+        list(
+        "mean (sd)" = ~qwraps2::mean_sd(mutual.friends, na_rm = TRUE, show_n = "never"),
+        "Median (IQR)"  = ~qwraps2::median_iqr(mutual.friends, na_rm = TRUE, show_n = "never")
+        ),
+   "Mutual friends/Total Friends" =
+        list(
+        "mean (sd)" = ~qwraps2::mean_sd(pct.friends, na_rm = TRUE, show_n = "never"),
+        "Median (IQR)"  = ~qwraps2::median_iqr(pct.friends, na_rm = TRUE, show_n = "never")
+        ),
+    "Rates" =
+      list(
+        "Same Race Rate" = ~qwraps2::frmt(mean(race.in.group, na.rm = TRUE)),
+        "Same Gender Rate" = ~qwraps2::frmt(mean(gender.in.group, na.rm = TRUE))
+      )
+)
+
+print(summary_table(pymk.data.raw, summary_statistics),
+      rtitle = "PYMK Sample", 
+      align = "lc")
+
+```
+
+# Behavior
+
+```{r behavior summary, results='asis'}
+
+
+recent.data.raw$clean.race <- with(recent.data.raw, ifelse(human == 1,
+                                                   race.in.group,
+                                                   NA))
+
+recent.data.raw$clean.gender <- with(recent.data.raw, ifelse(human == 1,
+                                                   gender.in.group,
+                                                   NA))
+
+summary_statistics <-
+  list(
+    "Type" =
+      list(
+        "Reaction Rate" = ~qwraps2::frmt(mean(react, na.rm = TRUE)),
+        "Comment Rate" = ~qwraps2::frmt(mean(comment, na.rm = TRUE))
+      ),
+    "Rates" =
+      list(
+        "Same Race Rate" = ~qwraps2::frmt(mean(clean.race, na.rm = TRUE)),
+        "Same Gender Rate" = ~qwraps2::frmt(mean(clean.gender, na.rm = TRUE)),
+        "Human Rate" = ~qwraps2::frmt(mean(human, na.rm = TRUE))
+      ),
+    "Primary Poster Race" =
+      list(
+        "Asian" = ~qwraps2::perc_n(na.omit(poster.recent.race) %in% "asian"),
+        "Black/AA" = ~qwraps2::perc_n(na.omit(poster.recent.race) %in% "black or african american"),
+        "Hispanic" = ~qwraps2::perc_n(na.omit(poster.recent.race) %in% "hispanic"),
+        "Other" = ~qwraps2::perc_n(na.omit(poster.recent.race) %in% "other"),
+        "White" = ~qwraps2::perc_n(na.omit(poster.recent.race) %in% "white"))
+)
+
+print(summary_table(recent.data.raw, summary_statistics),
+      rtitle = "Behavior Sample", 
+      align = "lc")
+
+```
+

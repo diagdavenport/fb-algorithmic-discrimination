@@ -3,6 +3,8 @@ title: "Facebook Results Memo"
 author: "ddd"
 date: "8/27/2020"
 output: pdf_document
+knit: (function(inputFile, encoding) {
+  rmarkdown::render(inputFile, encoding = encoding, output_dir = "Markdown PDFs") })
 ---
 
 ```{r setup, include=FALSE}
