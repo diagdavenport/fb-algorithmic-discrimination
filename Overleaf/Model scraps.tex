@@ -1,0 +1,15 @@
+
+%We will index the behavior that results absent an algorithm by $h$, in the presence of the oracle by $o$ and in the presence of the empirical algorithm by $m$; we will call these ranking rules. For a post $i$ seen by user $j$, it will be useful to define the bias under various regimes. We define $C_{ijR}^g$ - the rate at which she clicks the post given ranking rule $R$ and if the post had been written by own group $g=1$ or outgroup $g=0$. We will define the bias of a particular ranking rule for this post to be $\beta_{ij}^R = 1 - \frac{C_{ijR}^1}{C_{ijR}^0}$, the difference in click rates if it were produced by the in-group vs out-group.
+
+%It will be useful to study an (unachievable) ideal algorithm, which we call the oracle. Suppose there is more than enough data so that for each post $i$ the algorithm can estimate $c_{ij}$. Then this algorithm would rank posts by $c_{ij}$. We will call this algorithm's ranking $r^c(i,j)$ and will write $r^c_{ij}$ as the ranking induced by this algorithm.  
+
+%As such an option gets selected on with probability $$ (1-s)^{r(i)}c_{ij}$$. So lower ranked content naturally gets clicked on less. The user themselves determines the clicks $c_{ij}$. The algorithm, however, determines the ranks, so even though the user decides the algorithm has room to influence what the user effectively clicks on through the ranking.  These effects are increasingly first order as the amount of content gets extremely large. An algorithm has room to shape what we do because we do not consider all possible content. In this sense, the algorithm here shapes our choice set. 
+
+
+
+%The index $i$ also reflects a natural ordering of content so that, absent an algorithm, people see option $i=1$ then $i=2$ and so on. For example, in the Facebook NewsFeed setting, each option is a post, $i$ could index age of post so that the default ordering (absent an algorithm) could be newest posts first. In the PYMK setting, each option is a potential new friend, $i$ could index alphabetical order so that possible new friends are ordered like any list of people. 
+
+
+
+
+%Now of course this algorithm is clearly unachievable - we do not have click data on a post until it has been presented to the user. But at that point we do not need the algorithm. 
