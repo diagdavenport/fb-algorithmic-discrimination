@@ -42,7 +42,7 @@ m.newsfeed.df.all <- read.csv("Temp/Clean US Data NF.csv")
 
 m.pymk.df.all <- read.csv("Temp/Clean US Data PYMK.csv")
 
-m.qual.df.all <- read.csv("Temp/Clean qualtrics data.csv")
+m.qual.df.all <- read.csv("Temp/Clean US qualtrics data.csv")
 
 ```
 
@@ -450,6 +450,22 @@ ggplot(l.dat, aes(x=factor(connect.group), fill = race.in.group, y=rate)) +
                     labels=c("11-20","21-30", "31-40", "41-50", "51-60", "Top 10"))
 
 dev.copy(jpeg,'Output/Graphs/Audit/Misranking relative to expectation/Mutual friends expectation/US PYMK by mutual friend ranking.jpg')
+dev.off()
+
+l.dat <- m.pymk.df.all %>% group_by(race.in.group, norm.quartile) %>% dplyr::summarise(rate = mean(connect.misrank, na.rm = T), sd = sd(connect.misrank, na.rm = T), n= n()) 
+
+l.dat$ci <- (l.dat$sd/sqrt(l.dat$n))*1.96
+pd <- position_dodge(0.1)
+
+ggplot(l.dat, aes(x=norm.quartile, fill = race.in.group, y=rate)) + 
+  geom_bar(stat="identity", position="dodge", aes(fill = race.in.group)) + 
+    geom_errorbar(aes(ymin=rate-ci, ymax=rate+ci), colour="black", width=.1, position=position_dodge(.9)) + labs(title = "Ranking group errors") + ylab("Mean ranking boost above mutual friend rank") + 
+  scale_fill_manual(values=c("#CC79A7", "#009E73"), 
+                       name="Poster Identity",
+                       breaks=c("FALSE", "TRUE"),
+                       labels=c("Outgroup", "Ingroup"))
+
+dev.copy(jpeg,'Output/Graphs/Audit/Misranking relative to expectation/Mutual friends expectation/US PYMK by norm pref.jpg')
 dev.off()
 ```
 
@@ -1215,6 +1231,14 @@ ggplot(m.pymk.df.all %>% filter(pct_friend_rank <= 60), aes(x=pct_friend_rank, p
 dev.copy(jpeg,'Output/Graphs/Audit/Heatmaps/US PYMK pct friends by pymk rank - smooth.jpg')
 dev.off()
 
+ggplot(m.newsfeed.df.all %>% filter(complete_time_rank <= 60), aes(x=complete_time_rank, nf.order)) + stat_density_2d(
+  geom = "raster",
+  aes(fill = after_stat(density)),
+  contour = FALSE
+) + scale_fill_viridis_c()  + scale_x_reverse() + scale_y_reverse()
+
+dev.copy(jpeg,'Output/Graphs/Audit/Heatmaps/US NF chron rank by nf rank - smooth.jpg')
+dev.off()
 ```
 
 ```{r Raw Likert Panel - NF}
