@@ -213,6 +213,10 @@ Central to our model is the idea that behavioral bias by humans creates algorith
 
 Note that subjects were not made aware that this study was about in-group biases or race, and the exact data being recorded by the enumerator was unknown to the subject. For \StudyAboutSampleSize of our respondents, at the end of the survey we asked ``What do you think the purpose of this study is?'' Not one mentioned race, gender, or other indications of in-group biasas the subject. See Appendix ~\ref{app:studyabout} for more on these responses.\footnote{Similarly, RAs were not told the purpose of the study, though they were of course aware they were collecting information on race.}
 
+\subsection{Summary Statistics on Subjects}
+
+Table ~\ref{tab:usersumstats} shows summary statistics on our subject pool for: subjects for whom we collected Newsfeed information (N=?), subjects for whom we collected PYMK information (N=?), and subjects for whom we collected recent Newsfeed interactions (N$=$$\RecentInteractionsSampleSize).  We can see that.....
+
 % The key  items that are from the same race/ethnic group (in-group) versus a different one (out-group).  To study this, our survey design captures: 
 % \begin{itemize}
 %     \item \textbf{Subject Self-Reported Race/Ethnicity:} 
@@ -298,35 +302,42 @@ Note that subjects were not made aware that this study was about in-group biases
 
 \section{Results}
 
+Table~\ref{tab:sumstatsoutcomes} shows summary statistics and the data we collected on posts, friend recommendations, and interactions.  DESCRIBE.
+
+In Table X we can see that user's preference rankings have a wide range of mean and variance--- which could be due to the fact that posts differ across people or because each user was using and interpreting the likert scale ranking differently.  So rather than rely on the raw preference responses, which are hard to compare across subjects, instead we first create a normalized preference ranking within each subject, and then repord results using quartiles of this subject-normalized preference distribution.  Thus a post in quartile 4 would be amongst the most preferred posts and those in quartile 1 amongst the least preferred posts. And similarly for the PYMK familiarity rating. 
+
 We start with results for the most widely used algorithm on Facebook, the one each user encounters as soon as they log-in: Newsfeed. For starters it is useful to compare the algorithm's ranking to some alternative natural ranking, such as reverse chronological order---which is how Newsfeed was originally sorted until October 2009.\footnote{See \url{https://wallaroomedia.com/facebook-newsfeed-algorithm-history/}.} Using the data we collected on how long ago the post was created, we can compare what a reverse chronological ranking of the first 60 posts would have looked like how the algorithm ranked the posts. In Figure~\ref{fig:nftime} we show this, comparing the how a post would have been ranked in a ``natural'' reverse chronological ranking (shown along the x-axis, with the most recent posts furthest to the right) versus how the Newsfeed algorithm at the moment the user logged in ranked posts (as shown on the y-axis, with top-ranked posts at the top), which reportedly aims to show users posts they are most likely to be interested in.\footnote{url{https://www.facebook.com/notes/facebook-app/interesting-news-any-time-you-visit/10150286921207131/}.} We see that the algorithm does still tend to sort the most recent posts closer to the top, as indicated by the concentration of data points in the heat map in the upper right corner (most recent posts are disproportionately ranked at the top by the Newsfeed algorithm). But it is also clearly taking other things into consideration and doing \emph{something} beyond this natural rank ordering, since the data are clearly not concentrated along the 45 degree line in the heat map.
 
-\begin{figure}[h]
+%%% NF Heatmap Chron vs Algorithm %%%
+\begin{figure}[!h]
     \centering
     \includegraphics[scale=.8]{Output/Graphs/Audit/Heatmaps/US NF chron rank by nf rank - smooth.jpg}
     \caption{Caption}
     \label{fig:nftime}
 \end{figure}
 
-The bottom row of Figure~\ref{fig:nf_time_pref_group} shows that the Newsfeed algorithm is successfully inferring user preferences from their behavior to some degree. The difference here from Figure~\ref{fig:nftime} is that we now replicate the heat map relating reverse chronological order of the post and Newsfeed ranking, but now present this separately by quartile of the user's self-reported preferences. (Study subjects tended to use different range of the 1-7 preference scale, so we convert each user's self-reported preferences into user-specific quartiles and then aggregate those). \todo[inline]{(DD) Just to clarify, this isn't quite right. I think this says 1) we take the quartile \textit{within} user and 2) we do this because the ranges are different. What we do is different on both fronts. First, the range is pretty consistent across users, but the mean/variance is different (it isn't clear if that's because the posts differ across people or the scale usage differs across people). Second, we solve for this by creating a new score for each post which is $\Tilde{u}_{ij} = \frac{u_{ij} - \bar{u}_i}{\sigma(u_i)}$, termed "norm.pref" (basically the z-score within user), which "controls for" user-scale and user-post differences. Then we create quantiles over $\Tilde{u}_{ij}$ to get norm.percentile, norm.quartile, etc.} For the posts that the users are most excited about seeing (4th quartile), the Newsfeed algorithm does more to put recent posts at the top of the rank-ordering compared to posts that users are less excited to see (3rd, 2nd or 1st quartile of the user preference distribution).
+The bottom row of Figure~\ref{fig:nf_time_pref_group} shows that the Newsfeed algorithm is successfully inferring user preferences from their behavior to some degree. The difference here from Figure~\ref{fig:nftime} is that we now replicate the heat map relating reverse chronological order of the post and Newsfeed ranking, but now present this separately by quartile of the user's self-reported preferences.  For the posts that the users are most excited about seeing (4th quartile), the Newsfeed algorithm does more to put recent posts at the top of the rank-ordering compared to posts that users are less excited to see (3rd, 2nd or 1st quartile of the user preference distribution).
 
-\begin{figure}[h]
+%%% NF 3 x 5 Heatmap %%%
+\begin{figure}[!h]
     \centering
-    \includegraphics[scale=0.5]{Output/Graphs/Audit/Heatmaps/India NF chron rank by nf rank by norm quartile - smooth.jpg}
+    \includegraphics[scale=1]{Output/Graphs/Audit/Heatmaps/US NF chron rank by nf rank by norm quartile - smooth.jpg}
     \caption{Caption}
     \label{fig:nf_time_pref_group}
 \end{figure}
 
-\begin{figure}[h]
+%%% NF CDF Preferences %%%
+\begin{figure}[!h]
     \centering
     \includegraphics[scale=0.5]{Output/Graphs/Audit/Stated preferences/US NF cdf norm preferences by ingroup.jpg}
     \caption{Caption}
     \label{fig:prefcdf}
 \end{figure}
 
-
-\begin{figure}[h]
+%%% NF Ranking Boost by Quartile/Group %%%
+\begin{figure}[!h]
     \centering
-    \includegraphics[scale=0.5]{Output/Graphs/Audit/Misranking relative to expectation/Chronological expectation/US NF by norm preference.jpg}
+    \includegraphics[scale=0.75]{Output/Graphs/Audit/Misranking relative to expectation/Chronological expectation/US NF by norm preference.jpg}
     \caption{Caption}
     \label{fig:rankabovetime}
 \end{figure}
@@ -337,9 +348,18 @@ This evidence of out-group bias with the Newsfeed algorithm holds after conditio
 
 Figure~\ref{fig:rankabovetime} quantifies the out-group bias in the Newsfeed rankings and helps give some sense of magnitude. Along the x-axis we show each post's user preference quartile. The y-axis shows within each quartile, the average difference between the actual Newsfeed algorithm rank-ordering for those posts relative to the natural ranking (reverse chronological order). Consider for example the least-desired posts in preference quartile 1; the average in-group posts are ranked 2 slots higher than out-group posts. Another way to get a sense of magnitude here is that the least-desired in-group posts in quartile 1 have about the same average rank-ordering by the Newsfeed algorithm as out-group posts in the next-higher user-preference quartile 2.
 
-\begin{figure}[h]
+%%% 3 x 5 NF Heatmap %%%
+\begin{figure}[!h]
     \centering
-    \includegraphics[scale=1]{Output/Graphs/Audit/Misranking relative to expectation/Mutual friends expectation/Output/Graphs/Audit/Misranking relative to expectation/Mutual friends expectation/US PYMK by norm pref.jpg}
+    \includegraphics[scale=1]{Output/Graphs/Audit/Heatmaps/US PYMK pct friends by pymk rank by norm quartile - smooth.jpg}
+    \caption{Caption}
+    \label{fig:nf_time_pref_group}
+\end{figure}
+
+%%% NF Ranking Boost by Quartile/Group %%%
+\begin{figure}[!h]
+    \centering
+    \includegraphics[scale=1]{Output/Graphs/Audit/Misranking relative to expectation/Mutual friends expectation/US PYMK by norm pref.jpg}
     \caption{Caption}
     \label{fig:pymk_time_pref_group}
 \end{figure}
