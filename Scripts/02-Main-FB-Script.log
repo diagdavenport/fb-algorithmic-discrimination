@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  6 JAN 2021 23:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  8 JAN 2021 08:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2367,7 +2367,7 @@ Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
 (pdftex.def)             Requested size: 444.66016pt x 303.13176pt.
 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
 wn PDFs/02-Main-FB-Script_files/figure-latex/excess mass pymk-1.pdf, id=1139, 4
-45.665pt x 309.155pt>
+66.74374pt x 309.155pt>
 File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
 arkdown PDFs/02-Main-FB-Script_files/figure-latex/excess mass pymk-1.pdf Graphi
 c file (type pdf)
@@ -2376,7 +2376,7 @@ rkdown PDFs/02-Main-FB-Script_files/figure-latex/excess mass pymk-1.pdf>
 Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
 /Lockdown/Scripts/Markdown PDFs/02-Main-FB-Script_files/figure-latex/excess mas
 s pymk-1.pdf  used on input line 814.
-(pdftex.def)             Requested size: 445.6707pt x 309.15895pt.
+(pdftex.def)             Requested size: 466.76396pt x 309.16838pt.
 [58 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
 rkdown PDFs/02-Main-FB-Script_files/figure-latex/pymk rankings by mutual friend
 s and ingroup-2.pdf> </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lo
@@ -2401,7 +2401,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1052.
 Here is how much of TeX's memory you used:
  12476 strings out of 492649
  238816 string characters out of 6129622
- 312684 words of memory out of 5000000
+ 312687 words of memory out of 5000000
  16079 multiletter control sequences out of 15000+600000
  53550 words of font info for 74 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -2420,7 +2420,7 @@ ype1/public/lm/lmr7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/
 lm/lmri10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmsy10.
 pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/l
 ocal/texlive/2018/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on 02-Main-FB-Script.pdf (63 pages, 4034706 bytes).
+Output written on 02-Main-FB-Script.pdf (63 pages, 4038228 bytes).
 PDF statistics:
  1265 PDF objects out of 1440 (max. 8388607)
  844 compressed objects within 9 object streams

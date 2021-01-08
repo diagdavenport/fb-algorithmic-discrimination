@@ -56,7 +56,7 @@ m.newsfeed.df.all <- m.newsfeed.df.all %>%
   m.newsfeed.df.all <- m.newsfeed.df.all %>% filter(human == 1)
 
 m.newsfeed.df.all <- m.newsfeed.df.all %>%
-    group_by(primary.id, RA_id) %>%
+    group_by(primary.id) %>%
     mutate(time_rank = order(order(tenure.units, -post.tenure, decreasing = T)))
 
 ```
@@ -64,14 +64,14 @@ m.newsfeed.df.all <- m.newsfeed.df.all %>%
 ```{r helper vars for pymk}
 
 m.pymk.df.all <- m.pymk.df.all %>%
-    group_by(primary.id, RA_id) %>%
+    group_by(primary.id) %>%
     mutate(friend_rank = order(order(mutual.friends, decreasing = T)))
 
 m.pymk.df.all <- m.pymk.df.all %>%
-    group_by(primary.id, RA_id) %>%
+    group_by(primary.id) %>%
     mutate(pct_friend_rank = order(order(mutual.friends/total_friends, decreasing = T)))
 
-m.pymk.df.all <- m.pymk.df.all %>% group_by(primary.id, RA_id) %>%
+m.pymk.df.all <- m.pymk.df.all %>% group_by(primary.id) %>%
   mutate(new.rank = dense_rank(pymk.order))
 
 ```
@@ -421,14 +421,14 @@ stargazer(x, title = "Correlations 2",
 ```{r pymk misranking pegged to mutual friends}
 
 m.pymk.df.all <- m.pymk.df.all %>%
-    group_by(primary.id, RA_id) %>%
+    group_by(primary.id) %>%
     mutate(connectedness_rank = order(order(mutual.friends, decreasing = T)))
 
-m.pymk.df.all$connect.misrank <- m.pymk.df.all$connectedness_rank - m.pymk.df.all$pymk.order
+m.pymk.df.all$connect.misrank <- m.pymk.df.all$pct_friend_rank - m.pymk.df.all$pymk.order
 
-m.pymk.df.all <- m.pymk.df.all %>% filter(connectedness_rank <= 60)
+m.pymk.df.all <- m.pymk.df.all %>% filter(pct_friend_rank <= 60)
 
-m.pymk.df.all$connect.group <- trunc(m.pymk.df.all$connectedness_rank/10)
+m.pymk.df.all$connect.group <- trunc(m.pymk.df.all$pct_friend_rank/10)
 m.pymk.df.all$connect.group <- ifelse(m.pymk.df.all$connect.group == 6,
                                            5,
                                            m.pymk.df.all$connect.group)
@@ -440,7 +440,7 @@ pd <- position_dodge(0.1)
 
 ggplot(l.dat, aes(x=factor(connect.group), fill = race.in.group, y=rate)) + 
   geom_bar(stat="identity", position="dodge", aes(fill = race.in.group)) + 
-    geom_errorbar(aes(ymin=rate-ci, ymax=rate+ci), colour="black", width=.1, position=position_dodge(.9)) + labs(title = "Ranking group errors") + ylab("Mean ranking boost above mutual friend rank") + 
+    geom_errorbar(aes(ymin=rate-ci, ymax=rate+ci), colour="black", width=.1, position=position_dodge(.9)) + labs(title = "Ranking group errors") + ylab("Mean ranking boost above mutual friend pct rank") + 
   scale_fill_manual(values=c("#CC79A7", "#009E73"), 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
@@ -449,7 +449,7 @@ ggplot(l.dat, aes(x=factor(connect.group), fill = race.in.group, y=rate)) +
                    breaks = c("1","2","3","4","5","0"),
                     labels=c("11-20","21-30", "31-40", "41-50", "51-60", "Top 10"))
 
-dev.copy(jpeg,'Output/Graphs/Audit/Misranking relative to expectation/Mutual friends expectation/US PYMK by mutual friend ranking.jpg')
+dev.copy(jpeg,'Output/Graphs/Audit/Misranking relative to expectation/Mutual friends expectation/US PYMK by mutual friend pct ranking.jpg')
 dev.off()
 
 l.dat <- m.pymk.df.all %>% group_by(race.in.group, norm.quartile) %>% dplyr::summarise(rate = mean(connect.misrank, na.rm = T), sd = sd(connect.misrank, na.rm = T), n= n()) 
@@ -459,7 +459,7 @@ pd <- position_dodge(0.1)
 
 ggplot(l.dat, aes(x=norm.quartile, fill = race.in.group, y=rate)) + 
   geom_bar(stat="identity", position="dodge", aes(fill = race.in.group)) + 
-    geom_errorbar(aes(ymin=rate-ci, ymax=rate+ci), colour="black", width=.1, position=position_dodge(.9)) + labs(title = "Ranking group errors") + ylab("Mean ranking boost above mutual friend rank") + 
+    geom_errorbar(aes(ymin=rate-ci, ymax=rate+ci), colour="black", width=.1, position=position_dodge(.9)) + labs(title = "Ranking group errors") + ylab("Mean ranking boost above mutual friend pct rank") + 
   scale_fill_manual(values=c("#CC79A7", "#009E73"), 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
