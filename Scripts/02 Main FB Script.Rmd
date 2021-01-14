@@ -878,6 +878,8 @@ m.newsfeed.df.all$new.order4 <- ifelse(m.newsfeed.df.all$new.order4 == 4, 3, m.n
 m.newsfeed.df.all$chron.order4 <- trunc(m.newsfeed.df.all$complete_time_rank/15)
 m.newsfeed.df.all$chron.order4 <- ifelse(m.newsfeed.df.all$chron.order4 == 4, 3, m.newsfeed.df.all$chron.order4)
 
+m.newsfeed.df.all$newquartile4 <- 3 - (m.newsfeed.df.all$norm.quartile - 1)
+
 l.dat <- m.newsfeed.df.all %>% group_by(chron.order4, new.order4, norm.quartile) %>% dplyr::summarise(freq = n())
 
 l.dat$norm.quartile <- ifelse(l.dat$chron.order4 == 0, l.dat$norm.quartile, 99)
@@ -897,7 +899,6 @@ ggplot(as.data.frame(l.dat),
 
 dev.copy(jpeg,'Output/Graphs/Audit/Sankey flows/US NF chronology to actual by norm preference.jpg')
 dev.off()
-
 
 l.dat <- m.newsfeed.df.all %>% group_by(norm.quartile, new.order4, race.in.group) %>% dplyr::summarise(freq = n())
 
@@ -933,6 +934,40 @@ ggplot(as.data.frame(l.dat),
   scale_fill_manual(values=c("red", "blue", "snow"))
 
 dev.copy(jpeg,'Output/Graphs/Audit/Sankey flows/US NF chronology to actual by ingroup.jpg')
+dev.off()
+
+l.dat <- m.newsfeed.df.all %>% group_by(newquartile4, new.order4) %>% dplyr::summarise(freq = n())
+
+l.dat$pct <- l.dat$freq/nrow(m.newsfeed.df.all)
+
+ggplot(as.data.frame(l.dat),
+       aes(y = pct, axis1 = newquartile4, axis2 = new.order4)) +
+  geom_alluvium(aes(fill = factor(newquartile4)), width = 1/12) +
+  geom_stratum(width = 1/12, fill = "black", color = "grey") +
+  geom_label(stat = "stratum", aes(label = after_stat(stratum))) +
+  scale_x_discrete(limits = c("Ranking Group*(-1)", "Actual NF Ranking"), expand = c(.05, .05)) + theme(legend.position="bottom")
+
+dev.copy(jpeg,'Output/Graphs/Audit/Sankey flows/US NF norm quartile to actual.jpg')
+dev.off()
+
+
+
+l.dat <- m.newsfeed.df.all %>% group_by(chron.order4, new.order4) %>% dplyr::summarise(freq = n())
+
+#l.dat$race.in.group <- ifelse(l.dat$chron.order4 == 0, 1, 99)
+
+l.dat$pct <- l.dat$freq/nrow(m.newsfeed.df.all)
+
+#l.dat$pct <- ifelse(l.dat$chron.order4 != 0, 0, l.dat$pct)
+
+ggplot(as.data.frame(l.dat),
+       aes(y = pct, axis1 = chron.order4, axis2 = new.order4)) +
+  geom_alluvium(aes(fill = factor(chron.order4)), width = 1/12) +
+  geom_stratum(width = 1/12, fill = "black", color = "grey") +
+  geom_label(stat = "stratum", aes(label = after_stat(stratum))) +
+  scale_x_discrete(limits = c("Chronological Group", "Actual NF Ranking"), expand = c(.05, .05)) + theme(legend.position="bottom")
+
+dev.copy(jpeg,'Output/Graphs/Audit/Sankey flows/US NF chronology to actual.jpg')
 dev.off()
 
 l.dat <- m.newsfeed.df.all %>% group_by(chron.order4, new.order4) %>% dplyr::summarise(freq = n())
@@ -1235,10 +1270,110 @@ ggplot(m.newsfeed.df.all %>% filter(complete_time_rank <= 60), aes(x=complete_ti
   geom = "raster",
   aes(fill = after_stat(density)),
   contour = FALSE
-) + scale_fill_viridis_c()  + scale_x_reverse() + scale_y_reverse()
+) + scale_x_reverse() + scale_y_reverse() 
 
 dev.copy(jpeg,'Output/Graphs/Audit/Heatmaps/US NF chron rank by nf rank - smooth.jpg')
 dev.off()
+
+ratio.by.combo <- m.newsfeed.df.all  %>% filter(complete_time_rank <= 60) %>%
+  group_by(complete_time_rank, nf.order, race.in.group) %>% dplyr::summarise(count = n()) %>% pivot_wider(names_from = race.in.group, values_from = count, values_fill = 0)
+
+ratio.by.combo$`FALSE` <- ratio.by.combo$`FALSE` + 0.1
+ratio.by.combo$`TRUE` <- ratio.by.combo$`TRUE` + 0.1
+
+ratio.by.combo$pctFALSE <- ratio.by.combo$`FALSE`/sum(ratio.by.combo$`FALSE`)
+ratio.by.combo$pctTRUE <- ratio.by.combo$`TRUE`/sum(ratio.by.combo$`TRUE`)
+
+ratio.by.combo$excess <- (ratio.by.combo$pctTRUE - ratio.by.combo$pctFALSE)/ratio.by.combo$pctFALSE
+ratio.by.combo$delta <- (ratio.by.combo$pctTRUE - ratio.by.combo$pctFALSE)
+
+ratio.by.combo$ratio.round <- ratio.by.combo$excess
+ratio.by.combo$ratio.round <- ifelse(ratio.by.combo$ratio.round >= 10,
+                                     10,
+                                     ratio.by.combo$ratio.round)
+
+ratio.by.combo.expanded <- ratio.by.combo[rep(row.names(ratio.by.combo), ratio.by.combo$ratio.round ),]
+
+ggplot(ratio.by.combo.expanded[1:500,], aes(x=complete_time_rank, nf.order)) + stat_density_2d(
+  geom = "raster",
+  aes(fill = after_stat(density)),
+  contour = FALSE
+) + scale_x_reverse() + scale_y_reverse()
+
+ggplot(ratio.by.combo, aes(complete_time_rank, nf.order, fill= ratio.round)) + 
+  geom_tile(aes(fill = ratio.round)) + scale_y_reverse() + scale_x_reverse() + 
+  scale_fill_gradient(name = "Over-representation multiple",
+                      low = "#FFFFFF",
+                      high = "#012345")
+
+ggplot(ratio.by.combo, aes(complete_time_rank, nf.order, fill= ratio.round)) + 
+  geom_tile(aes(fill = ratio.round)) + scale_y_reverse() + scale_x_reverse()
+
+ggplot(ratio.by.combo, aes(complete_time_rank, nf.order, fill= delta)) + 
+  geom_tile(aes(fill = delta)) + scale_y_reverse() + scale_x_reverse()
+
+
+
+
+
+ratio.by.combo <- m.newsfeed.df.all  %>% filter(complete_time_rank <= 60) %>%
+  group_by(complete_time_rank, nf.order.round, race.in.group) %>% dplyr::summarise(count = n()) %>% pivot_wider(names_from = race.in.group, values_from = count, values_fill = 0)
+
+ratio.by.combo$`FALSE` <- ratio.by.combo$`FALSE` + 0.1
+ratio.by.combo$`TRUE` <- ratio.by.combo$`TRUE` + 0.1
+
+ratio.by.combo$pctFALSE <- ratio.by.combo$`FALSE`/sum(ratio.by.combo$`FALSE`)
+ratio.by.combo$pctTRUE <- ratio.by.combo$`TRUE`/sum(ratio.by.combo$`TRUE`)
+
+ratio.by.combo$excess <- (ratio.by.combo$pctTRUE - ratio.by.combo$pctFALSE)/ratio.by.combo$pctFALSE
+ratio.by.combo$delta <- (ratio.by.combo$pctTRUE - ratio.by.combo$pctFALSE)
+
+ratio.by.combo$ratio.round <- ratio.by.combo$excess
+ratio.by.combo$ratio.round <- ifelse(ratio.by.combo$ratio.round >= 10,
+                                     10,
+                                     ratio.by.combo$ratio.round)
+
+ratio.by.combo.expanded <- ratio.by.combo[rep(row.names(ratio.by.combo), ratio.by.combo$ratio.round ),]
+
+ggplot(ratio.by.combo, aes(complete_time_rank, nf.order.round, fill= ratio.round)) + 
+  geom_tile(aes(fill = ratio.round)) + scale_y_reverse() + scale_x_reverse() + 
+  scale_fill_gradient(name = "Over-representation multiple",
+                      low = "#FFFFFF",
+                      high = "#012345")
+
+ggplot(ratio.by.combo, aes(complete_time_rank, nf.order.round, fill= ratio.round)) + 
+  geom_tile(aes(fill = ratio.round)) + scale_y_reverse() + scale_x_reverse()
+
+ggplot(ratio.by.combo, aes(complete_time_rank, nf.order.round, fill= delta)) + 
+  geom_tile(aes(fill = delta)) + scale_y_reverse() + scale_x_reverse()
+
+
+
+ggplot(m.newsfeed.df.all, aes(x=norm.pctle, nf.order)) + stat_density_2d(
+  geom = "raster",
+  aes(fill = after_stat(density)),
+  contour = F
+) + scale_fill_viridis_c() + scale_y_reverse()
+
+dev.copy(jpeg,'Output/Graphs/Audit/Heatmaps/US NF norm pref rank by nf rank - smooth.jpg')
+dev.off()
+
+m.newsfeed.df.all$holder <- m.newsfeed.df.all$nf.order
+
+ggplot(m.newsfeed.df.all %>% filter(holder %in% 55:60), aes(x=holder, nf.order)) + stat_density_2d(
+  geom = "raster",
+  aes(fill = after_stat(density)),
+  contour = FALSE
+) + scale_fill_viridis_c() + facet_grid(race.in.group~.)  + scale_x_reverse() + scale_y_reverse()
+
+
+m.newsfeed.df.all$holder <- 1
+
+ggplot(m.newsfeed.df.all, aes(factor(holder), nf.order)) + stat_density(aes(fill = after_stat(density)), geom = "raster", position = "identity") + facet_grid(.~race.in.group, scales = "free_y") + scale_y_reverse()
+
+dev.copy(jpeg,'Output/Graphs/Audit/Heatmaps/US NF nf rank by ingroup - smooth.jpg')
+dev.off()
+
 ```
 
 ```{r Raw Likert Panel - NF}
@@ -1463,6 +1598,8 @@ dev.off()
 ```{r Distribution of algo rank by group}
 # 
 # mu <- ddply(m.newsfeed.df.all, "race.in.group", summarise, grp.mean=mean(nf.order, na.rm = T), grp.var = var(nf.order, na.rm = T))
+
+
 # 
 # tl <- ggplot(m.newsfeed.df.all, aes(x=nf.order, color=race.in.group)) +
 #   geom_density(aes(linetype=race.in.group, color="black")) + 
@@ -2125,48 +2262,82 @@ t.test(in.dist$norm.pref, out.dist$norm.pref)
 
 ```{r Recent Activity attempt 2}
 
+dat <- m.newsfeed.df.all %>% group_by(preference, race.in.group) %>% dplyr::summarise(n= n()) %>%
+  pivot_wider(names_from = race.in.group, values_from = n)
+
+dat$pctFALSE <- dat$`FALSE`/sum(dat$`FALSE`)
+dat$pctTRUE <- dat$`TRUE`/sum(dat$`TRUE`)
+
+dat$excess <- (dat$pctTRUE - dat$pctFALSE)/dat$pctFALSE
+
+dat$Tsd <- dat$pctTRUE*(1-dat$pctTRUE)
+dat$Fsd <- dat$pctFALSE*(1-dat$pctFALSE)
+
+dat$ci <- ((dat$Tsd/sqrt(dat$`TRUE`)) + (dat$Fsd/sqrt(dat$`FALSE`)))*1.96
+
+
 m.recent.df <- read.csv("Temp/Clean US Data Recent.csv")
 m.recent.df <- m.recent.df %>% filter(human == 1)
 
-recent.summ.all <- m.recent.df %>% dplyr::summarise(prob.same.race = mean(race.in.group, na.rm = T), sd = sd(race.in.group, na.rm = T), n= n())
-recent.summ.all$ci <- (recent.summ.all$sd/sqrt(recent.summ.all$n))*1.96
-recent.summ.all$source <- "All Recent Interactions"
-recent.summ.all$group <- -1
+# recent.summ.all <- m.recent.df %>% dplyr::summarise(prob.same.race = mean(race.in.group, na.rm = T), sd = sd(race.in.group, na.rm = T), n= n())
+# recent.summ.all$ci <- (recent.summ.all$sd/sqrt(recent.summ.all$n))*1.96
+# recent.summ.all$source <- "All Recent Interactions"
+# recent.summ.all$group <- -1
+
+dat <- m.recent.df %>% filter(react == 1) %>% group_by(race.in.group) %>% dplyr::summarise(n= n()) %>%
+  pivot_wider(names_from = race.in.group, values_from = n)
+
+dat$pctFALSE <- dat$`FALSE`/sum(dat$`FALSE`)
+dat$pctTRUE <- dat$`TRUE`/sum(dat$`TRUE`)
+
+dat$excess <- (dat$pctTRUE - dat$pctFALSE)/dat$pctFALSE
+ 
+
+recent.summ.i <- m.recent.df %>% dplyr::summarise(prob.same.race = mean(race.in.group, na.rm = T), sd = sd(race.in.group, na.rm = T), n= n())
+recent.summ.i$ci <- (recent.summ.i$sd/sqrt(recent.summ.i$n))*1.96
+recent.summ.i$source <- "Interactions"
+recent.summ.i$group <- -3
 
 recent.summ.r <- m.recent.df %>% filter(react == 1) %>% dplyr::summarise(prob.same.race = mean(race.in.group, na.rm = T), sd = sd(race.in.group, na.rm = T), n= n())
 recent.summ.r$ci <- (recent.summ.r$sd/sqrt(recent.summ.r$n))*1.96
-recent.summ.r$source <- "Recent Reactions"
-recent.summ.r$group <- -1
+recent.summ.r$source <- "Interactions"
+recent.summ.r$group <- -2
 
 recent.summ.c <- m.recent.df %>% filter(comment == 1) %>% dplyr::summarise(prob.same.race = mean(race.in.group, na.rm = T), sd = sd(race.in.group, na.rm = T), n= n())
 recent.summ.c$ci <- (recent.summ.c$sd/sqrt(recent.summ.c$n))*1.96
-recent.summ.c$source <- "Recent Comments"
+recent.summ.c$source <- "Interactions"
 recent.summ.c$group <- -1
 
 m.newsfeed.df.all <- dplyr::ungroup(m.newsfeed.df.all)
 
 base.rate <- mean((m.newsfeed.df.all %>%
   filter(source %in% c("CDR 2", "CDR 4")) %>% 
-  select(race.in.group))$race.in.group, na.rm = T)
+  dplyr::select(race.in.group))$race.in.group, na.rm = T)
 
-nf.1 <- m.newsfeed.df.all %>% filter(source %in% c("CDR 2", "CDR 4")) %>%
-  group_by(nf.order.round) %>% 
+nf.5 <- m.newsfeed.df.all %>% filter(source %in% c("CDR 2", "CDR 4")) %>%
+  filter(nf.order <= 5) %>% 
   dplyr::summarise(prob.same.race = mean(race.in.group, na.rm = T), sd = sd(race.in.group, na.rm = T), n= n()) %>%
-  dplyr::rename(group = nf.order.round)
-nf.1$ci <- (nf.1$sd/sqrt(nf.1$n))*1.96
-nf.1$source <- "Actual Newsfeed Ranking"
+  dplyr::mutate(group = 0)
+nf.5$ci <- (nf.5$sd/sqrt(nf.5$n))*1.96
+nf.5$source <- "Actual Newsfeed Ranking"
 
-nf.2 <- m.newsfeed.df.all %>% filter(source %in% c("CDR 2", "CDR 4")) %>%
-  group_by(norm.sextile) %>% 
+nf.10 <- m.newsfeed.df.all %>% filter(source %in% c("CDR 2", "CDR 4")) %>%
+  filter(nf.order <= 10) %>% 
   dplyr::summarise(prob.same.race = mean(race.in.group, na.rm = T), sd = sd(race.in.group, na.rm = T), n= n()) %>%
-  dplyr::rename(group = norm.sextile)
-nf.2$ci <- (nf.2$sd/sqrt(nf.2$n))*1.96
-nf.2$source <- "Stated Preference Ranking"
-nf.2$group <- nf.2$group - 1 # jsut to standardize with the nf groups
+  dplyr::mutate(group = 1)
+nf.10$ci <- (nf.10$sd/sqrt(nf.10$n))*1.96
+nf.10$source <- "Actual Newsfeed Ranking"
 
-l.dat <- rbind(nf.1, nf.2, recent.summ.all, recent.summ.r, recent.summ.c)
+nf.20 <- m.newsfeed.df.all %>% filter(source %in% c("CDR 2", "CDR 4")) %>%
+  filter(nf.order <= 20) %>% 
+  dplyr::summarise(prob.same.race = mean(race.in.group, na.rm = T), sd = sd(race.in.group, na.rm = T), n= n()) %>%
+  dplyr::mutate(group = 2)
+nf.20$ci <- (nf.20$sd/sqrt(nf.20$n))*1.96
+nf.20$source <- "Actual Newsfeed Ranking"
 
-l.dat$prob.same.race <- l.dat$prob.same.race - base.rate
+l.dat <- rbind(nf.5, nf.10, nf.20, recent.summ.r, recent.summ.c, recent.summ.i)
+
+l.dat$prob.same.race.rate <- (l.dat$prob.same.race/base.rate) - 1
 
 # l.dat$source <- factor(l.dat$source,levels = c("All posts",
 #                                                "Top 3 quartiles",
@@ -2180,15 +2351,28 @@ l.dat$prob.same.race <- l.dat$prob.same.race - base.rate
 
 pd <- position_dodge(0.6)
 
-ggplot(l.dat, aes(x = factor(group), y=prob.same.race, fill = source)) + 
+ggplot(l.dat, aes(x = factor(group), y=prob.same.race.rate, fill = source)) + 
     geom_bar(stat="identity", position=pd) + scale_fill_brewer(palette="Paired")+
-  geom_errorbar(aes(ymin=prob.same.race-ci, ymax=prob.same.race+ci), width=.1, position=pd) + labs(title = "Ingroup preferences in interactions") + ylab("Share of posts that are in-group \nminus base rate") + 
+  geom_errorbar(aes(ymin=prob.same.race.rate-ci, ymax=prob.same.race.rate+ci), width=.1, position=pd) + labs(title = "Ingroup preferences in interactions") + ylab("Share of posts that are in-group \ndivided by base rate") + 
   scale_x_discrete(name ="Ranking Group", 
-                   breaks = c("1","2","3","4","5","0"),
-                    labels=c("11-20","21-30", "31-40", "41-50", "51-60", "Top 10"))
+                   breaks = c("1","2","0", "-1", "-2", "-3"),
+                    labels=c("Top 10", "Top 20", "Top 5", "Comments", "React", "All"))
+
 
 dev.copy(jpeg,'Output/Graphs/Audit/Interactions/US preferences reactions and actual rankings above base rate.jpg')
 dev.off()
+
+l.dat$prob.same.race.diff <- (l.dat$prob.same.race-base.rate)
+
+pd <- position_dodge(0.6)
+
+ggplot(l.dat, aes(x = factor(group), y=prob.same.race.diff, fill = source)) + 
+    geom_bar(stat="identity", position=pd) + scale_fill_brewer(palette="Paired")+
+  geom_errorbar(aes(ymin=prob.same.race.diff-ci, ymax=prob.same.race.diff+ci), width=.1, position=pd) + labs(title = "Ingroup preferences in interactions") + ylab("Share of posts that are in-group \nminus base rate") + 
+  scale_x_discrete(name ="Ranking Group", 
+                   breaks = c("1","2","0", "-1"),
+                    labels=c("Top 10", "Top 20", "Top 5", "??"))
+
 
 #t.test((m.newsfeed.df2 %>% filter(nf.order <= 10))$race.in.group, m.recent.df$race.in.group)
 
