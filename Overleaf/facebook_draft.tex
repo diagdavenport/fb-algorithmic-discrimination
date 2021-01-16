@@ -215,7 +215,7 @@ Note that subjects were not made aware that this study was about in-group biases
 
 \subsection{Summary Statistics on Subjects}
 
-Table ~\ref{tab:usersumstats} shows summary statistics on our subject pool for: subjects for whom we collected Newsfeed information (N=?), subjects for whom we collected PYMK information (N=?), and subjects for whom we collected recent Newsfeed interactions (N$=$$\RecentInteractionsSampleSize).  We can see that.....
+Table ~\ref{tab:usersumstats} shows summary statistics on our subject pool for: subjects for whom we collected Newsfeed information (N=?), subjects for whom we collected PYMK information (N=?), and subjects for whom we collected recent Newsfeed interactions (N$=$\RecentInteractionsSampleSize).  We can see that.....
 
 % The key  items that are from the same race/ethnic group (in-group) versus a different one (out-group).  To study this, our survey design captures: 
 % \begin{itemize}
@@ -308,39 +308,12 @@ In Table X we can see that user's preference rankings have a wide range of mean 
 
 We start with results for the most widely used algorithm on Facebook, the one each user encounters as soon as they log-in: Newsfeed. For starters it is useful to compare the algorithm's ranking to some alternative natural ranking, such as reverse chronological order---which is how Newsfeed was originally sorted until October 2009.\footnote{See \url{https://wallaroomedia.com/facebook-newsfeed-algorithm-history/}.} Using the data we collected on how long ago the post was created, we can compare what a reverse chronological ranking of the first 60 posts would have looked like how the algorithm ranked the posts. In Figure~\ref{fig:nftime} we show this, comparing the how a post would have been ranked in a ``natural'' reverse chronological ranking (shown along the x-axis, with the most recent posts furthest to the right) versus how the Newsfeed algorithm at the moment the user logged in ranked posts (as shown on the y-axis, with top-ranked posts at the top), which reportedly aims to show users posts they are most likely to be interested in.\footnote{url{https://www.facebook.com/notes/facebook-app/interesting-news-any-time-you-visit/10150286921207131/}.} We see that the algorithm does still tend to sort the most recent posts closer to the top, as indicated by the concentration of data points in the heat map in the upper right corner (most recent posts are disproportionately ranked at the top by the Newsfeed algorithm). But it is also clearly taking other things into consideration and doing \emph{something} beyond this natural rank ordering, since the data are clearly not concentrated along the 45 degree line in the heat map.
 
-%%% NF Heatmap Chron vs Algorithm %%%
-\begin{figure}[!h]
-    \centering
-    \includegraphics[scale=.8]{Output/Graphs/Audit/Heatmaps/US NF chron rank by nf rank - smooth.jpg}
-    \caption{Caption}
-    \label{fig:nftime}
-\end{figure}
+
+
 
 The bottom row of Figure~\ref{fig:nf_time_pref_group} shows that the Newsfeed algorithm is successfully inferring user preferences from their behavior to some degree. The difference here from Figure~\ref{fig:nftime} is that we now replicate the heat map relating reverse chronological order of the post and Newsfeed ranking, but now present this separately by quartile of the user's self-reported preferences.  For the posts that the users are most excited about seeing (4th quartile), the Newsfeed algorithm does more to put recent posts at the top of the rank-ordering compared to posts that users are less excited to see (3rd, 2nd or 1st quartile of the user preference distribution).
 
-%%% NF 3 x 5 Heatmap %%%
-\begin{figure}[!h]
-    \centering
-    \includegraphics[scale=1]{Output/Graphs/Audit/Heatmaps/US NF chron rank by nf rank by norm quartile - smooth.jpg}
-    \caption{Caption}
-    \label{fig:nf_time_pref_group}
-\end{figure}
 
-%%% NF CDF Preferences %%%
-\begin{figure}[!h]
-    \centering
-    \includegraphics[scale=0.5]{Output/Graphs/Audit/Stated preferences/US NF cdf norm preferences by ingroup.jpg}
-    \caption{Caption}
-    \label{fig:prefcdf}
-\end{figure}
-
-%%% NF Ranking Boost by Quartile/Group %%%
-\begin{figure}[!h]
-    \centering
-    \includegraphics[scale=0.75]{Output/Graphs/Audit/Misranking relative to expectation/Chronological expectation/US NF by norm preference.jpg}
-    \caption{Caption}
-    \label{fig:rankabovetime}
-\end{figure}
 
 With this as background we can now see our main result in Figure~\ref{fig:nf_time_pref_group}, which is evidence of out-group bias that is clearly visible even in the raw data. The first row presents the results relating reverse chronological order of posts to Newsfeed ranking, overall and by user preference quartile, for out-group posts. The second row presents the same set of results for in-group posts. Overall, and at any given user-preference quartile we can see in the figure that the Newsfeed algorithm does more to put more recent posts at the top of the rank-ordering, or equivalently, a disproportionate share of posts ranked at the top of Newsfeed by the algorithm will be in-group rather than out-group.
 
@@ -348,21 +321,7 @@ This evidence of out-group bias with the Newsfeed algorithm holds after conditio
 
 Figure~\ref{fig:rankabovetime} quantifies the out-group bias in the Newsfeed rankings and helps give some sense of magnitude. Along the x-axis we show each post's user preference quartile. The y-axis shows within each quartile, the average difference between the actual Newsfeed algorithm rank-ordering for those posts relative to the natural ranking (reverse chronological order). Consider for example the least-desired posts in preference quartile 1; the average in-group posts are ranked 2 slots higher than out-group posts. Another way to get a sense of magnitude here is that the least-desired in-group posts in quartile 1 have about the same average rank-ordering by the Newsfeed algorithm as out-group posts in the next-higher user-preference quartile 2.
 
-%%% 3 x 5 NF Heatmap %%%
-\begin{figure}[!h]
-    \centering
-    \includegraphics[scale=1]{Output/Graphs/Audit/Heatmaps/US PYMK pct friends by pymk rank by norm quartile - smooth.jpg}
-    \caption{Caption}
-    \label{fig:nf_time_pref_group}
-\end{figure}
 
-%%% NF Ranking Boost by Quartile/Group %%%
-\begin{figure}[!h]
-    \centering
-    \includegraphics[scale=1]{Output/Graphs/Audit/Misranking relative to expectation/Mutual friends expectation/US PYMK by norm pref.jpg}
-    \caption{Caption}
-    \label{fig:pymk_time_pref_group}
-\end{figure}
 
 Figure~\ref{fig:pymk_time_pref_group} shows that there is no evidence of similar out-group bias in PYMK. Here we consider the ``natural'' ranking to be by proportion of the subject's friend that are shared with the recommended friend (i.e. number of mutual friends$/$number of subject's total friends). The lower right hand corner, is  Figure X is a heat map that shows a plausible natural ranking for PYMK recommendations (proportion of subject's friend that are shared with recommended friend) on the x-axis, and PYMK algorithmic rankings on the y-axis, overall (last column) and by user preference quartile (self-report of how well the user knows the recommended person), for all recommendations (bottom row) and separately for out-group recommendations (top row) and in-group recommendations (second row). The PYMK algorithm ranks recommendations that share more friends closer to the top (next to last column for quartile 4 compared to the other columns for quartiles 1, 2 and 3), but this is not clearly different for out-group versus in-group posts (comparing the top row to the second row within a given column). Figure Y groups posts by user knowledge quartile (x-axis), and shows that within each quartile, the average actual PYMK algorithm ranking (shown on the y-axis) is very similar for out-group versus in-group posts.
 
@@ -370,62 +329,9 @@ Why do we see evidence of out-group bias with the Newsfeed algorithm but not wit
 
 Our model not only gives us a way to understand the source of algorithmic bias, but also yields a prediction about the magnitude of bias in behavior that results: The biased algorithm compounds the user's own bias (or bias of users like her) by showing the user a choice set that over-represents in-group items. So the magnitude of the bias in user's \emph{behavior} at the end of the day should be even larger than the bias we see in the algorithm rankings, given that they choosing amongst this already biased set. To explore this hypothesis we collected data on the last 10 \emph{interactions} people had with Newsfeed posts: reactions and comments. This is not a perfect measure of user behavior with Newsfeed, since there are other behavioral dimensions that we cannot mention in our setting (like the time the user had spent looking at the post, etc.) With this caveat in mind we can see that there is sizable bias in user behavior with the biased Newsfeed algorithm, despite no bias in self-reported explicit preferences, that is larger than the bias in the Newsfeed algorithm's rankings, as our model predicts.  Figure~\ref{fig:behavior} shows this. 
  
-\begin{figure}[!h]
-    \centering
-    \includegraphics[scale=.5]{Output/Graphs/Audit/Interactions/US preferences reactions and actual rankings above base rate.jpg}
-    \caption{Caption}
-    \label{fig:behavior}
-\end{figure}
 
 Part of what makes Facebook an interesting test-case for our theory about algorithmic bias is its massive scope, touching the lives of billions of people all over the world. To show that our results are quite general, not specific either to the US context or to out-group bias along the lines of race specifically, we replicated our analysis to test for bias with Newsfeed and PYMK rank-orderings in another massive Facebook market, India. We recruited 200 study subjects via the Ashoka University Centre for Social and Behaviour Change (CSBC). In this sample in-group/out-group is defined by religion rather than by race, but otherwise the study proceeded identically as in the US. In Figure X we replicate Figure~\ref{fig:rankabovetime} with data from the sample from India and again see evidence of out-group bias by religion. Figure Y repeats the exercise for PYMK, once again (as in the US context) showing no statistically significant evidence of out-group bias. (Additional results for this India sample are presented in the Appendix.)
 
-% \todo[inline]{AA: Below is fairly old at this point and hasn't been worked on yet}
-
-% Our final sample has 474 Facebook users from the United States yielding over 25,000 posts and friend recommendations. Summary statistics: SUM STATS TABLE
-
-% We start by showing the relationship between how much users explicitly state they want to see a post, and how high this post shows up on the Newsfeed of the subject. Here we see that posts users self-report as  wanting to see more \textit{do} show up higher in their Newsfeed--while 25\% of the 60 posts we collected data will be in the Top 15, posts users rated the highest in terms of desire to see (top quartile) had a 32\% chance of showing up in the top 15 whereas those rated the lowest (lowest quartile) had only a 22.5\% chance. The algorithm is acting as expected, collecting enough information that approximates users explicit preferences and showing posts we prefer to see higher up.  We see a similar phenomenon in People You May Know: while 25\% of recommendations will show up in the Top 15, people that users rated the highest level of familiarity with (top quartile) have an X\% chance of showing up in the Top 15 and those with the lowest familiarity just a Y\% chance.
-
-% \begin{center}
-% [FIGURE NEWSFEED RANKING BY PREFERENCE ] \\
-
-% [PYMK RANKING BY KNOWLEDGE ]
-% \end{center}
-
-% \begin{center}
-
-% \end{center}
-
-
-% 59\% of posts seen by US subjects are from friends of the same race (in-group).  These in-group posts tend to show up higher in the user's newsfeed. Amongst the Top 10 posts on a users feed, X\% are in-group posts, where as in the bottom 10, Y\% are in-group.
-
-% \begin{center}
-% [FIGURE: NEWSFEED BY IN-GROUP]
-% \end{center}
-
-% It could just be that users just explicitly prefer posts by in-group members, and the algorithm is just reflecting that preference. Given that we asked how much a user desired to see a post, we can compare the distribution of user preference by in-group status. WE see in Appendix ~\ref{app:tab_fig} that there is very little apparent difference in how much users say they like a post and the in-group status of the poster. 
-
-% Also, if we \textit{condition} on users explicit preferences we still see evidence of in-group bias.  Within each quartile of a users stated preference for a post, in-group posts show up higher in the newsfeed than outgroup posts. A post by an out-group member that a user moderately prefers (3rd quartile of user preference, above median likingness) shows at about the same rate in the top 15 posts as a in-group post in the  lowest quartile of user preference.
-
-% \begin{center}
-% [FIGURE: NEWSFEED In-group/out-group BY PREFERENCE]
-% \end{center}
-
-% Interestingly, we do not see the same pattern of ingroup bias for PYMK. X\% of our user's PYMK recommendations were in-group members.  And there is no apparent pattern in the proportion of recommendations that are ingroup versus outgroup as you move down the list.  Y\% of the top 10 recommendations are ingroup, and Z\% of the bottom 10 recommendations are ingroup.  Users also similarly do not show any explicit difference in self-reported familiarity with ingroup versus outgroup recommendation (Appendix ~\ref{app:tab_fig}). And conditional on that familiarity, there is no difference in the ranking of in-group versus out-group posts.
-
-
-% \begin{center}
-% [FIGURE: PYMK BY IN-GROUP] 
-
-% [FIGURE: PYMK  IN-GROUP BY FAMILIARITY? ]
-% \end{center}
-
-% Why does the Newsfeed algorithm exhibit exhibit ingroup bias but not Facebook's PYMK friend-recommendation algorithm, even though for neither do users seem to have a difference in stated preferences or familiarity for in-group posts or recommendations?  
-
-% While explicit preferences may not differ, implicit preferences could show a bias that the algorithm is picking up.\footnote{It could also be that \textit{stated} preferences differed from true preferences due to social desirability bias, that is users did not want to state outloud an explicitly higher preference for ingroups posts even if they do truly prefer them more. It is important to note, however, that users were not aware that the RA was collecting perceived race of the poster or recommendation and were not told the survey was about race. In fact, we asked a subsample of our subjects what they thought the purpose of the study they were participating in was. Of the $n=X$ participants, only Y mentioned anything anything about race. So it seems unlikely that this would be the explanation.}  
-
-% AUTOMATICITY 
-
-% To partially directly test this, for $n=X$ subjects, we also collected information on the in-group status of the last 10 posts that the subject actually interacted with by ``liking'' or one of Facebook's other options for indicating WHAT.  Here we do see evidence that the share of the last 10 interactions that are ingroup is higher than the share of the top 10 posts are ingroup, indicating that people may exhibit some preference for ingroups in interaction that the algorithm is picking up.  And given that our decisions to interact with a post on newsfeed tend to be more automatic, these could actually be expressing a more subconscious bias.
 
 %%%%%%%%%% CONCLUSION (OR DISCUSSION) %%%%%%%%%%
 \section{Conclusion}
@@ -436,6 +342,154 @@ We have seen how algorithms can magnify our biases. They are problematic in anot
 \singlespacing 
 \bibliographystyle{chicago}
 \bibliography{references}
+
+
+%%%%%%%%%% TABLES AND FIGURES %%%%%%%%%%
+
+%%% NF Heatmap Chron vs Algorithm %%%
+\begin{figure}[ht]
+
+    \begin{subfigure}{.5\textwidth} % this sets the figure to be max half the width of the page
+        \centering
+            % include first image
+        \includegraphics[width=.9\linewidth]{Output/Graphs/Audit/Heatmaps/US NF chron rank by nf rank - smooth.jpg}  % this sets the image to fill 90% of the available space -> 45% of the line width in total. 
+        \caption{Chronology Heat Map}
+        \label{fig:sub-first}
+        \end{subfigure}
+    \begin{subfigure}{.5\textwidth}
+        \centering
+            % include second image
+        \includegraphics[width=.9\linewidth]{Output/Graphs/Audit/Sankey flows/US NF chronology to actual by ingroup.jpg}  
+        \caption{Chronology Sankey (ALL!)}
+        \label{fig:sub-second}
+    \end{subfigure}
+
+        \label{fig:fig}
+   \begin{subfigure}{.5\textwidth} % this sets the figure to be max half the width of the page
+        \centering
+            % include first image
+        \includegraphics[width=.9\linewidth]{Output/Graphs/Audit/Heatmaps/US NF chron rank by nf rank - smooth.jpg}  % this sets the image to fill 90% of the available space -> 45% of the line width in total. 
+        \caption{Preference Heat Map [STAND IN]}
+        \label{fig:sub-first}
+        \end{subfigure}
+    \begin{subfigure}{.5\textwidth}
+        \centering
+            % include second image
+        \includegraphics[width=.9\linewidth]{Output/Graphs/Audit/Sankey flows/US NF chronology to actual by ingroup.jpg}  
+        \caption{Preference Sankey [STAND IN]}
+        \label{fig:sub-second}
+    \end{subfigure}
+\caption{Algorithm Does Algorithm Stuff}
+\end{figure}
+
+
+
+
+%%% NF Ranking Boost by Quartile/Group %%%
+% \begin{figure}[!h]
+%     \centering
+%     \includegraphics[scale=0.75]{Output/Graphs/Audit/Excess Mass/US NF excess mass by ranking group.jpg}
+%     \caption{THIS MIGHT HAVE EXCESS MAP HEATMAP NEXT TO IT?}
+%     \label{fig:rankabovetime}
+% \end{figure}
+
+\begin{figure}[ht]
+
+    \begin{subfigure}{.5\textwidth} % this sets the figure to be max half the width of the page
+        \centering
+            % include first image
+        \includegraphics[width=.9\linewidth]{Output/Graphs/Audit/Heatmaps/US NF chron rank by nf rank - smooth.jpg}  % this sets the image to fill 90% of the available space -> 45% of the line width in total. 
+        \caption{Two Singls Heat Maps by Ingroup}
+        \label{fig:sub-first}
+        \end{subfigure}
+    \begin{subfigure}{.5\textwidth}
+        \centering
+            % include second image
+        \includegraphics[width=.9\linewidth]{Output/Graphs/Audit/Excess Mass/US NF excess mass by ranking group.jpg}  
+        \caption{Excess Mass by Ranking}
+        \label{fig:sub-second}
+    \end{subfigure}
+\caption{Stuff}
+\end{figure}
+%%% NF Ranking Boost by Quartile/Group %%%
+% \begin{figure}[!h]
+%     \centering
+%     \includegraphics[scale=0.75]{Output/Graphs/Audit/Misranking relative to expectation/Chronological expectation/US NF by norm preference.jpg}
+%     \caption{Caption}
+%     \label{fig:rankabovetime}
+% \end{figure}
+
+\begin{figure}[ht]
+
+    \begin{subfigure}{.5\textwidth} 
+        \centering
+            % include first image
+        \includegraphics[width=1\linewidth]{Output/Graphs/Audit/Ranking line graphs/US NF all outcomes panel by norm preference by ingroup.jpg} 
+        \caption{Something1}
+        \label{fig:sub-first}
+        \end{subfigure}
+    \begin{subfigure}{.5\textwidth}
+        \centering
+        \includegraphics[width=1\linewidth]{Output/Graphs/Audit/Misranking relative to expectation/Chronological expectation/US NF by norm preference.jpg}  
+        \caption{Something2}
+        \label{fig:sub-second}
+    \end{subfigure}
+\caption{Stuff}
+\end{figure}
+
+%%% COMMENTING OUT PYMK FIGURES UNTIL WE FIGURE OUT THE NF FIGURES %%%%
+
+% %%% 3 x 5 NF Heatmap %%%
+% \begin{figure}[!h]
+%     \centering
+%     \includegraphics[scale=1]{Output/Graphs/Audit/Heatmaps/US PYMK pct friends by pymk rank by norm quartile - smooth.jpg}
+%     \caption{Caption}
+%     \label{fig:nf_time_pref_group}
+% \end{figure}
+
+% %%% NF Ranking Boost by Quartile/Group %%%
+% \begin{figure}[!h]
+%     \centering
+%     \includegraphics[scale=1]{Output/Graphs/Audit/Misranking relative to expectation/Mutual friends expectation/US PYMK by norm pref.jpg}
+%     \caption{Caption}
+%     \label{fig:pymk_time_pref_group}
+% \end{figure}
+
+
+%%%% AUTOMATICITY %%%%%%
+\begin{figure}
+    \begin{subfigure}{.5\textwidth} % this sets the figure to be max half the width of the page
+        \centering
+            % include first image
+        \includegraphics[width=1\linewidth]{Output/Graphs/Experiments/Automaticity/bar chart binary measures.jpg}  % this sets the image to fill 90% of the available space -> 45% of the line width in total. 
+        \caption{45 degree line likerts?}
+        \label{fig:sub-first}
+    \end{subfigure}
+    \begin{subfigure}{.5\textwidth} % this sets the figure to be max half the width of the page
+        \centering
+            % include first image
+        \includegraphics[width=1\linewidth]{Output/Graphs/Experiments/Automaticity/bar chart binary measures.jpg} 
+        \caption{Something}
+        \label{fig:sub-first}
+    \end{subfigure}
+    \begin{subfigure}{1\textwidth}
+        \centering
+        \includegraphics[width=.5\linewidth]{Output/Graphs/Experiments/Automaticity/speed cdf.png}  
+        \caption{Speed (time to decide in seconds) CDF?}
+        \label{fig:sub-second}
+    \end{subfigure}
+\caption{Automaticity}
+\end{figure}
+
+%%% Interactions/Behavior %%%
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=1\linewidth]{Output/Graphs/Audit/Interactions/US preferences reactions and actual rankings above base rate.jpg}
+    \caption{NEEDS UPDATING.  3 INTERACTIONS $+$ Top 5, Top 10, Top 10}
+    \label{fig:behavior}
+\end{figure}
+
 
 %%%%%%%%%% Appendix %%%%%%%%%%
 \FloatBarrier
