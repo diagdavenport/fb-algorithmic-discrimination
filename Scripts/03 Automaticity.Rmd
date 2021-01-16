@@ -210,6 +210,16 @@ ggplot(t, aes(x=nf, y=pymk, label = cat)) +
 
 dev.copy(jpeg,'Output/Graphs/Experiments/Automaticity/45 degree scatter.jpg')
 dev.off()
+
+cohen.data <- merge(t, temp.l.dat)
+
+cohen.data$cohen.d <- with(cohen.data, (nf - pymk)/sd)
+
+ ggplot(cohen.data, aes(x = cat, y = cohen.d)) +
+  geom_col(position = "dodge") + geom_hline(yintercept = c(.2,.5,.8), linetype = "dotted")
+ 
+ dev.copy(jpeg,'Output/Graphs/Experiments/Automaticity/standardized effect sizes.jpg')
+dev.off()
  
 ```
 
@@ -332,7 +342,6 @@ l.dat <- m.long %>% filter(cat %in% c("careful", "gut")) %>%
   group_by(cat, target)  %>% 
   dplyr::summarise(mean = mean(val, na.rm = T), sd = sd(val, na.rm = T), n= n())
 
-l.dat$mean <- l.dat$mean - 1 # push down to make range go from zero to one
 l.dat$ci <- (l.dat$sd/sqrt(l.dat$n))*1.96
 pd <- position_dodge(0.1)
 
