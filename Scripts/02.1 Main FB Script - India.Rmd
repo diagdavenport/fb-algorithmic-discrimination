@@ -26,7 +26,8 @@ library(viridis)
 library(ggalluvial)
 library(gganimate)
 library(tidyverse)
-theme_set(theme_tufte())
+theme_set(theme_bw())
+library(RColorBrewer)
 options(dplyr.summarise.inform=F)
 options(ggplot2.continuous.colour="viridis")
 options(ggplot2.continuous.fill = "viridis")
@@ -976,276 +977,441 @@ ggplot(as.data.frame(l.dat),
 
 ```
 
+```{r alluvial clean}
+
+m.newsfeed.df.all <- m.newsfeed.df.all %>% filter(complete_time_rank <= 60)
+
+m.newsfeed.df.all$new.order4 <- trunc(m.newsfeed.df.all$nf.order/15)
+m.newsfeed.df.all$new.order4 <- ifelse(m.newsfeed.df.all$new.order4 == 4, 3, m.newsfeed.df.all$new.order4)
+m.newsfeed.df.all$chron.order4 <- trunc(m.newsfeed.df.all$complete_time_rank/15)
+m.newsfeed.df.all$chron.order4 <- ifelse(m.newsfeed.df.all$chron.order4 == 4, 3, m.newsfeed.df.all$chron.order4)
+
+m.newsfeed.df.all$newquartile4 <- 3 - (m.newsfeed.df.all$norm.quartile - 1)
+
+l.dat <- m.newsfeed.df.all %>% group_by(newquartile4, new.order4) %>% dplyr::summarise(freq = n())
+
+l.dat$pct <- l.dat$freq/nrow(m.newsfeed.df.all)
+
+ggplot(as.data.frame(l.dat),
+       aes(y = pct, axis1 = newquartile4, axis2 = new.order4)) +
+  geom_alluvium(aes(fill = factor(newquartile4)), width = 1/12) +
+  geom_stratum(width = 1/12, fill = "white", color = "black") +
+  geom_label(stat = "stratum", aes(label = after_stat(stratum))) +
+  scale_x_discrete(limits = c("Ranking Group*(-1)", "Actual NF Ranking"), expand = c(.05, .05)) + theme(legend.position="bottom") + 
+  scale_fill_manual(values=rev(brewer.pal(n = 4, name = "Reds")))  +
+  geom_text(stat = "alluvium", aes(label = round(after_stat(prop)/.25, 2)), hjust = -0.85)
+
+   brewer.pal(n = 4, name = "Reds")
+
+scale_fill_gradientn(colors = brewer.pal(n = 4, name = "Reds"),
+                             values = c(0, 0.8, 0.9, 0.95, 1))
+
+dev.copy(jpeg,'Output/Graphs/Audit/Sankey flows/India NF norm quartile to actual.jpg')
+dev.off()
+
+
+l.dat <- m.newsfeed.df.all %>% group_by(chron.order4, new.order4) %>% dplyr::summarise(freq = n())
+
+#l.dat$race.in.group <- ifelse(l.dat$chron.order4 == 0, 1, 99)
+
+l.dat$pct <- l.dat$freq/nrow(m.newsfeed.df.all)
+
+ggplot(as.data.frame(l.dat),
+       aes(y = pct, axis1 = chron.order4, axis2 = new.order4)) +
+  geom_alluvium(aes(fill = factor(chron.order4)), width = 1/12) +
+  geom_stratum(width = 1/12, fill = "black", color = "grey") +
+  geom_label(stat = "stratum", aes(label = after_stat(stratum))) +
+  scale_x_discrete(limits = c("Chronological Group", "Actual NF Ranking"), expand = c(.05, .05)) + theme(legend.position="bottom")
+
+dev.copy(jpeg,'Output/Graphs/Audit/Sankey flows/India NF chronology to actual.jpg')
+dev.off()
+
+
+
+#temp <- m.newsfeed.df.all
+
+m.pymk.df.all <- m.pymk.df.all %>% filter(pct_friend_rank <= 60)
+
+m.pymk.df.all$new.order4 <- trunc(m.pymk.df.all$pymk.order/15)
+m.pymk.df.all$new.order4 <- ifelse(m.pymk.df.all$new.order4 == 4, 3, m.pymk.df.all$new.order4)
+m.pymk.df.all$friend.order4 <- trunc(m.pymk.df.all$pct_friend_rank/15)
+m.pymk.df.all$friend.order4 <- ifelse(m.pymk.df.all$friend.order4 == 4, 3, m.pymk.df.all$friend.order4)
+
+m.pymk.df.all$newquartile4 <- 3 - (m.pymk.df.all$norm.quartile - 1)
+
+
+## PYMK
+
+l.dat <- m.pymk.df.all %>% group_by(newquartile4, new.order4) %>% dplyr::summarise(freq = n())
+
+l.dat$pct <- l.dat$freq/nrow(m.pymk.df.all)
+
+ggplot(as.data.frame(l.dat),
+       aes(y = pct, axis1 = newquartile4, axis2 = new.order4)) +
+  geom_alluvium(aes(fill = factor(newquartile4)), width = 1/12) +
+  geom_stratum(width = 1/12, fill = "white", color = "black") +
+  geom_label(stat = "stratum", aes(label = after_stat(stratum))) +
+  scale_x_discrete(limits = c("Ranking Group*(-1)", "Actual PYMK Ranking"), expand = c(.05, .05)) + theme(legend.position="bottom") + 
+  scale_fill_manual(values=rev(brewer.pal(n = 4, name = "Reds")))  +
+  geom_text(stat = "alluvium", aes(label = round(after_stat(prop)/.25, 2)), hjust = -0.85)
+
+dev.copy(jpeg,'Output/Graphs/Audit/Sankey flows/India PYMK norm quartile to actual.jpg')
+dev.off()
+
+
+
+l.dat <- m.pymk.df.all %>% group_by(friend.order4, new.order4) %>% dplyr::summarise(freq = n())
+
+#l.dat$race.in.group <- ifelse(l.dat$chron.order4 == 0, 1, 99)
+
+l.dat$pct <- l.dat$freq/nrow(m.pymk.df.all)
+
+#l.dat$pct <- ifelse(l.dat$chron.order4 != 0, 0, l.dat$pct)
+
+ggplot(as.data.frame(l.dat),
+       aes(y = pct, axis1 = friend.order4, axis2 = new.order4)) +
+  geom_alluvium(aes(fill = factor(friend.order4)), width = 1/12) +
+  geom_stratum(width = 1/12, fill = "black", color = "grey") +
+  geom_label(stat = "stratum", aes(label = after_stat(stratum))) +
+  scale_x_discrete(limits = c("Pct Friend Group", "Actual NF Ranking"), expand = c(.05, .05)) + theme(legend.position="bottom")
+
+dev.copy(jpeg,'Output/Graphs/Audit/Sankey flows/India PYMK pct friend to actual.jpg')
+dev.off()
+
+```
+
 ```{r sankey}
-
-# sigmoid <- function(x_from, x_to, y_from, y_to, scale = 5, n = 100) {
-#   x <- seq(-scale, scale, length = n)
-#   y <- exp(x) / (exp(x) + 1)
-#   tibble(x = (x + scale) / (scale * 2) * (x_to - x_from) + x_from,
-#          y = y * (y_to - y_from) + y_from)
-# }
 # 
-# sankey.data <- m.newsfeed.df.all %>% filter(norm.quartile == 4)
+# # sigmoid <- function(x_from, x_to, y_from, y_to, scale = 5, n = 100) {
+# #   x <- seq(-scale, scale, length = n)
+# #   y <- exp(x) / (exp(x) + 1)
+# #   tibble(x = (x + scale) / (scale * 2) * (x_to - x_from) + x_from,
+# #          y = y * (y_to - y_from) + y_from)
+# # }
+# # 
+# # sankey.data <- m.newsfeed.df.all %>% filter(norm.quartile == 4)
+# # 
+# # p <- map_df(seq_len(nrow(sankey.data)), 
+# #     ~ sigmoid(0, 1, as.numeric(sankey.data[.x, "norm.quartile"]), as.numeric(sankey.data[.x, "new.order4"])) %>%
+# #       mutate(time = row_number() + .x,
+# #              y = y + runif(1, -0.25, 0.25))) %>%
+# #   ggplot(aes(x, y, frame = time)) +
+# #   geom_point() 
+# # 
+# # gganimate(p)
 # 
-# p <- map_df(seq_len(nrow(sankey.data)), 
-#     ~ sigmoid(0, 1, as.numeric(sankey.data[.x, "norm.quartile"]), as.numeric(sankey.data[.x, "new.order4"])) %>%
-#       mutate(time = row_number() + .x,
-#              y = y + runif(1, -0.25, 0.25))) %>%
-#   ggplot(aes(x, y, frame = time)) +
-#   geom_point() 
+# l.dat <- m.newsfeed.df.all %>% filter(norm.quartile == 1 & religion.in.group == T) %>%
+#   group_by(norm.quartile, nf.order.round, religion.in.group) %>% dplyr::summarise(freq = n())
 # 
-# gganimate(p)
-
-l.dat <- m.newsfeed.df.all %>% filter(norm.quartile == 1 & religion.in.group == T) %>%
-  group_by(norm.quartile, nf.order.round, religion.in.group) %>% dplyr::summarise(freq = n())
-
-l.dat$pct <- l.dat$freq/nrow(m.newsfeed.df.all %>% filter(norm.quartile == 1 & religion.in.group == T) )
-
-ing <- ggplot(as.data.frame(l.dat),
-       aes(y = pct, axis1 = religion.in.group, axis2 = nf.order.round)) +
-  geom_alluvium(aes(fill = factor(nf.order.round)), width = 1/12) +
-  geom_stratum(width = 1/12, fill = "black", color = "grey") +
-  geom_label(stat = "stratum", aes(label = after_stat(stratum))) +
-  scale_x_discrete(limits = c("Ingroup?", "Actual NF Ranking Group"), expand = c(.05, .05)) + theme(legend.position="bottom")
-
-l.dat <- m.newsfeed.df.all %>% filter(norm.quartile == 1 & religion.in.group == F) %>%
-  group_by(norm.quartile, nf.order.round, religion.in.group) %>% dplyr::summarise(freq = n())
-
-l.dat$pct <- l.dat$freq/nrow(m.newsfeed.df.all %>% filter(norm.quartile == 1 & religion.in.group == F) )
-
-m.newsfeed.df.all$in.group 
- 
-outg <- ggplot(as.data.frame(l.dat),
-       aes(y = pct, axis2 = religion.in.group, axis1 = nf.order.round)) +
-  geom_alluvium(aes(fill = factor(nf.order.round)), width = 1/12) +
-  geom_stratum(width = 1/12, fill = "black", color = "grey") +
-  geom_label(stat = "stratum", aes(label = after_stat(stratum))) +
-  scale_x_discrete(limits = c("", "Ingroup?"), expand = c(.05, .05)) + theme(legend.position="bottom") +
-  theme(axis.title.y =element_blank(),
-        axis.text.y =element_blank(),
-        axis.ticks.y =element_blank())
-
-ggarrange(ing, outg,
-          ncol = 2, nrow = 1, labels = c("Disfavored ingroup posts", "Disfavored outgroup posts"))
-
-l.dat <- m.newsfeed.df.all %>%
-  group_by(norm.quartile, nf.order.round, religion.in.group) %>% dplyr::summarise(freq = n())
-l.dat$pct <- l.dat$freq/nrow(m.newsfeed.df.all %>% filter(norm.quartile == 1 & religion.in.group == F) )
+# l.dat$pct <- l.dat$freq/nrow(m.newsfeed.df.all %>% filter(norm.quartile == 1 & religion.in.group == T) )
+# 
+# ing <- ggplot(as.data.frame(l.dat),
+#        aes(y = pct, axis1 = religion.in.group, axis2 = nf.order.round)) +
+#   geom_alluvium(aes(fill = factor(nf.order.round)), width = 1/12) +
+#   geom_stratum(width = 1/12, fill = "black", color = "grey") +
+#   geom_label(stat = "stratum", aes(label = after_stat(stratum))) +
+#   scale_x_discrete(limits = c("Ingroup?", "Actual NF Ranking Group"), expand = c(.05, .05)) + theme(legend.position="bottom")
+# 
+# l.dat <- m.newsfeed.df.all %>% filter(norm.quartile == 1 & religion.in.group == F) %>%
+#   group_by(norm.quartile, nf.order.round, religion.in.group) %>% dplyr::summarise(freq = n())
+# 
+# l.dat$pct <- l.dat$freq/nrow(m.newsfeed.df.all %>% filter(norm.quartile == 1 & religion.in.group == F) )
+# 
+# m.newsfeed.df.all$in.group 
+#  
+# outg <- ggplot(as.data.frame(l.dat),
+#        aes(y = pct, axis2 = religion.in.group, axis1 = nf.order.round)) +
+#   geom_alluvium(aes(fill = factor(nf.order.round)), width = 1/12) +
+#   geom_stratum(width = 1/12, fill = "black", color = "grey") +
+#   geom_label(stat = "stratum", aes(label = after_stat(stratum))) +
+#   scale_x_discrete(limits = c("", "Ingroup?"), expand = c(.05, .05)) + theme(legend.position="bottom") +
+#   theme(axis.title.y =element_blank(),
+#         axis.text.y =element_blank(),
+#         axis.ticks.y =element_blank())
+# 
+# ggarrange(ing, outg,
+#           ncol = 2, nrow = 1, labels = c("Disfavored ingroup posts", "Disfavored outgroup posts"))
+# 
+# l.dat <- m.newsfeed.df.all %>%
+#   group_by(norm.quartile, nf.order.round, religion.in.group) %>% dplyr::summarise(freq = n())
+# l.dat$pct <- l.dat$freq/nrow(m.newsfeed.df.all %>% filter(norm.quartile == 1 & religion.in.group == F) )
 
 ```
 
 ```{r heatmap counts}
-
-heat.df <- m.newsfeed.df.all %>% filter(complete_time_rank <= 60) %>%
-  group_by(nf.order, complete_time_rank) %>% dplyr::summarize(count = n()) %>%
-  group_by(complete_time_rank) %>%
-    mutate(countT= sum(count)) %>%
-    group_by(nf.order, add=TRUE) %>%
-    mutate(per=count/countT)
-
-ggplot(heat.df, aes(complete_time_rank, nf.order, fill= per)) + 
-  geom_tile() + scale_x_reverse() + scale_y_reverse() 
-
-heat.df <- m.newsfeed.df.all %>% filter(complete_time_rank <= 60 & norm.quartile == 1) %>%
-  group_by(nf.order, complete_time_rank) %>% dplyr::summarize(count = n()) %>%
-  group_by(complete_time_rank) %>%
-    mutate(countT= sum(count)) %>%
-    group_by(nf.order, add=TRUE) %>%
-    mutate(per=count/countT)
-
-ggplot(heat.df, aes(complete_time_rank, nf.order, fill= per)) + 
-  geom_tile() + scale_x_reverse() + scale_y_reverse()
-
-heat.df <- m.newsfeed.df.all %>% filter(complete_time_rank <= 60 & norm.quartile == 2) %>%
-  group_by(nf.order, complete_time_rank) %>% dplyr::summarize(count = n()) %>%
-  group_by(complete_time_rank) %>%
-    mutate(countT= sum(count)) %>%
-    group_by(nf.order, add=TRUE) %>%
-    mutate(per=count/countT)
-
-ggplot(heat.df, aes(complete_time_rank, nf.order, fill= per)) + 
-  geom_tile() + scale_x_reverse() + scale_y_reverse()
-
-heat.df <- m.newsfeed.df.all %>% filter(complete_time_rank <= 60 & norm.quartile == 3) %>%
-  group_by(nf.order, complete_time_rank) %>% dplyr::summarize(count = n()) %>%
-  group_by(complete_time_rank) %>%
-    mutate(countT= sum(count)) %>%
-    group_by(nf.order, add=TRUE) %>%
-    mutate(per=count/countT)
-
-ggplot(heat.df, aes(complete_time_rank, nf.order, fill= per)) + 
-  geom_tile() + scale_x_reverse() + scale_y_reverse()
-
-heat.df <- m.newsfeed.df.all %>% filter(complete_time_rank <= 60 & norm.quartile == 4)%>%
-  group_by(nf.order, complete_time_rank) %>% dplyr::summarize(count = n()) %>%
-  group_by(complete_time_rank) %>%
-    mutate(countT= sum(count)) %>%
-    group_by(nf.order, add=TRUE) %>%
-    mutate(per=count/countT)
-
-ggplot(heat.df, aes(complete_time_rank, nf.order, fill= per)) + 
-  geom_tile() + scale_x_reverse() + scale_y_reverse()
-
-
-heat.df <- m.newsfeed.df.all %>% filter(complete_time_rank <= 60) %>%
-  group_by(nf.order, complete_time_rank, religion.in.group, norm.quartile) %>% dplyr::summarize(count = n()) 
-
-ggplot(heat.df, aes(complete_time_rank, nf.order, fill= count)) + 
-  geom_tile() + scale_x_reverse() + scale_y_reverse() + facet_grid(religion.in.group ~ norm.quartile, margins = T)
-
-ggplot(heat.df, aes(complete_time_rank, nf.order, fill= count)) + 
-  geom_tile() + scale_x_reverse() + scale_y_reverse() + facet_grid(religion.in.group ~ norm.quartile, margins = T, scales = "free")
+# 
+# heat.df <- m.newsfeed.df.all %>% filter(complete_time_rank <= 60) %>%
+#   group_by(nf.order, complete_time_rank) %>% dplyr::summarize(count = n()) %>%
+#   group_by(complete_time_rank) %>%
+#     mutate(countT= sum(count)) %>%
+#     group_by(nf.order, add=TRUE) %>%
+#     mutate(per=count/countT)
+# 
+# ggplot(heat.df, aes(complete_time_rank, nf.order, fill= per)) + 
+#   geom_tile() + scale_x_reverse() + scale_y_reverse() 
+# 
+# heat.df <- m.newsfeed.df.all %>% filter(complete_time_rank <= 60 & norm.quartile == 1) %>%
+#   group_by(nf.order, complete_time_rank) %>% dplyr::summarize(count = n()) %>%
+#   group_by(complete_time_rank) %>%
+#     mutate(countT= sum(count)) %>%
+#     group_by(nf.order, add=TRUE) %>%
+#     mutate(per=count/countT)
+# 
+# ggplot(heat.df, aes(complete_time_rank, nf.order, fill= per)) + 
+#   geom_tile() + scale_x_reverse() + scale_y_reverse()
+# 
+# heat.df <- m.newsfeed.df.all %>% filter(complete_time_rank <= 60 & norm.quartile == 2) %>%
+#   group_by(nf.order, complete_time_rank) %>% dplyr::summarize(count = n()) %>%
+#   group_by(complete_time_rank) %>%
+#     mutate(countT= sum(count)) %>%
+#     group_by(nf.order, add=TRUE) %>%
+#     mutate(per=count/countT)
+# 
+# ggplot(heat.df, aes(complete_time_rank, nf.order, fill= per)) + 
+#   geom_tile() + scale_x_reverse() + scale_y_reverse()
+# 
+# heat.df <- m.newsfeed.df.all %>% filter(complete_time_rank <= 60 & norm.quartile == 3) %>%
+#   group_by(nf.order, complete_time_rank) %>% dplyr::summarize(count = n()) %>%
+#   group_by(complete_time_rank) %>%
+#     mutate(countT= sum(count)) %>%
+#     group_by(nf.order, add=TRUE) %>%
+#     mutate(per=count/countT)
+# 
+# ggplot(heat.df, aes(complete_time_rank, nf.order, fill= per)) + 
+#   geom_tile() + scale_x_reverse() + scale_y_reverse()
+# 
+# heat.df <- m.newsfeed.df.all %>% filter(complete_time_rank <= 60 & norm.quartile == 4)%>%
+#   group_by(nf.order, complete_time_rank) %>% dplyr::summarize(count = n()) %>%
+#   group_by(complete_time_rank) %>%
+#     mutate(countT= sum(count)) %>%
+#     group_by(nf.order, add=TRUE) %>%
+#     mutate(per=count/countT)
+# 
+# ggplot(heat.df, aes(complete_time_rank, nf.order, fill= per)) + 
+#   geom_tile() + scale_x_reverse() + scale_y_reverse()
+# 
+# 
+# heat.df <- m.newsfeed.df.all %>% filter(complete_time_rank <= 60) %>%
+#   group_by(nf.order, complete_time_rank, religion.in.group, norm.quartile) %>% dplyr::summarize(count = n()) 
+# 
+# ggplot(heat.df, aes(complete_time_rank, nf.order, fill= count)) + 
+#   geom_tile() + scale_x_reverse() + scale_y_reverse() + facet_grid(religion.in.group ~ norm.quartile, margins = T)
+# 
+# ggplot(heat.df, aes(complete_time_rank, nf.order, fill= count)) + 
+#   geom_tile() + scale_x_reverse() + scale_y_reverse() + facet_grid(religion.in.group ~ norm.quartile, margins = T, scales = "free")
 
 ```
 
 ```{r heatmap pct}
-
-heat.df <- m.newsfeed.df.all %>% filter(complete_time_rank <= 60) %>%
-  group_by(nf.order, complete_time_rank, religion.in.group, norm.quartile) %>% dplyr::summarize(count = n()) %>%
-  group_by(complete_time_rank, religion.in.group, norm.quartile) %>%
-    mutate(countT= sum(count)) %>%
-    group_by(nf.order, add=TRUE) %>%
-    mutate(per=count/countT)
-
-ggplot(heat.df, aes(complete_time_rank, nf.order, fill= per)) + 
-  geom_tile(aes(fill = per)) + scale_x_reverse() + scale_y_reverse() + facet_grid(religion.in.group ~ norm.quartile, margins = T)
-
-heat.df <- m.newsfeed.df.all %>% filter(complete_time_rank <= 60 & norm.quartile == 1) %>%
-  group_by(nf.order, complete_time_rank) %>% dplyr::summarize(count = n()) %>%
-  group_by(complete_time_rank) %>%
-    mutate(countT= sum(count)) %>%
-    group_by(nf.order, add=TRUE) %>%
-    mutate(per=count/countT)
-
-ggplot(heat.df, aes(complete_time_rank, nf.order, fill= per)) + 
-  geom_tile() + scale_x_reverse() + scale_y_reverse()
-
-heat.df <- m.newsfeed.df.all %>% filter(complete_time_rank <= 60 & norm.quartile == 2) %>%
-  group_by(nf.order, complete_time_rank) %>% dplyr::summarize(count = n()) %>%
-  group_by(complete_time_rank) %>%
-    mutate(countT= sum(count)) %>%
-    group_by(nf.order, add=TRUE) %>%
-    mutate(per=count/countT)
-
-ggplot(heat.df, aes(complete_time_rank, nf.order, fill= per)) + 
-  geom_tile() + scale_x_reverse() + scale_y_reverse()
-
-heat.df <- m.newsfeed.df.all %>% filter(complete_time_rank <= 60 & norm.quartile == 3) %>%
-  group_by(nf.order, complete_time_rank) %>% dplyr::summarize(count = n()) %>%
-  group_by(complete_time_rank) %>%
-    mutate(countT= sum(count)) %>%
-    group_by(nf.order, add=TRUE) %>%
-    mutate(per=count/countT)
-
-ggplot(heat.df, aes(complete_time_rank, nf.order, fill= per)) + 
-  geom_tile() + scale_x_reverse() + scale_y_reverse()
-
-heat.df <- m.newsfeed.df.all %>% filter(complete_time_rank <= 60 & norm.quartile == 4)%>%
-  group_by(nf.order, complete_time_rank) %>% dplyr::summarize(count = n()) %>%
-  group_by(complete_time_rank) %>%
-    mutate(countT= sum(count)) %>%
-    group_by(nf.order, add=TRUE) %>%
-    mutate(per=count/countT)
-
-ggplot(heat.df, aes(complete_time_rank, nf.order, fill= per)) + 
-  geom_tile() + scale_x_reverse() + scale_y_reverse()
-
-
-heat.df <- m.newsfeed.df.all %>% filter(complete_time_rank <= 60) %>%
-  group_by(nf.order, complete_time_rank, religion.in.group, norm.quartile) %>% dplyr::summarize(count = n()) 
-
-ggplot(heat.df, aes(complete_time_rank, nf.order, fill= count)) + 
-  geom_tile() + scale_x_reverse() + scale_y_reverse() + facet_grid(religion.in.group ~ norm.quartile, margins = T)
-
-ggplot(heat.df, aes(complete_time_rank, nf.order, fill= count)) + 
-  geom_tile() + scale_x_reverse() + scale_y_reverse() + facet_grid(religion.in.group ~ norm.quartile, margins = T, scales = "free")
+# 
+# heat.df <- m.newsfeed.df.all %>% filter(complete_time_rank <= 60) %>%
+#   group_by(nf.order, complete_time_rank, religion.in.group, norm.quartile) %>% dplyr::summarize(count = n()) %>%
+#   group_by(complete_time_rank, religion.in.group, norm.quartile) %>%
+#     mutate(countT= sum(count)) %>%
+#     group_by(nf.order, add=TRUE) %>%
+#     mutate(per=count/countT)
+# 
+# ggplot(heat.df, aes(complete_time_rank, nf.order, fill= per)) + 
+#   geom_tile(aes(fill = per)) + scale_x_reverse() + scale_y_reverse() + facet_grid(religion.in.group ~ norm.quartile, margins = T)
+# 
+# heat.df <- m.newsfeed.df.all %>% filter(complete_time_rank <= 60 & norm.quartile == 1) %>%
+#   group_by(nf.order, complete_time_rank) %>% dplyr::summarize(count = n()) %>%
+#   group_by(complete_time_rank) %>%
+#     mutate(countT= sum(count)) %>%
+#     group_by(nf.order, add=TRUE) %>%
+#     mutate(per=count/countT)
+# 
+# ggplot(heat.df, aes(complete_time_rank, nf.order, fill= per)) + 
+#   geom_tile() + scale_x_reverse() + scale_y_reverse()
+# 
+# heat.df <- m.newsfeed.df.all %>% filter(complete_time_rank <= 60 & norm.quartile == 2) %>%
+#   group_by(nf.order, complete_time_rank) %>% dplyr::summarize(count = n()) %>%
+#   group_by(complete_time_rank) %>%
+#     mutate(countT= sum(count)) %>%
+#     group_by(nf.order, add=TRUE) %>%
+#     mutate(per=count/countT)
+# 
+# ggplot(heat.df, aes(complete_time_rank, nf.order, fill= per)) + 
+#   geom_tile() + scale_x_reverse() + scale_y_reverse()
+# 
+# heat.df <- m.newsfeed.df.all %>% filter(complete_time_rank <= 60 & norm.quartile == 3) %>%
+#   group_by(nf.order, complete_time_rank) %>% dplyr::summarize(count = n()) %>%
+#   group_by(complete_time_rank) %>%
+#     mutate(countT= sum(count)) %>%
+#     group_by(nf.order, add=TRUE) %>%
+#     mutate(per=count/countT)
+# 
+# ggplot(heat.df, aes(complete_time_rank, nf.order, fill= per)) + 
+#   geom_tile() + scale_x_reverse() + scale_y_reverse()
+# 
+# heat.df <- m.newsfeed.df.all %>% filter(complete_time_rank <= 60 & norm.quartile == 4)%>%
+#   group_by(nf.order, complete_time_rank) %>% dplyr::summarize(count = n()) %>%
+#   group_by(complete_time_rank) %>%
+#     mutate(countT= sum(count)) %>%
+#     group_by(nf.order, add=TRUE) %>%
+#     mutate(per=count/countT)
+# 
+# ggplot(heat.df, aes(complete_time_rank, nf.order, fill= per)) + 
+#   geom_tile() + scale_x_reverse() + scale_y_reverse()
+# 
+# 
+# heat.df <- m.newsfeed.df.all %>% filter(complete_time_rank <= 60) %>%
+#   group_by(nf.order, complete_time_rank, religion.in.group, norm.quartile) %>% dplyr::summarize(count = n()) 
+# 
+# ggplot(heat.df, aes(complete_time_rank, nf.order, fill= count)) + 
+#   geom_tile() + scale_x_reverse() + scale_y_reverse() + facet_grid(religion.in.group ~ norm.quartile, margins = T)
+# 
+# ggplot(heat.df, aes(complete_time_rank, nf.order, fill= count)) + 
+#   geom_tile() + scale_x_reverse() + scale_y_reverse() + facet_grid(religion.in.group ~ norm.quartile, margins = T, scales = "free")
+# 
+# ```
+# 
+# ```{r heatmap four by 60}
+# 
+# heat.df <- m.newsfeed.df.all %>% filter(complete_time_rank <= 60) %>%
+#   group_by(nf.order.round, complete_time_rank, religion.in.group, norm.quartile) %>% dplyr::summarize(count = n()) %>%
+#   group_by(complete_time_rank, religion.in.group, norm.quartile) %>%
+#     mutate(countT= sum(count)) %>%
+#     group_by(nf.order.round, add=TRUE) %>%
+#     mutate(per=count/countT)
+# 
+# ggplot(heat.df, aes(complete_time_rank, nf.order.round, fill= per)) + 
+#   geom_tile(aes(fill = per)) + scale_x_reverse() + scale_y_reverse() + facet_grid(religion.in.group ~ norm.quartile, margins = T)
+# 
+# dev.copy(jpeg,'Output/Graphs/Audit/Heatmaps/India NF chronology by norm quartile by ingroup.jpg')
+# dev.off()
+# 
+# heat.df <- m.newsfeed.df.all %>% filter(complete_time_rank <= 60) %>%
+#   group_by(nf.order, religion.in.group, norm.quartile) %>% dplyr::summarize(count = n()) %>%
+#   group_by(religion.in.group, norm.quartile) %>%
+#     mutate(countT= sum(count)) %>%
+#     group_by(nf.order, add=TRUE) %>%
+#     mutate(per=count/countT)
+# 
+# ggplot(heat.df, aes(norm.quartile, nf.order, fill= per)) + 
+#   geom_tile(aes(fill = per)) + scale_y_reverse() + facet_grid(.~religion.in.group, margins = T)
+# 
+# dev.copy(jpeg,'Output/Graphs/Audit/Heatmaps/India NF norm quartile by ingroup.jpg')
+# dev.off()
+# 
+# ### PYMK
+# 
+# heat.df <- m.pymk.df.all %>% filter(pct_friend_rank <= 60) %>%
+#   group_by(pymk.order.round, pct_friend_rank, religion.in.group, norm.quartile) %>% dplyr::summarize(count = n()) %>%
+#   group_by(pct_friend_rank, religion.in.group, norm.quartile) %>%
+#     mutate(countT= sum(count)) %>%
+#     group_by(pymk.order.round, add=TRUE) %>%
+#     mutate(per=count/countT)
+# 
+# ggplot(heat.df, aes(pct_friend_rank, pymk.order.round, fill= per)) + 
+#   geom_tile(aes(fill = per)) + scale_x_reverse() + scale_y_reverse() + facet_grid(religion.in.group ~ norm.quartile, margins = T)
+# 
+# dev.copy(jpeg,'Output/Graphs/Audit/Heatmaps/India PYMK percent friends rank by norm quartile by ingroup.jpg')
+# dev.off()
+# 
+# heat.df <- m.pymk.df.all %>% filter(pct_friend_rank <= 60) %>%
+#   group_by(pymk.order, religion.in.group, norm.quartile) %>% dplyr::summarize(count = n()) %>%
+#   group_by(religion.in.group, norm.quartile) %>%
+#     mutate(countT= sum(count)) %>%
+#     group_by(pymk.order, add=TRUE) %>%
+#     mutate(per=count/countT)
+# 
+# ggplot(heat.df, aes(norm.quartile, pymk.order, fill= per)) + 
+#   geom_tile(aes(fill = per)) + scale_y_reverse() + facet_grid(.~religion.in.group, margins = T)
+# 
+# dev.copy(jpeg,'Output/Graphs/Audit/Heatmaps/India PYMK norm quartile by ingroup.jpg')
+# dev.off()
+# 
+# ggplot(m.newsfeed.df.all %>% filter(complete_time_rank <= 60), aes(x=complete_time_rank, nf.order)) + stat_density_2d(
+#   geom = "raster",
+#   aes(fill = after_stat(density)),
+#   contour = FALSE
+# ) + scale_fill_viridis_c() + facet_grid(religion.in.group~norm.quartile, margins = T)  + scale_x_reverse() + scale_y_reverse()
+# 
+# dev.copy(jpeg,'Output/Graphs/Audit/Heatmaps/India NF chron rank by nf rank by norm quartile - smooth.jpg')
+# dev.off()
+# 
+# ggplot(m.pymk.df.all %>% filter(pct_friend_rank <= 60), aes(x=pct_friend_rank, pymk.order)) + stat_density_2d(
+#   geom = "raster",
+#   aes(fill = after_stat(density)),
+#   contour = FALSE
+# ) + scale_fill_viridis_c() + facet_grid(religion.in.group~norm.quartile, margins = T)  + scale_x_reverse() + scale_y_reverse()
+# 
+# dev.copy(jpeg,'Output/Graphs/Audit/Heatmaps/India PYMK pct friends by pymk rank by norm quartile - smooth.jpg')
+# dev.off()
+# 
+# ggplot(m.pymk.df.all %>% filter(pct_friend_rank <= 60), aes(x=pct_friend_rank, pymk.order)) + stat_density_2d(
+#   geom = "raster",
+#   aes(fill = after_stat(density)),
+#   contour = FALSE
+# ) + scale_fill_viridis_c() + scale_x_reverse() + scale_y_reverse()
+# 
+# dev.copy(jpeg,'Output/Graphs/Audit/Heatmaps/India PYMK pct friends by pymk rank - smooth.jpg')
+# dev.off()
 
 ```
 
-```{r heatmap four by 60}
 
-heat.df <- m.newsfeed.df.all %>% filter(complete_time_rank <= 60) %>%
-  group_by(nf.order.round, complete_time_rank, religion.in.group, norm.quartile) %>% dplyr::summarize(count = n()) %>%
-  group_by(complete_time_rank, religion.in.group, norm.quartile) %>%
-    mutate(countT= sum(count)) %>%
-    group_by(nf.order.round, add=TRUE) %>%
-    mutate(per=count/countT)
-
-ggplot(heat.df, aes(complete_time_rank, nf.order.round, fill= per)) + 
-  geom_tile(aes(fill = per)) + scale_x_reverse() + scale_y_reverse() + facet_grid(religion.in.group ~ norm.quartile, margins = T)
-
-dev.copy(jpeg,'Output/Graphs/Audit/Heatmaps/India NF chronology by norm quartile by ingroup.jpg')
-dev.off()
-
-heat.df <- m.newsfeed.df.all %>% filter(complete_time_rank <= 60) %>%
-  group_by(nf.order, religion.in.group, norm.quartile) %>% dplyr::summarize(count = n()) %>%
-  group_by(religion.in.group, norm.quartile) %>%
-    mutate(countT= sum(count)) %>%
-    group_by(nf.order, add=TRUE) %>%
-    mutate(per=count/countT)
-
-ggplot(heat.df, aes(norm.quartile, nf.order, fill= per)) + 
-  geom_tile(aes(fill = per)) + scale_y_reverse() + facet_grid(.~religion.in.group, margins = T)
-
-dev.copy(jpeg,'Output/Graphs/Audit/Heatmaps/India NF norm quartile by ingroup.jpg')
-dev.off()
-
-### PYMK
-
-heat.df <- m.pymk.df.all %>% filter(pct_friend_rank <= 60) %>%
-  group_by(pymk.order.round, pct_friend_rank, religion.in.group, norm.quartile) %>% dplyr::summarize(count = n()) %>%
-  group_by(pct_friend_rank, religion.in.group, norm.quartile) %>%
-    mutate(countT= sum(count)) %>%
-    group_by(pymk.order.round, add=TRUE) %>%
-    mutate(per=count/countT)
-
-ggplot(heat.df, aes(pct_friend_rank, pymk.order.round, fill= per)) + 
-  geom_tile(aes(fill = per)) + scale_x_reverse() + scale_y_reverse() + facet_grid(religion.in.group ~ norm.quartile, margins = T)
-
-dev.copy(jpeg,'Output/Graphs/Audit/Heatmaps/India PYMK percent friends rank by norm quartile by ingroup.jpg')
-dev.off()
-
-heat.df <- m.pymk.df.all %>% filter(pct_friend_rank <= 60) %>%
-  group_by(pymk.order, religion.in.group, norm.quartile) %>% dplyr::summarize(count = n()) %>%
-  group_by(religion.in.group, norm.quartile) %>%
-    mutate(countT= sum(count)) %>%
-    group_by(pymk.order, add=TRUE) %>%
-    mutate(per=count/countT)
-
-ggplot(heat.df, aes(norm.quartile, pymk.order, fill= per)) + 
-  geom_tile(aes(fill = per)) + scale_y_reverse() + facet_grid(.~religion.in.group, margins = T)
-
-dev.copy(jpeg,'Output/Graphs/Audit/Heatmaps/India PYMK norm quartile by ingroup.jpg')
-dev.off()
+```{r clean heatmaps}
 
 ggplot(m.newsfeed.df.all %>% filter(complete_time_rank <= 60), aes(x=complete_time_rank, nf.order)) + stat_density_2d(
   geom = "raster",
   aes(fill = after_stat(density)),
   contour = FALSE
-) + scale_fill_viridis_c() + facet_grid(religion.in.group~norm.quartile, margins = T)  + scale_x_reverse() + scale_y_reverse()
+) + scale_x_reverse() + scale_y_reverse() 
 
-dev.copy(jpeg,'Output/Graphs/Audit/Heatmaps/India NF chron rank by nf rank by norm quartile - smooth.jpg')
+dev.copy(jpeg,'Output/Graphs/Audit/Heatmaps/India NF chron rank by nf rank - smooth.jpg')
 dev.off()
+
+ggplot(m.newsfeed.df.all, aes(x=norm.pctle, nf.order)) + stat_density_2d(
+  geom = "raster",
+  aes(fill = after_stat(density)),
+  contour = F
+) + scale_y_reverse() + scale_fill_gradientn(colors = brewer.pal(n = 5, name = "Greens"),
+                             values = c(0, 0.5, 0.9, 0.95, 1))
+
+dev.copy(jpeg,'Output/Graphs/Audit/Heatmaps/India NF norm pref rank by nf rank - smooth.jpg')
+dev.off()
+
+m.newsfeed.df.all$holder <- 1
+
+ggplot(m.newsfeed.df.all, aes(factor(holder), nf.order)) + stat_density(aes(fill = after_stat(density)), geom = "raster", position = "identity") + facet_grid(.~religion.in.group, scales = "free_y") + scale_y_reverse() + scale_fill_gradientn(colors = brewer.pal(n = 5, name = "Blues"),
+                             values = c(0, 0.5, 0.9, 0.95, 1))
+
+dev.copy(jpeg,'Output/Graphs/Audit/Heatmaps/India NF nf rank by ingroup - smooth.jpg')
+dev.off()
+
+## PYMK
 
 ggplot(m.pymk.df.all %>% filter(pct_friend_rank <= 60), aes(x=pct_friend_rank, pymk.order)) + stat_density_2d(
   geom = "raster",
   aes(fill = after_stat(density)),
   contour = FALSE
-) + scale_fill_viridis_c() + facet_grid(religion.in.group~norm.quartile, margins = T)  + scale_x_reverse() + scale_y_reverse()
+) + scale_x_reverse() + scale_y_reverse() 
 
-dev.copy(jpeg,'Output/Graphs/Audit/Heatmaps/India PYMK pct friends by pymk rank by norm quartile - smooth.jpg')
+dev.copy(jpeg,'Output/Graphs/Audit/Heatmaps/India PYMK pct friend rank by pymk rank - smooth.jpg')
 dev.off()
 
-ggplot(m.pymk.df.all %>% filter(pct_friend_rank <= 60), aes(x=pct_friend_rank, pymk.order)) + stat_density_2d(
+ggplot(m.pymk.df.all, aes(x=norm.pctle, pymk.order)) + stat_density_2d(
   geom = "raster",
   aes(fill = after_stat(density)),
-  contour = FALSE
-) + scale_fill_viridis_c() + scale_x_reverse() + scale_y_reverse()
+  contour = F
+) + scale_y_reverse() + scale_fill_gradientn(colors = brewer.pal(n = 5, name = "Greens"),
+                             values = c(0, 0.5, 0.9, 0.95, 1))
 
-dev.copy(jpeg,'Output/Graphs/Audit/Heatmaps/India PYMK pct friends by pymk rank - smooth.jpg')
+dev.copy(jpeg,'Output/Graphs/Audit/Heatmaps/India PYMK norm pref rank by pymk rank - smooth.jpg')
+dev.off()
+
+m.pymk.df.all$holder <- 1
+
+ggplot(m.pymk.df.all, aes(factor(holder), pymk.order)) + stat_density(aes(fill = after_stat(density)), geom = "raster", position = "identity") + facet_grid(.~religion.in.group, scales = "free_y") + scale_y_reverse() + scale_fill_gradientn(colors = brewer.pal(n = 5, name = "Blues"),
+                             values = c(0, 0.5, 0.9, 0.95, 1))
+
+dev.copy(jpeg,'Output/Graphs/Audit/Heatmaps/India PYMK pymk rank by ingroup - smooth.jpg')
 dev.off()
 
 ```
+
 
 ```{r Raw Likert Panel - NF}
 

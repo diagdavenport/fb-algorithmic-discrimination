@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  8 JAN 2021 09:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  17 JAN 2021 13:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -810,7 +810,7 @@ visulaize misranking nf-1.pdf  used on input line 266.
 (pdftex.def)             Requested size: 453.6939pt x 316.18047pt.
 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
 wn PDFs/02.1-Main-FB-Script---India_files/figure-latex/visulaize misranking nf-
-2.pdf, id=96, 457.71pt x 310.15875pt>
+2.pdf, id=96, 457.71pt x 312.16624pt>
 File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
 arkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/visulaize misrankin
 g nf-2.pdf Graphic file (type pdf)
@@ -820,7 +820,7 @@ rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/visulaize misranking
 Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
 /Lockdown/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/
 visulaize misranking nf-2.pdf  used on input line 267.
-(pdftex.def)             Requested size: 457.7089pt x 310.15799pt.
+(pdftex.def)             Requested size: 457.71587pt x 312.17024pt.
 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
 wn PDFs/02.1-Main-FB-Script---India_files/figure-latex/visulaize misranking nf-
 3.pdf, id=97, 457.71pt x 316.18124pt>
@@ -924,7 +924,7 @@ visulaize misranking pymk-1.pdf  used on input line 278.
 (pdftex.def)             Requested size: 453.6939pt x 316.18047pt.
 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
 wn PDFs/02.1-Main-FB-Script---India_files/figure-latex/visulaize misranking pym
-k-2.pdf, id=174, 457.71pt x 299.1175pt>
+k-2.pdf, id=174, 457.71pt x 312.16624pt>
 File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
 arkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/visulaize misrankin
 g pymk-2.pdf Graphic file (type pdf)
@@ -934,7 +934,7 @@ rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/visulaize misranking
 Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
 /Lockdown/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/
 visulaize misranking pymk-2.pdf  used on input line 279.
-(pdftex.def)             Requested size: 457.72984pt x 299.13045pt.
+(pdftex.def)             Requested size: 457.71587pt x 312.17024pt.
 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
 wn PDFs/02.1-Main-FB-Script---India_files/figure-latex/visulaize misranking pym
 k-3.pdf, id=175, 457.71pt x 316.18124pt>
@@ -1023,7 +1023,7 @@ cripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/unnamed-chu
 nk-1-1.pdf>]
 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
 wn PDFs/02.1-Main-FB-Script---India_files/figure-latex/evolution of timeline-1.
-pdf, id=236, 451.6875pt x 316.18124pt>
+pdf, id=236, 463.7325pt x 316.18124pt>
 File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
 arkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/evolution of timeli
 ne-1.pdf Graphic file (type pdf)
@@ -1033,10 +1033,10 @@ e-1.pdf>
 Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
 /Lockdown/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/
 evolution of timeline-1.pdf  used on input line 291.
-(pdftex.def)             Requested size: 451.71394pt x 316.19975pt.
+(pdftex.def)             Requested size: 463.73842pt x 316.18529pt.
 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
 wn PDFs/02.1-Main-FB-Script---India_files/figure-latex/evolution of timeline-2.
-pdf, id=237, 451.6875pt x 316.18124pt>
+pdf, id=237, 463.7325pt x 316.18124pt>
 File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
 arkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/evolution of timeli
 ne-2.pdf Graphic file (type pdf)
@@ -1046,7 +1046,7 @@ e-2.pdf>
 Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
 /Lockdown/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/
 evolution of timeline-2.pdf  used on input line 292.
-(pdftex.def)             Requested size: 451.71394pt x 316.19975pt.
+(pdftex.def)             Requested size: 463.73842pt x 316.18529pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 291--293
 [][]
@@ -1057,7 +1057,7 @@ rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/evolution of timelin
 e-1.pdf>]
 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
 wn PDFs/02.1-Main-FB-Script---India_files/figure-latex/evolution of timeline-3.
-pdf, id=250, 451.6875pt x 316.18124pt>
+pdf, id=250, 463.7325pt x 316.18124pt>
 File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
 arkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/evolution of timeli
 ne-3.pdf Graphic file (type pdf)
@@ -1067,13 +1067,13 @@ e-3.pdf>
 Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
 /Lockdown/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/
 evolution of timeline-3.pdf  used on input line 299.
-(pdftex.def)             Requested size: 451.71394pt x 316.19975pt.
+(pdftex.def)             Requested size: 463.73842pt x 316.18529pt.
 [14 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
 rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/evolution of timelin
 e-2.pdf>]
 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
 wn PDFs/02.1-Main-FB-Script---India_files/figure-latex/alluvials-1.pdf, id=262,
- 458.71375pt x 300.12125pt>
+ 461.725pt x 309.155pt>
 File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
 arkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/alluvials-1.pdf Gra
 phic file (type pdf)
@@ -1082,10 +1082,10 @@ rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/alluvials-1.pdf>
 Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
 /Lockdown/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/
 alluvials-1.pdf  used on input line 301.
-(pdftex.def)             Requested size: 458.73363pt x 300.13425pt.
+(pdftex.def)             Requested size: 461.72388pt x 309.15424pt.
 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
 wn PDFs/02.1-Main-FB-Script---India_files/figure-latex/alluvials-2.pdf, id=263,
- 458.71375pt x 300.12125pt>
+ 461.725pt x 309.155pt>
 File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
 arkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/alluvials-2.pdf Gra
 phic file (type pdf)
@@ -1094,10 +1094,10 @@ rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/alluvials-2.pdf>
 Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
 /Lockdown/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/
 alluvials-2.pdf  used on input line 302.
-(pdftex.def)             Requested size: 458.73363pt x 300.13425pt.
+(pdftex.def)             Requested size: 461.72388pt x 309.15424pt.
 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
 wn PDFs/02.1-Main-FB-Script---India_files/figure-latex/alluvials-3.pdf, id=264,
- 458.71375pt x 300.12125pt>
+ 461.725pt x 309.155pt>
 File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
 arkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/alluvials-3.pdf Gra
 phic file (type pdf)
@@ -1106,10 +1106,10 @@ rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/alluvials-3.pdf>
 Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
 /Lockdown/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/
 alluvials-3.pdf  used on input line 303.
-(pdftex.def)             Requested size: 458.73363pt x 300.13425pt.
+(pdftex.def)             Requested size: 461.72388pt x 309.15424pt.
 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
 wn PDFs/02.1-Main-FB-Script---India_files/figure-latex/alluvials-4.pdf, id=265,
- 458.71375pt x 300.12125pt>
+ 461.725pt x 309.155pt>
 File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
 arkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/alluvials-4.pdf Gra
 phic file (type pdf)
@@ -1118,10 +1118,10 @@ rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/alluvials-4.pdf>
 Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
 /Lockdown/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/
 alluvials-4.pdf  used on input line 304.
-(pdftex.def)             Requested size: 458.73363pt x 300.13425pt.
+(pdftex.def)             Requested size: 461.72388pt x 309.15424pt.
 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
 wn PDFs/02.1-Main-FB-Script---India_files/figure-latex/alluvials-5.pdf, id=266,
- 458.71375pt x 300.12125pt>
+ 461.725pt x 309.155pt>
 File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
 arkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/alluvials-5.pdf Gra
 phic file (type pdf)
@@ -1130,7 +1130,7 @@ rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/alluvials-5.pdf>
 Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
 /Lockdown/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/
 alluvials-5.pdf  used on input line 305.
-(pdftex.def)             Requested size: 458.73363pt x 300.13425pt.
+(pdftex.def)             Requested size: 461.72388pt x 309.15424pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 301--306
 [][]
@@ -1160,421 +1160,198 @@ ts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/alluvials-1.pdf
 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
 wn PDFs/02.1-Main-FB-Script---India_files/figure-latex/alluvials-3.pdf>]
 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
-wn PDFs/02.1-Main-FB-Script---India_files/figure-latex/sankey-1.pdf, id=319, 46
-3.7325pt x 310.15875pt>
+wn PDFs/02.1-Main-FB-Script---India_files/figure-latex/alluvial clean-1.pdf, id
+=316, 461.725pt x 309.155pt>
 File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
-arkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/sankey-1.pdf Graphi
-c file (type pdf)
+arkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/alluvial clean-1.pd
+f Graphic file (type pdf)
 <use /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
-rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/sankey-1.pdf>
+rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/alluvial clean-1.pdf
+>
 Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
 /Lockdown/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/
-sankey-1.pdf  used on input line 307.
-(pdftex.def)             Requested size: 463.73135pt x 310.15799pt.
+alluvial clean-1.pdf  used on input line 307.
+(pdftex.def)             Requested size: 461.72388pt x 309.15424pt.
+</Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
+wn PDFs/02.1-Main-FB-Script---India_files/figure-latex/alluvial clean-2.pdf, id
+=317, 461.725pt x 309.155pt>
+File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
+arkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/alluvial clean-2.pd
+f Graphic file (type pdf)
+<use /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
+rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/alluvial clean-2.pdf
+>
+Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
+/Lockdown/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/
+alluvial clean-2.pdf  used on input line 308.
+(pdftex.def)             Requested size: 461.72388pt x 309.15424pt.
+</Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
+wn PDFs/02.1-Main-FB-Script---India_files/figure-latex/alluvial clean-3.pdf, id
+=318, 464.73625pt x 309.155pt>
+File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
+arkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/alluvial clean-3.pd
+f Graphic file (type pdf)
+<use /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
+rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/alluvial clean-3.pdf
+>
+Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
+/Lockdown/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/
+alluvial clean-3.pdf  used on input line 309.
+(pdftex.def)             Requested size: 464.74928pt x 309.16367pt.
+</Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
+wn PDFs/02.1-Main-FB-Script---India_files/figure-latex/alluvial clean-4.pdf, id
+=319, 461.725pt x 309.155pt>
+File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
+arkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/alluvial clean-4.pd
+f Graphic file (type pdf)
+<use /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
+rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/alluvial clean-4.pdf
+>
+Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
+/Lockdown/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/
+alluvial clean-4.pdf  used on input line 310.
+(pdftex.def)             Requested size: 461.72388pt x 309.15424pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 307--311
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 307--311
+[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 307--311
+[]
+ []
+
 [17 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
 rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/alluvials-4.pdf> </U
 sers/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdown 
-PDFs/02.1-Main-FB-Script---India_files/figure-latex/alluvials-5.pdf>]
-</Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
-wn PDFs/02.1-Main-FB-Script---India_files/figure-latex/heatmap counts-1.pdf, id
-=348, 453.695pt x 303.1325pt>
-File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
-arkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/heatmap counts-1.pd
-f Graphic file (type pdf)
-<use /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
-rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/heatmap counts-1.pdf
->
-Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
-/Lockdown/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/
-heatmap counts-1.pdf  used on input line 309.
-(pdftex.def)             Requested size: 453.6939pt x 303.13176pt.
-</Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
-wn PDFs/02.1-Main-FB-Script---India_files/figure-latex/heatmap counts-2.pdf, id
-=349, 453.695pt x 303.1325pt>
-File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
-arkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/heatmap counts-2.pd
-f Graphic file (type pdf)
-<use /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
-rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/heatmap counts-2.pdf
->
-Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
-/Lockdown/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/
-heatmap counts-2.pdf  used on input line 310.
-(pdftex.def)             Requested size: 453.6939pt x 303.13176pt.
-</Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
-wn PDFs/02.1-Main-FB-Script---India_files/figure-latex/heatmap counts-3.pdf, id
-=350, 453.695pt x 303.1325pt>
-File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
-arkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/heatmap counts-3.pd
-f Graphic file (type pdf)
-<use /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
-rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/heatmap counts-3.pdf
->
-Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
-/Lockdown/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/
-heatmap counts-3.pdf  used on input line 311.
-(pdftex.def)             Requested size: 453.6939pt x 303.13176pt.
-</Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
-wn PDFs/02.1-Main-FB-Script---India_files/figure-latex/heatmap counts-4.pdf, id
-=351, 453.695pt x 303.1325pt>
-File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
-arkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/heatmap counts-4.pd
-f Graphic file (type pdf)
-<use /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
-rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/heatmap counts-4.pdf
->
-Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
-/Lockdown/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/
-heatmap counts-4.pdf  used on input line 312.
-(pdftex.def)             Requested size: 453.6939pt x 303.13176pt.
-</Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
-wn PDFs/02.1-Main-FB-Script---India_files/figure-latex/heatmap counts-5.pdf, id
-=352, 453.695pt x 303.1325pt>
-File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
-arkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/heatmap counts-5.pd
-f Graphic file (type pdf)
-<use /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
-rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/heatmap counts-5.pdf
->
-Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
-/Lockdown/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/
-heatmap counts-5.pdf  used on input line 313.
-(pdftex.def)             Requested size: 453.6939pt x 303.13176pt.
-</Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
-wn PDFs/02.1-Main-FB-Script---India_files/figure-latex/heatmap counts-6.pdf, id
-=353, 453.695pt x 310.15875pt>
-File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
-arkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/heatmap counts-6.pd
-f Graphic file (type pdf)
-<use /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
-rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/heatmap counts-6.pdf
->
-Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
-/Lockdown/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/
-heatmap counts-6.pdf  used on input line 314.
-(pdftex.def)             Requested size: 453.6939pt x 310.15799pt.
-</Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
-wn PDFs/02.1-Main-FB-Script---India_files/figure-latex/heatmap counts-7.pdf, id
-=354, 453.695pt x 310.15875pt>
-File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
-arkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/heatmap counts-7.pd
-f Graphic file (type pdf)
-<use /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
-rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/heatmap counts-7.pdf
->
-Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
-/Lockdown/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/
-heatmap counts-7.pdf  used on input line 315.
-(pdftex.def)             Requested size: 453.6939pt x 310.15799pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 309--316
-[][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 309--316
-[]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 309--316
-[]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 309--316
-[]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 309--316
-[]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 309--316
-[]
- []
-
-[18 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
-rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/sankey-1.pdf> </User
-s/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdown PDF
-s/02.1-Main-FB-Script---India_files/figure-latex/heatmap counts-1.pdf>] [19 </U
-sers/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdown 
-PDFs/02.1-Main-FB-Script---India_files/figure-latex/heatmap counts-2.pdf> </Use
+PDFs/02.1-Main-FB-Script---India_files/figure-latex/alluvials-5.pdf>] [18 </Use
 rs/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdown PD
-Fs/02.1-Main-FB-Script---India_files/figure-latex/heatmap counts-3.pdf>] [20 </
-Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdown
- PDFs/02.1-Main-FB-Script---India_files/figure-latex/heatmap counts-4.pdf> </Us
-ers/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdown P
-DFs/02.1-Main-FB-Script---India_files/figure-latex/heatmap counts-5.pdf>]
+Fs/02.1-Main-FB-Script---India_files/figure-latex/alluvial clean-1.pdf> </Users
+/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdown PDFs
+/02.1-Main-FB-Script---India_files/figure-latex/alluvial clean-2.pdf>]
 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
-wn PDFs/02.1-Main-FB-Script---India_files/figure-latex/heatmap pct-1.pdf, id=42
-1, 453.695pt x 310.15875pt>
+wn PDFs/02.1-Main-FB-Script---India_files/figure-latex/clean heatmaps-1.pdf, id
+=372, 453.695pt x 315.1775pt>
 File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
-arkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/heatmap pct-1.pdf G
-raphic file (type pdf)
+arkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/clean heatmaps-1.pd
+f Graphic file (type pdf)
 <use /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
-rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/heatmap pct-1.pdf>
+rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/clean heatmaps-1.pdf
+>
 Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
 /Lockdown/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/
-heatmap pct-1.pdf  used on input line 317.
-(pdftex.def)             Requested size: 453.6939pt x 310.15799pt.
+clean heatmaps-1.pdf  used on input line 312.
+(pdftex.def)             Requested size: 453.6939pt x 315.17673pt.
 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
-wn PDFs/02.1-Main-FB-Script---India_files/figure-latex/heatmap pct-2.pdf, id=42
-2, 453.695pt x 303.1325pt>
+wn PDFs/02.1-Main-FB-Script---India_files/figure-latex/clean heatmaps-2.pdf, id
+=373, 453.695pt x 315.1775pt>
 File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
-arkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/heatmap pct-2.pdf G
-raphic file (type pdf)
+arkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/clean heatmaps-2.pd
+f Graphic file (type pdf)
 <use /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
-rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/heatmap pct-2.pdf>
+rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/clean heatmaps-2.pdf
+>
 Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
 /Lockdown/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/
-heatmap pct-2.pdf  used on input line 318.
-(pdftex.def)             Requested size: 453.6939pt x 303.13176pt.
+clean heatmaps-2.pdf  used on input line 313.
+(pdftex.def)             Requested size: 453.6939pt x 315.17673pt.
 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
-wn PDFs/02.1-Main-FB-Script---India_files/figure-latex/heatmap pct-3.pdf, id=42
-3, 453.695pt x 303.1325pt>
+wn PDFs/02.1-Main-FB-Script---India_files/figure-latex/clean heatmaps-3.pdf, id
+=374, 453.695pt x 315.1775pt>
 File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
-arkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/heatmap pct-3.pdf G
-raphic file (type pdf)
+arkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/clean heatmaps-3.pd
+f Graphic file (type pdf)
 <use /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
-rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/heatmap pct-3.pdf>
+rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/clean heatmaps-3.pdf
+>
 Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
 /Lockdown/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/
-heatmap pct-3.pdf  used on input line 319.
-(pdftex.def)             Requested size: 453.6939pt x 303.13176pt.
+clean heatmaps-3.pdf  used on input line 314.
+(pdftex.def)             Requested size: 453.6939pt x 315.17673pt.
 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
-wn PDFs/02.1-Main-FB-Script---India_files/figure-latex/heatmap pct-4.pdf, id=42
-4, 453.695pt x 303.1325pt>
+wn PDFs/02.1-Main-FB-Script---India_files/figure-latex/clean heatmaps-4.pdf, id
+=375, 453.695pt x 315.1775pt>
 File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
-arkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/heatmap pct-4.pdf G
-raphic file (type pdf)
+arkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/clean heatmaps-4.pd
+f Graphic file (type pdf)
 <use /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
-rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/heatmap pct-4.pdf>
+rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/clean heatmaps-4.pdf
+>
 Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
 /Lockdown/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/
-heatmap pct-4.pdf  used on input line 320.
-(pdftex.def)             Requested size: 453.6939pt x 303.13176pt.
+clean heatmaps-4.pdf  used on input line 315.
+(pdftex.def)             Requested size: 453.6939pt x 315.17673pt.
 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
-wn PDFs/02.1-Main-FB-Script---India_files/figure-latex/heatmap pct-5.pdf, id=42
-5, 453.695pt x 303.1325pt>
+wn PDFs/02.1-Main-FB-Script---India_files/figure-latex/clean heatmaps-5.pdf, id
+=376, 453.695pt x 315.1775pt>
 File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
-arkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/heatmap pct-5.pdf G
-raphic file (type pdf)
+arkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/clean heatmaps-5.pd
+f Graphic file (type pdf)
 <use /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
-rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/heatmap pct-5.pdf>
+rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/clean heatmaps-5.pdf
+>
 Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
 /Lockdown/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/
-heatmap pct-5.pdf  used on input line 321.
-(pdftex.def)             Requested size: 453.6939pt x 303.13176pt.
+clean heatmaps-5.pdf  used on input line 316.
+(pdftex.def)             Requested size: 453.6939pt x 315.17673pt.
 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
-wn PDFs/02.1-Main-FB-Script---India_files/figure-latex/heatmap pct-6.pdf, id=42
-6, 453.695pt x 310.15875pt>
+wn PDFs/02.1-Main-FB-Script---India_files/figure-latex/clean heatmaps-6.pdf, id
+=377, 453.695pt x 315.1775pt>
 File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
-arkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/heatmap pct-6.pdf G
-raphic file (type pdf)
+arkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/clean heatmaps-6.pd
+f Graphic file (type pdf)
 <use /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
-rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/heatmap pct-6.pdf>
+rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/clean heatmaps-6.pdf
+>
 Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
 /Lockdown/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/
-heatmap pct-6.pdf  used on input line 322.
-(pdftex.def)             Requested size: 453.6939pt x 310.15799pt.
-</Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
-wn PDFs/02.1-Main-FB-Script---India_files/figure-latex/heatmap pct-7.pdf, id=42
-7, 453.695pt x 310.15875pt>
-File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
-arkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/heatmap pct-7.pdf G
-raphic file (type pdf)
-<use /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
-rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/heatmap pct-7.pdf>
-Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
-/Lockdown/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/
-heatmap pct-7.pdf  used on input line 323.
-(pdftex.def)             Requested size: 453.6939pt x 310.15799pt.
+clean heatmaps-6.pdf  used on input line 317.
+(pdftex.def)             Requested size: 453.6939pt x 315.17673pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 317--324
+Underfull \hbox (badness 10000) in paragraph at lines 312--318
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 317--324
+Underfull \hbox (badness 10000) in paragraph at lines 312--318
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 317--324
+Underfull \hbox (badness 10000) in paragraph at lines 312--318
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 317--324
+Underfull \hbox (badness 10000) in paragraph at lines 312--318
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 317--324
+Underfull \hbox (badness 10000) in paragraph at lines 312--318
 []
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 317--324
-[]
- []
-
-[21 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
-rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/heatmap counts-6.pdf
+[19 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
+rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/alluvial clean-3.pdf
 > </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Mark
-down PDFs/02.1-Main-FB-Script---India_files/figure-latex/heatmap counts-7.pdf>]
-[22 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
-rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/heatmap pct-1.pdf> <
-/Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdow
-n PDFs/02.1-Main-FB-Script---India_files/figure-latex/heatmap pct-2.pdf>] [23 <
-/Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdow
-n PDFs/02.1-Main-FB-Script---India_files/figure-latex/heatmap pct-3.pdf> </User
-s/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdown PDF
-s/02.1-Main-FB-Script---India_files/figure-latex/heatmap pct-4.pdf>] [24 </User
-s/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdown PDF
-s/02.1-Main-FB-Script---India_files/figure-latex/heatmap pct-5.pdf> </Users/dia
-gdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdown PDFs/02.
-1-Main-FB-Script---India_files/figure-latex/heatmap pct-6.pdf>]
-</Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
-wn PDFs/02.1-Main-FB-Script---India_files/figure-latex/heatmap four by 60-1.pdf
-, id=509, 453.695pt x 310.15875pt>
-File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
-arkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/heatmap four by 60-
-1.pdf Graphic file (type pdf)
-<use /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
-rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/heatmap four by 60-1
-.pdf>
-Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
-/Lockdown/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/
-heatmap four by 60-1.pdf  used on input line 325.
-(pdftex.def)             Requested size: 453.6939pt x 310.15799pt.
-</Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
-wn PDFs/02.1-Main-FB-Script---India_files/figure-latex/heatmap four by 60-2.pdf
-, id=510, 453.695pt x 310.15875pt>
-File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
-arkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/heatmap four by 60-
-2.pdf Graphic file (type pdf)
-<use /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
-rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/heatmap four by 60-2
-.pdf>
-Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
-/Lockdown/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/
-heatmap four by 60-2.pdf  used on input line 326.
-(pdftex.def)             Requested size: 453.6939pt x 310.15799pt.
-</Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
-wn PDFs/02.1-Main-FB-Script---India_files/figure-latex/heatmap four by 60-3.pdf
-, id=511, 453.695pt x 310.15875pt>
-File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
-arkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/heatmap four by 60-
-3.pdf Graphic file (type pdf)
-<use /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
-rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/heatmap four by 60-3
-.pdf>
-Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
-/Lockdown/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/
-heatmap four by 60-3.pdf  used on input line 327.
-(pdftex.def)             Requested size: 453.6939pt x 310.15799pt.
-</Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
-wn PDFs/02.1-Main-FB-Script---India_files/figure-latex/heatmap four by 60-4.pdf
-, id=512, 453.695pt x 310.15875pt>
-File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
-arkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/heatmap four by 60-
-4.pdf Graphic file (type pdf)
-<use /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
-rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/heatmap four by 60-4
-.pdf>
-Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
-/Lockdown/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/
-heatmap four by 60-4.pdf  used on input line 328.
-(pdftex.def)             Requested size: 453.6939pt x 310.15799pt.
-</Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
-wn PDFs/02.1-Main-FB-Script---India_files/figure-latex/heatmap four by 60-5.pdf
-, id=513, 453.695pt x 310.15875pt>
-File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
-arkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/heatmap four by 60-
-5.pdf Graphic file (type pdf)
-<use /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
-rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/heatmap four by 60-5
-.pdf>
-Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
-/Lockdown/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/
-heatmap four by 60-5.pdf  used on input line 329.
-(pdftex.def)             Requested size: 453.6939pt x 310.15799pt.
-</Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
-wn PDFs/02.1-Main-FB-Script---India_files/figure-latex/heatmap four by 60-6.pdf
-, id=514, 453.695pt x 310.15875pt>
-File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
-arkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/heatmap four by 60-
-6.pdf Graphic file (type pdf)
-<use /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
-rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/heatmap four by 60-6
-.pdf>
-Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
-/Lockdown/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/
-heatmap four by 60-6.pdf  used on input line 330.
-(pdftex.def)             Requested size: 453.6939pt x 310.15799pt.
-</Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
-wn PDFs/02.1-Main-FB-Script---India_files/figure-latex/heatmap four by 60-7.pdf
-, id=515, 453.695pt x 304.13625pt>
-File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
-arkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/heatmap four by 60-
-7.pdf Graphic file (type pdf)
-<use /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
-rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/heatmap four by 60-7
-.pdf>
-Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
-/Lockdown/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/
-heatmap four by 60-7.pdf  used on input line 331.
-(pdftex.def)             Requested size: 453.6939pt x 304.1355pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 325--332
-[][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 325--332
-[]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 325--332
-[]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 325--332
-[]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 325--332
-[]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 325--332
-[]
- []
-
-[25 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
-rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/heatmap pct-7.pdf> <
-/Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdow
-n PDFs/02.1-Main-FB-Script---India_files/figure-latex/heatmap four by 60-1.pdf>
-] [26 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/
-Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/heatmap four by 60
--2.pdf> </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Script
-s/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/heatmap four by 
-60-3.pdf>] [27 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown
-/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/heatmap f
-our by 60-4.pdf> </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdo
-wn/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/heatmap
- four by 60-5.pdf>]
+down PDFs/02.1-Main-FB-Script---India_files/figure-latex/alluvial clean-4.pdf>]
+[20 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
+rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/clean heatmaps-1.pdf
+> </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Mark
+down PDFs/02.1-Main-FB-Script---India_files/figure-latex/clean heatmaps-2.pdf>]
+[21 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
+rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/clean heatmaps-3.pdf
+> </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Mark
+down PDFs/02.1-Main-FB-Script---India_files/figure-latex/clean heatmaps-4.pdf>]
 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
 wn PDFs/02.1-Main-FB-Script---India_files/figure-latex/Raw Likert Panel - NF-1.
-pdf, id=592, 445.665pt x 316.18124pt>
+pdf, id=450, 463.7325pt x 316.18124pt>
 File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
 arkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/Raw Likert Panel - 
 NF-1.pdf Graphic file (type pdf)
@@ -1583,11 +1360,11 @@ rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/Raw Likert Panel - N
 F-1.pdf>
 Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
 /Lockdown/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/
-Raw Likert Panel - NF-1.pdf  used on input line 333.
-(pdftex.def)             Requested size: 445.6707pt x 316.18529pt.
+Raw Likert Panel - NF-1.pdf  used on input line 319.
+(pdftex.def)             Requested size: 463.73842pt x 316.18529pt.
 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
 wn PDFs/02.1-Main-FB-Script---India_files/figure-latex/Raw Likert Panel - NF-2.
-pdf, id=593, 445.665pt x 316.18124pt>
+pdf, id=451, 463.7325pt x 316.18124pt>
 File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
 arkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/Raw Likert Panel - 
 NF-2.pdf Graphic file (type pdf)
@@ -1596,11 +1373,11 @@ rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/Raw Likert Panel - N
 F-2.pdf>
 Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
 /Lockdown/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/
-Raw Likert Panel - NF-2.pdf  used on input line 334.
-(pdftex.def)             Requested size: 445.6707pt x 316.18529pt.
+Raw Likert Panel - NF-2.pdf  used on input line 320.
+(pdftex.def)             Requested size: 463.73842pt x 316.18529pt.
 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
 wn PDFs/02.1-Main-FB-Script---India_files/figure-latex/Raw Likert Panel - NF-3.
-pdf, id=594, 445.665pt x 316.18124pt>
+pdf, id=452, 463.7325pt x 316.18124pt>
 File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
 arkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/Raw Likert Panel - 
 NF-3.pdf Graphic file (type pdf)
@@ -1609,11 +1386,11 @@ rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/Raw Likert Panel - N
 F-3.pdf>
 Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
 /Lockdown/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/
-Raw Likert Panel - NF-3.pdf  used on input line 335.
-(pdftex.def)             Requested size: 445.6707pt x 316.18529pt.
+Raw Likert Panel - NF-3.pdf  used on input line 321.
+(pdftex.def)             Requested size: 463.73842pt x 316.18529pt.
 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
 wn PDFs/02.1-Main-FB-Script---India_files/figure-latex/Raw Likert Panel - NF-4.
-pdf, id=595, 445.665pt x 316.18124pt>
+pdf, id=453, 463.7325pt x 316.18124pt>
 File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
 arkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/Raw Likert Panel - 
 NF-4.pdf Graphic file (type pdf)
@@ -1622,35 +1399,35 @@ rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/Raw Likert Panel - N
 F-4.pdf>
 Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
 /Lockdown/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/
-Raw Likert Panel - NF-4.pdf  used on input line 336.
-(pdftex.def)             Requested size: 445.6707pt x 316.18529pt.
+Raw Likert Panel - NF-4.pdf  used on input line 322.
+(pdftex.def)             Requested size: 463.73842pt x 316.18529pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 333--337
+Underfull \hbox (badness 10000) in paragraph at lines 319--323
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 333--337
+Underfull \hbox (badness 10000) in paragraph at lines 319--323
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 333--337
+Underfull \hbox (badness 10000) in paragraph at lines 319--323
 []
  []
 
-[28 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
-rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/heatmap four by 60-6
-.pdf> </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/
-Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/heatmap four by 60
--7.pdf>] [29 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/S
-cripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/Raw Likert 
-Panel - NF-1.pdf> </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockd
-own/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/Raw Li
-kert Panel - NF-2.pdf>]
+[22 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
+rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/clean heatmaps-5.pdf
+> </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Mark
+down PDFs/02.1-Main-FB-Script---India_files/figure-latex/clean heatmaps-6.pdf>]
+[23 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
+rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/Raw Likert Panel - N
+F-1.pdf> </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scrip
+ts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/Raw Likert Pane
+l - NF-2.pdf>]
 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
 wn PDFs/02.1-Main-FB-Script---India_files/figure-latex/Outcomes by norm pref-1.
-pdf, id=650, 444.66125pt x 316.18124pt>
+pdf, id=496, 463.7325pt x 316.18124pt>
 File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
 arkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/Outcomes by norm pr
 ef-1.pdf Graphic file (type pdf)
@@ -1659,11 +1436,11 @@ rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/Outcomes by norm pre
 f-1.pdf>
 Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
 /Lockdown/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/
-Outcomes by norm pref-1.pdf  used on input line 338.
-(pdftex.def)             Requested size: 444.66016pt x 316.18047pt.
+Outcomes by norm pref-1.pdf  used on input line 324.
+(pdftex.def)             Requested size: 463.73842pt x 316.18529pt.
 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
 wn PDFs/02.1-Main-FB-Script---India_files/figure-latex/Outcomes by norm pref-2.
-pdf, id=651, 444.66125pt x 316.18124pt>
+pdf, id=497, 463.7325pt x 316.18124pt>
 File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
 arkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/Outcomes by norm pr
 ef-2.pdf Graphic file (type pdf)
@@ -1672,11 +1449,11 @@ rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/Outcomes by norm pre
 f-2.pdf>
 Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
 /Lockdown/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/
-Outcomes by norm pref-2.pdf  used on input line 339.
-(pdftex.def)             Requested size: 444.66016pt x 316.18047pt.
+Outcomes by norm pref-2.pdf  used on input line 325.
+(pdftex.def)             Requested size: 463.73842pt x 316.18529pt.
 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
 wn PDFs/02.1-Main-FB-Script---India_files/figure-latex/Outcomes by norm pref-3.
-pdf, id=652, 444.66125pt x 316.18124pt>
+pdf, id=498, 463.7325pt x 316.18124pt>
 File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
 arkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/Outcomes by norm pr
 ef-3.pdf Graphic file (type pdf)
@@ -1685,11 +1462,11 @@ rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/Outcomes by norm pre
 f-3.pdf>
 Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
 /Lockdown/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/
-Outcomes by norm pref-3.pdf  used on input line 340.
-(pdftex.def)             Requested size: 444.66016pt x 316.18047pt.
+Outcomes by norm pref-3.pdf  used on input line 326.
+(pdftex.def)             Requested size: 463.73842pt x 316.18529pt.
 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
 wn PDFs/02.1-Main-FB-Script---India_files/figure-latex/Outcomes by norm pref-4.
-pdf, id=653, 444.66125pt x 316.18124pt>
+pdf, id=499, 463.7325pt x 316.18124pt>
 File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
 arkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/Outcomes by norm pr
 ef-4.pdf Graphic file (type pdf)
@@ -1698,35 +1475,35 @@ rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/Outcomes by norm pre
 f-4.pdf>
 Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
 /Lockdown/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/
-Outcomes by norm pref-4.pdf  used on input line 341.
-(pdftex.def)             Requested size: 444.66016pt x 316.18047pt.
+Outcomes by norm pref-4.pdf  used on input line 327.
+(pdftex.def)             Requested size: 463.73842pt x 316.18529pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 338--342
+Underfull \hbox (badness 10000) in paragraph at lines 324--328
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 338--342
+Underfull \hbox (badness 10000) in paragraph at lines 324--328
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 338--342
+Underfull \hbox (badness 10000) in paragraph at lines 324--328
 []
  []
 
-[30 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
+[24 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
 rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/Raw Likert Panel - N
 F-3.pdf> </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scrip
 ts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/Raw Likert Pane
-l - NF-4.pdf>] [31 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lock
+l - NF-4.pdf>] [25 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lock
 down/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/Outco
 mes by norm pref-1.pdf> </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
 /Lockdown/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/
 Outcomes by norm pref-2.pdf>]
 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
 wn PDFs/02.1-Main-FB-Script---India_files/figure-latex/Excess ingroup-1.pdf, id
-=692, 465.74pt x 311.1625pt>
+=537, 466.74374pt x 316.18124pt>
 File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
 arkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/Excess ingroup-1.pd
 f Graphic file (type pdf)
@@ -1735,11 +1512,11 @@ rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/Excess ingroup-1.pdf
 >
 Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
 /Lockdown/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/
-Excess ingroup-1.pdf  used on input line 343.
-(pdftex.def)             Requested size: 465.74596pt x 311.16649pt.
+Excess ingroup-1.pdf  used on input line 329.
+(pdftex.def)             Requested size: 466.76396pt x 316.19493pt.
 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
 wn PDFs/02.1-Main-FB-Script---India_files/figure-latex/Excess ingroup-2.pdf, id
-=693, 445.665pt x 309.155pt>
+=538, 463.7325pt x 316.18124pt>
 File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
 arkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/Excess ingroup-2.pd
 f Graphic file (type pdf)
@@ -1748,21 +1525,21 @@ rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/Excess ingroup-2.pdf
 >
 Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
 /Lockdown/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/
-Excess ingroup-2.pdf  used on input line 344.
-(pdftex.def)             Requested size: 445.6707pt x 309.15895pt.
+Excess ingroup-2.pdf  used on input line 330.
+(pdftex.def)             Requested size: 463.73842pt x 316.18529pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 343--345
+Underfull \hbox (badness 10000) in paragraph at lines 329--331
 [][]
  []
 
-[32 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
+[26 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
 rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/Outcomes by norm pre
 f-3.pdf> </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scrip
 ts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/Outcomes by nor
 m pref-4.pdf>]
 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
 wn PDFs/02.1-Main-FB-Script---India_files/figure-latex/Distribution of raw pref
- by group-1.pdf, id=712, 453.695pt x 316.18124pt>
+ by group-1.pdf, id=557, 453.695pt x 316.18124pt>
 File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
 arkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/Distribution of raw
  pref by group-1.pdf Graphic file (type pdf)
@@ -1771,11 +1548,11 @@ rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/Distribution of raw
 pref by group-1.pdf>
 Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
 /Lockdown/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/
-Distribution of raw pref by group-1.pdf  used on input line 346.
+Distribution of raw pref by group-1.pdf  used on input line 332.
 (pdftex.def)             Requested size: 453.6939pt x 316.18047pt.
 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
 wn PDFs/02.1-Main-FB-Script---India_files/figure-latex/Distribution of raw pref
- by group-2.pdf, id=713, 459.7175pt x 312.16624pt>
+ by group-2.pdf, id=558, 459.7175pt x 315.1775pt>
 File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
 arkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/Distribution of raw
  pref by group-2.pdf Graphic file (type pdf)
@@ -1784,11 +1561,11 @@ rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/Distribution of raw
 pref by group-2.pdf>
 Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
 /Lockdown/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/
-Distribution of raw pref by group-2.pdf  used on input line 347.
-(pdftex.def)             Requested size: 459.72337pt x 312.17024pt.
+Distribution of raw pref by group-2.pdf  used on input line 333.
+(pdftex.def)             Requested size: 459.74442pt x 315.19595pt.
 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
 wn PDFs/02.1-Main-FB-Script---India_files/figure-latex/Distribution of raw pref
- by group-3.pdf, id=714, 453.695pt x 315.1775pt>
+ by group-3.pdf, id=559, 453.695pt x 315.1775pt>
 File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
 arkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/Distribution of raw
  pref by group-3.pdf Graphic file (type pdf)
@@ -1797,11 +1574,11 @@ rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/Distribution of raw
 pref by group-3.pdf>
 Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
 /Lockdown/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/
-Distribution of raw pref by group-3.pdf  used on input line 348.
+Distribution of raw pref by group-3.pdf  used on input line 334.
 (pdftex.def)             Requested size: 453.6939pt x 315.17673pt.
 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
 wn PDFs/02.1-Main-FB-Script---India_files/figure-latex/Distribution of raw pref
- by group-4.pdf, id=715, 453.695pt x 315.1775pt>
+ by group-4.pdf, id=560, 453.695pt x 315.1775pt>
 File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
 arkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/Distribution of raw
  pref by group-4.pdf Graphic file (type pdf)
@@ -1810,35 +1587,35 @@ rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/Distribution of raw
 pref by group-4.pdf>
 Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
 /Lockdown/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/
-Distribution of raw pref by group-4.pdf  used on input line 349.
+Distribution of raw pref by group-4.pdf  used on input line 335.
 (pdftex.def)             Requested size: 453.6939pt x 315.17673pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 346--350
+Underfull \hbox (badness 10000) in paragraph at lines 332--336
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 346--350
+Underfull \hbox (badness 10000) in paragraph at lines 332--336
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 346--350
+Underfull \hbox (badness 10000) in paragraph at lines 332--336
 []
  []
 
-[33 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
+[27 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
 rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/Excess ingroup-1.pdf
 > </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Mark
 down PDFs/02.1-Main-FB-Script---India_files/figure-latex/Excess ingroup-2.pdf>]
-[34 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
+[28 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
 rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/Distribution of raw 
 pref by group-1.pdf> </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lo
 ckdown/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/Dis
 tribution of raw pref by group-2.pdf>]
 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
 wn PDFs/02.1-Main-FB-Script---India_files/figure-latex/Raw Likert Panel by Grou
-p-1.pdf, id=756, 468.75125pt x 317.185pt>
+p-1.pdf, id=600, 469.755pt x 317.185pt>
 File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
 arkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/Raw Likert Panel by
  Group-1.pdf Graphic file (type pdf)
@@ -1847,11 +1624,11 @@ rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/Raw Likert Panel by
 Group-1.pdf>
 Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
 /Lockdown/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/
-Raw Likert Panel by Group-1.pdf  used on input line 351.
-(pdftex.def)             Requested size: 468.75009pt x 317.1842pt.
+Raw Likert Panel by Group-1.pdf  used on input line 337.
+(pdftex.def)             Requested size: 469.75386pt x 317.1842pt.
 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
 wn PDFs/02.1-Main-FB-Script---India_files/figure-latex/Raw Likert Panel by Grou
-p-2.pdf, id=757, 447.6725pt x 316.18124pt>
+p-2.pdf, id=601, 463.7325pt x 316.18124pt>
 File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
 arkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/Raw Likert Panel by
  Group-2.pdf Graphic file (type pdf)
@@ -1860,21 +1637,21 @@ rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/Raw Likert Panel by
 Group-2.pdf>
 Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
 /Lockdown/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/
-Raw Likert Panel by Group-2.pdf  used on input line 352.
-(pdftex.def)             Requested size: 447.68506pt x 316.19011pt.
+Raw Likert Panel by Group-2.pdf  used on input line 338.
+(pdftex.def)             Requested size: 463.73842pt x 316.18529pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 351--353
+Underfull \hbox (badness 10000) in paragraph at lines 337--339
 [][]
  []
 
-[35 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
+[29 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
 rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/Distribution of raw 
 pref by group-3.pdf> </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lo
 ckdown/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/Dis
 tribution of raw pref by group-4.pdf>]
 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
 wn PDFs/02.1-Main-FB-Script---India_files/figure-latex/Norm Likert Panel by Gro
-up-1.pdf, id=782, 468.75125pt x 302.12875pt>
+up-1.pdf, id=627, 469.755pt x 301.125pt>
 File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
 arkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/Norm Likert Panel b
 y Group-1.pdf Graphic file (type pdf)
@@ -1883,11 +1660,11 @@ rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/Norm Likert Panel by
  Group-1.pdf>
 Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
 /Lockdown/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/
-Norm Likert Panel by Group-1.pdf  used on input line 354.
-(pdftex.def)             Requested size: 468.75009pt x 302.128pt.
+Norm Likert Panel by Group-1.pdf  used on input line 340.
+(pdftex.def)             Requested size: 469.75386pt x 301.12425pt.
 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
 wn PDFs/02.1-Main-FB-Script---India_files/figure-latex/Norm Likert Panel by Gro
-up-2.pdf, id=783, 457.71pt x 316.18124pt>
+up-2.pdf, id=628, 457.71pt x 316.18124pt>
 File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
 arkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/Norm Likert Panel b
 y Group-2.pdf Graphic file (type pdf)
@@ -1896,21 +1673,21 @@ rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/Norm Likert Panel by
  Group-2.pdf>
 Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
 /Lockdown/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/
-Norm Likert Panel by Group-2.pdf  used on input line 355.
+Norm Likert Panel by Group-2.pdf  used on input line 341.
 (pdftex.def)             Requested size: 457.72984pt x 316.19493pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 354--356
+Underfull \hbox (badness 10000) in paragraph at lines 340--342
 [][]
  []
 
-[36 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
+[30 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
 rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/Raw Likert Panel by 
 Group-1.pdf> </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/S
 cripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/Raw Likert 
 Panel by Group-2.pdf>]
 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
 wn PDFs/02.1-Main-FB-Script---India_files/figure-latex/main graph by time-1.pdf
-, id=803, 457.71pt x 316.18124pt>
+, id=648, 457.71pt x 316.18124pt>
 File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
 arkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/main graph by time-
 1.pdf Graphic file (type pdf)
@@ -1919,16 +1696,16 @@ rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/main graph by time-1
 .pdf>
 Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
 /Lockdown/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/
-main graph by time-1.pdf  used on input line 357.
+main graph by time-1.pdf  used on input line 343.
 (pdftex.def)             Requested size: 457.72984pt x 316.19493pt.
-[37 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
+[31 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
 rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/Norm Likert Panel by
  Group-1.pdf> </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/
 Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/Norm Liker
 t Panel by Group-2.pdf>]
 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
 wn PDFs/02.1-Main-FB-Script---India_files/figure-latex/slow roll out of main gr
-aph nf-1.pdf, id=825, 457.71pt x 316.18124pt>
+aph nf-1.pdf, id=669, 457.71pt x 316.18124pt>
 File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
 arkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/slow roll out of ma
 in graph nf-1.pdf Graphic file (type pdf)
@@ -1937,14 +1714,14 @@ rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/slow roll out of mai
 n graph nf-1.pdf>
 Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
 /Lockdown/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/
-slow roll out of main graph nf-1.pdf  used on input line 364.
+slow roll out of main graph nf-1.pdf  used on input line 350.
 (pdftex.def)             Requested size: 457.72984pt x 316.19493pt.
-[38 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
+[32 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
 rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/main graph by time-1
 .pdf>]
 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
 wn PDFs/02.1-Main-FB-Script---India_files/figure-latex/slow roll out of main gr
-aph nf-2.pdf, id=837, 457.71pt x 316.18124pt>
+aph nf-2.pdf, id=681, 457.71pt x 316.18124pt>
 File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
 arkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/slow roll out of ma
 in graph nf-2.pdf Graphic file (type pdf)
@@ -1953,11 +1730,11 @@ rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/slow roll out of mai
 n graph nf-2.pdf>
 Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
 /Lockdown/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/
-slow roll out of main graph nf-2.pdf  used on input line 371.
+slow roll out of main graph nf-2.pdf  used on input line 357.
 (pdftex.def)             Requested size: 457.72984pt x 316.19493pt.
 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
 wn PDFs/02.1-Main-FB-Script---India_files/figure-latex/slow roll out of main gr
-aph nf-3.pdf, id=838, 457.71pt x 316.18124pt>
+aph nf-3.pdf, id=682, 457.71pt x 316.18124pt>
 File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
 arkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/slow roll out of ma
 in graph nf-3.pdf Graphic file (type pdf)
@@ -1966,19 +1743,19 @@ rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/slow roll out of mai
 n graph nf-3.pdf>
 Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
 /Lockdown/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/
-slow roll out of main graph nf-3.pdf  used on input line 372.
+slow roll out of main graph nf-3.pdf  used on input line 358.
 (pdftex.def)             Requested size: 457.72984pt x 316.19493pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 371--373
+Underfull \hbox (badness 10000) in paragraph at lines 357--359
 [][]
  []
 
-[39 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
+[33 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
 rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/slow roll out of mai
 n graph nf-1.pdf>]
 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
 wn PDFs/02.1-Main-FB-Script---India_files/figure-latex/transparency scatter-1.p
-df, id=850, 381.425pt x 306.14375pt>
+df, id=694, 463.7325pt x 316.18124pt>
 File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
 arkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/transparency scatte
 r-1.pdf Graphic file (type pdf)
@@ -1987,11 +1764,11 @@ rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/transparency scatter
 -1.pdf>
 Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
 /Lockdown/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/
-transparency scatter-1.pdf  used on input line 374.
-(pdftex.def)             Requested size: 381.44151pt x 306.157pt.
+transparency scatter-1.pdf  used on input line 360.
+(pdftex.def)             Requested size: 463.73842pt x 316.18529pt.
 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
 wn PDFs/02.1-Main-FB-Script---India_files/figure-latex/transparency scatter-2.p
-df, id=851, 430.60875pt x 304.13625pt>
+df, id=695, 463.7325pt x 316.18124pt>
 File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
 arkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/transparency scatte
 r-2.pdf Graphic file (type pdf)
@@ -2000,11 +1777,11 @@ rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/transparency scatter
 -2.pdf>
 Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
 /Lockdown/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/
-transparency scatter-2.pdf  used on input line 375.
-(pdftex.def)             Requested size: 430.62082pt x 304.14478pt.
+transparency scatter-2.pdf  used on input line 361.
+(pdftex.def)             Requested size: 463.73842pt x 316.18529pt.
 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
 wn PDFs/02.1-Main-FB-Script---India_files/figure-latex/transparency scatter-3.p
-df, id=852, 427.5975pt x 305.14pt>
+df, id=696, 459.7175pt x 315.1775pt>
 File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
 arkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/transparency scatte
 r-3.pdf Graphic file (type pdf)
@@ -2013,21 +1790,30 @@ rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/transparency scatter
 -3.pdf>
 Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
 /Lockdown/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/
-transparency scatter-3.pdf  used on input line 376.
-(pdftex.def)             Requested size: 427.59645pt x 305.13924pt.
+transparency scatter-3.pdf  used on input line 362.
+(pdftex.def)             Requested size: 459.74442pt x 315.19595pt.
 
-Overfull \hbox (344.52953pt too wide) in paragraph at lines 374--377
-[][] []
+Underfull \hbox (badness 10000) in paragraph at lines 360--363
+[][]
  []
 
-[40 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
+
+Underfull \hbox (badness 10000) in paragraph at lines 360--363
+[]
+ []
+
+[34 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
 rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/slow roll out of mai
 n graph nf-2.pdf> </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockd
 own/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/slow r
-oll out of main graph nf-3.pdf>]
+oll out of main graph nf-3.pdf>] [35 </Users/diagdavenport/Desktop/Synced Resea
+rch/Ludwig/FB/Lockdown/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/
+figure-latex/transparency scatter-1.pdf> </Users/diagdavenport/Desktop/Synced R
+esearch/Ludwig/FB/Lockdown/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_fi
+les/figure-latex/transparency scatter-2.pdf>]
 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
 wn PDFs/02.1-Main-FB-Script---India_files/figure-latex/Distribution of norm pre
-f by group-1.pdf, id=871, 433.62pt x 315.1775pt>
+f by group-1.pdf, id=737, 463.7325pt x 315.1775pt>
 File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
 arkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/Distribution of nor
 m pref by group-1.pdf Graphic file (type pdf)
@@ -2036,18 +1822,16 @@ rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/Distribution of norm
  pref by group-1.pdf>
 Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
 /Lockdown/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/
-Distribution of norm pref by group-1.pdf  used on input line 378.
-(pdftex.def)             Requested size: 433.63878pt x 315.19115pt.
-[41 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
+Distribution of norm pref by group-1.pdf  used on input line 364.
+(pdftex.def)             Requested size: 463.73842pt x 315.18153pt.
+[36 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
 rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/transparency scatter
--1.pdf> </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Script
-s/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/transparency sca
-tter-2.pdf> </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Sc
-ripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/transparency
- scatter-3.pdf>]
+-3.pdf> </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Script
+s/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/Distribution of 
+norm pref by group-1.pdf>]
 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
 wn PDFs/02.1-Main-FB-Script---India_files/figure-latex/Distribution of norm pre
-f by group-2.pdf, id=905, 453.695pt x 316.18124pt>
+f by group-2.pdf, id=760, 453.695pt x 316.18124pt>
 File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
 arkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/Distribution of nor
 m pref by group-2.pdf Graphic file (type pdf)
@@ -2056,11 +1840,11 @@ rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/Distribution of norm
  pref by group-2.pdf>
 Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
 /Lockdown/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/
-Distribution of norm pref by group-2.pdf  used on input line 384.
+Distribution of norm pref by group-2.pdf  used on input line 370.
 (pdftex.def)             Requested size: 453.6939pt x 316.18047pt.
 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
 wn PDFs/02.1-Main-FB-Script---India_files/figure-latex/Distribution of norm pre
-f by group-3.pdf, id=906, 451.6875pt x 316.18124pt>
+f by group-3.pdf, id=761, 451.6875pt x 316.18124pt>
 File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
 arkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/Distribution of nor
 m pref by group-3.pdf Graphic file (type pdf)
@@ -2069,23 +1853,19 @@ rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/Distribution of norm
  pref by group-3.pdf>
 Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
 /Lockdown/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/
-Distribution of norm pref by group-3.pdf  used on input line 385.
+Distribution of norm pref by group-3.pdf  used on input line 371.
 (pdftex.def)             Requested size: 451.71394pt x 316.19975pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 384--386
+Underfull \hbox (badness 10000) in paragraph at lines 370--372
 [][]
  []
 
-[42 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
+[37 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
 rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/Distribution of norm
- pref by group-1.pdf>] [43 </Users/diagdavenport/Desktop/Synced Research/Ludwig
-/FB/Lockdown/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-lat
-ex/Distribution of norm pref by group-2.pdf> </Users/diagdavenport/Desktop/Sync
-ed Research/Ludwig/FB/Lockdown/Scripts/Markdown PDFs/02.1-Main-FB-Script---Indi
-a_files/figure-latex/Distribution of norm pref by group-3.pdf>]
+ pref by group-2.pdf>]
 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
 wn PDFs/02.1-Main-FB-Script---India_files/figure-latex/pymk evolution-1.pdf, id
-=937, 451.6875pt x 316.18124pt>
+=775, 463.7325pt x 316.18124pt>
 File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
 arkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/pymk evolution-1.pd
 f Graphic file (type pdf)
@@ -2094,12 +1874,14 @@ rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/pymk evolution-1.pdf
 >
 Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
 /Lockdown/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/
-pymk evolution-1.pdf  used on input line 509.
-(pdftex.def)             Requested size: 451.71394pt x 316.19975pt.
-[44] [45]
+pymk evolution-1.pdf  used on input line 495.
+(pdftex.def)             Requested size: 463.73842pt x 316.18529pt.
+[38 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
+rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/Distribution of norm
+ pref by group-3.pdf>] [39]
 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
 wn PDFs/02.1-Main-FB-Script---India_files/figure-latex/norm fam by group-1.pdf,
- id=949, 433.62pt x 315.1775pt>
+ id=793, 463.7325pt x 315.1775pt>
 File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
 arkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/norm fam by group-1
 .pdf Graphic file (type pdf)
@@ -2108,11 +1890,11 @@ rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/norm fam by group-1.
 pdf>
 Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
 /Lockdown/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/
-norm fam by group-1.pdf  used on input line 511.
-(pdftex.def)             Requested size: 433.63878pt x 315.19115pt.
+norm fam by group-1.pdf  used on input line 497.
+(pdftex.def)             Requested size: 463.73842pt x 315.18153pt.
 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
 wn PDFs/02.1-Main-FB-Script---India_files/figure-latex/norm fam by group-2.pdf,
- id=950, 453.695pt x 316.18124pt>
+ id=794, 453.695pt x 316.18124pt>
 File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
 arkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/norm fam by group-2
 .pdf Graphic file (type pdf)
@@ -2121,11 +1903,11 @@ rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/norm fam by group-2.
 pdf>
 Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
 /Lockdown/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/
-norm fam by group-2.pdf  used on input line 512.
+norm fam by group-2.pdf  used on input line 498.
 (pdftex.def)             Requested size: 453.6939pt x 316.18047pt.
 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
 wn PDFs/02.1-Main-FB-Script---India_files/figure-latex/norm fam by group-3.pdf,
- id=951, 451.6875pt x 316.18124pt>
+ id=795, 451.6875pt x 316.18124pt>
 File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
 arkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/norm fam by group-3
 .pdf Graphic file (type pdf)
@@ -2134,26 +1916,28 @@ rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/norm fam by group-3.
 pdf>
 Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
 /Lockdown/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/
-norm fam by group-3.pdf  used on input line 513.
+norm fam by group-3.pdf  used on input line 499.
 (pdftex.def)             Requested size: 451.71394pt x 316.19975pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 511--514
+Underfull \hbox (badness 10000) in paragraph at lines 497--500
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 511--514
+Underfull \hbox (badness 10000) in paragraph at lines 497--500
 []
  []
 
-[46 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
+[40 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
 rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/pymk evolution-1.pdf
-> </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Mark
-down PDFs/02.1-Main-FB-Script---India_files/figure-latex/norm fam by group-1.pd
-f>]
+>] [41 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts
+/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/norm fam by group
+-1.pdf> </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Script
+s/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/norm fam by grou
+p-2.pdf>]
 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
 wn PDFs/02.1-Main-FB-Script---India_files/figure-latex/PYMK ranking against raw
- likert panel-1.pdf, id=971, 445.665pt x 316.18124pt>
+ likert panel-1.pdf, id=826, 463.7325pt x 316.18124pt>
 File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
 arkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/PYMK ranking agains
 t raw likert panel-1.pdf Graphic file (type pdf)
@@ -2162,11 +1946,11 @@ rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/PYMK ranking against
  raw likert panel-1.pdf>
 Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
 /Lockdown/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/
-PYMK ranking against raw likert panel-1.pdf  used on input line 515.
-(pdftex.def)             Requested size: 445.6707pt x 316.18529pt.
+PYMK ranking against raw likert panel-1.pdf  used on input line 501.
+(pdftex.def)             Requested size: 463.73842pt x 316.18529pt.
 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
 wn PDFs/02.1-Main-FB-Script---India_files/figure-latex/PYMK ranking against raw
- likert panel-2.pdf, id=972, 445.665pt x 316.18124pt>
+ likert panel-2.pdf, id=827, 463.7325pt x 316.18124pt>
 File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
 arkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/PYMK ranking agains
 t raw likert panel-2.pdf Graphic file (type pdf)
@@ -2175,11 +1959,11 @@ rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/PYMK ranking against
  raw likert panel-2.pdf>
 Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
 /Lockdown/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/
-PYMK ranking against raw likert panel-2.pdf  used on input line 516.
-(pdftex.def)             Requested size: 445.6707pt x 316.18529pt.
+PYMK ranking against raw likert panel-2.pdf  used on input line 502.
+(pdftex.def)             Requested size: 463.73842pt x 316.18529pt.
 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
 wn PDFs/02.1-Main-FB-Script---India_files/figure-latex/PYMK ranking against raw
- likert panel-3.pdf, id=973, 445.665pt x 316.18124pt>
+ likert panel-3.pdf, id=828, 463.7325pt x 316.18124pt>
 File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
 arkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/PYMK ranking agains
 t raw likert panel-3.pdf Graphic file (type pdf)
@@ -2188,11 +1972,11 @@ rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/PYMK ranking against
  raw likert panel-3.pdf>
 Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
 /Lockdown/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/
-PYMK ranking against raw likert panel-3.pdf  used on input line 517.
-(pdftex.def)             Requested size: 445.6707pt x 316.18529pt.
+PYMK ranking against raw likert panel-3.pdf  used on input line 503.
+(pdftex.def)             Requested size: 463.73842pt x 316.18529pt.
 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
 wn PDFs/02.1-Main-FB-Script---India_files/figure-latex/PYMK ranking against raw
- likert panel-4.pdf, id=974, 445.665pt x 316.18124pt>
+ likert panel-4.pdf, id=829, 463.7325pt x 316.18124pt>
 File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
 arkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/PYMK ranking agains
 t raw likert panel-4.pdf Graphic file (type pdf)
@@ -2201,40 +1985,35 @@ rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/PYMK ranking against
  raw likert panel-4.pdf>
 Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
 /Lockdown/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/
-PYMK ranking against raw likert panel-4.pdf  used on input line 518.
-(pdftex.def)             Requested size: 445.6707pt x 316.18529pt.
+PYMK ranking against raw likert panel-4.pdf  used on input line 504.
+(pdftex.def)             Requested size: 463.73842pt x 316.18529pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 515--519
+Underfull \hbox (badness 10000) in paragraph at lines 501--505
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 515--519
+Underfull \hbox (badness 10000) in paragraph at lines 501--505
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 515--519
+Underfull \hbox (badness 10000) in paragraph at lines 501--505
 []
  []
 
-[47 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
-rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/norm fam by group-2.
+[42 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
+rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/norm fam by group-3.
 pdf> </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
-arkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/norm fam by group-3
-.pdf>] [48 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scr
-ipts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/PYMK ranking 
-against raw likert panel-1.pdf> </Users/diagdavenport/Desktop/Synced Research/L
-udwig/FB/Lockdown/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figur
-e-latex/PYMK ranking against raw likert panel-2.pdf>] [49 </Users/diagdavenport
-/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdown PDFs/02.1-Main-FB-
-Script---India_files/figure-latex/PYMK ranking against raw likert panel-3.pdf> 
-</Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
-wn PDFs/02.1-Main-FB-Script---India_files/figure-latex/PYMK ranking against raw
- likert panel-4.pdf>]
+arkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/PYMK ranking agains
+t raw likert panel-1.pdf>] [43 </Users/diagdavenport/Desktop/Synced Research/Lu
+dwig/FB/Lockdown/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure
+-latex/PYMK ranking against raw likert panel-2.pdf> </Users/diagdavenport/Deskt
+op/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdown PDFs/02.1-Main-FB-Script
+---India_files/figure-latex/PYMK ranking against raw likert panel-3.pdf>]
 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
 wn PDFs/02.1-Main-FB-Script---India_files/figure-latex/Unconditional mean diff 
-pymk-1.pdf, id=1030, 357.335pt x 316.18124pt>
+pymk-1.pdf, id=867, 463.7325pt x 316.18124pt>
 File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
 arkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/Unconditional mean 
 diff pymk-1.pdf Graphic file (type pdf)
@@ -2243,11 +2022,14 @@ rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/Unconditional mean d
 iff pymk-1.pdf>
 Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
 /Lockdown/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/
-Unconditional mean diff pymk-1.pdf  used on input line 525.
-(pdftex.def)             Requested size: 357.35048pt x 316.19493pt.
+Unconditional mean diff pymk-1.pdf  used on input line 511.
+(pdftex.def)             Requested size: 463.73842pt x 316.18529pt.
+[44 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
+rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/PYMK ranking against
+ raw likert panel-4.pdf>]
 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
 wn PDFs/02.1-Main-FB-Script---India_files/figure-latex/unnamed-chunk-3-1.pdf, i
-d=1031, 457.71pt x 316.18124pt>
+d=879, 457.71pt x 316.18124pt>
 File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
 arkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/unnamed-chunk-3-1.p
 df Graphic file (type pdf)
@@ -2256,14 +2038,11 @@ rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/unnamed-chunk-3-1.pd
 f>
 Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
 /Lockdown/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/
-unnamed-chunk-3-1.pdf  used on input line 527.
+unnamed-chunk-3-1.pdf  used on input line 513.
 (pdftex.def)             Requested size: 457.72984pt x 316.19493pt.
-[50 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
-rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/Unconditional mean d
-iff pymk-1.pdf>]
 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
 wn PDFs/02.1-Main-FB-Script---India_files/figure-latex/pymk rankings by mutual 
-friends and ingroup-1.pdf, id=1043, 457.71pt x 316.18124pt>
+friends and ingroup-1.pdf, id=880, 457.71pt x 316.18124pt>
 File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
 arkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/pymk rankings by mu
 tual friends and ingroup-1.pdf Graphic file (type pdf)
@@ -2272,11 +2051,11 @@ rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/pymk rankings by mut
 ual friends and ingroup-1.pdf>
 Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
 /Lockdown/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/
-pymk rankings by mutual friends and ingroup-1.pdf  used on input line 529.
+pymk rankings by mutual friends and ingroup-1.pdf  used on input line 515.
 (pdftex.def)             Requested size: 457.72984pt x 316.19493pt.
 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
 wn PDFs/02.1-Main-FB-Script---India_files/figure-latex/pymk rankings by mutual 
-friends and ingroup-2.pdf, id=1044, 457.71pt x 316.18124pt>
+friends and ingroup-2.pdf, id=881, 457.71pt x 316.18124pt>
 File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
 arkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/pymk rankings by mu
 tual friends and ingroup-2.pdf Graphic file (type pdf)
@@ -2285,21 +2064,25 @@ rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/pymk rankings by mut
 ual friends and ingroup-2.pdf>
 Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
 /Lockdown/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/
-pymk rankings by mutual friends and ingroup-2.pdf  used on input line 530.
+pymk rankings by mutual friends and ingroup-2.pdf  used on input line 516.
 (pdftex.def)             Requested size: 457.72984pt x 316.19493pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 529--531
+Underfull \hbox (badness 10000) in paragraph at lines 515--517
 [][]
  []
 
-[51 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
-rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/unnamed-chunk-3-1.pd
-f> </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Mar
-kdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/pymk rankings by mutu
-al friends and ingroup-1.pdf>]
+[45 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
+rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/Unconditional mean d
+iff pymk-1.pdf> </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdow
+n/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/unnamed-
+chunk-3-1.pdf>] [46 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Loc
+kdown/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/pymk
+ rankings by mutual friends and ingroup-1.pdf> </Users/diagdavenport/Desktop/Sy
+nced Research/Ludwig/FB/Lockdown/Scripts/Markdown PDFs/02.1-Main-FB-Script---In
+dia_files/figure-latex/pymk rankings by mutual friends and ingroup-2.pdf>]
 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
 wn PDFs/02.1-Main-FB-Script---India_files/figure-latex/pymk order vs mutual fri
-ends-1.pdf, id=1063, 444.66125pt x 303.1325pt>
+ends-1.pdf, id=918, 459.7175pt x 313.17pt>
 File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
 arkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/pymk order vs mutua
 l friends-1.pdf Graphic file (type pdf)
@@ -2308,11 +2091,11 @@ rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/pymk order vs mutual
  friends-1.pdf>
 Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
 /Lockdown/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/
-pymk order vs mutual friends-1.pdf  used on input line 536.
-(pdftex.def)             Requested size: 444.66016pt x 303.13176pt.
+pymk order vs mutual friends-1.pdf  used on input line 522.
+(pdftex.def)             Requested size: 459.7304pt x 313.17877pt.
 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
 wn PDFs/02.1-Main-FB-Script---India_files/figure-latex/excess mass pymk-1.pdf, 
-id=1064, 445.665pt x 309.155pt>
+id=919, 463.7325pt x 316.18124pt>
 File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
 arkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/excess mass pymk-1.
 pdf Graphic file (type pdf)
@@ -2321,37 +2104,35 @@ rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/excess mass pymk-1.p
 df>
 Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
 /Lockdown/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/
-excess mass pymk-1.pdf  used on input line 538.
-(pdftex.def)             Requested size: 445.6707pt x 309.15895pt.
-[52 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
-rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/pymk rankings by mut
-ual friends and ingroup-2.pdf> </Users/diagdavenport/Desktop/Synced Research/Lu
-dwig/FB/Lockdown/Scripts/Markdown PDFs/02.1-Main-FB-Script---India_files/figure
--latex/pymk order vs mutual friends-1.pdf>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 682.
-[53 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
+excess mass pymk-1.pdf  used on input line 524.
+(pdftex.def)             Requested size: 463.73842pt x 316.18529pt.
+[47 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
+rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/pymk order vs mutual
+ friends-1.pdf>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 668.
+[48 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
 rkdown PDFs/02.1-Main-FB-Script---India_files/figure-latex/excess mass pymk-1.p
-df>] [54] [55]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 682.
+df>] [49] [50]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 668.
 (./02.1-Main-FB-Script---India.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 682.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 682.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 668.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 668.
 Package rerunfilecheck Info: File `02.1-Main-FB-Script---India.out' has not cha
 nged.
 (rerunfilecheck)             Checksum: 1B55FD1967C1981F7F07783B7324F8C5;705.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 682.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 668.
  ) 
 Here is how much of TeX's memory you used:
- 12442 strings out of 492649
- 239159 string characters out of 6129622
+ 12389 strings out of 492649
+ 231220 string characters out of 6129622
  295419 words of memory out of 5000000
- 16059 multiletter control sequences out of 15000+600000
+ 16011 multiletter control sequences out of 15000+600000
  53550 words of font info for 74 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 32i,9n,38p,522b,454s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 32i,9n,38p,522b,455s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/local
 /texlive/2018/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texlive/2018/
 texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2018/texmf-dist/fon
@@ -2366,10 +2147,10 @@ ype1/public/lm/lmr7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/
 lm/lmri10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmsy10.
 pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/l
 ocal/texlive/2018/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on 02.1-Main-FB-Script---India.pdf (55 pages, 2318967 bytes).
+Output written on 02.1-Main-FB-Script---India.pdf (50 pages, 1390895 bytes).
 PDF statistics:
- 1178 PDF objects out of 1200 (max. 8388607)
- 783 compressed objects within 8 object streams
- 73 named destinations out of 1000 (max. 500000)
- 12774 words of extra memory for PDF output out of 14400 (max. 10000000)
+ 1025 PDF objects out of 1200 (max. 8388607)
+ 709 compressed objects within 8 object streams
+ 68 named destinations out of 1000 (max. 500000)
+ 12714 words of extra memory for PDF output out of 14400 (max. 10000000)
 
