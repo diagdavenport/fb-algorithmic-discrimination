@@ -14,6 +14,7 @@ library(lubridate)
 library(arsenal)
 library(qwraps2)
 library(kableExtra)
+library(stargazer)
 
 knitr::opts_knit$set(root.dir = '/Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown')
 
@@ -93,120 +94,6 @@ nf.data <- nf.data.raw %>% select(subject_race_RA,
                              poster.nf.gender)
 
 
-
-```
-
-```{r, results='asis'}
-# 
-# options(qwraps2_markup = "latex")
-# participant.data <- as.data.frame(participant.data)
-# 
-# summary_statistics <-
-#   list(
-#     "Age" =
-#       list(
-#         "mean (sd)" = ~qwraps2::mean_sd(age, na_rm = TRUE, show_n = "never")
-#       ),
-#     "Educational Attainment" =
-#       list(
-#         "No college degree" = ~qwraps2::n_perc(na.omit(education) %in% c("Associate's degree",
-#                                                                          "Did not graduate high school",
-#                                                                          "Graduated high school",
-#                                                                          "Some college, no degree")),
-#         "Bachelor's degree" = ~qwraps2::n_perc(na.omit(education) %in% "Bachelor's degree"),
-#         "Graduate degree" = ~qwraps2::n_perc(na.omit(education) %in% c("Doctoral degree",
-#                                                                          "Master's degree",
-#                                                                        "Professional degree"))),
-# 
-#     "Gender" =
-#       list(
-#         "Female" = ~qwraps2::n_perc(na.omit(gender) %in% c("Female")),
-#         "Male" = ~qwraps2::n_perc(na.omit(gender) %in% "Male"),
-#         "Non-binary" = ~qwraps2::n_perc(na.omit(gender) %in% c("Non-binary"))
-#       ),
-#     "NF data summary" =
-#       list(
-#         recorded.posts,
-#                              mean.rating,
-#                              sd.rating,
-#                              median.rating
-#       ),
-#     
-#     "Pre-COVID FB Usage" =
-#       list(
-#         "Hourly" = ~qwraps2::n_perc(na.omit(pre.covid.usage) %in% "A few times an hour"),
-#         "Daily" = ~qwraps2::n_perc(na.omit(pre.covid.usage) %in% "A few times a day"),
-#         "Weekly" = ~qwraps2::n_perc(na.omit(pre.covid.usage) %in% "A few times a week"),
-#         "Monthly" = ~qwraps2::n_perc(na.omit(pre.covid.usage) %in% "A few times a month"),
-#         "Yearly" = ~qwraps2::n_perc(na.omit(pre.covid.usage) %in% "A few times a year"),
-#         "Never" = ~qwraps2::n_perc(na.omit(pre.covid.usage) %in% "Never")
-#   ),
-#     
-#     "COVID FB Usage" =
-#       list(
-#         "Hourly" = ~qwraps2::n_perc(na.omit(covid.usage) %in% "A few times an hour"),
-#         "Daily" = ~qwraps2::n_perc(na.omit(covid.usage) %in% "A few times a day"),
-#         "Weekly" = ~qwraps2::n_perc(na.omit(covid.usage) %in% "A few times a week"),
-#         "Monthly" = ~qwraps2::n_perc(na.omit(covid.usage) %in% "A few times a month"),
-#         "Yearly" = ~qwraps2::n_perc(na.omit(covid.usage) %in% "A few times a year"),
-#         "Never" = ~qwraps2::n_perc(na.omit(covid.usage) %in% "Never")
-#   ),
-#     
-#     "Race Self-Identification" =
-#       list(
-#         "Asian" = ~qwraps2::n_perc(na.omit(self.race) %in% "Asian"),
-#         "Black/AA" = ~qwraps2::n_perc(na.omit(self.race) %in% "Black or African American"),
-#         "Hispanic" = ~qwraps2::n_perc(na.omit(self.race) %in% "Hispanic"),
-#         "White" = ~qwraps2::n_perc(na.omit(self.race) %in% "White"),
-#         "Multi-racial" = ~qwraps2::n_perc(na.omit(self.race) %in% "Two or more"),
-#         "Other" = ~qwraps2::n_perc(na.omit(self.race) %in% "Other")
-#   )
-# )
-# 
-# whole <- summary_table(participant.data, summary_statistics)
-# by_group <- summary_table(dplyr::group_by(participant.data, subject_race_RA), summary_statistics)
-# 
-# cbind(whole, by_group)
-# 
-# #summary_table(as.table(rbind(table(participant.data$subject_race_RA)/nrow(participant.data), by_group)))
-
-```
-
-```{r, results = 'asis'}
-
-# options(qwraps2_markup = "latex")
-# nf.data$race.in.group <- ((as.character(nf.data$poster.nf.race.1.ra) == as.character(nf.data$subject_race_RA)) | (as.character(nf.data$poster.nf.race.2.ra) == as.character(nf.data$subject_race_RA)))
-# nf.data <- as.data.frame(nf.data %>% filter(human == 1))
-# 
-# summary_statistics <-
-#   list(
-#     "Friends" =
-#       list(
-#         "Median (IQR)" = ~qwraps2::median_iqr(total_friends, na_rm = TRUE, show_n = "never")
-#       ),
-#         "Preference" =
-#       list(
-#         "Median (IQR)"  = ~qwraps2::median_iqr(preference, na_rm = TRUE, show_n = "never")
-#       ),
-#     "In-group" =
-#       list(
-#         "Mean (IQR)" = ~mean(race.in.group, na_rm = TRUE)
-#       ),
-#     "Poster Race" =
-#       list(
-#         "Asian" = ~qwraps2::n_perc(na.omit(poster.nf.race.1.ra) %in% "asian"),
-#         "Black/AA" = ~qwraps2::n_perc(na.omit(poster.nf.race.1.ra) %in% "black or african american"),
-#         "Hispanic" = ~qwraps2::n_perc(na.omit(poster.nf.race.1.ra) %in% "hispanic"),
-#         "Other" = ~qwraps2::n_perc(na.omit(poster.nf.race.1.ra) %in% "other"),
-#         "White" = ~qwraps2::n_perc(na.omit(poster.nf.race.1.ra) %in% "white"))
-# )
-# 
-#  whole <- summary_table(nf.data, summary_statistics)
-#  by_group <- summary_table(dplyr::group_by(nf.data, subject_race_RA), summary_statistics)
-# 
-# cbind(whole, by_group)
-
-#summary_table(as.table(rbind(table(participant.data$subject_race_RA)/nrow(participant.data), by_group)))
 
 ```
 
@@ -298,21 +185,6 @@ summary_statistics <-
         )
 )
 
-# print(summary_table(participant.data, summary_statistics),
-#       rtitle = "NF Sample", 
-#       align = "lc")
-# 
-# t <- participant.data %>% dplyr::filter(source %in% c("CDR 1", "HDSL"))
-# 
-# print(summary_table(t, summary_statistics),
-#       rtitle = "PYMK Sample", 
-#       align = "lc")
-# 
-# t <- participant.data %>% dplyr::filter(source %in% c("CDR 2", "CDR 4"))
-# 
-# print(summary_table(t, summary_statistics),
-#       rtitle = "Behavior Sample", 
-#       align = "lc")
 
 full <- summary_table(participant.data, summary_statistics)
 
@@ -328,7 +200,8 @@ colnames(final.table) <- c("NF Sample",
                            "PYMK Sample",
                            "Behavior Sample")
 
-final.table
+stargazer(final.table,
+          out = "Output/Tex/Summary Tables/US NF participants by sample.tex")
 
 #  whole <- summary_table(nf.data, summary_statistics)
 #  by_group <- summary_table(dplyr::group_by(nf.data, subject_race_RA), summary_statistics)
@@ -395,24 +268,22 @@ summary_statistics <-
       )
 )
 
-print(summary_table(nf.data.raw, summary_statistics),
-      rtitle = "NF Sample", 
-      align = "lc")
+full <- summary_table(nf.data.raw, summary_statistics)
 
 t <- nf.data.raw %>% dplyr::filter(source %in% c("CDR 1", "HDSL"))
-
-print(summary_table(t, summary_statistics),
-      rtitle = "PYMK Sample", 
-      align = "lc")
+pymk.sub <- summary_table(t, summary_statistics)
 
 t <- nf.data.raw %>% dplyr::filter(source %in% c("CDR 2", "CDR 4"))
+beh.sub <- summary_table(t, summary_statistics)
 
-print(summary_table(t, summary_statistics),
-      rtitle = "Behavior Sample", 
-      align = "lc")
+final.table <- cbind(full, pymk.sub, beh.sub)
 
-kbl(summary_table(t, summary_statistics), booktabs = T)
+colnames(final.table) <- c("NF Sample",
+                           "PYMK Sample",
+                           "Behavior Sample")
 
+stargazer(final.table,
+          out = "Output/Tex/Summary Tables/US NF nf data by sample.tex")
 ```
 
 # PYMK
@@ -462,10 +333,10 @@ summary_statistics <-
       )
 )
 
-print(summary_table(pymk.data.raw, summary_statistics),
-      rtitle = "PYMK Sample", 
-      align = "lc")
+final.table <- summary_table(pymk.data.raw, summary_statistics)
 
+stargazer(final.table,
+          out = "Output/Tex/Summary Tables/US PYMK data.tex")
 ```
 
 # Behavior
@@ -503,9 +374,10 @@ summary_statistics <-
         "White" = ~qwraps2::perc_n(na.omit(poster.recent.race) %in% "white"))
 )
 
-print(summary_table(recent.data.raw, summary_statistics),
-      rtitle = "Behavior Sample", 
-      align = "lc")
+final.table <- summary_table(recent.data.raw, summary_statistics)
+
+stargazer(final.table,
+          out = "Output/Tex/Summary Tables/US behavior data.tex")
 
 ```
 
