@@ -124,7 +124,7 @@ A user indexed by $j$ faces an ordered list of items each indexed by $i$, such a
 Each item $i$ brings utility $u_{ij}$ to user $j$. Every item is also either associated with one's own-group or not--- we denote this by a binary variable $g_{ij}$, where $g_{ij}=1$ indicates an out-group item. Users ideally would like to choose all positive utility options. The user only views a limited set of information before deciding to act on an item. Thus, while the user would like to choose an option if $u_{ij} >0$, their actual choice may differ from that. In particular each option gets chosen with probability equal to 
 $$c_{ij} = (1-b_jg_{ij})c(u_{ij})$$
 
-\todo[inline]{AA: Above used to define $g_{ij}=1$ as ingroup, but then I think math doesn't work out correctly - implies that ingroup choices are $c_{ij}=(1-b_j)c(u_{ij})$ and outgroup are $c_{ij}=c(u_{ij})$.  We can also consider different transformations if $g_{ij}=1$ as outgroup feels unnatural}
+
 where the randomness reflects the noise that arises from assessing options from limited information. Here $c(\cdot)$ is a monotonically increasing function that reflects that users tend to be attracted to items they like. The $(1-b_jg_{i})$ term reflects the potential for bias in a user's behavior. At $b=0$ an item's group has no effect on the user's choice. If $b >0$, outgroup items are less likely to be chosen, holding utility for the item constant. 
 
 We refer to $b$ as the behavioral bias in user choices: the bias that can arise in behaviors (actual choices) $c$ above and beyond one's utility $u$. The user may also exhibit outroup bias directly in their utility, but that is not our focus. Our point instead is that, in certain contexts, our choices, $c$, can reflect outgroup bias \emph{beyond} whatever bias there is in the user's preferences, $u$.\footnote{Of course, biased preferences are problematic but in all our analyses and comparisons preferences are held constant. As such our results hold irrespective of however much a given person's preferences favor (or not) ingroups.} 
@@ -215,97 +215,23 @@ Note that subjects were not made aware that this study was about in-group biases
 
 \subsection{Summary Statistics on Subjects}
 
-Table ~\ref{tab:usersumstats} shows summary statistics on our subject pool for: subjects for whom we collected Newsfeed information (N=?), subjects for whom we collected PYMK information (N=?), and subjects for whom we collected recent Newsfeed interactions (N$=$\RecentInteractionsSampleSize).  We can see that.....
+Table ~\ref{tab:usersumstats} shows summary statistics on our subject pool for: subjects for whom we collected Newsfeed information (N=666), subjects for whom we collected PYMK information (N=439), and subjects for whom we collected recent Newsfeed interactions (N$=$\RecentInteractionsSampleSize).  In general our samples have a higher proportion Asian and female subjects than the US population.  A large fraction check Facebook at least weekly.  We also see further evidence that enumerator and subject racial categorization tended to align, in that proportions of the sample in each category are similar across the two elicitation types.
 
-% The key  items that are from the same race/ethnic group (in-group) versus a different one (out-group).  To study this, our survey design captures: 
-% \begin{itemize}
-%     \item \textbf{Subject Self-Reported Race/Ethnicity:} 
-%     \item For the first 60 non-sponsored posts on Newsfeed:
-%         \begin{enumerate}
-%             \item \textbf{Subject Explicit Preference for Post:}  
-%             \item \textbf{(Perceived) Race of Poster}
-%             \item \textbf{Timing of post}
-%         \end{enumerate}
-%     \item For the first 60 PYMK recommendations:
-%     \begin{enumerate}
-%         \item \textbf{Subject Familiarity with Recommendation:}  
-    
-%      \item \textbf{(Perceived) Race of Recommendation}
-%      \item \textbf{Number of mutual friends}
-%     \end{enumerate}
-%     \item Additional details described below.
-% \end{itemize} 
+The composition of the samples is also fairly similar across the three sample collection type, though the racial distribution of the sample where we collected recent interactions was slightly less skewed toward Asian subjects. 
 
-% For each post on Newsfeed or PYMK recommendation the enumerator records (their perception of) the race of the poster of the content or the recommendation.  
+In our main analysis we will use the full samples available for each result - that is we will present results for Newfeed in the full sample for which we collected Newsfeed data, results for PYMK in the full sample for which we collected PYMK data, and results for interactions in the full sample where we collected interaction data. In Appendix~\ref{app:tab_fig} we will also present Newsfeed results in the subsample for which we have PYMK information.
 
-
-
-
-% Our question about preferences for posted content gives us information on subjects stated preferences. To get more information on their revealed preferences for a postIn addition, some study subjects were asked to click on their ``Activity Log'', which is a personal recording of their activity on Facebook including posts they have interacted with
-  
-
-% \subsection{Subject Categorization}
-%   Subjects start by filling out a survey describing their demographics and Facebook usage. While several questions are asked, the key piece of information is:
-%  \begin{enumerate}
-%      \item \textbf{Subject Race:} self-identified from the survey using the seven race and ethnicity categories from the US Census---subject can check as many boxes as they like.
-%  \end{enumerate}
- 
-%  The RA also simultaneously makes their best assessment of subject's race.\footnote{ Neither the subject nor the RA is aware of the assessment that the other has made. This has the advantage of allowing us to observe how much alignment there is between how subjects self-identify and how they are perceived. }
-
-
-% User then opens their Facebook account and shares their screen with the RA. 
-
-% \subsection{Newsfeed Data Collection} 
-% Scrolling sequentially through the user's Newsfeed, two pieces of information are recorded about each of the first 60 non-sponsored posts.
-% \begin{enumerate}
-% \setlength\itemsep{1em}
-%     \item \textbf{Subject Explicit Preference for Post:} The user is asked exactly one question about each post: “There are more posts than Facebook can possibly show you. How would you rate this post on a scale from 1-7 where 1 means ‘can skip’ and 7 means ‘definitely want to see’.” 
-    
-%     \item \textbf{Perceived Race of Poster}:  The \textit{RA} simultaneously assesses and records the perceived race of the poster of the content. Race is perceived by name and photograph. The RA also records ancillary information about the post such as how long ago it was posted and whether it was posted to a group. The exact data being recorded by the RA are unknown to the subject. 
-%     % WE MAY WANT TO SEPARATE AND EMPHASIZE FOR EXAMPLE TIME SINCE POSTING if that becomes important later in the analysis
-    
-% \end{enumerate}
-
-
-% \subsection{People You May Know Data Collection}  
-% Subject that navigates to the Facebook recommender for new friends, entitled “People You May Know” (PYMK). Scrolling sequentially through the recommendations, two pieces of information are recorded about each of the first 60 recommendations.
-% % NEED A BETTER WORD THAN "recommendation"
-
-% \begin{enumerate}
-% \setlength\itemsep{1em}
-%     \item \textbf{Subject Familiarity with Recommendation:}  The user is asked exactly one question about each recommended person: “How familiar are you with this person on a scale from 1-7?” where 1 is not familiar and 7 is very familiar.
-    
-%      \item \textbf{Perceived Race of Recommendation}:  The \tesxtit{RA} simultaneously assesses and records the perceived race of the recommended person. Race is perceived by name and photograph. The RA also records how many mutual friends that recommended person has with the subject. 
-%     % WE MAY WANT TO SEPARATE AND EMPHASIZE FOR EXAMPLE TIME SINCE POSTING if that becomes important later in the analysis
-% \end{enumerate}
-
-% \subsection{Additional Data Collection for Some Subjects}
-% Some subjects also participated in additional data collection.
-% \begin{enumerate}
-% \setlength\itemsep{1em}
-%  \item \textbf{10 Most Recent Interactions with Posts}
-%  \item \textbf{Study About?}
-
-% \end{enumerate}
-
-
-%\subsection{Data Quality} The key measurements for this analysis are in- versus out-group status assignments and subject's ratings.
-% It's possible we do not want to discuss the above in the main text...
-
-
-%Usually people use names and/or pictures of themselves that make assessment of race (in the US) or religion (in India) straightforward. However, at times in our study, this is not the case. When this happens, the RA makes a note of the name of the ambiguous user and continues the data collection for the rest of the items in that Part. Once the 60 items have been rated for their preference/familiarity, the RA then circles back to the noted names and asks the user to navigate to that ‘friend’s’ profile page. Then, by scrolling through the recent pictures, the RA makes a best guess about the friend’s race. Ultimately, the accuracy of this process cannot be directly evaluated with the data we have. But given the high accuracy of assessment from Part I and the pattern of results across races and religions, we do not believe that our results can be explained by RA measurement error.
-
-%Second, to allow for different preference and familiarity baselines across subjects, we construct a normalized preference scale by dividing each subject’s rating by the mean of all of her ratings in that Part. All normalized preference ratings can be interpreted as preference relative to the user u’s average.
 
 
 %%%%%%%%%% RESULTS %%%%%%%%%%
 
 \section{Results}
 
-Table~\ref{tab:sumstatsoutcomes} shows summary statistics and the data we collected on posts, friend recommendations, and interactions.  DESCRIBE.
+Table~\ref{tab:outcomesumstats} shows summary statistics and the data we collected on posts and friend recommendations. About 60\% of posts in the Newsfeed and 58\% of friend recommendations are from people of the same race. 
 
-In Table X we can see that user's preference rankings have a wide range of mean and variance--- which could be due to the fact that posts differ across people or because each user was using and interpreting the likert scale ranking differently.  So rather than rely on the raw preference responses, which are hard to compare across subjects, instead we first create a normalized preference ranking within each subject, and then repord results using quartiles of this subject-normalized preference distribution.  Thus a post in quartile 4 would be amongst the most preferred posts and those in quartile 1 amongst the least preferred posts. And similarly for the PYMK familiarity rating. 
+In Table~\ref{tab:usersumstats} we saw that user's preference ratings have a wide range of mean and variance--- which could be due to the fact that posts differ across people or because each user was using and interpreting the likert scale ranking differently.  So rather than rely on the raw preference responses, which are hard to compare across subjects, instead we first create a normalized preference ranking within each subject, and then report results using quartiles of this subject-normalized preference distribution.  Thus a post in quartile 4 would be amongst the most preferred posts and those in quartile 1 amongst the least preferred posts. And similarly for the PYMK familiarity rating. 
 
+\subsection{Newsfeed}
 We start with results for the most widely used algorithm on Facebook, the one each user encounters as soon as they log-in: Newsfeed. For starters it is useful to compare the algorithm's ranking to some alternative natural ranking, such as reverse chronological order---which is how Newsfeed was originally sorted until October 2009.\footnote{See \url{https://wallaroomedia.com/facebook-newsfeed-algorithm-history/}.} Using the data we collected on how long ago the post was created, we can compare what a reverse chronological ranking of the first 60 posts would have looked like how the algorithm ranked the posts. In Figure~\ref{fig:nftime} we show this, comparing the how a post would have been ranked in a ``natural'' reverse chronological ranking (shown along the x-axis, with the most recent posts furthest to the right) versus how the Newsfeed algorithm at the moment the user logged in ranked posts (as shown on the y-axis, with top-ranked posts at the top), which reportedly aims to show users posts they are most likely to be interested in.\footnote{url{https://www.facebook.com/notes/facebook-app/interesting-news-any-time-you-visit/10150286921207131/}.} We see that the algorithm does still tend to sort the most recent posts closer to the top, as indicated by the concentration of data points in the heat map in the upper right corner (most recent posts are disproportionately ranked at the top by the Newsfeed algorithm). But it is also clearly taking other things into consideration and doing \emph{something} beyond this natural rank ordering, since the data are clearly not concentrated along the 45 degree line in the heat map.
 
 
@@ -317,18 +243,21 @@ The bottom row of Figure~\ref{fig:nf_time_pref_group} shows that the Newsfeed al
 
 With this as background we can now see our main result in Figure~\ref{fig:nf_time_pref_group}, which is evidence of out-group bias that is clearly visible even in the raw data. The first row presents the results relating reverse chronological order of posts to Newsfeed ranking, overall and by user preference quartile, for out-group posts. The second row presents the same set of results for in-group posts. Overall, and at any given user-preference quartile we can see in the figure that the Newsfeed algorithm does more to put more recent posts at the top of the rank-ordering, or equivalently, a disproportionate share of posts ranked at the top of Newsfeed by the algorithm will be in-group rather than out-group.
 
-This evidence of out-group bias with the Newsfeed algorithm holds after conditioning on user preferences. Interestingly, it turns out that self-reported preferences about the content in different posts does not reveal any signs of out-group bias themselves, as shown in Figure~\ref{fig:prefcdf}. Visually the cumulative distribution functions are quite similar for user preferences for in-group and out-group posts, and a formal test (DIAG CAN YOU EXPLAIN WHAT WE DID HERE EXACTLY?) fails to reject the null hypothesis that the two CDFs are the same (P=??).
+This evidence of out-group bias with the Newsfeed algorithm holds after conditioning on user preferences. Interestingly, it turns out that self-reported preferences about the content in different posts does not reveal any signs of out-group bias themselves, as shown in Appendix Figure~\ref{fig:prefcdf}. Visually the cumulative distribution functions are quite similar for user preferences for in-group and out-group posts, and a formal test (DIAG CAN YOU EXPLAIN WHAT WE DID HERE EXACTLY?) fails to reject the null hypothesis that the two CDFs are the same (P=??).
 
 Figure~\ref{fig:rankabovetime} quantifies the out-group bias in the Newsfeed rankings and helps give some sense of magnitude. Along the x-axis we show each post's user preference quartile. The y-axis shows within each quartile, the average difference between the actual Newsfeed algorithm rank-ordering for those posts relative to the natural ranking (reverse chronological order). Consider for example the least-desired posts in preference quartile 1; the average in-group posts are ranked 2 slots higher than out-group posts. Another way to get a sense of magnitude here is that the least-desired in-group posts in quartile 1 have about the same average rank-ordering by the Newsfeed algorithm as out-group posts in the next-higher user-preference quartile 2.
 
 
-
+\subsection{PYMK}
 Figure~\ref{fig:pymk_time_pref_group} shows that there is no evidence of similar out-group bias in PYMK. Here we consider the ``natural'' ranking to be by proportion of the subject's friend that are shared with the recommended friend (i.e. number of mutual friends$/$number of subject's total friends). The lower right hand corner, is  Figure X is a heat map that shows a plausible natural ranking for PYMK recommendations (proportion of subject's friend that are shared with recommended friend) on the x-axis, and PYMK algorithmic rankings on the y-axis, overall (last column) and by user preference quartile (self-report of how well the user knows the recommended person), for all recommendations (bottom row) and separately for out-group recommendations (top row) and in-group recommendations (second row). The PYMK algorithm ranks recommendations that share more friends closer to the top (next to last column for quartile 4 compared to the other columns for quartiles 1, 2 and 3), but this is not clearly different for out-group versus in-group posts (comparing the top row to the second row within a given column). Figure Y groups posts by user knowledge quartile (x-axis), and shows that within each quartile, the average actual PYMK algorithm ranking (shown on the y-axis) is very similar for out-group versus in-group posts.
 
+\subsection{Explaining the Difference}
 Why do we see evidence of out-group bias with the Newsfeed algorithm but not with PYMK? Our model suggests one hypothesis: previous research in psychology shows clearly that out-group bias in our behavior (the behavior-preference wedge) is more pronounced for behaviors that are less deliberate. We expect user behavior with Newsfeed posts, which is frequent and low-stakes, to be less deliberate than user behavior to accept PYMK friend recommendations, which is less frequent and higher-stakes. The data presented in Figure X are consistent with this hypothesis (EXPLAIN). Study subjects report spending less time and make decisions less deliberately for interacting with Newsfeed posts relative to choosing friends on PYMK, implying the behavioral wedge is likely to be higher there.
 
+\subsection{Interactions/Behavior}
 Our model not only gives us a way to understand the source of algorithmic bias, but also yields a prediction about the magnitude of bias in behavior that results: The biased algorithm compounds the user's own bias (or bias of users like her) by showing the user a choice set that over-represents in-group items. So the magnitude of the bias in user's \emph{behavior} at the end of the day should be even larger than the bias we see in the algorithm rankings, given that they choosing amongst this already biased set. To explore this hypothesis we collected data on the last 10 \emph{interactions} people had with Newsfeed posts: reactions and comments. This is not a perfect measure of user behavior with Newsfeed, since there are other behavioral dimensions that we cannot mention in our setting (like the time the user had spent looking at the post, etc.) With this caveat in mind we can see that there is sizable bias in user behavior with the biased Newsfeed algorithm, despite no bias in self-reported explicit preferences, that is larger than the bias in the Newsfeed algorithm's rankings, as our model predicts.  Figure~\ref{fig:behavior} shows this. 
- 
+
+\subsection{Additional Results from India}
 
 Part of what makes Facebook an interesting test-case for our theory about algorithmic bias is its massive scope, touching the lives of billions of people all over the world. To show that our results are quite general, not specific either to the US context or to out-group bias along the lines of race specifically, we replicated our analysis to test for bias with Newsfeed and PYMK rank-orderings in another massive Facebook market, India. We recruited 200 study subjects via the Ashoka University Centre for Social and Behaviour Change (CSBC). In this sample in-group/out-group is defined by religion rather than by race, but otherwise the study proceeded identically as in the US. In Figure X we replicate Figure~\ref{fig:rankabovetime} with data from the sample from India and again see evidence of out-group bias by religion. Figure Y repeats the exercise for PYMK, once again (as in the US context) showing no statistically significant evidence of out-group bias. (Additional results for this India sample are presented in the Appendix.)
 
@@ -346,7 +275,21 @@ We have seen how algorithms can magnify our biases. They are problematic in anot
 
 %%%%%%%%%% TABLES AND FIGURES %%%%%%%%%%
 
-%%% NF Heatmap Chron vs Algorithm %%%
+
+%%%%%%%%%%
+%%% US: Summary Statistics
+%%%%%%%%%%
+
+\small
+\input{Output/Tex/Summary Tables/US NF participants by sample.tex}
+
+\input{Output/Tex/Summary Tables/US NF PYMK Outcomes.tex}
+
+%%%%%%%%%%
+%%% US: NF
+%%%%%%%%%%
+
+%%% NF Heatmap and Sankey: Chron vs Algorithm and Pref vs Algorithm %%%
 \begin{figure}[ht]
 
     \begin{subfigure}{.5\textwidth} 
@@ -375,20 +318,12 @@ We have seen how algorithms can magnify our biases. They are problematic in anot
         \label{fig:sub-second}
     \end{subfigure}
     
-\caption{Algorithm Does Algorithm Stuff}
+\caption{NF Algorithm Does Algorithm Stuff}
 \end{figure}
 
 
 
-
-%%% NF Ranking Boost by Quartile/Group %%%
-% \begin{figure}[!h]
-%     \centering
-%     \includegraphics[scale=0.75]{Output/Graphs/Audit/Excess Mass/US NF excess mass by ranking group.jpg}
-%     \caption{THIS MIGHT HAVE EXCESS MAP HEATMAP NEXT TO IT?}
-%     \label{fig:rankabovetime}
-% \end{figure}
-
+%%% NF Ingroup Posts %%%
 \begin{figure}[ht]
 
     \begin{subfigure}{.5\textwidth} 
@@ -403,18 +338,10 @@ We have seen how algorithms can magnify our biases. They are problematic in anot
         \caption{Excess Mass by Ranking}
         \label{fig:sub-second}
     \end{subfigure}
-\caption{Ingroup Posts Higher}
+\caption{NF Ingroup Posts Higher}
 \end{figure}
 
-
-%%% NF Ranking Boost by Quartile/Group %%%
-% \begin{figure}[!h]
-%     \centering
-%     \includegraphics[scale=0.75]{Output/Graphs/Audit/Misranking relative to expectation/Chronological expectation/US NF by norm preference.jpg}
-%     \caption{Caption}
-%     \label{fig:rankabovetime}
-% \end{figure}
-
+%%% NF Ranking by preference %%%
 \begin{figure}[ht]
 
     \begin{subfigure}{.5\textwidth} 
@@ -430,35 +357,92 @@ We have seen how algorithms can magnify our biases. They are problematic in anot
         \caption{Something2}
         \label{fig:sub-second}
     \end{subfigure}
-\caption{Beautiful Results}
+\caption{NF Beautiful Results}
 \end{figure}
 
-%%% COMMENTING OUT PYMK FIGURES UNTIL WE FIGURE OUT THE NF FIGURES %%%%
+%%%%%%%%%%
+%%% US: PYMK
+%%%%%%%%%%
 
-% %%% 3 x 5 NF Heatmap %%%
-% \begin{figure}[!h]
-%     \centering
-%     \includegraphics[scale=1]{Output/Graphs/Audit/Heatmaps/US PYMK pct friends by pymk rank by norm quartile - smooth.jpg}
-%     \caption{Caption}
-%     \label{fig:nf_time_pref_group}
-% \end{figure}
+%%% NF Heatmap and Sankey: Chron vs Algorithm and Pref vs Algorithm %%%
+\begin{figure}[ht]
 
-% %%% NF Ranking Boost by Quartile/Group %%%
-% \begin{figure}[!h]
-%     \centering
-%     \includegraphics[scale=1]{Output/Graphs/Audit/Misranking relative to expectation/Mutual friends expectation/US PYMK by norm pref.jpg}
-%     \caption{Caption}
-%     \label{fig:pymk_time_pref_group}
-% \end{figure}
+    \begin{subfigure}{.5\textwidth} 
+        \centering
+        \includegraphics[width=1\linewidth]{Output/Graphs/Audit/Heatmaps/US PYMK pct friends by pymk rank - smooth.jpg}   
+        \caption{Percent Friend Heat Map}
+        \label{fig:sub-first}
+        \end{subfigure}
+    \begin{subfigure}{.5\textwidth}
+        \centering
+        \includegraphics[width=1\linewidth]{Output/Graphs/Audit/Sankey flows/US PYMK pct friend to actual.jpg}  
+        \caption{Percent Friend Sankey (ALL!)}
+        \label{fig:sub-second}
+    \end{subfigure}
+
+   \begin{subfigure}{.5\textwidth} 
+        \centering
+        \includegraphics[width=1\linewidth]{Output/Graphs/Audit/Heatmaps/US PYMK norm pref rank by pymk rank - smooth.jpg}  
+        \caption{Preference Heat Map}
+        \label{fig:sub-first}
+        \end{subfigure}
+    \begin{subfigure}{.5\textwidth}
+        \centering
+        \includegraphics[width=1\linewidth]{Output/Graphs/Audit/Sankey flows/US PYMK norm quartile to actual.jpg}  
+        \caption{Preference Sankey}
+        \label{fig:sub-second}
+    \end{subfigure}
+    
+\caption{PYMK Algorithm Does Algorithm Stuff}
+\end{figure}
 
 
-%%%% AUTOMATICITY %%%%%%
+%%% PYMK Ingroup Posts %%%
+\begin{figure}[ht]
+
+    \begin{subfigure}{.5\textwidth} 
+        \centering
+        \includegraphics[width=1\linewidth]{Output/Graphs/Audit/Heatmaps/US PYMK pymk rank by ingroup - smooth.jpg}  
+        \caption{Two Single Heat Maps by Ingroup}
+        \label{fig:sub-first}
+        \end{subfigure}
+    \begin{subfigure}{.5\textwidth}
+        \centering
+        \includegraphics[width=.9\linewidth]{Output/Graphs/Audit/Excess Mass/US PYMK excess mass by ranking group.jpg}  
+        \caption{Excess Mass by Ranking PUT ON SAME SCALE AS NF?}
+        \label{fig:sub-second}
+    \end{subfigure}
+\caption{PYMK Ingroup Posts Not Higher}
+\end{figure}
+
+%%% NF Ranking by preference %%%
+\begin{figure}[ht]
+
+    \begin{subfigure}{.5\textwidth} 
+        \centering
+            % include first image
+        \includegraphics[width=1\linewidth]{?} 
+        \caption{Something1}
+        \label{fig:sub-first}
+        \end{subfigure}
+    \begin{subfigure}{.5\textwidth}
+        \centering
+        \includegraphics[width=1\linewidth]{Output/Graphs/Audit/Misranking relative to expectation/Mutual friends expectation/US PYMK by norm pref.jpg}  
+        \caption{Something2}
+        \label{fig:sub-second}
+    \end{subfigure}
+\caption{PYMK Results}
+\end{figure}
+
+%%%%%%%%%%
+%%% US: AUTO
+%%%%%%%%%%
 
 \begin{figure}
     \begin{subfigure}{.5\textwidth} 
         \centering
-        \includegraphics[width=1\linewidth]{Output/Graphs/Experiments/Automaticity/45 degree scatter.jpg} 
-        \caption{45 degree line (incl binary and likert)}
+        \includegraphics[width=1\linewidth]{Output/Graphs/Experiments/Automaticity/standardized effect sizes.jpg} 
+        \caption{Standardized Effect Sizes)}
         \label{fig:sub-first}
     \end{subfigure}
     \begin{subfigure}{.5\textwidth} 
@@ -476,8 +460,9 @@ We have seen how algorithms can magnify our biases. They are problematic in anot
 \caption{Automaticity}
 \end{figure}
 
-%%% Interactions/Behavior %%%
-
+%%%%%%%%%%
+%%% US: Interactions
+%%%%%%%%%%
 \begin{figure}[!h]
     \centering
     \includegraphics[width=1\linewidth]{Output/Graphs/Audit/Interactions/US preferences reactions and actual rankings above base rate.jpg}
@@ -490,6 +475,8 @@ We have seen how algorithms can magnify our biases. They are problematic in anot
 \FloatBarrier
 \clearpage
 \appendix
+\renewcommand\thefigure{\thesection.\arabic{figure}}
+\renewcommand\thetable{\thesection.\arabic{table}}
 \counterwithin{table}{section}
 
 \section{Materials and Methods}\label{app:materials}
@@ -559,116 +546,14 @@ Finally, Wave 6 sought to elicit participant perceptions on the purpose of the s
 
 \section{Additional Tables and Figures}\label{app:tab_fig}
 
-\begin{enumerate}
-\item \textbf{Participants summary stats table}
+%%% CDF US NF Preferences by Ingroup %%% 
+\begin{figure}[!h]
+    \centering
+    \includegraphics[scale=.8]{Output/Graphs/Audit/Stated preferences/US NF cdf norm preferences by ingroup.jpg}
+    \caption{CDF}
+    \label{fig:prefcdf}
+\end{figure}
 
-\centering
-\begin{adjustbox}{angle=90}
-\resizebox{\textwidth}{!}{\begin{tabular}{l|c|c|c|c|c|c}
-\hline
-& All (N = 666) & Asian (N = 272) & Black/AA (N = 60) & Hispanic (N = 60) & Other (N = 9) & White (N = 265)\\
- \hline
- \bf{Age} & ~ & ~ & ~ & ~ & ~ & ~\\
- \hline
- ~~ mean (sd) & 26.64 $\pm$ 9.17 & 23.86 $\pm$ 6.53 & 30.98 $\pm$ 11.45 & 26.60 $\pm$ 8.44 & 24.56 $\pm$ 2.88 & 28.63 $\pm$ 10.34\\
- \hline
- \bf{Educational Attainment} & ~ & ~ & ~ & ~ & ~ & ~\\
- \hline
- ~~ No college degree & 252 (39.01\%) & 127 (47.74\%) & 24 (42.11\%) & 24 (41.38\%) & 2 (22.22\%) & 75 (29.30\%)\\
- \hline
- ~~ Bachelor's degree & 231 (35.76\%) & 81 (30.45\%) & 24 (42.11\%) & 24 (41.38\%) & 2 (22.22\%) & 100 (39.06\%)\\
- \hline
- ~~ Graduate degree & 163 (25.23\%) & 58 (21.80\%) & 9 (15.79\%) & 10 (17.24\%) & 5 (55.56\%) & 81 (31.64\%)\\
- \hline
- \bf{Gender} & ~ & ~ & ~ & ~ & ~ & ~\\
- \hline
- ~~ Female & 452 (69.97\%) & 187 (70.30\%) & 37 (64.91\%) & 39 (67.24\%) & 5 (55.56\%) & 184 (71.88\%)\\
- \hline
- ~~ Male & 176 (27.24\%) & 77 (28.95\%) & 16 (28.07\%) & 18 (31.03\%) & 4 (44.44\%) & 61 (23.83\%)\\
- \hline
- ~~ Non-binary & 18 (2.79\%) & 2 (0.75\%) & 4 (7.02\%) & 1 (1.72\%) & 0 (0.00\%) & 11 (4.30\%)\\
- \hline
- \bf{Pre-COVID FB Usage} & ~ & ~ & ~ & ~ & ~ & ~\\
- \hline
- ~~ Hourly & 47 (7.28\%) & 16 (6.02\%) & 6 (10.53\%) & 6 (10.34\%) & 0 (0.00\%) & 19 (7.42\%)\\
- \hline
- ~~ Daily & 308 (47.68\%) & 119 (44.74\%) & 22 (38.60\%) & 18 (31.03\%) & 6 (66.67\%) & 143 (55.86\%)\\
- \hline
- ~~ Weekly & 172 (26.63\%) & 78 (29.32\%) & 14 (24.56\%) & 15 (25.86\%) & 3 (33.33\%) & 62 (24.22\%)\\
- \hline
- ~~ Monthly & 84 (13.00\%) & 37 (13.91\%) & 10 (17.54\%) & 13 (22.41\%) & 0 (0.00\%) & 24 (9.38\%)\\
- \hline
- ~~ Yearly & 27 (4.18\%) & 14 (5.26\%) & 1 (1.75\%) & 5 (8.62\%) & 0 (0.00\%) & 7 (2.73\%)\\
- \hline
- ~~ Never & 8 (1.24\%) & 2 (0.75\%) & 4 (7.02\%) & 1 (1.72\%) & 0 (0.00\%) & 1 (0.39\%)\\
- \hline
- \bf{COVID FB Usage} & ~ & ~ & ~ & ~ & ~ & ~\\
- \hline
- ~~ Hourly & 79 (12.23\%) & 26 (9.77\%) & 8 (14.04\%) & 7 (12.07\%) & 0 (0.00\%) & 38 (14.84\%)\\
- \hline
- ~~ Daily & 346 (53.56\%) & 138 (51.88\%) & 25 (43.86\%) & 28 (48.28\%) & 8 (88.89\%) & 147 (57.42\%)\\
- \hline
- ~~ Weekly & 155 (23.99\%) & 72 (27.07\%) & 11 (19.30\%) & 15 (25.86\%) & 1 (11.11\%) & 56 (21.88\%)\\
- \hline
- ~~ Monthly & 49 (7.59\%) & 23 (8.65\%) & 8 (14.04\%) & 5 (8.62\%) & 0 (0.00\%) & 13 (5.08\%)\\
- \hline
- ~~ Yearly & 12 (1.86\%) & 5 (1.88\%) & 3 (5.26\%) & 2 (3.45\%) & 0 (0.00\%) & 2 (0.78\%)\\
- \hline
- ~~ Never & 5 (0.77\%) & 2 (0.75\%) & 2 (3.51\%) & 1 (1.72\%) & 0 (0.00\%) & 0 (0.00\%)\\
- \hline
- \bf{Race Self-Identification} & ~ & ~ & ~ & ~ & ~ & ~\\
- \hline
- ~~ Asian & 256 (39.63\%) & 246 (92.48\%) & 0 (0.00\%) & 2 (3.45\%) & 5 (55.56\%) & 3 (1.17\%)\\
- \hline
- ~~ Black/AA & 47 (7.28\%) & 0 (0.00\%) & 46 (80.70\%) & 0 (0.00\%) & 0 (0.00\%) & 1 (0.39\%)\\
- \hline
- ~~ Hispanic & 44 (6.81\%) & 0 (0.00\%) & 1 (1.75\%) & 38 (65.52\%) & 0 (0.00\%) & 5 (1.95\%)\\
- \hline
- ~~ White & 237 (36.69\%) & 4 (1.50\%) & 0 (0.00\%) & 6 (10.34\%) & 1 (11.11\%) & 226 (88.28\%)\\
- \hline
- ~~ Multi-racial & 46 (7.12\%) & 10 (3.76\%) & 8 (14.04\%) & 8 (13.79\%) & 2 (22.22\%) & 18 (7.03\%)\\
- \hline
- ~~ Other & 16 (2.48\%) & 6 (2.26\%) & 2 (3.51\%) & 4 (6.90\%) & 1 (11.11\%) & 3 (1.17\%)\\
- \hline
- \end{tabular}}
- \end{adjustbox}
- 
- \item \textbf{NF summary stats table}
-
-\centering
-\begin{adjustbox}{angle=90}
-\resizebox{\textwidth}{!}{ \begin{tabular}{l|c|c|c|c|c|c}
- \hline
-  & nf.data (N = 28,752) & asian (N = 12,114) & black or african american (N = 2,505) & hispanic (N = 2,576) & other (N = 407) & white (N = 11,150)\\
- \hline
- \bf{Friends} & ~ & ~ & ~ & ~ & ~ & ~\\
- \hline
- ~~ Median (IQR) & 712 (366.00, 1,183.00) & 787 (387.00, 1,215.00) & 749 (365.00, 1,218.00) & 440.00 (291.00, 864.00) & 1,264 (410.00, 1,557.00) & 680.00 (385.00, 1,123.00)\\
- \hline
- \bf{Preference} & ~ & ~ & ~ & ~ & ~ & ~\\
- \hline
- ~~ Median (IQR) & 3.00 (2.00, 5.00) & 3.00 (1.00, 5.00) & 4 (2.00, 6.00) & 3.00 (2.00, 5.00) & 2 (1.00, 4.00) & 3.00 (2.00, 5.00)\\
- \hline
- \bf{In-group} & ~ & ~ & ~ & ~ & ~ & ~\\
- \hline
- ~~ Mean (IQR) & 0.60 & 0.50 & 0.54 & 0.49 & 0.57 & 0.75 \\
- \hline
- \bf{Poster Race} & ~ & ~ & ~ & ~ & ~ & ~\\
- \hline
- ~~ Asian & 7,458 (25.94\%) & 6,006 (49.58\%) & 168 (6.71\%) & 243 (9.43\%) & 40 (9.83\%) & 1,001 (8.98\%)\\
- \hline
- ~~ Black/AA & 2,977 (10.35\%) & 671 (5.54\%) & 1,349 (53.85\%) & 181 (7.03\%) & 13 (3.19\%) & 763 (6.84\%)\\
- \hline
- ~~ Hispanic & 2,952 (10.27\%) & 750 (6.19\%) & 182 (7.27\%) & 1,241 (48.18\%) & 18 (4.42\%) & 761 (6.83\%)\\
- \hline
- ~~ Other & 823 (2.86\%) & 221 (1.82\%) & 33 (1.32\%) & 55 (2.14\%) & 226 (55.53\%) & 288 (2.58\%)\\
- \hline
- ~~ White & 14,542 (50.58\%) & 4,466 (36.87\%) & 773 (30.86\%) & 856 (33.23\%) & 110 (27.03\%) & 8,337 (74.77\%)\\
- \hline
- \end{tabular}}
- \end{adjustbox}
- 
- \end{enumerate}
 
 \section{India Results}\label{app:india}
 
