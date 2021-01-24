@@ -34,6 +34,7 @@ options(ggplot2.continuous.fill = "viridis")
 
 knitr::opts_knit$set(root.dir = '/Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown')
 
+color.scaling <- c(0, 0.8, 0.9, 0.95, 1)
 ```
 
 
@@ -886,62 +887,6 @@ m.newsfeed.df.all$chron.order4 <- ifelse(m.newsfeed.df.all$chron.order4 == 4, 3,
 
 m.newsfeed.df.all$newquartile4 <- 3 - (m.newsfeed.df.all$norm.quartile - 1)
 
-# l.dat <- m.newsfeed.df.all %>% group_by(chron.order4, new.order4, norm.quartile) %>% dplyr::summarise(freq = n())
-# 
-# l.dat$norm.quartile <- ifelse(l.dat$chron.order4 == 0, l.dat$norm.quartile, 99)
-# 
-# l.dat$pct <- l.dat$freq/nrow(m.newsfeed.df.all)
-# 
-# #l.dat$pct <- ifelse(l.dat$chron.order4 != 0, 0, l.dat$pct)
-# 
-# ggplot(as.data.frame(l.dat),
-#        aes(y = pct, axis1 = chron.order4, axis2 = new.order4)) +
-#   geom_alluvium(aes(fill = factor(norm.quartile)), width = 1/12) +
-#   geom_stratum(width = 1/12, fill = "black", color = "grey") +
-#   geom_label(stat = "stratum", aes(label = after_stat(stratum))) +
-#   scale_x_discrete(limits = c("Chronological Group", "Actual NF Ranking"), expand = c(.05, .05)) + theme(legend.position="bottom") + 
-#   scale_fill_manual(values=c("red", "blue", "deeppink", "green", "snow")) +
-#   scale_alpha_manual(values = c(0,0,0,0,.5), guide=F)
-# 
-# dev.copy(jpeg,'Output/Graphs/Audit/Sankey flows/US NF chronology to actual by norm preference.jpg')
-# dev.off()
-# 
-# l.dat <- m.newsfeed.df.all %>% group_by(norm.quartile, new.order4, race.in.group) %>% dplyr::summarise(freq = n())
-# 
-# l.dat$pct <- l.dat$freq/nrow(m.newsfeed.df.all)
-# 
-# l.dat$race.in.group <- ifelse(l.dat$norm.quartile == 4, l.dat$race.in.group, 99)
-# 
-# ggplot(as.data.frame(l.dat),
-#        aes(y = pct, axis1 = norm.quartile-1, axis2 = new.order4)) +
-#   geom_alluvium(aes(fill = factor(race.in.group)), width = 1/12) +
-#   geom_stratum(width = 1/12, fill = "black", color = "grey") +
-#   geom_label(stat = "stratum", aes(label = after_stat(stratum))) +
-#   scale_x_discrete(limits = c("Norm Quartile", "Actual NF Ranking"), expand = c(.05, .05)) + theme(legend.position="bottom") + 
-#   scale_fill_manual(values=c("red", "blue", "snow"))
-# 
-# dev.copy(jpeg,'Output/Graphs/Audit/Sankey flows/US NF norm preference to actual by ingroup.jpg')
-# dev.off()
-# 
-# l.dat <- m.newsfeed.df.all %>% group_by(chron.order4, new.order4, race.in.group) %>% dplyr::summarise(freq = n())
-# 
-# l.dat$race.in.group <- ifelse(l.dat$chron.order4 == 0, l.dat$race.in.group, 99)
-# 
-# l.dat$pct <- l.dat$freq/nrow(m.newsfeed.df.all)
-# 
-# #l.dat$pct <- ifelse(l.dat$chron.order4 != 0, 0, l.dat$pct)
-# 
-# ggplot(as.data.frame(l.dat),
-#        aes(y = pct, axis1 = chron.order4, axis2 = new.order4)) +
-#   geom_alluvium(aes(fill = factor(race.in.group)), width = 1/12) +
-#   geom_stratum(width = 1/12, fill = "black", color = "grey") +
-#   geom_label(stat = "stratum", aes(label = after_stat(stratum))) +
-#   scale_x_discrete(limits = c("Chronological Group", "Actual NF Ranking"), expand = c(.05, .05)) + theme(legend.position="bottom") + 
-#   scale_fill_manual(values=c("red", "blue", "snow"))
-# 
-# dev.copy(jpeg,'Output/Graphs/Audit/Sankey flows/US NF chronology to actual by ingroup.jpg')
-# dev.off()
-
 l.dat <- m.newsfeed.df.all %>% group_by(newquartile4, new.order4) %>% dplyr::summarise(freq = n())
 
 l.dat$pct <- l.dat$freq/nrow(m.newsfeed.df.all)
@@ -952,13 +897,8 @@ ggplot(as.data.frame(l.dat),
   geom_stratum(width = 1/12, fill = "white", color = "black") +
   geom_label(stat = "stratum", aes(label = after_stat(stratum))) +
   scale_x_discrete(limits = c("Ranking Group*(-1)", "Actual NF Ranking"), expand = c(.05, .05)) + theme(legend.position="bottom") + 
-  scale_fill_manual(values=rev(brewer.pal(n = 4, name = "Reds")))  +
+  scale_fill_manual(values=rev(brewer.pal(n = 4, name = "Blues")))  +
   geom_text(stat = "alluvium", aes(label = round(after_stat(prop)/.25, 2)), hjust = -0.85)
-
-   brewer.pal(n = 4, name = "Reds")
-
-scale_fill_gradientn(colors = brewer.pal(n = 4, name = "Reds"),
-                             values = c(0, 0.8, 0.9, 0.95, 1))
 
 dev.copy(jpeg,'Output/Graphs/Audit/Sankey flows/US NF norm quartile to actual.jpg')
 dev.off()
@@ -976,37 +916,14 @@ l.dat$pct <- l.dat$freq/nrow(m.newsfeed.df.all)
 ggplot(as.data.frame(l.dat),
        aes(y = pct, axis1 = chron.order4, axis2 = new.order4)) +
   geom_alluvium(aes(fill = factor(chron.order4)), width = 1/12) +
-  geom_stratum(width = 1/12, fill = "black", color = "grey") +
+  geom_stratum(width = 1/12, fill = "white", color = "grey") +
   geom_label(stat = "stratum", aes(label = after_stat(stratum))) +
-  scale_x_discrete(limits = c("Chronological Group", "Actual NF Ranking"), expand = c(.05, .05)) + theme(legend.position="bottom")
+  scale_x_discrete(limits = c("Chronological Group", "Actual NF Ranking"), expand = c(.05, .05)) + theme(legend.position="bottom") + 
+  scale_fill_manual(values=rev(brewer.pal(n = 4, name = "Blues")))  +
+  geom_text(stat = "alluvium", aes(label = round(after_stat(prop)/.25, 2)), hjust = -0.85)
 
 dev.copy(jpeg,'Output/Graphs/Audit/Sankey flows/US NF chronology to actual.jpg')
 dev.off()
-# 
-# l.dat <- m.newsfeed.df.all %>% group_by(chron.order4, new.order4) %>% dplyr::summarise(freq = n())
-# 
-# l.dat$pct <- l.dat$freq/nrow(m.newsfeed.df.all)
-# 
-# ggplot(as.data.frame(l.dat),
-#        aes(y = pct, axis1 = chron.order4, axis2 = new.order4)) +
-#   geom_alluvium(width = 1/12) +
-#   geom_alluvium(aes(fill = factor(new.order4)), width = 1/12) +
-#   geom_stratum(width = 1/12, fill = "black", color = "grey") +
-#   geom_label(stat = "stratum", aes(label = after_stat(stratum))) +
-#   scale_x_discrete(limits = c("Chronological Group", "Actual NF Ranking"), expand = c(.05, .05)) + theme(legend.position="bottom")
-# 
-# l.dat <- m.newsfeed.df.all %>% group_by(norm.quartile, new.order4) %>% dplyr::summarise(freq = n())
-# 
-# l.dat$pct <- l.dat$freq/nrow(m.newsfeed.df.all)
-# 
-# ggplot(as.data.frame(l.dat),
-#        aes(y = pct, axis1 = norm.quartile, axis2 = factor(new.order4))) +
-#   geom_alluvium(aes(fill = factor(new.order4)), width = 1/12) +
-#   geom_stratum(width = 1/12, fill = "black", color = "grey") +
-#   geom_label(stat = "stratum", aes(label = after_stat(stratum))) +
-#   scale_x_discrete(limits = c("Preference Group", "Actual NF Ranking"), expand = c(.05, .05)) + theme(legend.position="bottom")
-# 
-# #m.newsfeed.df.all <- temp
 
 ```
 
@@ -1023,61 +940,7 @@ m.pymk.df.all$friend.order4 <- ifelse(m.pymk.df.all$friend.order4 == 4, 3, m.pym
 
 m.pymk.df.all$newquartile4 <- 3 - (m.pymk.df.all$norm.quartile - 1)
 
-# l.dat <- m.newsfeed.df.all %>% group_by(chron.order4, new.order4, norm.quartile) %>% dplyr::summarise(freq = n())
-# 
-# l.dat$norm.quartile <- ifelse(l.dat$chron.order4 == 0, l.dat$norm.quartile, 99)
-# 
-# l.dat$pct <- l.dat$freq/nrow(m.newsfeed.df.all)
-# 
-# #l.dat$pct <- ifelse(l.dat$chron.order4 != 0, 0, l.dat$pct)
-# 
-# ggplot(as.data.frame(l.dat),
-#        aes(y = pct, axis1 = chron.order4, axis2 = new.order4)) +
-#   geom_alluvium(aes(fill = factor(norm.quartile)), width = 1/12) +
-#   geom_stratum(width = 1/12, fill = "black", color = "grey") +
-#   geom_label(stat = "stratum", aes(label = after_stat(stratum))) +
-#   scale_x_discrete(limits = c("Chronological Group", "Actual NF Ranking"), expand = c(.05, .05)) + theme(legend.position="bottom") + 
-#   scale_fill_manual(values=c("red", "blue", "deeppink", "green", "snow")) +
-#   scale_alpha_manual(values = c(0,0,0,0,.5), guide=F)
-# 
-# dev.copy(jpeg,'Output/Graphs/Audit/Sankey flows/US NF chronology to actual by norm preference.jpg')
-# dev.off()
-# 
-# l.dat <- m.newsfeed.df.all %>% group_by(norm.quartile, new.order4, race.in.group) %>% dplyr::summarise(freq = n())
-# 
-# l.dat$pct <- l.dat$freq/nrow(m.newsfeed.df.all)
-# 
-# l.dat$race.in.group <- ifelse(l.dat$norm.quartile == 4, l.dat$race.in.group, 99)
-# 
-# ggplot(as.data.frame(l.dat),
-#        aes(y = pct, axis1 = norm.quartile-1, axis2 = new.order4)) +
-#   geom_alluvium(aes(fill = factor(race.in.group)), width = 1/12) +
-#   geom_stratum(width = 1/12, fill = "black", color = "grey") +
-#   geom_label(stat = "stratum", aes(label = after_stat(stratum))) +
-#   scale_x_discrete(limits = c("Norm Quartile", "Actual NF Ranking"), expand = c(.05, .05)) + theme(legend.position="bottom") + 
-#   scale_fill_manual(values=c("red", "blue", "snow"))
-# 
-# dev.copy(jpeg,'Output/Graphs/Audit/Sankey flows/US NF norm preference to actual by ingroup.jpg')
-# dev.off()
-# 
-# l.dat <- m.newsfeed.df.all %>% group_by(chron.order4, new.order4, race.in.group) %>% dplyr::summarise(freq = n())
-# 
-# l.dat$race.in.group <- ifelse(l.dat$chron.order4 == 0, l.dat$race.in.group, 99)
-# 
-# l.dat$pct <- l.dat$freq/nrow(m.newsfeed.df.all)
-# 
-# #l.dat$pct <- ifelse(l.dat$chron.order4 != 0, 0, l.dat$pct)
-# 
-# ggplot(as.data.frame(l.dat),
-#        aes(y = pct, axis1 = chron.order4, axis2 = new.order4)) +
-#   geom_alluvium(aes(fill = factor(race.in.group)), width = 1/12) +
-#   geom_stratum(width = 1/12, fill = "black", color = "grey") +
-#   geom_label(stat = "stratum", aes(label = after_stat(stratum))) +
-#   scale_x_discrete(limits = c("Chronological Group", "Actual NF Ranking"), expand = c(.05, .05)) + theme(legend.position="bottom") + 
-#   scale_fill_manual(values=c("red", "blue", "snow"))
-# 
-# dev.copy(jpeg,'Output/Graphs/Audit/Sankey flows/US NF chronology to actual by ingroup.jpg')
-# dev.off()
+
 
 l.dat <- m.pymk.df.all %>% group_by(newquartile4, new.order4) %>% dplyr::summarise(freq = n())
 
@@ -1086,10 +949,10 @@ l.dat$pct <- l.dat$freq/nrow(m.pymk.df.all)
 ggplot(as.data.frame(l.dat),
        aes(y = pct, axis1 = newquartile4, axis2 = new.order4)) +
   geom_alluvium(aes(fill = factor(newquartile4)), width = 1/12) +
-  geom_stratum(width = 1/12, fill = "white", color = "black") +
+  geom_stratum(width = 1/12, fill = "white", color = "grey") +
   geom_label(stat = "stratum", aes(label = after_stat(stratum))) +
   scale_x_discrete(limits = c("Ranking Group*(-1)", "Actual PYMK Ranking"), expand = c(.05, .05)) + theme(legend.position="bottom") + 
-  scale_fill_manual(values=rev(brewer.pal(n = 4, name = "Reds")))  +
+  scale_fill_manual(values=rev(brewer.pal(n = 4, name = "Blues")))  +
   geom_text(stat = "alluvium", aes(label = round(after_stat(prop)/.25, 2)), hjust = -0.85)
 
 dev.copy(jpeg,'Output/Graphs/Audit/Sankey flows/US PYMK norm quartile to actual.jpg')
@@ -1108,98 +971,17 @@ l.dat$pct <- l.dat$freq/nrow(m.pymk.df.all)
 ggplot(as.data.frame(l.dat),
        aes(y = pct, axis1 = friend.order4, axis2 = new.order4)) +
   geom_alluvium(aes(fill = factor(friend.order4)), width = 1/12) +
-  geom_stratum(width = 1/12, fill = "black", color = "grey") +
+  geom_stratum(width = 1/12, fill = "white", color = "grey") +
   geom_label(stat = "stratum", aes(label = after_stat(stratum))) +
-  scale_x_discrete(limits = c("Pct Friend Group", "Actual NF Ranking"), expand = c(.05, .05)) + theme(legend.position="bottom")
+  scale_x_discrete(limits = c("Pct Friend Group", "Actual NF Ranking"), expand = c(.05, .05)) + theme(legend.position="bottom") + 
+  scale_fill_manual(values=rev(brewer.pal(n = 4, name = "Blues")))  +
+  geom_text(stat = "alluvium", aes(label = round(after_stat(prop)/.25, 2)), hjust = -0.85)
 
 dev.copy(jpeg,'Output/Graphs/Audit/Sankey flows/US PYMK pct friend to actual.jpg')
 dev.off()
-# 
-# l.dat <- m.newsfeed.df.all %>% group_by(chron.order4, new.order4) %>% dplyr::summarise(freq = n())
-# 
-# l.dat$pct <- l.dat$freq/nrow(m.newsfeed.df.all)
-# 
-# ggplot(as.data.frame(l.dat),
-#        aes(y = pct, axis1 = chron.order4, axis2 = new.order4)) +
-#   geom_alluvium(width = 1/12) +
-#   geom_alluvium(aes(fill = factor(new.order4)), width = 1/12) +
-#   geom_stratum(width = 1/12, fill = "black", color = "grey") +
-#   geom_label(stat = "stratum", aes(label = after_stat(stratum))) +
-#   scale_x_discrete(limits = c("Chronological Group", "Actual NF Ranking"), expand = c(.05, .05)) + theme(legend.position="bottom")
-# 
-# l.dat <- m.newsfeed.df.all %>% group_by(norm.quartile, new.order4) %>% dplyr::summarise(freq = n())
-# 
-# l.dat$pct <- l.dat$freq/nrow(m.newsfeed.df.all)
-# 
-# ggplot(as.data.frame(l.dat),
-#        aes(y = pct, axis1 = norm.quartile, axis2 = factor(new.order4))) +
-#   geom_alluvium(aes(fill = factor(new.order4)), width = 1/12) +
-#   geom_stratum(width = 1/12, fill = "black", color = "grey") +
-#   geom_label(stat = "stratum", aes(label = after_stat(stratum))) +
-#   scale_x_discrete(limits = c("Preference Group", "Actual NF Ranking"), expand = c(.05, .05)) + theme(legend.position="bottom")
-# 
-# #m.newsfeed.df.all <- temp
 
 ```
 
-
-```{r sankey}
-
-# sigmoid <- function(x_from, x_to, y_from, y_to, scale = 5, n = 100) {
-#   x <- seq(-scale, scale, length = n)
-#   y <- exp(x) / (exp(x) + 1)
-#   tibble(x = (x + scale) / (scale * 2) * (x_to - x_from) + x_from,
-#          y = y * (y_to - y_from) + y_from)
-# }
-# 
-# sankey.data <- m.newsfeed.df.all %>% filter(norm.quartile == 4)
-# 
-# p <- map_df(seq_len(nrow(sankey.data)), 
-#     ~ sigmoid(0, 1, as.numeric(sankey.data[.x, "norm.quartile"]), as.numeric(sankey.data[.x, "new.order4"])) %>%
-#       mutate(time = row_number() + .x,
-#              y = y + runif(1, -0.25, 0.25))) %>%
-#   ggplot(aes(x, y, frame = time)) +
-#   geom_point() 
-# 
-# gganimate(p)
-
-l.dat <- m.newsfeed.df.all %>% filter(norm.quartile == 1 & race.in.group == T) %>%
-  group_by(norm.quartile, nf.order.round, race.in.group) %>% dplyr::summarise(freq = n())
-
-l.dat$pct <- l.dat$freq/nrow(m.newsfeed.df.all %>% filter(norm.quartile == 1 & race.in.group == T) )
-
-ing <- ggplot(as.data.frame(l.dat),
-       aes(y = pct, axis1 = race.in.group, axis2 = nf.order.round)) +
-  geom_alluvium(aes(fill = factor(nf.order.round)), width = 1/12) +
-  geom_stratum(width = 1/12, fill = "black", color = "grey") +
-  geom_label(stat = "stratum", aes(label = after_stat(stratum))) +
-  scale_x_discrete(limits = c("Ingroup?", "Actual NF Ranking Group"), expand = c(.05, .05)) + theme(legend.position="bottom")
-
-l.dat <- m.newsfeed.df.all %>% filter(norm.quartile == 1 & race.in.group == F) %>%
-  group_by(norm.quartile, nf.order.round, race.in.group) %>% dplyr::summarise(freq = n())
-
-l.dat$pct <- l.dat$freq/nrow(m.newsfeed.df.all %>% filter(norm.quartile == 1 & race.in.group == F) )
-
-m.newsfeed.df.all$in.group 
- 
-outg <- ggplot(as.data.frame(l.dat),
-       aes(y = pct, axis2 = race.in.group, axis1 = nf.order.round)) +
-  geom_alluvium(aes(fill = factor(nf.order.round)), width = 1/12) +
-  geom_stratum(width = 1/12, fill = "black", color = "grey") +
-  geom_label(stat = "stratum", aes(label = after_stat(stratum))) +
-  scale_x_discrete(limits = c("", "Ingroup?"), expand = c(.05, .05)) + theme(legend.position="bottom") +
-  theme(axis.title.y =element_blank(),
-        axis.text.y =element_blank(),
-        axis.ticks.y =element_blank())
-
-ggarrange(ing, outg,
-          ncol = 2, nrow = 1, labels = c("Disfavored ingroup posts", "Disfavored outgroup posts"))
-
-l.dat <- m.newsfeed.df.all %>%
-  group_by(norm.quartile, nf.order.round, race.in.group) %>% dplyr::summarise(freq = n())
-l.dat$pct <- l.dat$freq/nrow(m.newsfeed.df.all %>% filter(norm.quartile == 1 & race.in.group == F) )
-
-```
 
 ```{r heatmap counts}
 
@@ -1494,82 +1276,12 @@ ggplot(ratio.by.combo, aes(complete_time_rank, nf.order.round, fill= delta)) +
   geom_tile(aes(fill = delta)) + scale_y_reverse() + scale_x_reverse()
 
 
-ggplot(m.newsfeed.df.all, aes(x=norm.sixty, nf.order)) + stat_density_2d(
-  geom = "raster",
-  aes(fill = after_stat(density)),
-  contour = F
-) + scale_fill_viridis_c(option = "D") + scale_y_reverse()
-
-ggplot(m.newsfeed.df.all, aes(x=norm.sixty, nf.order)) + stat_density_2d(
-  geom = "raster",
-  aes(fill = after_stat(density)),
-  contour = F
-) + scale_fill_viridis_c(option = "C") + scale_y_reverse()
-
-
-ggplot(m.newsfeed.df.all, aes(x=norm.pctle, nf.order)) + stat_density_2d(
-  geom = "raster",
-  aes(fill = after_stat(density)),
-  contour = F
-) + scale_fill_viridis_c(option = "D") + scale_y_reverse()
-
-ggplot(m.newsfeed.df.all, aes(x=norm.pctle, nf.order)) + stat_density_2d(
-  geom = "raster",
-  aes(fill = after_stat(density)),
-  contour = F
-) + scale_fill_viridis_c(option = "C") + scale_y_reverse()
-
-ggplot(m.newsfeed.df.all, aes(x=norm.pctle, nf.order)) + stat_density_2d(
-  geom = "raster",
-  aes(fill = after_stat(density)),
-  contour = F
-) + scale_fill_viridis_c(option = "B") + scale_y_reverse()
-
-ggplot(m.newsfeed.df.all, aes(x=norm.pctle, nf.order)) + stat_density_2d(
-  geom = "raster",
-  aes(fill = after_stat(density)),
-  contour = F
-) + scale_fill_viridis_c(option = "A") + scale_y_reverse()
-
-
-ggplot(m.newsfeed.df.all, aes(x=norm.pctle, nf.order)) + stat_density_2d(
-  geom = "raster",
-  aes(fill = after_stat(density)),
-  contour = F
-) + scale_y_reverse() + 
-  scale_fill_gradient(
-                      low = "#FFFFFF",
-                      high = "#012345", breaks = c(0.19, 0.02))
-
-ggplot(m.newsfeed.df.all, aes(x=norm.pctle, nf.order)) + stat_density_2d(
-  geom = "raster",
-  aes(fill = after_stat(density)),
-  contour = F
-) + scale_y_reverse() + scale_fill_gradientn(colors = brewer.pal(n = 5, name = "Reds"),
-                             values = c(0, 0.8, 0.9, 0.95, 1))
-
 ggplot(m.newsfeed.df.all, aes(x=norm.pctle, nf.order)) + stat_density_2d(
   geom = "raster",
   aes(fill = after_stat(density)),
   contour = F
 ) + scale_y_reverse() + scale_fill_gradientn(colors = brewer.pal(n = 5, name = "Blues"),
-                             values = c(0, 0.8, 0.9, 0.95, 1))
-
-ggplot(m.newsfeed.df.all, aes(x=norm.pctle, nf.order)) + stat_density_2d(
-  geom = "raster",
-  aes(fill = after_stat(density)),
-  contour = F
-) + scale_y_reverse() + scale_fill_gradientn(colors = brewer.pal(n = 5, name = "Greens"),
-                             values = c(0, 0.5, 0.9, 0.95, 1))
-
-ggplot(m.newsfeed.df.all, aes(x=norm.pctle, nf.order)) + stat_density_2d(
-  geom = "raster",
-  aes(fill = after_stat(density)),
-  contour = F
-) + scale_y_reverse() + 
-  scale_fill_gradient(
-                      low = "#FFFFFF",
-                      high = "black")
+                             values = color.scaling)
 
 dev.copy(jpeg,'Output/Graphs/Audit/Heatmaps/US NF norm pref rank by nf rank - smooth.jpg')
 dev.off()
@@ -1585,7 +1297,7 @@ ggplot(m.newsfeed.df.all %>% filter(holder %in% 55:60), aes(x=holder, nf.order))
 m.newsfeed.df.all$holder <- 1
 
 ggplot(m.newsfeed.df.all, aes(factor(holder), nf.order)) + stat_density(aes(fill = after_stat(density)), geom = "raster", position = "identity") + facet_grid(.~race.in.group, scales = "free_y") + scale_y_reverse() + scale_fill_gradientn(colors = brewer.pal(n = 5, name = "Blues"),
-                             values = c(0, 0.5, 0.9, 0.95, 1))
+                             values = color.scaling)
 
 dev.copy(jpeg,'Output/Graphs/Audit/Heatmaps/US NF nf rank by ingroup - smooth.jpg')
 dev.off()
@@ -1599,8 +1311,8 @@ ggplot(m.pymk.df.all, aes(x=norm.pctle, pymk.order)) + stat_density_2d(
   geom = "raster",
   aes(fill = after_stat(density)),
   contour = F
-) + scale_y_reverse() + scale_fill_gradientn(colors = brewer.pal(n = 5, name = "Reds"),
-                             values = c(0, 0.5, 0.9, 0.95, 1))
+) + scale_y_reverse() + scale_fill_gradientn(colors = brewer.pal(n = 5, name = "Blues"),
+                             values = color.scaling)
 
 dev.copy(jpeg,'Output/Graphs/Audit/Heatmaps/US PYMK norm pref rank by pymk rank - smooth.jpg')
 dev.off()
@@ -1608,7 +1320,7 @@ dev.off()
 m.pymk.df.all$holder <- 1
 
 ggplot(m.pymk.df.all, aes(factor(holder), pymk.order)) + stat_density(aes(fill = after_stat(density)), geom = "raster", position = "identity") + facet_grid(.~race.in.group, scales = "free_y") + scale_y_reverse() + scale_fill_gradientn(colors = brewer.pal(n = 5, name = "Blues"),
-                             values = c(0, 0.5, 0.9, 0.95, 1))
+                             values = color.scaling)
 
 dev.copy(jpeg,'Output/Graphs/Audit/Heatmaps/US PYMK pymk rank by ingroup - smooth.jpg')
 dev.off()
@@ -1940,7 +1652,7 @@ ggplot(dat, aes(x = nf.order.round, y = excess)) + geom_bar(stat = "identity") +
   xlab("Newsfeed rank sextile (Groups of 10 posts)")  +
   scale_x_discrete(name ="NF Ranking Group", 
                    breaks = c("1","2","3","4","5","0"),
-                    labels=c("11-20","21-30", "31-40", "41-50", "51-60", "Top 10")) +
+                    labels=c("11-20","21-30", "31-40", "41-50", "51-60", "Top 10")) + ylim(c(-.15,.15)) +
   coord_flip()
 
 dev.copy(jpeg,'Output/Graphs/Audit/Excess mass/US NF excess mass by ranking group.jpg')
@@ -2553,30 +2265,107 @@ base.rate <- mean((m.newsfeed.df.all %>%
   filter(source %in% c("CDR 2", "CDR 4")) %>% 
   dplyr::select(race.in.group))$race.in.group, na.rm = T)
 
+base.rate.all <- mean((m.newsfeed.df.all %>%
+  dplyr::select(race.in.group))$race.in.group, na.rm = T)
+
 nf.5 <- m.newsfeed.df.all %>% filter(source %in% c("CDR 2", "CDR 4")) %>%
-  filter(nf.order <= 5) %>% 
+  filter(new.rank <= 5) %>% 
   dplyr::summarise(prob.same.race = mean(race.in.group, na.rm = T), sd = sd(race.in.group, na.rm = T), n= n()) %>%
   dplyr::mutate(group = 0)
 nf.5$ci <- (nf.5$sd/sqrt(nf.5$n))*1.96
 nf.5$source <- "Actual Newsfeed Ranking"
 
 nf.10 <- m.newsfeed.df.all %>% filter(source %in% c("CDR 2", "CDR 4")) %>%
-  filter(nf.order <= 10) %>% 
+  filter(new.rank <= 10) %>% 
   dplyr::summarise(prob.same.race = mean(race.in.group, na.rm = T), sd = sd(race.in.group, na.rm = T), n= n()) %>%
   dplyr::mutate(group = 1)
 nf.10$ci <- (nf.10$sd/sqrt(nf.10$n))*1.96
 nf.10$source <- "Actual Newsfeed Ranking"
 
 nf.20 <- m.newsfeed.df.all %>% filter(source %in% c("CDR 2", "CDR 4")) %>%
-  filter(nf.order <= 20) %>% 
+  filter(new.rank <= 20) %>% 
   dplyr::summarise(prob.same.race = mean(race.in.group, na.rm = T), sd = sd(race.in.group, na.rm = T), n= n()) %>%
   dplyr::mutate(group = 2)
 nf.20$ci <- (nf.20$sd/sqrt(nf.20$n))*1.96
 nf.20$source <- "Actual Newsfeed Ranking"
 
-l.dat <- rbind(nf.5, nf.10, nf.20, recent.summ.r, recent.summ.c, recent.summ.i)
+
+
+pref.5 <- m.newsfeed.df.all %>% filter(source %in% c("CDR 2", "CDR 4")) %>%
+  filter(norm.pctle >= (1-(5/60))) %>% 
+  dplyr::summarise(prob.same.race = mean(race.in.group, na.rm = T), sd = sd(race.in.group, na.rm = T), n= n()) %>%
+  dplyr::mutate(group = 0)
+pref.5$ci <- (pref.5$sd/sqrt(pref.5$n))*1.96
+pref.5$source <- "Preference Ranking"
+
+pref.10 <- m.newsfeed.df.all %>% filter(source %in% c("CDR 2", "CDR 4")) %>%
+  filter(norm.pctle >= (1-(10/60))) %>% 
+  dplyr::summarise(prob.same.race = mean(race.in.group, na.rm = T), sd = sd(race.in.group, na.rm = T), n= n()) %>%
+  dplyr::mutate(group = 1)
+pref.10$ci <- (pref.10$sd/sqrt(pref.10$n))*1.96
+pref.10$source <- "Preference Ranking"
+
+pref.20 <- m.newsfeed.df.all %>% filter(source %in% c("CDR 2", "CDR 4")) %>%
+  filter(norm.pctle >= (1-(20/60))) %>% 
+  dplyr::summarise(prob.same.race = mean(race.in.group, na.rm = T), sd = sd(race.in.group, na.rm = T), n= n()) %>%
+  dplyr::mutate(group = 2)
+pref.20$ci <- (pref.20$sd/sqrt(pref.20$n))*1.96
+pref.20$source <- "Preference Ranking"
+
+
+pref.5.all <- m.newsfeed.df.all %>%
+  filter(norm.pctle >= (1-(5/60))) %>% 
+  dplyr::summarise(prob.same.race = mean(race.in.group, na.rm = T), sd = sd(race.in.group, na.rm = T), n= n()) %>%
+  dplyr::mutate(group = 0)
+pref.5.all$ci <- (pref.5.all$sd/sqrt(pref.5.all$n))*1.96
+pref.5.all$source <- "Preference Ranking (All)"
+
+pref.10.all <- m.newsfeed.df.all %>%
+  filter(norm.pctle >= (1-(10/60))) %>% 
+  dplyr::summarise(prob.same.race = mean(race.in.group, na.rm = T), sd = sd(race.in.group, na.rm = T), n= n()) %>%
+  dplyr::mutate(group = 1)
+pref.10.all$ci <- (pref.10.all$sd/sqrt(pref.10.all$n))*1.96
+pref.10.all$source <- "Preference Ranking (All)"
+
+pref.20.all <- m.newsfeed.df.all %>%
+  filter(norm.pctle >= (1-(20/60))) %>% 
+  dplyr::summarise(prob.same.race = mean(race.in.group, na.rm = T), sd = sd(race.in.group, na.rm = T), n= n()) %>%
+  dplyr::mutate(group = 2)
+pref.20.all$ci <- (pref.20.all$sd/sqrt(pref.20.all$n))*1.96
+pref.20.all$source <- "Preference Ranking (All)"
+
+chron.5 <- m.newsfeed.df.all %>% filter(source %in% c("CDR 2", "CDR 4")) %>%
+  filter(time_rank <= 5) %>% 
+  dplyr::summarise(prob.same.race = mean(race.in.group, na.rm = T), sd = sd(race.in.group, na.rm = T), n= n()) %>%
+  dplyr::mutate(group = 0)
+chron.5$ci <- (chron.5$sd/sqrt(chron.5$n))*1.96
+chron.5$source <- "Chronological Ranking"
+
+chron.10 <- m.newsfeed.df.all %>% filter(source %in% c("CDR 2", "CDR 4")) %>%
+  filter(time_rank <= 10) %>% 
+  dplyr::summarise(prob.same.race = mean(race.in.group, na.rm = T), sd = sd(race.in.group, na.rm = T), n= n()) %>%
+  dplyr::mutate(group = 1)
+chron.10$ci <- (chron.10$sd/sqrt(chron.10$n))*1.96
+chron.10$source <- "Chronological Ranking"
+
+chron.20 <- m.newsfeed.df.all %>% filter(source %in% c("CDR 2", "CDR 4")) %>%
+  filter(time_rank <= 20) %>% 
+  dplyr::summarise(prob.same.race = mean(race.in.group, na.rm = T), sd = sd(race.in.group, na.rm = T), n= n()) %>%
+  dplyr::mutate(group = 2)
+chron.20$ci <- (chron.20$sd/sqrt(chron.20$n))*1.96
+chron.20$source <- "Chronological Ranking"
+
+l.dat <- rbind(nf.5, nf.10, nf.20,
+               chron.5, chron.10, chron.20,
+               pref.5, pref.10, pref.20,
+               recent.summ.r, recent.summ.c, recent.summ.i)
 
 l.dat$prob.same.race.rate <- (l.dat$prob.same.race/base.rate) - 1
+
+
+l.dat$prob.same.race.diff <- ifelse(l.dat$source == "Preference Ranking (All)",
+                                    (l.dat$prob.same.race/base.rate) - 1,
+                                    (l.dat$prob.same.race/base.rate.all) - 1)
 
 # l.dat$source <- factor(l.dat$source,levels = c("All posts",
 #                                                "Top 3 quartiles",
@@ -2591,7 +2380,7 @@ l.dat$prob.same.race.rate <- (l.dat$prob.same.race/base.rate) - 1
 pd <- position_dodge(0.6)
 
 ggplot(l.dat, aes(x = factor(group), y=prob.same.race.rate, fill = source)) + 
-    geom_bar(stat="identity", position=pd) + scale_fill_brewer(palette="Paired")+
+    geom_bar(stat="identity", position=pd) +
   geom_errorbar(aes(ymin=prob.same.race.rate-ci, ymax=prob.same.race.rate+ci), width=.1, position=pd) + labs(title = "Ingroup preferences in interactions") + ylab("Share of posts that are in-group \ndivided by base rate") + 
   scale_x_discrete(name ="Ranking Group", 
                    breaks = c("1","2","0", "-1", "-2", "-3"),
@@ -2601,12 +2390,14 @@ ggplot(l.dat, aes(x = factor(group), y=prob.same.race.rate, fill = source)) +
 dev.copy(jpeg,'Output/Graphs/Audit/Interactions/US preferences reactions and actual rankings above base rate.jpg')
 dev.off()
 
-l.dat$prob.same.race.diff <- (l.dat$prob.same.race-base.rate)
+l.dat$prob.same.race.diff <- ifelse(l.dat$source == "Preference Ranking (All)",
+                                    l.dat$prob.same.race-base.rate,
+                                    l.dat$prob.same.race-base.rate.all)
 
 pd <- position_dodge(0.6)
 
 ggplot(l.dat, aes(x = factor(group), y=prob.same.race.diff, fill = source)) + 
-    geom_bar(stat="identity", position=pd) + scale_fill_brewer(palette="Paired")+
+    geom_bar(stat="identity", position=pd) +
   geom_errorbar(aes(ymin=prob.same.race.diff-ci, ymax=prob.same.race.diff+ci), width=.1, position=pd) + labs(title = "Ingroup preferences in interactions") + ylab("Share of posts that are in-group \nminus base rate") + 
   scale_x_discrete(name ="Ranking Group", 
                    breaks = c("1","2","0", "-1"),
@@ -3161,8 +2952,8 @@ ggplot(dat, aes(x = pymk.order.round, y = excess)) + geom_bar(stat = "identity")
   xlab("PYMK rank sextile (Groups of 10 posts)") +
   scale_x_discrete(name ="PYMK Ranking Group", 
                    breaks = c("1","2","3","4","5","0"),
-                    labels=c("11-20","21-30", "31-40", "41-50", "51-60", "Top 10")) +
-  coord_flip()
+                    labels=c("11-20","21-30", "31-40", "41-50", "51-60", "Top 10")) + ylim(c(-.15,.15)) +
+  coord_flip() 
 
 dev.copy(jpeg,'Output/Graphs/Audit/Excess Mass/US PYMK excess mass by ranking group.jpg')
 dev.off()

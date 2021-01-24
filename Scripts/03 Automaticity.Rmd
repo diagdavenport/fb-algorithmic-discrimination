@@ -109,7 +109,7 @@ choice.long2$val <- ifelse(choice.long2$cat == "careful",
 
 temp.l.dat <- choice.long2 %>% group_by(cat)  %>% dplyr::summarise(mean.val = mean(val, na.rm = T), sd = sd(val, na.rm = T), n= n()) 
 
-l.dat <- choice.long2 %>% filter(cat == "speed") %>% group_by(cat, target)  %>% dplyr::summarise(mean.val = mean(val, na.rm = T), sd = sd(val, na.rm = T), n= n()) 
+l.dat <- choice.long2 %>% filter(cat == "speed") %>% group_by(cat, target)  %>% dplyr::summarise(mean.val = mean(val, na.rm = T), sd = sd(val, na.rm = T), n= n())
 
 l.dat$ci <- (l.dat$sd/sqrt(l.dat$n))*1.96
 
@@ -126,16 +126,14 @@ m.long <- merge(choice.long2, temp.l.dat, by = c("cat"))
 m.long$z <- (m.long$val - m.long$mean.val)/m.long$sd
  
  label.df <- data.frame(cat = c("access",
-                                "awareness", 
-                                "careful", 
+                                "awareness",
                                 "cogeffort", 
                                 "control", 
-                                "efficiency", 
-                                "gut", 
+                                "efficiency",
                                 "influence", 
                                 "intention",
-                                "composite"),
-                       mean.val = c(2.9, 2.8, 0.6, 4, 2.4, 4.4, 0.9, 4.4, 4, 3.0),
+                                "simple composite"),
+                       mean.val = c(2.9, 2.8, 4, 2.4, 4.4, 4.4, 4, 3.6),
                        target = "nf")
  
 automaticity.labels <- c(
@@ -145,59 +143,48 @@ automaticity.labels <- c(
                                 "(Control) Inability to resist action urge",
                                 "(Influence) Infleunced by situation",  
                                 "(Efficiency) Low cognitive effort", 
-                                "(Cog Effort) Lack of forethought", 
-                                "(Gut) Based on gut reaction", 
-                                "(Careful) Not a careful consideration",
-                                "Composite Score")
-
-l.dat <- m.long %>% filter(cat != "speed") %>% group_by(cat, target)  %>% dplyr::summarise(mean.z = mean(z, na.rm = T), sd = sd(z, na.rm = T), n= n())
-
-l.dat$ci <- (l.dat$sd/sqrt(l.dat$n))*1.96
-
- ggplot(l.dat, aes(x = cat, y = mean.z, fill = target)) +
-  geom_col(position = "dodge") +
-   geom_errorbar(aes(ymin=mean.z-ci, ymax=mean.z+ci),
-                 width=.2,                    # Width of the error bars
-                  position=position_dodge(.9))  + theme(axis.text.x = element_text(angle = 45, hjust = 1)) + xlab("Measure") +
-   ylab("Mean-Centered Rescaled Automaticity Rating St. Dev.\n(Higher ratings = more automatic)") + labs(title = "Automaticity Ratings by Target", subtitle = "All dimensions of automaticity indicate that NF behavior is more automatic \nthan PYMK behavior.") +
-   scale_x_discrete(labels= automaticity.labels) +
-  coord_cartesian(ylim = c(0.45, -0.45)) +
-   coord_flip()  +
-   scale_fill_manual(values=c("#CC79A7", "#009E73"),
-                       name="Poster Identity",
-                       breaks=c("nf", "pymk"),
-                       labels=c("Newsfeed", "PYMK"))
+                                "(Cog Effort) Lack of forethought",
+                                "Simple Composite Score")
 
 l.dat1 <- choice.long2 %>% filter(cat != "speed") %>% group_by(cat, target)  %>% dplyr::summarise(mean.val = mean(val, na.rm = T), sd = sd(val, na.rm = T), n= n()) 
 
 l.dat1$ci <- (l.dat1$sd/sqrt(l.dat1$n))*1.96
 
-l.dat2 <- choice.long2 %>% filter(cat != "speed") %>% group_by(target)  %>% dplyr::summarise(mean.val = mean(val, na.rm = T), sd = sd(val, na.rm = T), n= n()) 
-l.dat2$cat <- "composite"
+l.dat2 <- choice.long2 %>% filter(cat != "speed" & cat != "gut" & cat != "careful") %>% group_by(target)  %>% dplyr::summarise(mean.val = mean(val, na.rm = T), sd = sd(val, na.rm = T), n= n()) 
+l.dat2$cat <- "simple composite"
 l.dat2$ci <- (l.dat2$sd/sqrt(l.dat2$n))*1.96
+
+pca <- prcomp(choice.long[!is.na(choice.long$access),
+                             c("access", "cogeffort", "influence", "awareness", "intention", "control", "efficiency")],
+                 center = TRUE, scale. = TRUE)
+
+pca.with.label <- cbind(choice.long[!is.na(choice.long$access), ".set"], pca$x)
+
+l.dat3 <- pca.with.label %>% group_by(.set) %>% dplyr::summarise(mean.val = mean(PC1, na.rm = T), sd = sd(PC1, na.rm = T), n= n()) %>% mutate(target = .set)
+l.dat3$cat <- "First Principal Component (28% PVE)"
+l.dat3$ci <- (l.dat2$sd/sqrt(l.dat3$n))*1.96
 
 l.dat <- rbind(as.data.frame(l.dat1), as.data.frame(l.dat2))
 
 # sort the bars by effect size
-l.dat$cat <- factor(l.dat$cat,levels = c("intention", "access", "awareness", "control", "influence", "efficiency", "cogeffort", "gut", "careful", "composite"))
+l.dat$cat <- factor(l.dat$cat,levels = c("intention", "access", "awareness", "control", "influence", "efficiency", "cogeffort", "gut", "careful", "simple composite"))
 
- ggplot(l.dat, aes(x = cat, y = mean.val, fill = target)) +
+ ggplot(l.dat %>% filter(cat != "careful" & cat != "gut"), aes(x = cat, y = mean.val, fill = target)) +
   geom_col(position = "dodge", aes(fill = target)) +
    geom_errorbar(aes(ymin=mean.val-ci, ymax=mean.val+ci),
                  width=.2,                    # Width of the error bars
-                  position=position_dodge(.9))  +
-   theme(axis.text.x = element_text(angle = 45, hjust = 1)) + xlab("Measure") + 
-   ylab("Mean Rescaled Automaticity Rating\n(Higher ratings = more automatic)") + 
-   labs(title = "Automaticity Ratings by Target", 
+                  position=position_dodge(.9)) + xlab("Measure")  +
+   ylab("Mean Rescaled Automaticity Rating\n(Higher ratings = more automatic)") +
+   labs(title = "Automaticity Ratings by Target",
         subtitle = "All dimensions of automaticity indicate that NF behavior is more automatic \nthan PYMK behavior.") +
-   geom_text(data = label.df, 
-             label = c("NS", "**", "***", "***", "***", "***", "***", "***", "NS", "***")) + 
+   geom_text(data = label.df,
+             label = c("NS", "**", "***", "***", "***", "***", "NS", "***"))  +
    scale_x_discrete(labels= automaticity.labels) + coord_flip() +
-   scale_fill_manual(values=c("#CC79A7", "#009E73"), 
+   scale_fill_manual(values=c("#CC79A7", "#009E73"),
                        name="Target",
                        breaks=c("nf", "pymk"),
                        labels=c("Newsfeed", "PYMK"))
-
+  
 dev.copy(jpeg,'Output/Graphs/Experiments/Automaticity/composite score and components.jpg')
 dev.off()
  
@@ -215,12 +202,39 @@ cohen.data <- merge(t, temp.l.dat)
 
 cohen.data$cohen.d <- with(cohen.data, (nf - pymk)/sd)
 
- ggplot(cohen.data, aes(x = cat, y = cohen.d)) +
+last.row <- data.frame(cat = "PCA",
+                       "nf" = l.dat3[1,2],
+                       "pymk" = l.dat3[2,2],
+                       "mean.val" = 0,
+                       sd = sd(pca.with.label$PC1),
+                       n = 688,
+                       cohen.d = abs(l.dat3[1,2] - l.dat3[2,2])/sd(pca.with.label$PC1))
+colnames(last.row) <- names(cohen.data)
+
+cohen.data <- rbind(cohen.data, last.row)
+
+
+all.vals <- choice.long2 %>% filter(cat != "speed" & cat != "gut" & cat != "careful")
+
+last.row <- data.frame(cat = "composite",
+                       "nf" = mean(all.vals[all.vals$target == "nf",]$val, na.rm = T),
+                       "pymk" = mean(all.vals[all.vals$target == "pymk",]$val, na.rm = T),
+                       "mean.val" = NA,
+                       sd = sd(all.vals$val, na.rm = T),
+                       n = 688,
+                       cohen.d = 777)
+colnames(last.row) <- names(cohen.data)
+
+cohen.data <- rbind(cohen.data, last.row)
+
+cohen.data$cohen.d <- with(cohen.data, (nf - pymk)/sd)
+
+ ggplot(cohen.data, aes(x = cat, y = abs(cohen.d))) +
   geom_col(position = "dodge") + geom_hline(yintercept = c(.2,.5,.8), linetype = "dotted")
  
- dev.copy(jpeg,'Output/Graphs/Experiments/Automaticity/standardized effect sizes.jpg')
+dev.copy(jpeg,'Output/Graphs/Experiments/Automaticity/standardized effect sizes.jpg')
 dev.off()
- 
+
 ```
 
 
