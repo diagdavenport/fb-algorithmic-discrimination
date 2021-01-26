@@ -1171,7 +1171,8 @@ ggplot(m.newsfeed.df.all %>% filter(complete_time_rank <= 60), aes(x=complete_ti
   geom = "raster",
   aes(fill = after_stat(density)),
   contour = FALSE
-) + scale_fill_viridis_c() + facet_grid(race.in.group~norm.quartile, margins = T)  + scale_x_reverse() + scale_y_reverse()
+) + scale_fill_gradientn(colors = brewer.pal(n = 5, name = "Blues"),
+                             values = color.scaling) + facet_grid(race.in.group~norm.quartile, margins = T)  + scale_x_reverse() + scale_y_reverse()
 
 dev.copy(jpeg,'Output/Graphs/Audit/Heatmaps/US NF chron rank by nf rank by norm quartile - smooth.jpg')
 dev.off()
@@ -1200,7 +1201,7 @@ ggplot(m.newsfeed.df.all %>% filter(complete_time_rank <= 60), aes(x=complete_ti
   geom = "raster",
   aes(fill = after_stat(density)),
   contour = FALSE
-) + scale_x_reverse() + scale_y_reverse() 
+) + scale_x_reverse() + scale_y_reverse()  + scale_fill_gradientn(colors = brewer.pal(n = 5, name = "Blues"), values = color.scaling)
 
 dev.copy(jpeg,'Output/Graphs/Audit/Heatmaps/US NF chron rank by nf rank - smooth.jpg')
 dev.off()
