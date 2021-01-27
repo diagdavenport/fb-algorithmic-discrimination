@@ -952,7 +952,7 @@ ggplot(as.data.frame(l.dat),
   geom_stratum(width = 1/12, fill = "white", color = "grey") +
   geom_label(stat = "stratum", aes(label = after_stat(stratum))) +
   scale_x_discrete(limits = c("Ranking Group*(-1)", "Actual PYMK Ranking"), expand = c(.05, .05)) + theme(legend.position="bottom") + 
-  scale_fill_manual(values=rev(brewer.pal(n = 4, name = "Blues")))  +
+  scale_fill_manual(values=rev(brewer.pal(n = 5, name = "Blues")[2:5]))  +
   geom_text(stat = "alluvium", aes(label = round(after_stat(prop)/.25, 2)), hjust = -0.85)
 
 dev.copy(jpeg,'Output/Graphs/Audit/Sankey flows/US PYMK norm quartile to actual.jpg')
@@ -974,7 +974,7 @@ ggplot(as.data.frame(l.dat),
   geom_stratum(width = 1/12, fill = "white", color = "grey") +
   geom_label(stat = "stratum", aes(label = after_stat(stratum))) +
   scale_x_discrete(limits = c("Pct Friend Group", "Actual NF Ranking"), expand = c(.05, .05)) + theme(legend.position="bottom") + 
-  scale_fill_manual(values=rev(brewer.pal(n = 4, name = "Blues")))  +
+  scale_fill_manual(values=rev(brewer.pal(n = 5, name = "Blues")[2:5]))  +
   geom_text(stat = "alluvium", aes(label = round(after_stat(prop)/.25, 2)), hjust = -0.85)
 
 dev.copy(jpeg,'Output/Graphs/Audit/Sankey flows/US PYMK pct friend to actual.jpg')

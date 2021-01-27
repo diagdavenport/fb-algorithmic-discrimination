@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  26 JAN 2021 14:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  27 JAN 2021 08:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2317,7 +2317,7 @@ rkdown PDFs/02-Main-FB-Script_files/figure-latex/Recent Activity attempt 2-1.pd
 f>]
 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
 wn PDFs/02-Main-FB-Script_files/figure-latex/re alex imas-1.pdf, id=1080, 454.6
-9875pt x 303.1325pt>
+9875pt x 301.125pt>
 File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
 arkdown PDFs/02-Main-FB-Script_files/figure-latex/re alex imas-1.pdf Graphic fi
 le (type pdf)
@@ -2326,7 +2326,7 @@ rkdown PDFs/02-Main-FB-Script_files/figure-latex/re alex imas-1.pdf>
 Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
 /Lockdown/Scripts/Markdown PDFs/02-Main-FB-Script_files/figure-latex/re alex im
 as-1.pdf  used on input line 477.
-(pdftex.def)             Requested size: 454.70456pt x 303.13638pt.
+(pdftex.def)             Requested size: 454.70456pt x 301.12885pt.
 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
 wn PDFs/02-Main-FB-Script_files/figure-latex/re alex imas-2.pdf, id=1081, 454.6
 9875pt x 300.12125pt>
@@ -2349,9 +2349,9 @@ rkdown PDFs/02-Main-FB-Script_files/figure-latex/Recent Activity attempt 2-2.pd
 f>] [51] [52 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/S
 cripts/Markdown PDFs/02-Main-FB-Script_files/figure-latex/re alex imas-1.pdf> <
 /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdow
-n PDFs/02-Main-FB-Script_files/figure-latex/re alex imas-2.pdf>] [53]
+n PDFs/02-Main-FB-Script_files/figure-latex/re alex imas-2.pdf>] [53] [54]
 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
-wn PDFs/02-Main-FB-Script_files/figure-latex/pymk evolution-1.pdf, id=1124, 451
+wn PDFs/02-Main-FB-Script_files/figure-latex/pymk evolution-1.pdf, id=1129, 451
 .6875pt x 316.18124pt>
 File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
 arkdown PDFs/02-Main-FB-Script_files/figure-latex/pymk evolution-1.pdf Graphic 
@@ -2363,7 +2363,7 @@ Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
 tion-1.pdf  used on input line 797.
 (pdftex.def)             Requested size: 451.71394pt x 316.19975pt.
 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
-wn PDFs/02-Main-FB-Script_files/figure-latex/norm fam by group-1.pdf, id=1125, 
+wn PDFs/02-Main-FB-Script_files/figure-latex/norm fam by group-1.pdf, id=1130, 
 434.62375pt x 315.1775pt>
 File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
 arkdown PDFs/02-Main-FB-Script_files/figure-latex/norm fam by group-1.pdf Graph
@@ -2375,7 +2375,7 @@ Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
 y group-1.pdf  used on input line 799.
 (pdftex.def)             Requested size: 434.6492pt x 315.19595pt.
 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
-wn PDFs/02-Main-FB-Script_files/figure-latex/norm fam by group-2.pdf, id=1126, 
+wn PDFs/02-Main-FB-Script_files/figure-latex/norm fam by group-2.pdf, id=1131, 
 453.695pt x 316.18124pt>
 File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
 arkdown PDFs/02-Main-FB-Script_files/figure-latex/norm fam by group-2.pdf Graph
@@ -2387,7 +2387,7 @@ Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
 y group-2.pdf  used on input line 800.
 (pdftex.def)             Requested size: 453.6939pt x 316.18047pt.
 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
-wn PDFs/02-Main-FB-Script_files/figure-latex/norm fam by group-3.pdf, id=1127, 
+wn PDFs/02-Main-FB-Script_files/figure-latex/norm fam by group-3.pdf, id=1132, 
 451.6875pt x 316.18124pt>
 File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
 arkdown PDFs/02-Main-FB-Script_files/figure-latex/norm fam by group-3.pdf Graph
@@ -2408,11 +2408,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 799--802
 []
  []
 
-[54 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
-rkdown PDFs/02-Main-FB-Script_files/figure-latex/pymk evolution-1.pdf>] [55] [5
-6] [57] [58 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Sc
-ripts/Markdown PDFs/02-Main-FB-Script_files/figure-latex/norm fam by group-1.pd
-f>]
+[55 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
+rkdown PDFs/02-Main-FB-Script_files/figure-latex/pymk evolution-1.pdf>] [56] [5
+7] [58 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts
+/Markdown PDFs/02-Main-FB-Script_files/figure-latex/norm fam by group-1.pdf>]
 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
 wn PDFs/02-Main-FB-Script_files/figure-latex/Norm Likert Panel by Group pymk-1.
 pdf, id=1169, 467.7475pt x 302.12875pt>
@@ -2641,7 +2640,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1067.
 Here is how much of TeX's memory you used:
  12535 strings out of 492649
  247396 string characters out of 6129622
- 313381 words of memory out of 5000000
+ 314380 words of memory out of 5000000
  16131 multiletter control sequences out of 15000+600000
  53550 words of font info for 74 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -2660,7 +2659,7 @@ ype1/public/lm/lmr7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/
 lm/lmri10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmsy10.
 pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/l
 ocal/texlive/2018/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on 02-Main-FB-Script.pdf (70 pages, 3987640 bytes).
+Output written on 02-Main-FB-Script.pdf (70 pages, 3987726 bytes).
 PDF statistics:
  1411 PDF objects out of 1440 (max. 8388607)
  922 compressed objects within 10 object streams
