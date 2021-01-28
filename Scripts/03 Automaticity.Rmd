@@ -14,6 +14,8 @@ library(tidyr)
 library(ggplot2)
 library(ggthemes)
 theme_set(theme_tufte())
+options(ggplot2.continuous.colour="plasma")
+options(ggplot2.continuous.fill = "plasma")
 
 knitr::opts_knit$set(root.dir = '/Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown')
 
@@ -180,7 +182,7 @@ l.dat$cat <- factor(l.dat$cat,levels = c("intention", "access", "awareness", "co
    geom_text(data = label.df,
              label = c("NS", "**", "***", "***", "***", "***", "NS", "***"))  +
    scale_x_discrete(labels= automaticity.labels) + coord_flip() +
-   scale_fill_manual(values=c("#CC79A7", "#009E73"),
+   scale_fill_manual(values=c("#39568CFF", "#FDE725FF"),
                        name="Target",
                        breaks=c("nf", "pymk"),
                        labels=c("Newsfeed", "PYMK"))
@@ -359,11 +361,12 @@ l.dat <- m.long %>% filter(cat %in% c("careful", "gut")) %>%
 l.dat$ci <- (l.dat$sd/sqrt(l.dat$n))*1.96
 pd <- position_dodge(0.1)
 
- ggplot(l.dat, aes(x = target, y = mean)) +
+ ggplot(l.dat, aes(x = target, y = mean, fill = target)) +
   geom_bar(stat="identity", position=pd) +
    geom_errorbar(aes(ymin=mean-ci, ymax=mean+ci), colour="black", width=.1, position=pd) +
    theme(axis.text.x = element_text(angle = 45, hjust = 1)) + xlab("Measure") +
-   ylab("Percent giving more automatic answer") + xlab("") + labs(title = "Rate of Affirming Automaticity by Target") + facet_wrap(~ cat, scales = "free", labeller = fun_labeller)
+   ylab("Percent giving more automatic answer") + xlab("") + labs(title = "Rate of Affirming Automaticity by Target") + facet_wrap(~ cat, scales = "free", labeller = fun_labeller) +
+   scale_fill_manual(values=c("#39568CFF", "#FDE725FF"))
  
   dev.copy(jpeg,'Output/Graphs/Experiments/Automaticity/bar chart binary measures.jpg')
 dev.off()
@@ -400,9 +403,10 @@ dev.off()
 
 m.long %>% filter(cat == "speed") %>% 
   mutate(x_new = ifelse(val > 60, 60, val)) %>%
-ggplot(aes(x=x_new)) + stat_ecdf(aes(colour=target))
+ggplot(aes(x=x_new)) + stat_ecdf(aes(colour=target)) +
+   scale_color_manual(values=c("#39568CFF", "#FDE725FF"))
 
-dev.copy(jpeg,'Output/Graphs/Experiments/Automaticity/speed cdf - bin over 60')
+dev.copy(jpeg,'Output/Graphs/Experiments/Automaticity/speed cdf - bin over 60.jpg')
 dev.off()
 
 ```
