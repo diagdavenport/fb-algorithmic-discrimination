@@ -1,204 +1,204 @@
-RA_id,participant_id,date,study_start,study_end,subject_race_RA,subject_gender_RA,total_friends,Notes
-JG,1947,6/23,10:00,10:52,White,Female,652,
-JG,3163,6/24,10:00,10:47,Other,Female,"1,847","other = Middle Eastern, for all indications of ""other"" for this participant's data"
-IC,9497,6/24,11:30,12:29,Hispanic,Female,84,"The participant reached ""You're All Caught Up"" mark on the News Feed, so there were no new posts and we stopped."
-IC,1121,6/24,3:00,3:47,Asian,Female,950,
-IC,9219,6/24,4:00,4:43,Asian,Male,520,
-IC,2484,6/24,5:00,5:40,White,Male,621,
-JG,7313,6/25,10:00,10:50,Asian,Male,"1,033",
-VI,6917,6/25,10:30,11:25,White,Male,177,"The participant reached ""You're All Caught Up"" mark on the News Feed, so there were no new posts and we stopped."
-VI,4388,6/25,12:00,12:45,White,Female,"1,682",
-VI,2436,6/25,1:00,1:40,White,Female,397,
-VI,4586,6/26,2:00,2:35,Asian,Female,"1,123","Accidentally clicked at 58 posts, stopped data collection"
-VI,8873,6/26,3:00,3:36,White,Female,129,
-VI,9495,6/26,4:00,4:28,White,Male,280,"The participant reached ""You're All Caught Up"" mark on the News Feed at 48 posts"
-IC,4336,6/26,11:30,12:10,Asian,Female,96,"The participant reached ""You're All Caught Up"" mark on the News Feed, so there were no new posts and we stopped."
-IC,2181,6/26,12:25,1:10,Asian,Male,725,"The ""People you may know"" page stopped loading new profiles"
-IC,2973,6/26,2:57,3:38,White,Male,414,
-IC,8320,6/26,4:57,5:29,Asian,Female,985,
-JG,3815,6/26,1:00,1:51,Asian,Male,811,
-JG,2004,6/29,4:00,4:36,Asian,Female,851,
-IC,8841,6/29,4:00,4:36,Asian,Female,516,
-IC,6814,6/29,4:57,5:32,White,Female,678,
-JG,9100,6/30,10:00,10:46,Other,Male,410,
-IC,3231,6/30,12:30,1:08,Asian,Female,"1,271",
-JG,6301,7/1,10:00,10:44,Other,Male,"1,264",
-JG,3060,7/1,11:30,12:10,Asian,Female,"1,571",
-SL ,3141,7/1,3:00,4:10,Other,Female,296,
-IC,8721,7/1,11:30,12:07,Asian,Female,82,
-IC,4342,7/1,12:20,12:51,Asian,Male,118,
-IC,2009,7/1,4:00,4:43,Asian,Female,"1,170",
-SV,5282,7/2,12:00,13:00,Asian,Female,"1,117",
-SV,8127,7/2,13:00,14:00,Asian,Female,901,
-JG,1360,7/2,2:00,2:45,White,Female,195,
-SL,9753,7/2,4:00,4:58,Asian,Female,858,
-IC,9667,7/2,11:00,11:45,Asian,Female,131,"The participant reached ""You're All Caught Up"" mark on the News Feed, so there were no new posts and we stopped."
-IC,4156,7/2,12:00,12:37,Hispanic,Male,440,
-IC,3773,7/2,12:57,1:32,Asian,Male,236,
-IC,3301,7/2,3:00,3:33,Asian,Female,326,
-IC,5220,7/2,4:00,4:30,Asian,Female,"1,213",
-IC,2372,7/2,5:00,5:27,Black or African American,Female,365,
-JG,9580,7/3,10:00,10:50,White,Female,889,
-SL,9507,7/3,3:58,5:10,Asian,Female,838,"Participant did not have Zoom downloaded on computer at direction for screen-sharing, downloaded and re-joined on computer at 4:11, this laptop did not have screen share capabilities and retrying on another laptop, continued at 4:16"
-SL ,8136,7/3,6:00,6:47,Asian,Female,242,
-CR,1598,7/4,12:00,12:38,White,Female,384,
-IC,1361,7/3,11:00,11:35,Asian,Male,908,
-IC,8370,7/3,12:00,12:31,Asian,Female,646,
-IC,2424,7/3,1:00,1:33,Asian,Male,"1,554",
-IC,3423,7/6,10:00,10:33,White,Male,59,"The participant reached ""You're All Caught Up"" mark on the News Feed, so there were no new posts and we stopped."
-IC,4128,7/6,11:00,11:30,Asian,Male,948,"The participant did not have a ""People you may know"" section"
-IC,3434,7/6,12:00,12:34,Asian,Male,"1,601",
-IC,8895,7/6,2:57,3:22,Asian,Female,,"Due to technical difficulties, I could not collect data for this participant."
-IC,2727,7/6,3:55,4:30,Hispanic,Female,563,
-IC,6191,7/6,4:58,,Asian,Male,"1,084",
-GS,5347,7/6,3:00,4:18,White,Female,"1,385",The 'other' is classified as Middle Eastern 
-JG,5597,7/7,10:30,11:19,White,Female,394,computer crash during news feed collection so did not complete that part (it refreshed the page)
-SV,6012,7/7,13:00,13:50,White,Female,"1,410",
+RA_id,participant_id,date,study_start,study_end,subject_race_RA,subject_gender_RA,total_friends,Notes,manual_diag
+JG,1947,6/23,10:00,10:52,White,Female,652,,0
+JG,3163,6/24,10:00,10:47,Other,Female,1847,"other = Middle Eastern, for all indications of ""other"" for this participant's data",0
+IC,9497,6/24,11:30,12:29,Hispanic,Female,84,"The participant reached ""You're All Caught Up"" mark on the News Feed, so there were no new posts and we stopped.",0
+IC,1121,6/24,3:00,3:47,Asian,Female,950,,0
+IC,9219,6/24,4:00,4:43,Asian,Male,520,,0
+IC,2484,6/24,5:00,5:40,White,Male,621,,0
+JG,7313,6/25,10:00,10:50,Asian,Male,1033,,0
+VI,6917,6/25,10:30,11:25,White,Male,177,"The participant reached ""You're All Caught Up"" mark on the News Feed, so there were no new posts and we stopped.",0
+VI,4388,6/25,12:00,12:45,White,Female,1682,,0
+VI,2436,6/25,1:00,1:40,White,Female,397,,0
+VI,4586,6/26,2:00,2:35,Asian,Female,1123,"Accidentally clicked at 58 posts, stopped data collection",0
+VI,8873,6/26,3:00,3:36,White,Female,129,,0
+VI,9495,6/26,4:00,4:28,White,Male,280,"The participant reached ""You're All Caught Up"" mark on the News Feed at 48 posts",0
+IC,4336,6/26,11:30,12:10,Asian,Female,96,"The participant reached ""You're All Caught Up"" mark on the News Feed, so there were no new posts and we stopped.",0
+IC,2181,6/26,12:25,1:10,Asian,Male,725,"The ""People you may know"" page stopped loading new profiles",0
+IC,2973,6/26,2:57,3:38,White,Male,414,,0
+IC,8320,6/26,4:57,5:29,Asian,Female,985,,0
+JG,3815,6/26,1:00,1:51,Asian,Male,811,,0
+JG,2004,6/29,4:00,4:36,Asian,Female,851,,0
+IC,8841,6/29,4:00,4:36,Asian,Female,516,,0
+IC,6814,6/29,4:57,5:32,White,Female,678,,0
+JG,9100,6/30,10:00,10:46,Other,Male,410,,0
+IC,323199999,6/30,12:30,1:08,Asian,Female,1271,,1
+JG,6301,7/1,10:00,10:44,Other,Male,1264,,0
+JG,3060,7/1,11:30,12:10,Asian,Female,1571,,0
+SL ,3141,7/1,3:00,4:10,Other,Female,296,,0
+IC,8721,7/1,11:30,12:07,Asian,Female,82,,0
+IC,4342,7/1,12:20,12:51,Asian,Male,118,,0
+IC,2009,7/1,4:00,4:43,Asian,Female,1170,,0
+SV,5282,7/2,12:00,13:00,Asian,Female,1117,,0
+SV,8127,7/2,13:00,14:00,Asian,Female,901,,0
+JG,1360,7/2,2:00,2:45,White,Female,195,,0
+SL,9753,7/2,4:00,4:58,Asian,Female,858,,0
+IC,9667,7/2,11:00,11:45,Asian,Female,131,"The participant reached ""You're All Caught Up"" mark on the News Feed, so there were no new posts and we stopped.",0
+IC,4156,7/2,12:00,12:37,Hispanic,Male,440,,0
+IC,3773,7/2,12:57,1:32,Asian,Male,236,,0
+IC,3301,7/2,3:00,3:33,Asian,Female,326,,0
+IC,5220,7/2,4:00,4:30,Asian,Female,1213,,0
+IC,2372,7/2,5:00,5:27,Black or African American,Female,365,,0
+JG,9580,7/3,10:00,10:50,White,Female,889,,0
+SL,9507,7/3,3:58,5:10,Asian,Female,838,"Participant did not have Zoom downloaded on computer at direction for screen-sharing, downloaded and re-joined on computer at 4:11, this laptop did not have screen share capabilities and retrying on another laptop, continued at 4:16",0
+SL ,8136,7/3,6:00,6:47,Asian,Female,242,,0
+CR,1598,7/4,12:00,12:38,White,Female,384,,0
+IC,1361,7/3,11:00,11:35,Asian,Male,908,,0
+IC,8370,7/3,12:00,12:31,Asian,Female,646,,0
+IC,2424,7/3,1:00,1:33,Asian,Male,1554,,0
+IC,3423,7/6,10:00,10:33,White,Male,59,"The participant reached ""You're All Caught Up"" mark on the News Feed, so there were no new posts and we stopped.",0
+IC,4128,7/6,11:00,11:30,Asian,Male,948,"The participant did not have a ""People you may know"" section",0
+IC,343499999,7/6,12:00,12:34,Asian,Male,1601,,1
+IC,8895,7/6,2:57,3:22,Asian,Female,,"Due to technical difficulties, I could not collect data for this participant.",0
+IC,2727,7/6,3:55,4:30,Hispanic,Female,563,,0
+IC,6191,7/6,4:58,,Asian,Male,1084,,0
+GS,5347,7/6,3:00,4:18,White,Female,1385,The 'other' is classified as Middle Eastern ,0
+JG,5597,7/7,10:30,11:19,White,Female,394,computer crash during news feed collection so did not complete that part (it refreshed the page),0
+SV,6012,7/7,13:00,13:50,White,Female,1410,,0
 GS,1244,7/7,3:05,4:10,Asian,Female,812,"Participant initially joined remotely and rejoined via desktop before we started. Technical difficulties led to slower data collection.  
-The 'other' is classified as Middle Eastern "
-IC,5074,7/7,10:00,10:30,White,Female,241,
-IC,5720,7/7,11:00,11:30,Hispanic,Female,408,
-IC,1562,7/7,12:00,12:30,Asian,Female,"1,046",
-IC,9607,7/7,3:58,4:32,Asian,Female,877,
-IC,9594,7/7,5:00,5:25,White,Male,151,"The ""People You May Know"" page didn't load any new profiles"
-SL,9297,7/8,1:00,1:45,White,Male,"1,067",
-GS,9044,7/8,2:20,3:10,White,Male,108,The participant had some techinical difficulties that led to a late start 
-GS,2311,7/8,3:15,3:58,Other,Male,"1,557", 'Other' is classified as Middle Eastern 
-SV,4070,7/9,10:00,10:44,White,Female,"1,192", 'Other' is classified as Middle Eastern 
-IC,5093,7/8,10:00,10:30,White,Male,262,
-IC,3242,7/8,11:00,11:30,Asian,Female,436,
-IC,5192,7/8,11:58,12:30,Asian,Male,482,
-IC,9276,7/8,2:00,2:39,White,Male,483,
-IC,3268,7/8,2:58,3:25,Asian,Female,231,
-IC,5861,7/8,4:00,4:40,Asian,Female,"1,335",
-IC,9977,7/8,5:00,5:59,Asian,Female,378,
-IC,9834,7/9,12:00,,Asian,Female,587,
-GG,7116,7/8,11:30,12:30,Asian,Male,"1,525",
-JG,3005,7/9,1:15,1:50,Asian,Male,406,
-SV,9447,7/9,14:00,14:42,Asian,Male,"1,190",
-IC,9059,7/9,3:00,3:30,Asian,Male,"1,223",
-IC,8588,7/9,5:00,5:32,Asian,Female,"1,374",
-SL,6367,7/9,19:08,20:48,Asian,Female,3,"Participant had technical difficulties that led to a late start, Confirmed is Facebook user for over a month"
-GG,9403,7/9,11:18,12:20,Asian,Male,"1,290","Participant clicked a profile after 30 PYMK had been recorded, so data collecting was halted and we moved on"
-GB,9983,7/9,19:00,20:03,Asian,Female,718,
-GB,8810,7/9,20:15,21:08,White,Female,637,
-SL,8590,7/10,11:59,12:38,White,Female,591,
-IC,8669,7/10,10:00,10:41,White,Female,"1,381",
-IC,8748,7/10,12:55,1:30,White,Male,"1,081",
-SL ,5530,7/10,5:59,6:39,White,Female,"2,042",
-SL,8627,7/11,16:00,16:37,White,Female,587,
-MP,8193,7/13,12:12,1:07,White,Female,"1,535",
-GS,9598,7/13,2:00,2:35,White,Female,886,
-GS,6140,7/13,3:15,3:48,Asian,Male,771,
-SV,8972,7/13,15:00,15:42,Asian,Female,"1,703",
-GG,5984,7/13,12:59,2:02,Asian,Female,"1,142",
-IC,7983,7/13,10:00,10:30,Asian,Female,"1,413",
-IC,8133,7/13,3:00,3:36,White,Female,"1,356",
-IC,5537,7/13,4:00,4:32,Asian,Male,435,
-IC,3800,7/13,4:58,5:27,Asian,Female,727,"The participant reached ""You're All Caught Up"" mark on the News Feed, so there were no new posts and we stopped."
-SV,3198,7/13,20:00,20:30,White,Female,957,"Did not have a ""people you may know"" section"
-SV,2663,7/14,9:00,9:34,Asian,Female,"1,269",
-SV,3280,7/14,10:14,10:48,Hispanic,Female,"2,103",
-SV,3704,7/14,11:15,11:52,Hispanic,Male,"1,845",
-MP,3619,7/14,11:01,11:51,White,Female,"2,354",
-SL,3434,7/14,12:12,13:00,Hispanic,Female,292,"Participant added time to Google Calendar but time had not adjusted to their time zone and session started late; at 12:45 PM participant froze in Zoom and left due to internet connection issues, rejoined 12:50"
-GS,5788,7/14,3:00,3:34,White,Female,"1,534",
-IC,8524,7/14,10:00,10:30,Black or African American,Male,"1,476",
-IC,1450,7/14,10:57,11:42,Black or African American,Female,55,
-IC,5465,7/14,12:00,12:33,White,Female,"1,920",
-IC,9368,7/14,1:00,1:38,White,Non-binary,"2,868","The participant accidentally clicked on a profile, so we stopped collecting data"
-IC,1657,7/14,3:00,3:30,Asian,Female,387,
-IC,5956,7/14,3:58,4:32,Black or African American,Male,"1,298",
-IC,4513,7/14,5:00,5:30,Asian,Female,619,
-GG,1939,7/14,2:04,2:43,Asian,Female,"1,713",
-GB,4024,7/13,18:15,18:55,Asian,Male,"1,775",
-GB,1836,7/14,20:15,21:05,White,Female,"1,368",
-MP,4744,7/15,11:03,11:43,White,Male,964,
-GS,8720,7/15,2:00,2:37,White,Male,"1,729",
-IC,9603,7/15,11:00,11:36,White,Female,648,
-IC,8433,7/15,12:00,12:38,Asian,Female,"1,493",
-IC,9721,7/15,1:00,1:40,Asian,Female,"1,054",
-IC,9878,7/15,4:00,4:48,White,Female,"1,028",
-IC,7556,7/15,5:00,5:38,White,Female,"1,741",
-MP,8313,7/15,2:03,2:43,Asian,Female,450,
-IC,9606,7/16,10:55,11:30,Hispanic,Female,179,
-IC,6160,7/16,11:58,12:45,White,Female,332,
-IC,1665,7/16,1:00,1:35,Asian,Female,270,
-IC,2752,7/16,3:00,3:36,Asian,Male,292,
-IC,9296,7/16,4:00,4:32,Hispanic,Male,"1,666",
-IC,3966,7/16,4:32,5:14,Asian,Male,"1,849",
-MP,6589,7/16,6:55,7:39,White,Female,"1,259",
-SL,3439,7/16,21:15,21:50,Asian,Male,"1,786",
-JG,9849,7/16,12:30,1:20,Asian,Female,315,
-GG,5785,7/16,1:07,1:56,White,Male,505,
-JG,9029,7/17,11:15,12:02,White,Female,"1,306",
-SL,8429,7/17,12:00,12:30,White,Male,788,
-JG,3170,7/17,12:30,1:15,White,Female,508,
-VI,7503,7/17,11:00,11:32,White,Female,"1,104",
-VI,3661,7/17,12:00,12:27,White,Female,"1,116",
-VI,1681,7/17,2:00,2:35,White,Female,"1,224",
-IC,7609,7/17,10:00,10:38,Black or African American,Female,98,News feed stopped loading new posts
-IC,7237,7/17,11:00,11:32,Asian,Female,513,
-IC,1461,7/17,1:00,1:40,White,Female,594,News feed stopped loading new posts
-IC,4114,7/17,3:00,3:33,Asian,Male,428,
-GS,3945,7/17,1:56,2:30,Hispanic,Female,137,
-GS,8265,7/17,3:10,3:48,Asian,Female,819,
-IC,2281,7/17,4:00,4:32,White,Male,687,
-IC,2890,7/17,5:00,5:32,Asian,Male,675,
-MP,4468,7/17,4:53,5:41,Hispanic,Female,314,
-SL,4518,7/17,18:00,18:31,Asian,Male,"2,471",
-SL,5395,7/18,11:03,11:27,Asian,Male,"2,028","Started later due to difficulties coming into Zoom, No friends loaded for People You May Know when going to https://www.facebook.com/find-friends/browser/"
-GB,2579,7/19,20:00,20:45,Asian,Male,638,
-GB,9852,7/17,21:15,21:56,Asian,Female,111,
-IC,4992,7/20,11:00,11:40,White,Female,"1,671",
-JG,2937,7/20,2:15,2:55,White,Male,74,told me he checks facebook more after the pandemic because he joined a specific group he likes to share. He also mentioned that he is on the spectrum.
-GS,6429,7/20,3:00,3:34,Asian,Male,"1,839",
-GG,4930,7/20,2:00,2:42,Asian,Female,"1,209",Stopped collecting data at NF Post #54 because no further posts loaded
-MP,4200,7/20,19:08,19:50,Black or African American,Male,"1,069",
-SL ,6313,7/21,10:00,10:22,Black or African American,Female,383,No friends loaded for People You May Know when going to https://www.facebook.com/find-friends/browser/ and in friends tab 
-IC,2887,7/21,10:00,10:38,White,Female,54,
-GB,4170,7/20,21:00,21:41,White,Female,653,
-IC,5027,7/21,11:00,11:40,White,Female,755,
-SL ,1612,7/21,11:21,11:52,White,Female,47,Last minute cancellation occured causing late start (new participant)
-SL,8631,7/21,12:00,12:30,Hispanic,Male,569,
-IC,2101,7/21,12:00,12:35,White,Male,878,
-IC,7019,7/21,1:00,1:32,White,Male,157,
-GS,7430,7/21,2:00,2:43,Hispanic,Female,"1,554",
-IC,2475,7/21,3:00,3:52,Asian,Female,656,
-GG,4079,7/21,4:07,4:42,White,Female,806,
-MP,3488,7/21,16:05,16:48,Other,Female,443,"Participant did not have a ""People You May Know"" section."
-GG,3081,7/21,5:14,5:59,White,Female,164,
-SL,7318,7/21,21:52,22:16,White,Female,938,Last minute cancellation occured causing late start (new participant)
-CR,9286,7/22,10:15,10:48,White,Male,33,"The participant reached ""You're All Caught Up"" mark on the News Feed, so there were no new posts and we stopped."
-CR,1754,7/22,11:00,11:35,White,Male,"1,011",
-JG,6911,7/22,11:15,11:55,Asian,Female,429,
-GS,8058,7/22,2:00,2:18,White,Female,733,"Participant reached the 'You're All Caught Up' mark on the News Feed, there were no new posts so we stopped"
-GS,1758,7/22,3:15,3:50,Asian,Female,178,
-MP,1608,7/22,19:29,20:10,White,Female,150,The participant had some technical issues or connectivity issues that led to a delay.
-MP,5089,7/22,20:18,20:50,Asian,Female,"1,261",
-IC,5213,7/23,11:00,11:32,Asian,Female,902,
-JG,5826,7/23,12:15,1:02,Black or African American,Male,408,
-SL,5637,7/23,13:28,,Asian,Female,241,Last minute cancellation occured causing late start (new participant)
-JG,1678,7/23,2:00,2:49,White,Female,370,
-GS,3231,7/23,3:15,3:50,White,Female,889,
-MP,4659,7/23,16:02,16:40,Other,Male,"1,325",
-MP,5783,7/23,19:00,19:42,White,Female,"1,283",
-SL,9752,7/23,21:25,22:02,White,Female,400,Participant joined Zoom at study_start time 
-CR,1933,7/24,10:00,10:30,Asian,Male,450,
-CR,2099,7/24,11:00,11:40,Asian,Female,625,
-JG,6821,7/24,11:25,12:05,Asian,Male,775,
-MP,2205,7/24,15:03,15:35,Black or African American,Female,73,Particpant created her account early June and the News Feed section stopped showing more results
-GS,8087,7/24,2:00,2:27,White,Female,364,The People You May Know section stopped showing more results
-GS,7634,7/24,3:15,3:48,Hispanic,Female,424,
-IC,8423,7/24,3:30,3:56,White,Female,680,"Participant did not have a ""People You May Know"" section."
-SL,2463,7/24,11:55,12:28,Black or African American,Female,112,
-VI,6072,7/23,2:20,2:50,Asian,Female,"1,633",
-VI,2902,7/23,3:10,3:35,White,Male,520,
-VI,9814,7/23,4:00,4:35,Asian,Male,"4,722",
-VI,8534,7/24,2:00,2:27,White,Female,"1,330",
-VI,2203,7/24,3:17,3:48,White,Female,"1,064",
-VI,2371,7/24,4:00,4:25,White,Female,"1,011",
-IC,3051,7/24,4:30,5:10,Black or African American,Female,"1,885",
-MP,3703,7/24,18:34,19:22,Asian,Female,57,Last minute cancellation occured causing late start (new participant) and News feed stopped loading new posts
-SV,7408,7/25,10:15,10:44,White,Female,"2,125",
-SL,1235,7/26,9:30,9:55,White,Male,"1,345",Last minute cancellation occured causing late start (new participant)
+The 'other' is classified as Middle Eastern ",0
+IC,5074,7/7,10:00,10:30,White,Female,241,,0
+IC,5720,7/7,11:00,11:30,Hispanic,Female,408,,0
+IC,1562,7/7,12:00,12:30,Asian,Female,1046,,0
+IC,9607,7/7,3:58,4:32,Asian,Female,877,,0
+IC,9594,7/7,5:00,5:25,White,Male,151,"The ""People You May Know"" page didn't load any new profiles",0
+SL,9297,7/8,1:00,1:45,White,Male,1067,,0
+GS,9044,7/8,2:20,3:10,White,Male,108,The participant had some techinical difficulties that led to a late start ,0
+GS,2311,7/8,3:15,3:58,Other,Male,1557, 'Other' is classified as Middle Eastern ,0
+SV,4070,7/9,10:00,10:44,White,Female,1192, 'Other' is classified as Middle Eastern ,0
+IC,5093,7/8,10:00,10:30,White,Male,262,,0
+IC,3242,7/8,11:00,11:30,Asian,Female,436,,0
+IC,5192,7/8,11:58,12:30,Asian,Male,482,,0
+IC,9276,7/8,2:00,2:39,White,Male,483,,0
+IC,3268,7/8,2:58,3:25,Asian,Female,231,,0
+IC,5861,7/8,4:00,4:40,Asian,Female,1335,,0
+IC,9977,7/8,5:00,5:59,Asian,Female,378,,0
+IC,9834,7/9,12:00,,Asian,Female,587,,0
+GG,7116,7/8,11:30,12:30,Asian,Male,1525,,0
+JG,3005,7/9,1:15,1:50,Asian,Male,406,,0
+SV,9447,7/9,14:00,14:42,Asian,Male,1190,,0
+IC,9059,7/9,3:00,3:30,Asian,Male,1223,,0
+IC,8588,7/9,5:00,5:32,Asian,Female,1374,,0
+SL,6367,7/9,19:08,20:48,Asian,Female,3,"Participant had technical difficulties that led to a late start, Confirmed is Facebook user for over a month",0
+GG,9403,7/9,11:18,12:20,Asian,Male,1290,"Participant clicked a profile after 30 PYMK had been recorded, so data collecting was halted and we moved on",0
+GB,9983,7/9,19:00,20:03,Asian,Female,718,,0
+GB,8810,7/9,20:15,21:08,White,Female,637,,0
+SL,8590,7/10,11:59,12:38,White,Female,591,,0
+IC,8669,7/10,10:00,10:41,White,Female,1381,,0
+IC,8748,7/10,12:55,1:30,White,Male,1081,,0
+SL ,5530,7/10,5:59,6:39,White,Female,2042,,0
+SL,8627,7/11,16:00,16:37,White,Female,587,,0
+MP,8193,7/13,12:12,1:07,White,Female,1535,,0
+GS,9598,7/13,2:00,2:35,White,Female,886,,0
+GS,6140,7/13,3:15,3:48,Asian,Male,771,,0
+SV,8972,7/13,15:00,15:42,Asian,Female,1703,,0
+GG,5984,7/13,12:59,2:02,Asian,Female,1142,,0
+IC,7983,7/13,10:00,10:30,Asian,Female,1413,,0
+IC,8133,7/13,3:00,3:36,White,Female,1356,,0
+IC,5537,7/13,4:00,4:32,Asian,Male,435,,0
+IC,3800,7/13,4:58,5:27,Asian,Female,727,"The participant reached ""You're All Caught Up"" mark on the News Feed, so there were no new posts and we stopped.",0
+SV,3198,7/13,20:00,20:30,White,Female,957,"Did not have a ""people you may know"" section",0
+SV,2663,7/14,9:00,9:34,Asian,Female,1269,,0
+SV,3280,7/14,10:14,10:48,Hispanic,Female,2103,,0
+SV,3704,7/14,11:15,11:52,Hispanic,Male,1845,,0
+MP,3619,7/14,11:01,11:51,White,Female,2354,,0
+SL,3434,7/14,12:12,13:00,Hispanic,Female,292,"Participant added time to Google Calendar but time had not adjusted to their time zone and session started late; at 12:45 PM participant froze in Zoom and left due to internet connection issues, rejoined 12:50",0
+GS,5788,7/14,3:00,3:34,White,Female,1534,,0
+IC,8524,7/14,10:00,10:30,Black or African American,Male,1476,,0
+IC,1450,7/14,10:57,11:42,Black or African American,Female,55,,0
+IC,5465,7/14,12:00,12:33,White,Female,1920,,0
+IC,9368,7/14,1:00,1:38,White,Non-binary,2868,"The participant accidentally clicked on a profile, so we stopped collecting data",0
+IC,1657,7/14,3:00,3:30,Asian,Female,387,,0
+IC,5956,7/14,3:58,4:32,Black or African American,Male,1298,,0
+IC,4513,7/14,5:00,5:30,Asian,Female,619,,0
+GG,1939,7/14,2:04,2:43,Asian,Female,1713,,0
+GB,4024,7/13,18:15,18:55,Asian,Male,1775,,0
+GB,1836,7/14,20:15,21:05,White,Female,1368,,0
+MP,4744,7/15,11:03,11:43,White,Male,964,,0
+GS,8720,7/15,2:00,2:37,White,Male,1729,,0
+IC,9603,7/15,11:00,11:36,White,Female,648,,0
+IC,8433,7/15,12:00,12:38,Asian,Female,1493,,0
+IC,9721,7/15,1:00,1:40,Asian,Female,1054,,0
+IC,9878,7/15,4:00,4:48,White,Female,1028,,0
+IC,7556,7/15,5:00,5:38,White,Female,1741,,0
+MP,8313,7/15,2:03,2:43,Asian,Female,450,,0
+IC,9606,7/16,10:55,11:30,Hispanic,Female,179,,0
+IC,6160,7/16,11:58,12:45,White,Female,332,,0
+IC,1665,7/16,1:00,1:35,Asian,Female,270,,0
+IC,2752,7/16,3:00,3:36,Asian,Male,292,,0
+IC,9296,7/16,4:00,4:32,Hispanic,Male,1666,,0
+IC,3966,7/16,4:32,5:14,Asian,Male,1849,,0
+MP,6589,7/16,6:55,7:39,White,Female,1259,,0
+SL,3439,7/16,21:15,21:50,Asian,Male,1786,,0
+JG,9849,7/16,12:30,1:20,Asian,Female,315,,0
+GG,5785,7/16,1:07,1:56,White,Male,505,,0
+JG,9029,7/17,11:15,12:02,White,Female,1306,,0
+SL,8429,7/17,12:00,12:30,White,Male,788,,0
+JG,3170,7/17,12:30,1:15,White,Female,508,,0
+VI,7503,7/17,11:00,11:32,White,Female,1104,,0
+VI,3661,7/17,12:00,12:27,White,Female,1116,,0
+VI,1681,7/17,2:00,2:35,White,Female,1224,,0
+IC,7609,7/17,10:00,10:38,Black or African American,Female,98,News feed stopped loading new posts,0
+IC,7237,7/17,11:00,11:32,Asian,Female,513,,0
+IC,1461,7/17,1:00,1:40,White,Female,594,News feed stopped loading new posts,0
+IC,4114,7/17,3:00,3:33,Asian,Male,428,,0
+GS,3945,7/17,1:56,2:30,Hispanic,Female,137,,0
+GS,8265,7/17,3:10,3:48,Asian,Female,819,,0
+IC,2281,7/17,4:00,4:32,White,Male,687,,0
+IC,2890,7/17,5:00,5:32,Asian,Male,675,,0
+MP,4468,7/17,4:53,5:41,Hispanic,Female,314,,0
+SL,4518,7/17,18:00,18:31,Asian,Male,2471,,0
+SL,5395,7/18,11:03,11:27,Asian,Male,2028,"Started later due to difficulties coming into Zoom, No friends loaded for People You May Know when going to https://www.facebook.com/find-friends/browser/",0
+GB,2579,7/19,20:00,20:45,Asian,Male,638,,0
+GB,9852,7/17,21:15,21:56,Asian,Female,111,,0
+IC,4992,7/20,11:00,11:40,White,Female,1671,,0
+JG,2937,7/20,2:15,2:55,White,Male,74,told me he checks facebook more after the pandemic because he joined a specific group he likes to share. He also mentioned that he is on the spectrum.,0
+GS,6429,7/20,3:00,3:34,Asian,Male,1839,,0
+GG,4930,7/20,2:00,2:42,Asian,Female,1209,Stopped collecting data at NF Post #54 because no further posts loaded,0
+MP,4200,7/20,19:08,19:50,Black or African American,Male,1069,,0
+SL ,6313,7/21,10:00,10:22,Black or African American,Female,383,No friends loaded for People You May Know when going to https://www.facebook.com/find-friends/browser/ and in friends tab ,0
+IC,2887,7/21,10:00,10:38,White,Female,54,,0
+GB,4170,7/20,21:00,21:41,White,Female,653,,0
+IC,5027,7/21,11:00,11:40,White,Female,755,,0
+SL ,1612,7/21,11:21,11:52,White,Female,47,Last minute cancellation occured causing late start (new participant),0
+SL,8631,7/21,12:00,12:30,Hispanic,Male,569,,0
+IC,2101,7/21,12:00,12:35,White,Male,878,,0
+IC,7019,7/21,1:00,1:32,White,Male,157,,0
+GS,7430,7/21,2:00,2:43,Hispanic,Female,1554,,0
+IC,2475,7/21,3:00,3:52,Asian,Female,656,,0
+GG,4079,7/21,4:07,4:42,White,Female,806,,0
+MP,3488,7/21,16:05,16:48,Other,Female,443,"Participant did not have a ""People You May Know"" section.",0
+GG,3081,7/21,5:14,5:59,White,Female,164,,0
+SL,7318,7/21,21:52,22:16,White,Female,938,Last minute cancellation occured causing late start (new participant),0
+CR,9286,7/22,10:15,10:48,White,Male,33,"The participant reached ""You're All Caught Up"" mark on the News Feed, so there were no new posts and we stopped.",0
+CR,1754,7/22,11:00,11:35,White,Male,1011,,0
+JG,6911,7/22,11:15,11:55,Asian,Female,429,,0
+GS,8058,7/22,2:00,2:18,White,Female,733,"Participant reached the 'You're All Caught Up' mark on the News Feed, there were no new posts so we stopped",0
+GS,1758,7/22,3:15,3:50,Asian,Female,178,,0
+MP,1608,7/22,19:29,20:10,White,Female,150,The participant had some technical issues or connectivity issues that led to a delay.,0
+MP,5089,7/22,20:18,20:50,Asian,Female,1261,,0
+IC,5213,7/23,11:00,11:32,Asian,Female,902,,0
+JG,5826,7/23,12:15,1:02,Black or African American,Male,408,,0
+SL,5637,7/23,13:28,,Asian,Female,241,Last minute cancellation occured causing late start (new participant),0
+JG,1678,7/23,2:00,2:49,White,Female,370,,0
+GS,3231,7/23,3:15,3:50,White,Female,889,,0
+MP,4659,7/23,16:02,16:40,Other,Male,1325,,0
+MP,5783,7/23,19:00,19:42,White,Female,1283,,0
+SL,9752,7/23,21:25,22:02,White,Female,400,Participant joined Zoom at study_start time ,0
+CR,1933,7/24,10:00,10:30,Asian,Male,450,,0
+CR,2099,7/24,11:00,11:40,Asian,Female,625,,0
+JG,6821,7/24,11:25,12:05,Asian,Male,775,,0
+MP,2205,7/24,15:03,15:35,Black or African American,Female,73,Particpant created her account early June and the News Feed section stopped showing more results,0
+GS,8087,7/24,2:00,2:27,White,Female,364,The People You May Know section stopped showing more results,0
+GS,7634,7/24,3:15,3:48,Hispanic,Female,424,,0
+IC,8423,7/24,3:30,3:56,White,Female,680,"Participant did not have a ""People You May Know"" section.",0
+SL,2463,7/24,11:55,12:28,Black or African American,Female,112,,0
+VI,6072,7/23,2:20,2:50,Asian,Female,1633,,0
+VI,2902,7/23,3:10,3:35,White,Male,520,,0
+VI,9814,7/23,4:00,4:35,Asian,Male,4722,,0
+VI,8534,7/24,2:00,2:27,White,Female,1330,,0
+VI,2203,7/24,3:17,3:48,White,Female,1064,,0
+VI,2371,7/24,4:00,4:25,White,Female,1011,,0
+IC,3051,7/24,4:30,5:10,Black or African American,Female,1885,,0
+MP,3703,7/24,18:34,19:22,Asian,Female,57,Last minute cancellation occured causing late start (new participant) and News feed stopped loading new posts,0
+SV,7408,7/25,10:15,10:44,White,Female,2125,,0
+SL,1235,7/26,9:30,9:55,White,Male,1345,Last minute cancellation occured causing late start (new participant),0

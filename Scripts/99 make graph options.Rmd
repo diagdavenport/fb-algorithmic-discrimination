@@ -1,0 +1,157 @@
+---
+title: "Play with color schemes"
+author: "ddd"
+date: "1/29/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = F)
+
+library(ggplot2)
+library(dplyr)
+library(RColorBrewer)
+
+knitr::opts_knit$set(root.dir = '/Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown')
+
+```
+
+
+```{r chronology}
+
+m.newsfeed.df.all <- read.csv("Temp/NF working data.csv")
+
+m.newsfeed.df.all$holder <- 1
+
+for (starting.point in c(.01, 0.05, .10, .2, .3, .4, .5, .6, .7, .8)) {
+  for (sequence in c("halving", "equal", "thirding")) {
+    
+  if (sequence == "halving") {
+  
+    first.transition <- starting.point
+  
+    second.transition <- first.transition + (1 - first.transition)/2
+  
+    third.transition <- second.transition + (1 - second.transition)/2
+  
+  }
+  if (sequence == "thirding") {
+    
+      first.transition <- starting.point
+  
+    second.transition <- first.transition + (1 - first.transition)/3
+  
+    third.transition <- second.transition + (1 - second.transition)/3
+  }
+    
+  if (sequence == "equal") {
+    
+      first.transition <- starting.point
+  
+    second.transition <- first.transition + (1 - first.transition)/3
+  
+    third.transition <- second.transition + (1 - first.transition)/3
+  }
+  
+  color.scaling <- c(0, first.transition, second.transition, third.transition, 1)
+  
+  g <- ggplot(m.newsfeed.df.all %>% filter(complete_time_rank <= 60), aes(x=complete_time_rank, nf.order)) + stat_density_2d(
+  geom = "raster",
+  aes(fill = after_stat(density)),
+  contour = FALSE
+) + scale_x_reverse() + scale_y_reverse()  + scale_fill_gradientn(colors = brewer.pal(n = 9, name = "Blues")[c(2,3,5,7,9)], values = color.scaling) + xlab(paste(round(color.scaling, 2), collapse = ','))
+    
+  print(g)
+  }
+}
+
+
+```
+
+```{r preferences}
+
+for (starting.point in c(.01, 0.05, .10, .2, .3, .4, .5, .6, .7, .8)) {
+  for (sequence in c("halving", "equal", "thirding")) {
+    
+  if (sequence == "halving") {
+  
+    first.transition <- starting.point
+  
+    second.transition <- first.transition + (1 - first.transition)/2
+  
+    third.transition <- second.transition + (1 - second.transition)/2
+  
+  }
+  if (sequence == "thirding") {
+    
+      first.transition <- starting.point
+  
+    second.transition <- first.transition + (1 - first.transition)/3
+  
+    third.transition <- second.transition + (1 - second.transition)/3
+  }
+    
+  if (sequence == "equal") {
+    
+      first.transition <- starting.point
+  
+    second.transition <- first.transition + (1 - first.transition)/3
+  
+    third.transition <- second.transition + (1 - first.transition)/3
+  }
+  
+  color.scaling <- c(0, first.transition, second.transition, third.transition, 1)
+  
+  g <- ggplot(m.newsfeed.df.all, aes(x=norm.pctle, nf.order)) + stat_density_2d(
+  geom = "raster",
+  aes(fill = after_stat(density)),
+  contour = F
+) + scale_y_reverse() + scale_fill_gradientn(colors = brewer.pal(n = 9, name = "Blues")[c(2,3,5,7,9)],
+                             values = color.scaling) + xlab(paste(round(color.scaling, 2), collapse = ','))
+  print(g)
+  }
+}
+
+```
+
+```{r group}
+
+for (starting.point in c(.01, 0.05, .10, .2, .3, .4, .5, .6, .7, .8)) {
+  for (sequence in c("halving", "equal", "thirding")) {
+    
+  if (sequence == "halving") {
+  
+    first.transition <- starting.point
+  
+    second.transition <- first.transition + (1 - first.transition)/2
+  
+    third.transition <- second.transition + (1 - second.transition)/2
+  
+  }
+  if (sequence == "thirding") {
+    
+      first.transition <- starting.point
+  
+    second.transition <- first.transition + (1 - first.transition)/3
+  
+    third.transition <- second.transition + (1 - second.transition)/3
+  }
+    
+  if (sequence == "equal") {
+    
+      first.transition <- starting.point
+  
+    second.transition <- first.transition + (1 - first.transition)/3
+  
+    third.transition <- second.transition + (1 - first.transition)/3
+  }
+  
+  color.scaling <- c(0, first.transition, second.transition, third.transition, 1)
+  
+  g <- ggplot(m.newsfeed.df.all, aes(factor(holder), nf.order)) + stat_density(aes(fill = after_stat(density)), geom = "raster", position = "identity") + facet_grid(.~race.in.group, scales = "free_y") + scale_y_reverse() + scale_fill_gradientn(colors = brewer.pal(n = 5, name = "Blues"),
+                             values = color.scaling) + xlab(paste(round(color.scaling, 2), collapse = ','))
+  print(g)
+  }
+}
+
+```

@@ -231,9 +231,19 @@ cohen.data <- rbind(cohen.data, last.row)
 
 cohen.data$cohen.d <- with(cohen.data, (nf - pymk)/sd)
 
+cohen.data$ci <- with(cohen.data, (sd/100)*1.96)
+pd <- position_dodge(0.01)
+
  ggplot(cohen.data, aes(x = cat, y = abs(cohen.d))) +
-  geom_col(position = "dodge") + geom_hline(yintercept = c(.2,.5,.8), linetype = "dotted")
+   geom_errorbar(aes(ymin=abs(cohen.d)-ci, ymax=abs(cohen.d)+ci), colour="black", width=.1, position=pd) + ylim(c(-.6, .6)) +
+  geom_point(position = "dodge") + geom_hline(yintercept = c(.2,.5,-.2, -.5), linetype = "dotted") + coord_flip()
  
+  ggplot(cohen.data, aes(x = cat, y = abs(cohen.d))) +
+  geom_point(position = "dodge") + geom_hline(yintercept = c(.2,.5,-.2, -.5), linetype = "dotted") + ylim(c(-.6, .6)) +
+   geom_errorbar(aes(ymin=abs(cohen.d)-ci, ymax=abs(cohen.d)+ci), colour="black",
+                 width=.2,                    # Width of the error bars
+                  position=position_dodge(.9))
+  
 dev.copy(jpeg,'Output/Graphs/Experiments/Automaticity/standardized effect sizes.jpg')
 dev.off()
 

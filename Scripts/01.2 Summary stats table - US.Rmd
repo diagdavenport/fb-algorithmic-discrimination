@@ -108,7 +108,9 @@ summary_statistics <-
   list(
     "Sample size" =
         list(
-         "N" = ~N(primary.id)
+         "N" = ~length(unique(primary.id))
+          #"N test" = ~arsenal::countN(primary.id),
+          #"N" = ~unique(primary.id)
         ),
     "Race Self-Identification" =
       list(
@@ -232,7 +234,7 @@ summary_statistics <-
   list(
       "Sample size" =
         list(
-         "N" = ~N(primary.id)
+         "N" = ~length(unique(primary.id))
         ),
         "Preference" =
       list(

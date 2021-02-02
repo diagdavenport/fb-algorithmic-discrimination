@@ -104,7 +104,7 @@ m.pymk.df.all <- m.pymk.df.all %>%
     mutate(pct_friend_rank = order(order(mutual.friends/total_friends, decreasing = T)))
 
 m.pymk.df.all <- m.pymk.df.all %>% group_by(primary.id) %>%
-  mutate(new.rank = dense_rank(pymk.order))
+    mutate(new.rank = order(order(pymk.order, decreasing = T)))
 
 ```
 
@@ -484,6 +484,7 @@ dev.copy(jpeg,'Output/Graphs/Audit/Misranking relative to expectation/Mutual fri
 dev.off()
 ```
 
+
 ```{r misrank calc nf}
 
 newsfeed.with.misranks$new.metric <- NA
@@ -705,6 +706,26 @@ pymk.with.misranks$new.metric <- ifelse(pymk.with.misranks$familiarity == 7,
 
 # invert so higher means closer to top
 pymk.with.misranks$new.metric <- pymk.with.misranks$new.metric*-1
+```
+
+```{r pymk mutual friend expectation}
+
+l.dat <- m.pymk.df.all %>% group_by(religion.in.group, norm.quartile) %>% dplyr::summarise(rate = mean(connect.misrank, na.rm = T), sd = sd(connect.misrank, na.rm = T), n= n()) 
+
+l.dat$ci <- (l.dat$sd/sqrt(l.dat$n))*1.96
+pd <- position_dodge(0.1)
+
+ggplot(l.dat, aes(x=norm.quartile, fill = religion.in.group, y=rate)) + 
+  geom_bar(stat="identity", position="dodge", aes(fill = religion.in.group)) + 
+    geom_errorbar(aes(ymin=rate-ci, ymax=rate+ci), colour="black", width=.1, position=position_dodge(.9)) + labs(title = "Ranking group errors") + ylab("Mean ranking boost above mutual friend pct rank") + 
+  scale_fill_manual(values=c("#CC79A7", "#009E73"), 
+                       name="Poster Identity",
+                       breaks=c("FALSE", "TRUE"),
+                       labels=c("Outgroup", "Ingroup"))
+
+dev.copy(jpeg,'Output/Graphs/Audit/Misranking relative to expectation/Mutual friends expectation/India PYMK by norm pref.jpg')
+dev.off()
+
 ```
 
 ```{r visulaize misranking pymk}
@@ -1012,7 +1033,7 @@ dev.off()
 
 l.dat <- m.newsfeed.df.all %>% group_by(chron.order4, new.order4) %>% dplyr::summarise(freq = n())
 
-#l.dat$race.in.group <- ifelse(l.dat$chron.order4 == 0, 1, 99)
+#l.dat$religion.in.group <- ifelse(l.dat$chron.order4 == 0, 1, 99)
 
 l.dat$pct <- l.dat$freq/nrow(m.newsfeed.df.all)
 
@@ -1062,7 +1083,7 @@ dev.off()
 
 l.dat <- m.pymk.df.all %>% group_by(friend.order4, new.order4) %>% dplyr::summarise(freq = n())
 
-#l.dat$race.in.group <- ifelse(l.dat$chron.order4 == 0, 1, 99)
+#l.dat$religion.in.group <- ifelse(l.dat$chron.order4 == 0, 1, 99)
 
 l.dat$pct <- l.dat$freq/nrow(m.pymk.df.all)
 
@@ -1737,7 +1758,7 @@ ggplot(dat, aes(x = nf.order.round, y = excess)) + geom_bar(stat = "identity") +
   scale_x_discrete(name ="NF Ranking Group", 
                    breaks = c("1","2","3","4","5","0"),
                     labels=c("11-20","21-30", "31-40", "41-50", "51-60", "Top 10")) +
-  coord_flip()
+  coord_flip() + ylim(c(-.17,.17))
 
 dev.copy(jpeg,'Output/Graphs/Audit/Excess mass/India NF excess mass by ranking group.jpg')
 dev.off()
@@ -2503,6 +2524,120 @@ dev.off()
 
 ```
 
+```{r Norm Likert Panel by Group pymk}
+
+common.x.lab <- "User self-reported normed preference \nquartile (4=most familiar)"
+
+l.dat <- m.pymk.df.all %>% group_by(norm.quartile, religion.in.group) %>% dplyr::summarise(mean.rating = mean(pymk.order, na.rm = T), sd = sd(pymk.order, na.rm = T), n= n()) 
+
+l.dat$mean.rating <- (l.dat$mean.rating - 30.5)*-1
+
+l.dat$ci <- (l.dat$sd/sqrt(l.dat$n))*1.96
+pd <- position_dodge(0.01)
+
+topleft <- ggplot(l.dat, aes(x=norm.quartile, y=mean.rating, colour=religion.in.group, group=religion.in.group)) +
+  geom_errorbar(aes(ymin=mean.rating-ci, ymax=mean.rating+ci, colour=religion.in.group), width=.1, position=pd) + 
+  geom_point(aes(shape = religion.in.group), position=pd, size=3) +
+  geom_line( aes(linetype=religion.in.group, color=religion.in.group) , position=pd) + labs(title = "Newsfeed Ranking by Preference (India)") + 
+  ylab("Mean number of slots \nabove median rank") + 
+  xlab(common.x.lab) +
+  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+                       name="Poster Identity",
+                       breaks=c("FALSE", "TRUE"),
+                       labels=c("Outgroup", "Ingroup")) + 
+   scale_shape_discrete(name="Poster Identity",
+                       breaks=c("FALSE", "TRUE"),
+                       labels=c("Outgroup", "Ingroup")) + 
+   scale_linetype_discrete(name="Poster Identity",
+                       breaks=c("FALSE", "TRUE"),
+                       labels=c("Outgroup", "Ingroup"))
+
+m.pymk.df.all$top5  <- m.pymk.df.all$pymk.order <= 5
+m.pymk.df.all$top10  <- m.pymk.df.all$pymk.order <= 10
+m.pymk.df.all$top15  <- m.pymk.df.all$pymk.order <= 15
+
+l.dat <- m.pymk.df.all %>% group_by(norm.quartile, religion.in.group) %>% dplyr::summarise(prob5 = mean(top5, na.rm = T), sd = sd(top5, na.rm = T), n= n()) 
+
+l.dat$ci <- (l.dat$sd/sqrt(l.dat$n))*1.96
+pd <- position_dodge(0.01)
+
+topright <- ggplot(l.dat, aes(x=norm.quartile, y=prob5, colour=religion.in.group, group=religion.in.group)) +
+  geom_errorbar(aes(ymin=prob5-ci, ymax=prob5+ci, colour=religion.in.group), width=.1, position=pd) + 
+  geom_point(aes(shape = religion.in.group), position=pd, size=3) +
+  geom_line( aes(linetype=religion.in.group, color=religion.in.group) , position=pd) + 
+  labs(title = "Newsfeed Top 5 by Preference (India)") + 
+  ylab("Pr(Top 5)") + 
+  xlab("") +
+  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+                       name="Poster Identity",
+                       breaks=c("FALSE", "TRUE"),
+                       labels=c("Outgroup", "Ingroup")) + 
+   scale_shape_discrete(name="Poster Identity",
+                       breaks=c("FALSE", "TRUE"),
+                       labels=c("Outgroup", "Ingroup")) + 
+   scale_linetype_discrete(name="Poster Identity",
+                       breaks=c("FALSE", "TRUE"),
+                       labels=c("Outgroup", "Ingroup")) + theme(legend.position = "none")
+
+l.dat <- m.pymk.df.all %>% group_by(norm.quartile, religion.in.group) %>% dplyr::summarise(prob10 = mean(top10, na.rm = T), sd = sd(top10, na.rm = T), n= n()) 
+
+l.dat$ci <- (l.dat$sd/sqrt(l.dat$n))*1.96
+pd <- position_dodge(0.01)
+
+botleft <- ggplot(l.dat, aes(x=norm.quartile, y=prob10, colour=religion.in.group, group=religion.in.group)) +
+  geom_errorbar(aes(ymin=prob10-ci, ymax=prob10+ci, colour=religion.in.group), width=.1, position=pd) + 
+  geom_point(aes(shape = religion.in.group), position=pd, size=3) +
+  geom_line( aes(linetype=religion.in.group, color=religion.in.group) , position=pd) + 
+  labs(title = "Newsfeed Top 10 by Preference (India)") + 
+  ylab("Pr(Top 10)") + 
+  xlab("") +
+  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+                       name="Poster Identity",
+                       breaks=c("FALSE", "TRUE"),
+                       labels=c("Outgroup", "Ingroup")) + 
+   scale_shape_discrete(name="Poster Identity",
+                       breaks=c("FALSE", "TRUE"),
+                       labels=c("Outgroup", "Ingroup")) + 
+   scale_linetype_discrete(name="Poster Identity",
+                       breaks=c("FALSE", "TRUE"),
+                       labels=c("Outgroup", "Ingroup")) + theme(legend.position = "none")
+
+l.dat <- m.pymk.df.all %>% group_by(norm.quartile, religion.in.group) %>% dplyr::summarise(prob15 = mean(top15, na.rm = T), sd = sd(top15, na.rm = T), n= n()) 
+
+l.dat$ci <- (l.dat$sd/sqrt(l.dat$n))*1.96
+pd <- position_dodge(0.01)
+
+botright <- ggplot(l.dat, aes(x=norm.quartile, y=prob15, colour=religion.in.group, group=religion.in.group)) +
+  geom_errorbar(aes(ymin=prob15-ci, ymax=prob15+ci, colour=religion.in.group), width=.1, position=pd) + 
+  geom_point(aes(shape = religion.in.group), position=pd, size=3) +
+  geom_line( aes(linetype=religion.in.group, color=religion.in.group) , position=pd) + 
+  labs(title = "Newsfeed Top 15 by Preference (India)") + 
+  ylab("Pr(Top 15)") + 
+  xlab("") +
+  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+                       name="Poster Identity",
+                       breaks=c("FALSE", "TRUE"),
+                       labels=c("Outgroup", "Ingroup")) + 
+   scale_shape_discrete(name="Poster Identity",
+                       breaks=c("FALSE", "TRUE"),
+                       labels=c("Outgroup", "Ingroup")) + 
+   scale_linetype_discrete(name="Poster Identity",
+                       breaks=c("FALSE", "TRUE"),
+                       labels=c("Outgroup", "Ingroup")) + theme(legend.position = "none")
+
+ggarrange(topleft, topright, botleft, botright,
+          labels = c("A", "B", "C", "D"),
+          ncol = 2, nrow = 2)
+dev.copy(jpeg,'Output/Graphs/Audit/Ranking line graphs/India PYMK all outcomes panel by norm preference by ingroup.jpg')
+dev.off()
+
+topleft
+dev.copy(jpeg,'Output/Graphs/Audit/Ranking line graphs/India PYMK slots above median rank by norm preference by ingroup.jpg')
+dev.off()
+
+```
+
+
 ```{r Unconditional mean diff pymk}
 
 l.dat <- m.pymk.df.all %>% group_by(religion.in.group) %>% dplyr::summarise(mean.rating = mean(pymk.order, na.rm = T), sd = sd(pymk.order, na.rm = T), n= n())
@@ -2674,7 +2809,7 @@ ggplot(dat, aes(x = pymk.order.round, y = excess)) + geom_bar(stat = "identity")
   scale_x_discrete(name ="PYMK Ranking Group", 
                    breaks = c("1","2","3","4","5","0"),
                     labels=c("11-20","21-30", "31-40", "41-50", "51-60", "Top 10")) +
-  coord_flip()
+  coord_flip() + ylim(c(-.17,.17))
 
 dev.copy(jpeg,'Output/Graphs/Audit/Excess Mass/India PYMK excess mass by ranking group.jpg')
 dev.off()

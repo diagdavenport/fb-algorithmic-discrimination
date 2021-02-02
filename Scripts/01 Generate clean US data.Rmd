@@ -195,6 +195,7 @@ merged.combined.raw <- merged.combined.raw[!is.na(merged.combined.raw$preference
                              "subject_gender_RA",
                              "total_friends",
                              "p_log_notes",
+                             "manual_flag_p_log",
                              "study_about",
                   
                    "nf.order", 
@@ -209,6 +210,7 @@ merged.combined.raw <- merged.combined.raw[!is.na(merged.combined.raw$preference
                    "poster.nf.race.2.ra",
                    "poster.nf.gender",
                    "nf.ra.notes",
+                   "manual_flag_nf_log",
                    "familiarity",
                    "relationship",
                    "common.friends"
@@ -302,7 +304,7 @@ pymk.df.hdsl$source <- "HDSL"
 pymk.combined.raw <- bind_rows(pymk.df.hdsl,
                                    pymk.df)
 
-pymk.combined.raw <- pymk.combined.raw[!is.na(pymk.combined.raw$familiarity..1.7.) & !is.na(pymk.combined.raw$participant_id), 1:9] # to be considered, the row needs to have a participant ID and a preference recorded
+pymk.combined.raw <- pymk.combined.raw[!is.na(pymk.combined.raw$familiarity..1.7.) & !is.na(pymk.combined.raw$participant_id), 1:10] # to be considered, the row needs to have a participant ID and a preference recorded
 
 # clean up names
   colnames(pymk.combined.raw) <- c("participant_id", 
@@ -313,6 +315,7 @@ pymk.combined.raw <- pymk.combined.raw[!is.na(pymk.combined.raw$familiarity..1.7
                    "poster.pymk.race.2.ra",
                    "poster.pymk.gender",
                    "pymk.ra.notes",
+                   "manual_flag",
                    "source")
 
   pymk.combined.raw$poster.pymk.race.1.ra <- tolower(pymk.combined.raw$poster.pymk.race.1.ra)
@@ -362,7 +365,7 @@ recent.cdr.2$source <- "CDR 4"
 
 recent.combined.raw <- bind_rows(recent.cdr.1, recent.cdr.2)
 
-recent.combined.raw <- recent.combined.raw[!is.na(recent.combined.raw$react) & !is.na(recent.combined.raw$participant_id), 1:11] # to be considered, the row needs to have a participant ID and a preference recorded
+recent.combined.raw <- recent.combined.raw[!is.na(recent.combined.raw$react) & !is.na(recent.combined.raw$participant_id), 1:12] # to be considered, the row needs to have a participant ID and a preference recorded
 
 # clean up names
   colnames(recent.combined.raw) <- c("participant_id", 
@@ -374,6 +377,7 @@ recent.combined.raw <- recent.combined.raw[!is.na(recent.combined.raw$react) & !
                    "human",
                    "poster.recent.race",
                    "poster.recent.gender",
+                   "manual_diag",
                    "notes",
                    "source")
 

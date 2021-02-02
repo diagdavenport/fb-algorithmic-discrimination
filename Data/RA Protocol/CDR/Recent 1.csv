@@ -1,561 +1,561 @@
-participant_id,order,react,comment,post_tenure,tenure_units,human (y/n),race,gender,notes
-7615,1,1,0,3,Minutes,1,White,Female,
-7615,2,1,0,15,Minutes,1,Asian,Male,
-7615,3,1,0,5,Days,1,White,Male,
-7615,4,1,0,6,Days,1,White,Female,
-7615,5,1,0,7,Days,0,,,
-7615,6,1,0,7,Days,1,White,Male,
-7615,7,1,0,7,Days,1,White,Female,
-7615,8,1,0,9,Days,1,Black or African American,Female,
-7615,9,1,0,9,Days,1,Black or African American,Female,
-7615,10,1,0,10,Days,1,White,Female,
-6585,1,1,0,21,Days,1,White,Female,
-6585,2,1,0,26,Days,1,Asian,Female,
-6585,3,1,0,31,Days,1,White,Female,
-6585,4,1,0,46,Days,1,White,Female,
-6585,5,1,0,50,Days,1,White,Female,
-6585,6,1,0,54,Days,1,White,Female,
-6585,7,1,0,67,Days,1,Asian,Female,
-6585,8,1,0,68,Days,1,Asian,Female,
-6585,9,1,0,70,Days,1,White,Male,
-6585,10,1,1,74,Days,1,Asian,Female,
-7214,1,1,0,3,Days,,,,"FB was unable to find and show the post, I wasn't able ot get any more information"
-7214,2,1,0,3,Days,1,White,Female,
-7214,3,1,1,5,Days,1,White,Male,
-7214,4,1,0,5,Days,1,White,Female,
-7214,5,1,0,11,Days,1,Hispanic,Female,
-7214,6,1,0,11,Days,1,White,Male,
-7214,7,1,0,11,Days,1,White,Male,"The participant reacted to another persons comment on a post, not the post itself"
-7214,8,1,0,11,Days,1,White,Female,
-7214,9,1,0,11,Days,1,White,Female,
-7214,10,1,0,18,Days,1,White,Female,
-6755,1,1,0,2,Hours,0,,,
-6755,2,1,0,7,Hours,1,White,Male,
-6755,3,1,0,7,Hours,1,White,Female,
-6755,4,0,1,7,Hours,1,Asian,Male,
-6755,5,0,1,1,Days,1,Asian,Female,
-6755,6,1,0,1,Days,1,Asian,Female,
-6755,7,0,1,1,Days,1,Asian,Female,
-6755,8,1,0,1,Days,1,Asian,Female,
-6755,9,0,1,1,Days,1,Asian,Female,
-6755,10,0,1,1,Days,1,Asian,Female,
-7650,1,1,1,20,Hours,1,White,Female,
-7650,2,1,1,1,Days,1,Hispanic,Female,
-7650,3,1,0,1,Days,1,White,Female,
-7650,4,1,1,1,Days,1,Asian,Male,
-7650,5,0,1,22,Hours,0,,,"friend tagged the particpant in a comment under another post, the participant replied"
-7650,6,1,1,1,Days,1,White,Female,
-7650,7,0,1,2,Days,1,White,Female,
-7650,8,1,1,1,Days,1,Hispanic,Female,
-7650,9,1,1,1,Days,1,White,Female,
-7650,10,0,1,1,Days,1,Asian,Male,
-2304,1,1,0,1,Days,0,,,
-2304,2,1,0,1,Days,1,White,Female,
-2304,3,1,0,1,Days,1,White,Female,
-2304,4,1,0,3,Days,1,Hispanic,Female,
-2304,5,1,0,4,Days,1,Hispanic,Female,
-2304,6,1,1,5,Days,1,White,Female,
-2304,7,1,0,5,Days,1,Hispanic,Male,
-2304,8,1,0,5,Days,1,White,Female,
-2304,9,1,0,5,Days,1,White,Male,
-2304,10,1,0,5,Days,1,Asian,Female,
-4800,1,1,0,1,Hours,0,White,Female,Celebrity Page
-4800,2,0,1,3,Hours,1,White,Female,
-4800,3,1,0,1,Days,0,White,Female,Celebrity Page
-4800,4,1,0,2,Days,1,White,Male,
-4800,5,1,0,4,Days,1,White,Male,
-4800,6,1,0,5,Days,1,White,Female,
-4800,7,1,0,11,Days,1,White,Female,
-4800,8,1,0,10,Days,0,White,Female,Celebrity Page
-4800,9,1,0,15,Days,1,White,Female,
-4800,10,1,0,13,Days,1,Hispanic,Female,
-3876,1,1,0,1,Days,1,Black or African American,Female,
-3876,2,0,1,15,Days,0,,,
-3876,3,0,0,13,Days,1,Asian,Female,
-3876,4,0,1,16,Days,1,Hispanic,Male,
-3876,5,1,0,17,Days,1,White,Male,
-3876,6,1,1,24,Days,1,White,Female,
-3876,7,1,0,44,Days,1,Black or African American,Female,
-3876,8,0,1,25,Days,1,White,Female,
-3876,9,1,0,26,Days,1,White,Female,
-3876,10,1,0,26,Days,1,Asian,Female,
-4301,1,0,1,2,Days,1,Hispanic,Female,
-4301,2,1,0,5,Days,1,Hispanic,Male,
-4301,3,1,0,11,Days,1,Hispanic,Female,
-4301,4,1,0,15,Days,1,Hispanic,Female,
-4301,5,1,0,9,Days,1,Hispanic,Male,
-4301,6,0,1,9,Days,1,Hispanic,Male,
-4301,7,0,1,10,Days,1,Hispanic,Female,
-4301,8,0,1,10,Days,1,Hispanic,Female,
-4301,9,0,1,15,Days,1,Hispanic,Female,
-4301,10,0,1,15,Days,1,Hispanic,Female,
-8755,1,1,0,1,days,1,white,female,
-8755,2,1,0,3,days,1,white,male,
-8755,3,1,0,20,days,1,white,female,
-8755,4,1,0,35,days,1,asian,female,
-8755,5,1,0,35,days,1,white,female,
-8755,6,1,0,49,days,1,white,female,
-8755,7,1,0,67,days,1,white,female,
-8755,8,1,0,67,days,1,white,male,
-8755,9,1,0,80,days,0,,,
-8755,10,1,0,81,days,1,white,female,
-2207,1,1,1,2,Days,1,Hispanic,Female,
-2207,2,1,0,2,Days,1,Hispanic,Male,
-2207,3,1,0,2,Days,1,Hispanic,Female,
-2207,4,1,0,4,Days,0,,,
-2207,5,1,0,5,Days,1,Hispanic,Female,
-2207,6,1,0,6,Days,1,White,Female,
-2207,7,1,0,8,Days,1,Hispanic,Male,
-2207,8,1,0,8,Days,1,Hispanic,Male,
-2207,9,1,0,6,Days,1,Hispanic,Female,
-2207,10,1,0,,,0,,,Tenure - The original post was from over 99 days ago (December 2019)
-9726,1,1,0,5,Hours,1,White,Female,Participant also 'saved' this post
-9726,2,1,0,46,Minutes,1,White,Female,
-9726,3,0,1,23,Hours,1,Asian,Male,Participant also 'saved' this post
-9726,4,1,1,5,Hours,1,White,Female,"A lot of interaction by the Participant, basically a FB comment fight"
-9726,5,0,0,1,Days,1,White,Female,Participant only 'saved' this post
-9726,6,1,0,19,Hours,1,White,Female,Participant also 'shared' this post
-9726,7,0,0,20,Hours,1,Asian,Male,Participant only 'saved' this post
-9726,8,1,0,16,Hours,1,White,Female,
-9726,9,0,1,20,Hours,1,White,Male,
-9726,10,1,0,2,Days,1,White,Female,
-3163,1,1,0,,,1,Asian,Female,"Tenure - Post was from over 99 days ago (March 10th, 2020)"
-3163,2,1,0,,,1,White,Male,"Tenure - Post was from over 99 days ago (21 weeks); Participant reacted to multiple comments on this post, not the post itself"
-3163,3,1,0,,,0,,,"Tenure - Post was from over 99 days ago (January 10th, 2020)"
-3163,4,1,1,,,1,Asian,Male,"Tenure - Post was from over 99 days ago (October 27th, 2019)"
-3163,5,1,1,,,1,White,Female,"Tenure - Post was from over 99 days ago (October 27th, 2019)"
-3163,6,1,1,,,1,White,Male,"Tenure - Post was from over 99 days ago (October 27th, 2019)"
-3163,7,1,0,,,1,Asian,Male,"Tenure - Post was from over 99 days ago (April 15th, 2019)"
-3163,8,1,0,,,1,White,Male,"Tenure - Post was from over 99 days ago (August 27th, 2019)"
-3163,9,1,0,,,0,,,"Tenure - Post was from over 99 days ago (August 30th, 2019)"
-3163,10,1,1,,,1,Asian,Female,"Tenure - Post was from over 99 days ago (August 31st, 2019)"
-6604,1,,,,,,,,"Participant doesn't interact with posts on FB, only lurks and uses it to network. We scrolled over a year back and there was no relevant recent activity."
-6604,2,,,,,,,,
-6604,3,,,,,,,,
-6604,4,,,,,,,,
-6604,5,,,,,,,,
-6604,6,,,,,,,,
-6604,7,,,,,,,,
-6604,8,,,,,,,,
-6604,9,,,,,,,,
-6604,10,,,,,,,,
-2177,1,1,0,3,Days,1,White,Female,
-2177,2,0,1,4,Days,1,White,Female,
-2177,3,1,0,4,Days,0,,,
-2177,4,1,0,4,Days,0,,,
-2177,5,1,0,5,Days,1,White,Female,
-2177,6,1,0,6,Days,1,Asian,Male,
-2177,7,1,0,4,Days,1,Hispanic,Female,
-2177,8,1,0,5,Days,0,,,
-2177,9,1,0,5,Days,0,,,
-2177,10,1,0,6,Days,0,,,
-2138,1,0,1,10,Days,1,Asian,Female,
-2138,2,0,1,10,Days,1,Asian,Female,
-2138,3,1,0,9,Days,1,Asian,Female,
-2138,4,1,0,11,Days,1,Asian,Male,
-2138,5,0,1,1,Days,1,Asian,Male,
-2138,6,1,0,15,Days,1,Asian,Female,
-2138,7,0,1,13,Days,1,Asian,Female,
-2138,8,1,0,14,Days,1,Asian,Female,
-2138,9,1,0,16,Days,1,Asian,Male,
-2138,10,1,0,19,Days,1,Asian,Male,
-6243,1,0,1,50,Days,1,Asian,Female,
-6243,2,0,1,50,Days,1,Asian,Female,
-6243,3,1,0,562,Days,1,Asian,Female,
-6243,4,0,1,578,Days,1,Asian,Female,
-6243,5,0,1,584,Days,1,Asian,Male,
-6243,6,1,0,775,Days,1,Asian,Female,
-6243,7,0,1,906,Days,1,White,Female,
-6243,8,0,1,906,Days,1,White,Female,
-6243,9,0,1,906,Days,1,White,Female,
-6243,10,0,1,906,Days,1,Asian,Male,
-7660,1,1,0,1,days,1,white,female,
-7660,2,1,0,1,days,1,white,female,
-7660,3,1,0,2,days,1,black or African American,male,
-7660,4,1,0,2,days,1,white,female,
-7660,5,0,1,2,days,1,black or African American,male,
-7660,6,1,0,2,days,1,white,female,
-7660,7,1,0,4,days,1,white,female,
-7660,8,0,1,6,days,1,white,male,
-7660,9,1,0,6,days,1,white,female,
-7660,10,1,0,6,days,1,white,female,
-1937,1,1,0,2,days,1,asian,male,
-1937,2,1,0,2,days,1,asian,male,
-1937,3,1,0,2,days,1,black or African American,male,
-1937,4,1,0,1,days,1,asian,male,
-1937,5,0,1,2,days,1,asian,male,
-1937,6,0,1,2,days,1,asian,male,
-1937,7,1,0,1,days,1,asian,male,
-1937,8,1,0,2,days,1,asian,female,
-1937,9,1,0,1,days,1,asian,male,
-1937,10,1,0,3,days,1,white,male,
-5458,1,1,0,2,hours,1,asian,female,
-5458,2,1,0,20,hours,1,white,female,
-5458,3,1,0,18,hours,1,asian,male,
-5458,4,1,0,3,days,1,white,male,
-5458,5,1,0,20,hours,1,asian,female,
-5458,6,1,0,2,days,1,white,male,
-5458,7,0,1,21,hours,1,white,male,
-5458,8,0,1,21,hours,1,asian,female,
-5458,9,1,0,21,hours,1,white,male,
-5458,10,1,0,1,days,0,,,
-9287,1,1,0,3,Days,1,Asian,Female,
-9287,2,1,0,6,Days,1,White,Male,
-9287,3,0,1,7,Days,1,White,Male,
-9287,4,1,0,15,Days,1,White,Male,
-9287,5,1,1,16,Days,1,Asian,Male,
-9287,6,1,0,13,Days,1,White,Male,
-9287,7,1,1,19,Days,1,Black or African American,Female,
-9287,8,1,0,23,Days,1,White,Female,
-9287,9,1,0,26,Days,1,White,Female,
-9287,10,1,0,36,Days,1,White,Male,
-8464,1,1,0,9,Days,1,Black or African American,Female,
-8464,2,1,0,5,Days,1,White,Female,
-8464,3,1,0,5,Days,0,,,
-8464,4,1,0,7,Days,1,White,Male,
-8464,5,1,0,8,Days,1,White,Female,
-8464,6,1,0,9,Days,1,White,Female,
-8464,7,1,0,9,Days,1,White,Male,
-8464,8,1,0,10,Days,1,White,Male,
-8464,9,1,0,12,Days,1,White,Female,
-8464,10,1,0,13,Days,1,Hispanic,Female,
-3038,1,1,0,1,Days,1,White,Female,
-3038,2,1,0,15,Hours,1,Asian,Male,
-3038,3,1,0,1,Days,1,Asian,Male,
-3038,4,1,0,3,Days,1,Asian,Male,
-3038,5,1,0,3,Days,1,White,Male,
-3038,6,1,0,3,Days,1,Asian,Female,
-3038,7,1,0,3,Days,1,Asian,Male,
-3038,8,1,0,4,Days,1,Asian,Female,
-3038,9,1,0,4,Days,1,Asian,Female,
-3038,10,1,0,5,Days,1,Asian,Female,
-7866,1,1,0,3,Days,1,Black or African American,Female,
-7866,2,1,0,4,Days,1,Black or African American,Female,
-7866,3,1,0,5,Days,1,Black or African American,Female,
-7866,4,1,0,9,Days,1,Black or African American,Female,
-7866,5,1,0,5,Days,1,White,Male,
-7866,6,1,0,14,Days,1,Black or African American,Female,
-7866,7,1,0,15,Days,0,,,
-7866,8,1,0,14,Days,1,Black or African American,Female,
-7866,9,1,0,16,Days,1,White,Male,
-7866,10,1,0,16,Days,1,Black or African American,Female,
-6639,1,1,0,3,days,0,,,
-6639,2,1,0,3,days,1,asian,male,
-6639,3,1,0,4,days,1,black or African American,male,
-6639,4,1,0,4,days,1,asian,male,
-6639,5,0,1,5,days,1,white,male,
-6639,6,1,0,5,days,1,white,female,
-6639,7,0,1,8,days,1,white,female,
-6639,8,0,1,8,days,0,,,
-6639,9,1,0,8,days,1,white,female,
-6639,10,0,1,10,days,1,white,female,
-5449,1,1,0,,,1,Asian,Male,"Tenure - reacted to a post from July 1st, 2019"
-5449,2,1,0,,,1,Asian,Female,Tenure - reacted to a post from about 4 years ago
-5449,3,1,0,,,0,Asian,Male,"Celebrity's Page; Tenure - reacted to a post from April 30th, 2018"
-5449,4,1,0,,,1,Asian,Male,"Tenure - reacted to a post from December 20th, 2017"
-5449,5,1,0,,,0,Asian,Male,"Celebrity's Page; Tenure - reacted to a post from December 10th, 2017"
-5449,6,1,0,,,0,Asian,Male,"Celebrity's Page; Tenure - reacted to a post from December 7th, 2017"
-5449,7,1,0,,,1,Asian,Female,"Tenure - reacted to a post from Decemebr 6th, 2017"
-5449,8,1,0,,,0,Asian,Male,"Celebrity's Page; Tenure - reacted to a post from November 28th, 2017"
-5449,9,1,0,,,0,Asian,Male,"Celebrity's Page; Tenure - reacted to a post from November 27th, 2017"
-5449,10,0,1,,,1,Asian,Male,"Tenure - commented on a post from October 23rd, 2017"
-1989,1,0,1,2,Days,1,White,Female,
-1989,2,1,0,2,Days,1,White,Female,
-1989,3,0,1,9,Days,1,White,Female,
-1989,4,1,0,9,Days,1,White,Female,
-1989,5,0,1,26,Days,1,White,Female,
-1989,6,1,0,26,Days,1,White,Female,
-1989,7,0,1,27,Days,1,White,Female,
-1989,8,0,1,27,Days,1,White,Female,
-1989,9,1,0,36,Days,1,White,Female,
-1989,10,1,0,36,Days,1,White,Female,
-8968,1,1,0,3,Days,1,Asian,Female,
-8968,2,0,1,4,Days,1,Asian,Female,
-8968,3,0,1,4,Days,1,Asian,Female,
-8968,4,1,0,4,Days,1,Asian,Female,
-8968,5,0,1,5,Days,1,Asian,Female,
-8968,6,0,1,6,Days,1,Asian,Female,
-8968,7,1,0,6,Days,1,Asian,Female,
-8968,8,1,0,6,Days,1,White,Female,
-8968,9,0,1,7,Days,1,White,Female,
-8968,10,1,0,7,Days,1,White,Female,
-4810,1,1,0,6,Days,0,,,
-4810,2,0,1,8,Days,1,White,Female,
-4810,3,1,0,6,Days,1,White,Male,
-4810,4,1,0,8,Days,1,White,Male,
-4810,5,1,0,11,Days,1,White,Female,
-4810,6,1,0,14,Days,1,White,Female,
-4810,7,1,0,16,Days,1,White,Female,
-4810,8,1,0,18,Days,1,White,Female,
-4810,9,1,0,19,Days,1,White,Female,
-4810,10,1,0,22,Days,0,,,
-2574,1,1,0,3,Days,1,Hispanic,Female,
-2574,2,1,0,3,Days,1,White,Female,
-2574,3,0,1,5,Days,0,,,
-2574,4,0,1,3,Days,1,White,Female,
-2574,5,0,1,4,Days,1,White,Female,
-2574,6,0,1,4,Days,1,White,Female,
-2574,7,0,1,4,Days,1,White,Female,
-2574,8,1,0,7,Days,0,,,
-2574,9,0,1,8,Days,1,White,Female,
-2574,10,1,0,9,Days,1,White,Female,
-3313,1,0,1,1,Days,1,Asian,Female,
-3313,2,1,0,3,Days,1,White,Female,
-3313,3,0,1,4,Days,1,White,Female,
-3313,4,0,1,3,Days,1,Asian,Female,
-3313,5,0,1,4,Days,1,White,Female,
-3313,6,0,1,4,Days,1,White,Female,
-3313,7,0,1,4,Days,1,White,Female,
-3313,8,0,1,4,Days,1,Asian,Female,
-3313,9,0,1,5,Days,1,Black or African American,Male,
-3313,10,0,1,5,Days,0,,,
-7031,1,1,0,2,days,1,white,male,
-7031,2,1,0,2,days,1,white,female,
-7031,3,1,0,3,days,1,white,female,
-7031,4,1,0,2,days,1,white,female,
-7031,5,1,0,10,days,0,,,
-7031,6,1,0,2,weeks,1,white,male,
-7031,7,1,0,2,weeks,1,white,female,
-7031,8,1,0,3,weeks,0,,,
-7031,9,1,0,5,weeks,1,white,male,
-7031,10,1,0,5,weeks,1,white,female,
-5775,1,1,0,1,days,1,white,female,
-5775,2,1,0,1,days,1,white,female,
-5775,3,1,0,1,days,1,white,male,
-5775,4,1,0,1,days,1,hispanic,female,
-5775,5,1,0,1,days,1,white,female,
-5775,6,1,0,1,days,1,white,female,
-5775,7,1,0,1,days,1,asian,female,
-5775,8,1,0,2,days,1,white,male,
-5775,9,1,0,2,days,1,white,male,
-5775,10,1,0,3,days,1,white,female,
-6164,1,1,0,14,days,1,asian,male,
-6164,2,1,0,17,days,1,asian,male,
-6164,3,1,0,25,days,1,asian,female,
-6164,4,1,0,1,months,0,,,
-6164,5,1,0,4,months,0,,,
-6164,6,1,0,1,year,1,asian,male,
-6164,7,0,1,2,year,0,,,
-6164,8,1,0,2,year,0,,,
-6164,9,1,0,2,year,1,asian,male,
-6164,10,1,0,2,year,1,asian,male,
-9706,1,1,0,6,days,1,white,female,
-9706,2,1,0,12,days,1,white,male,
-9706,3,1,0,12,days,1,white,female,
-9706,4,1,0,23,days,1,asian,female,
-9706,5,1,0,23,days,1,asian,female,
-9706,6,1,0,24,days,0,,,
-9706,7,1,0,25,days,1,asian,male,
-9706,8,1,0,27,days,1,white,female,
-9706,9,1,0,32,days,1,black or African American,female,
-9706,10,1,0,36,days,1,asian,male,
-4463,1,1,0,1,days,1,asian,female,
-4463,2,1,0,1,days,1,asian,male,
-4463,3,1,0,3,days,0,,,
-4463,4,1,0,3,days,1,asian,male,
-4463,5,1,0,3,days,1,asian,female,
-4463,6,1,0,3,days,1,asian,male,
-4463,7,1,0,4,days,1,asian,female,
-4463,8,1,0,4,days,0,,,
-4463,9,1,0,4,days,1,white,female,
-4463,10,1,0,5,days,1,white,female,
-3984,1,1,0,1,days,0,,,
-3984,2,1,0,1,days,0,,,
-3984,3,1,0,1,days,0,,,
-3984,4,1,0,1,days,1,white,female,
-3984,5,1,0,2,days,1,white,female,
-3984,6,0,1,3,days,1,white,male,
-3984,7,1,0,2,days,1,hispanic,male,
-3984,8,1,0,2,days,1,hispanic,female,
-3984,9,1,0,3,days,1,hispanic,male,
-3984,10,1,0,2,year,0,,,
-7618,1,1,0,4,Hours,0,,,society and culture website
-7618,2,1,0,23,Hours,1,White,Male,
-7618,3,1,0,2,Days,1,White,Female,
-7618,4,1,0,4,Days,1,White,Female,
-7618,5,1,1,6,Days,1,White,Male,in turkish
-7618,6,1,0,10,Days,1,White,Female,
-7618,7,1,0,10,Days,1,White,Female,in turkish
-7618,8,1,0,12,Days,1,White,Female,
-7618,9,1,0,16,Days,1,White,Male,
-7618,10,1,0,16,Days,1,White,Male,
-4877,1,1,0,1,Days,1,White,Female,
-4877,2,1,0,4,Days,1,White,Female,
-4877,3,1,0,7,Days,1,Hispanic,Female,
-4877,4,1,0,8,Days,1,Black or African American,Female,
-4877,5,1,0,8,Days,1,Hispanic,Female,
-4877,6,1,0,10,Days,1,Hispanic,Female,
-4877,7,1,0,12,Days,1,Hispanic,Female,
-4877,8,1,0,11,Days,1,Black or African American,Female,
-4877,9,1,0,10,Days,1,Asian,Female,
-4877,10,1,0,,Days,1,Hispanic,Female,493 days ago. Wouldn't let me enter it
-7124,1,1,0,1,days,1,asian,female,
-7124,2,1,0,1,days,1,asian,male,
-7124,3,1,0,2,days,1,asian,male,
-7124,4,1,0,2,days,1,asian,female,
-7124,5,1,0,2,days,1,asian,female,
-7124,6,1,0,2,days,1,asian,female,
-7124,7,1,0,3,days,1,white,female,
-7124,8,1,0,5,days,1,asian,male,
-7124,9,0,1,7,days,1,asian,male,
-7124,10,1,0,7,days,1,asian,male,
-3637,1,1,0,1,days,0,,,
-3637,2,1,0,2,days,1,white,male,
-3637,3,1,0,2,days,1,white,female,
-3637,4,0,1,3,days,1,white,female,
-3637,5,1,0,3,days,1,white,female,
-3637,6,1,0,3,days,1,white,female,
-3637,7,1,0,3,days,1,white,female,
-3637,8,1,0,5,days,1,white,female,
-3637,9,0,1,5,days,1,white,female,
-3637,10,1,0,5,days,1,white,female,
-3446,1,1,0,18,hours,1,white,male,
-3446,2,1,0,1,days,1,white,female,
-3446,3,1,0,1,days,1,asian,female,
-3446,4,1,0,22,hours,1,white,female,
-3446,5,1,0,1,days,1,white,female,
-3446,6,1,0,1,days,1,white,female,
-3446,7,1,0,14,days,1,asian,female,
-3446,8,0,1,3,days,1,Black or African American,male,
-3446,9,1,1,4,days,1,asian,female,
-3446,10,1,0,8,days,1,asian,male,
-6377,1,0,0,1,Days,1,Hispanic,Female,Participant saved the post
-6377,2,1,0,1,Hours,1,White,Male,
-6377,3,1,0,2,Hours,1,White,Male,
-6377,4,1,0,5,Hours,1,White,Male,
-6377,5,0,0,1,Days,1,White,Female,Participant saved a link from the post
-6377,6,1,0,20,Hours,1,White,Male,
-6377,7,1,0,1,Days,1,White,Female,
-6377,8,1,0,20,Hours,1,White,Male,
-6377,9,0,0,2,Days,0,,,Participant saved a link from the post
-6377,10,1,0,8,Days,1,Asian,Female,Participant also reacted to a comment on the post
-4405,1,0,0,2,days,1,asian,female,post was by the participant
-4405,2,0,0,2,days,1,asian,female,post was by the participant
-4405,3,0,0,2,days,1,asian,female,post was by the participant
-4405,4,0,0,2,days,1,asian,female,post was by the participant
-4405,5,0,0,3,days,1,asian,female,post was by the participant
-4405,6,0,0,5,days,1,asian,female,post was by the participant
-4405,7,1,0,5,days,1,white,female,
-4405,8,0,0,7,days,1,asian,female,post was by the participant
-4405,9,0,0,8,days,1,asian,female,post was by the participant
-4405,10,1,0,8,days,1,asian,female,
-4904,1,1,0,6,hours,1,black or African American,female,
-4904,2,1,0,5,hours,1,asian,male,
-4904,3,1,0,4,days,1,asian,male,
-4904,4,1,0,6,days,1,asian,female,
-4904,5,1,0,3,days,1,hispanic,male,
-4904,6,1,0,3,days,1,white,female,
-4904,7,1,0,1,days,1,asian,male,
-4904,8,1,0,21,hours,1,white,female,
-4904,9,1,0,17,hours,1,white,female,
-4904,10,1,0,1,days,1,asian,male,
-9378,1,1,0,22,Hours,0,,,
-9378,2,1,0,22,Hours,1,White,Female,
-9378,3,1,1,16,Hours,1,White,Male,
-9378,4,1,0,14,Hours,1,White,Female,
-9378,5,0,1,1,Days,1,White,Male,"Friend replied to Participant's comment, and participant interacted with the reply as well"
-9378,6,1,0,22,Hours,1,White,Female,
-9378,7,1,0,1,Days,1,Asian,Female,
-9378,8,1,0,20,Hours,1,White,Female,
-9378,9,1,0,2,Days,1,Black or African American,Male,
-9378,10,1,0,2,Days,1,Asian,Female,
-2454,1,1,0,1,Days,1,Hispanic,Female,
-2454,2,1,0,17,Hours,1,White,Female,
-2454,3,1,0,1,Days,1,White,Female,
-2454,4,1,0,3,Days,1,White,Female,
-2454,5,1,0,7,Days,1,White,Female,
-2454,6,1,0,4,Days,1,Hispanic,Female,
-2454,7,1,0,5,Days,1,White,Female,
-2454,8,1,0,5,Days,1,White,Female,
-2454,9,1,0,4,Days,1,White,Female,
-2454,10,1,0,5,Days,1,White,Female,
-7404,1,1,0,1,Days,1,White,Female,
-7404,2,1,0,1,Days,1,White,Female,
-7404,3,1,0,2,Days,1,White,Female,Person E
-7404,4,1,0,2,Days,1,Asian,Female,
-7404,5,1,0,3,Days,1,White,Female,
-7404,6,1,0,5,Days,1,White,Female,
-7404,7,1,0,5,Days,1,White,Female,
-7404,8,1,0,7,Days,1,Asian,Female,
-7404,9,1,0,7,Days,1,White,Female,Person A
-7404,10,1,0,6,Days,1,White,Female,
-6908,1,0,1,6,Hours,1,White,Male,Group A
-6908,2,1,0,1,Days,1,Asian,Male,
-6908,3,1,0,1,Days,1,Asian,Male,Group A
-6908,4,1,0,1,Days,1,Black or African American,Male,Person C
-6908,5,1,0,1,Days,1,,,Race/Gender - Unidentifiable
-6908,6,1,0,1,Days,1,White,Female,Person B
-6908,7,1,0,1,Days,1,Black or African American,Female,Group C
-6908,8,0,1,2,Days,1,White,Male,Group A
-6908,9,1,0,1,Days,1,Hispanic,Male,Person A
-6908,10,1,0,1,Days,1,White,Male,Person E in Group A
-8704,1,1,0,14,Days,1,white,male,
-8704,2,1,0,14,days,1,asian,female,
-8704,3,0,1,14,days,1,asian,male,
-8704,4,0,1,14,days,1,asian,female,
-8704,5,0,1,14,days,1,asian,female,
-8704,6,1,0,20,days,1,asian,female,
-8704,7,1,0,21,days,1,asian,female,
-8704,8,1,0,21,days,1,asian,female,
-8704,9,0,1,21,days,1,asian,female,
-8704,10,1,0,37,days,1,asian,female,
-2138,1,1,0,1,days,1,white,female,
-2138,2,1,0,7,days,1,white,female,her own post
-2138,3,1,0,6,days,1,white,female,
-2138,4,1,0,6,days,1,white,female,
-2138,5,1,0,11,days,1,white,male,
-2138,6,1,0,14,days,1,white,female,
-2138,7,1,0,15,Days,1,White,female,
-2138,8,1,0,17,days,0,,,
-2138,9,1,0,17,days,1,white,female,
-2138,10,1,0,18,days,1,white,female,
-8086,1,1,0,2,days,1,white,female,
-8086,2,1,0,2,days,1,white,female,
-8086,3,1,0,2,days,1,white,female,
-8086,4,1,0,2,days,1,white,female,
-8086,5,1,0,5,days,1,hispanic,female,
-8086,6,1,0,10,days,0,,,
-8086,7,1,0,10,days,0,,,
-8086,8,1,0,11,days,1,white,female,
-8086,9,1,0,11,days,1,white,female,
-8086,10,1,0,17,days,0,,,
-8179,1,1,0,2,hours,1,white,female,
-8179,2,1,0,4,hours,1,white,male,
-8179,3,1,0,22,hours,1,white,female,
-8179,4,1,0,2,days,1,black or African American,male,
-8179,5,1,0,2,days,1,white,male,
-8179,6,1,0,2,days,1,asian,female,
-8179,7,1,0,3,days,1,white,female,
-8179,8,1,0,4,days,1,white,female,
-8179,9,1,0,4,days,1,white,female,
-8179,10,1,0,4,days,1,white,female,
-7511,1,1,0,3,days,1,white,male,
-7511,2,1,0,3,days,1,white,female,
-7511,3,1,0,4,days,1,black or African American,female,
-7511,4,1,0,4,days,1,white,female,
-7511,5,1,0,4,days,1,white,male,
-7511,6,1,0,5,days,1,white,male,
-7511,7,1,0,5,days,1,hispanic,female,
-7511,8,1,0,5,days,1,white,female,
-7511,9,1,0,6,days,1,white,male,
-7511,10,1,0,9,days,1,white,male,
-6696,1,1,0,22,days,1,hispanic,female,
-6696,2,1,0,23,days,1,white,female,
-6696,3,1,0,25,days,1,asian,female,
-6696,4,1,0,30,days,1,asian,female,
-6696,5,1,0,54,days,1,asian,female,
-6696,6,1,0,28,days,0,,,
-6696,7,1,0,34,days,1,asian,male,
-6696,8,1,0,34,days,1,asian,female,
-6696,9,1,0,47,days,1,asian,male,
-6696,10,1,0,50,days,1,asian,female,
-3818,1,1,0,1,days,1,white,female,
-3818,2,1,0,1,days,1,white,female,
-3818,3,1,0,1,days,1,asian,female,
-3818,4,1,0,5,days,1,asian,female,
-3818,5,1,0,4,days,1,asian,female,
-3818,6,1,0,4,days,1,asian,female,
-3818,7,1,0,10,days,0,,,
-3818,8,1,0,20,days,1,asian,male,
-3818,9,1,0,11,days,1,asian,female,skipped one bc it wasn't loading
-3818,10,1,0,12,days,1,asian,female,
+participant_id,order,react,comment,post_tenure,tenure_units,human (y/n),race,gender,notes,manual_diag
+7615,1,1,0,3,Minutes,1,White,Female,,0
+7615,2,1,0,15,Minutes,1,Asian,Male,,0
+7615,3,1,0,5,Days,1,White,Male,,0
+7615,4,1,0,6,Days,1,White,Female,,0
+7615,5,1,0,7,Days,0,,,,0
+7615,6,1,0,7,Days,1,White,Male,,0
+7615,7,1,0,7,Days,1,White,Female,,0
+7615,8,1,0,9,Days,1,Black or African American,Female,,0
+7615,9,1,0,9,Days,1,Black or African American,Female,,0
+7615,10,1,0,10,Days,1,White,Female,,0
+6585,1,1,0,21,Days,1,White,Female,,0
+6585,2,1,0,26,Days,1,Asian,Female,,0
+6585,3,1,0,31,Days,1,White,Female,,0
+6585,4,1,0,46,Days,1,White,Female,,0
+6585,5,1,0,50,Days,1,White,Female,,0
+6585,6,1,0,54,Days,1,White,Female,,0
+6585,7,1,0,67,Days,1,Asian,Female,,0
+6585,8,1,0,68,Days,1,Asian,Female,,0
+6585,9,1,0,70,Days,1,White,Male,,0
+6585,10,1,1,74,Days,1,Asian,Female,,0
+7214,1,1,0,3,Days,,,,"FB was unable to find and show the post, I wasn't able ot get any more information",0
+7214,2,1,0,3,Days,1,White,Female,,0
+7214,3,1,1,5,Days,1,White,Male,,0
+7214,4,1,0,5,Days,1,White,Female,,0
+7214,5,1,0,11,Days,1,Hispanic,Female,,0
+7214,6,1,0,11,Days,1,White,Male,,0
+7214,7,1,0,11,Days,1,White,Male,"The participant reacted to another persons comment on a post, not the post itself",0
+7214,8,1,0,11,Days,1,White,Female,,0
+7214,9,1,0,11,Days,1,White,Female,,0
+7214,10,1,0,18,Days,1,White,Female,,0
+6755,1,1,0,2,Hours,0,,,,0
+6755,2,1,0,7,Hours,1,White,Male,,0
+6755,3,1,0,7,Hours,1,White,Female,,0
+6755,4,0,1,7,Hours,1,Asian,Male,,0
+6755,5,0,1,1,Days,1,Asian,Female,,0
+6755,6,1,0,1,Days,1,Asian,Female,,0
+6755,7,0,1,1,Days,1,Asian,Female,,0
+6755,8,1,0,1,Days,1,Asian,Female,,0
+6755,9,0,1,1,Days,1,Asian,Female,,0
+6755,10,0,1,1,Days,1,Asian,Female,,0
+7650,1,1,1,20,Hours,1,White,Female,,0
+7650,2,1,1,1,Days,1,Hispanic,Female,,0
+7650,3,1,0,1,Days,1,White,Female,,0
+7650,4,1,1,1,Days,1,Asian,Male,,0
+7650,5,0,1,22,Hours,0,,,"friend tagged the particpant in a comment under another post, the participant replied",0
+7650,6,1,1,1,Days,1,White,Female,,0
+7650,7,0,1,2,Days,1,White,Female,,0
+7650,8,1,1,1,Days,1,Hispanic,Female,,0
+7650,9,1,1,1,Days,1,White,Female,,0
+7650,10,0,1,1,Days,1,Asian,Male,,0
+2304,1,1,0,1,Days,0,,,,0
+2304,2,1,0,1,Days,1,White,Female,,0
+2304,3,1,0,1,Days,1,White,Female,,0
+2304,4,1,0,3,Days,1,Hispanic,Female,,0
+2304,5,1,0,4,Days,1,Hispanic,Female,,0
+2304,6,1,1,5,Days,1,White,Female,,0
+2304,7,1,0,5,Days,1,Hispanic,Male,,0
+2304,8,1,0,5,Days,1,White,Female,,0
+2304,9,1,0,5,Days,1,White,Male,,0
+2304,10,1,0,5,Days,1,Asian,Female,,0
+4800,1,1,0,1,Hours,0,White,Female,Celebrity Page,0
+4800,2,0,1,3,Hours,1,White,Female,,0
+4800,3,1,0,1,Days,0,White,Female,Celebrity Page,0
+4800,4,1,0,2,Days,1,White,Male,,0
+4800,5,1,0,4,Days,1,White,Male,,0
+4800,6,1,0,5,Days,1,White,Female,,0
+4800,7,1,0,11,Days,1,White,Female,,0
+4800,8,1,0,10,Days,0,White,Female,Celebrity Page,0
+4800,9,1,0,15,Days,1,White,Female,,0
+4800,10,1,0,13,Days,1,Hispanic,Female,,0
+3876,1,1,0,1,Days,1,Black or African American,Female,,0
+3876,2,0,1,15,Days,0,,,,0
+3876,3,0,0,13,Days,1,Asian,Female,,0
+3876,4,0,1,16,Days,1,Hispanic,Male,,0
+3876,5,1,0,17,Days,1,White,Male,,0
+3876,6,1,1,24,Days,1,White,Female,,0
+3876,7,1,0,44,Days,1,Black or African American,Female,,0
+3876,8,0,1,25,Days,1,White,Female,,0
+3876,9,1,0,26,Days,1,White,Female,,0
+3876,10,1,0,26,Days,1,Asian,Female,,0
+4301,1,0,1,2,Days,1,Hispanic,Female,,0
+4301,2,1,0,5,Days,1,Hispanic,Male,,0
+4301,3,1,0,11,Days,1,Hispanic,Female,,0
+4301,4,1,0,15,Days,1,Hispanic,Female,,0
+4301,5,1,0,9,Days,1,Hispanic,Male,,0
+4301,6,0,1,9,Days,1,Hispanic,Male,,0
+4301,7,0,1,10,Days,1,Hispanic,Female,,0
+4301,8,0,1,10,Days,1,Hispanic,Female,,0
+4301,9,0,1,15,Days,1,Hispanic,Female,,0
+4301,10,0,1,15,Days,1,Hispanic,Female,,0
+8755,1,1,0,1,days,1,white,female,,0
+8755,2,1,0,3,days,1,white,male,,0
+8755,3,1,0,20,days,1,white,female,,0
+8755,4,1,0,35,days,1,asian,female,,0
+8755,5,1,0,35,days,1,white,female,,0
+8755,6,1,0,49,days,1,white,female,,0
+8755,7,1,0,67,days,1,white,female,,0
+8755,8,1,0,67,days,1,white,male,,0
+8755,9,1,0,80,days,0,,,,0
+8755,10,1,0,81,days,1,white,female,,0
+2207,1,1,1,2,Days,1,Hispanic,Female,,0
+2207,2,1,0,2,Days,1,Hispanic,Male,,0
+2207,3,1,0,2,Days,1,Hispanic,Female,,0
+2207,4,1,0,4,Days,0,,,,0
+2207,5,1,0,5,Days,1,Hispanic,Female,,0
+2207,6,1,0,6,Days,1,White,Female,,0
+2207,7,1,0,8,Days,1,Hispanic,Male,,0
+2207,8,1,0,8,Days,1,Hispanic,Male,,0
+2207,9,1,0,6,Days,1,Hispanic,Female,,0
+2207,10,1,0,,,0,,,Tenure - The original post was from over 99 days ago (December 2019),0
+9726,1,1,0,5,Hours,1,White,Female,Participant also 'saved' this post,0
+9726,2,1,0,46,Minutes,1,White,Female,,0
+9726,3,0,1,23,Hours,1,Asian,Male,Participant also 'saved' this post,0
+9726,4,1,1,5,Hours,1,White,Female,"A lot of interaction by the Participant, basically a FB comment fight",0
+9726,5,0,0,1,Days,1,White,Female,Participant only 'saved' this post,0
+9726,6,1,0,19,Hours,1,White,Female,Participant also 'shared' this post,0
+9726,7,0,0,20,Hours,1,Asian,Male,Participant only 'saved' this post,0
+9726,8,1,0,16,Hours,1,White,Female,,0
+9726,9,0,1,20,Hours,1,White,Male,,0
+9726,10,1,0,2,Days,1,White,Female,,0
+3163,1,1,0,,,1,Asian,Female,"Tenure - Post was from over 99 days ago (March 10th, 2020)",0
+3163,2,1,0,,,1,White,Male,"Tenure - Post was from over 99 days ago (21 weeks); Participant reacted to multiple comments on this post, not the post itself",0
+3163,3,1,0,,,0,,,"Tenure - Post was from over 99 days ago (January 10th, 2020)",0
+3163,4,1,1,,,1,Asian,Male,"Tenure - Post was from over 99 days ago (October 27th, 2019)",0
+3163,5,1,1,,,1,White,Female,"Tenure - Post was from over 99 days ago (October 27th, 2019)",0
+3163,6,1,1,,,1,White,Male,"Tenure - Post was from over 99 days ago (October 27th, 2019)",0
+3163,7,1,0,,,1,Asian,Male,"Tenure - Post was from over 99 days ago (April 15th, 2019)",0
+3163,8,1,0,,,1,White,Male,"Tenure - Post was from over 99 days ago (August 27th, 2019)",0
+3163,9,1,0,,,0,,,"Tenure - Post was from over 99 days ago (August 30th, 2019)",0
+3163,10,1,1,,,1,Asian,Female,"Tenure - Post was from over 99 days ago (August 31st, 2019)",0
+6604,1,,,,,,,,"Participant doesn't interact with posts on FB, only lurks and uses it to network. We scrolled over a year back and there was no relevant recent activity.",0
+6604,2,,,,,,,,,0
+6604,3,,,,,,,,,0
+6604,4,,,,,,,,,0
+6604,5,,,,,,,,,0
+6604,6,,,,,,,,,0
+6604,7,,,,,,,,,0
+6604,8,,,,,,,,,0
+6604,9,,,,,,,,,0
+6604,10,,,,,,,,,0
+2177,1,1,0,3,Days,1,White,Female,,0
+2177,2,0,1,4,Days,1,White,Female,,0
+2177,3,1,0,4,Days,0,,,,0
+2177,4,1,0,4,Days,0,,,,0
+2177,5,1,0,5,Days,1,White,Female,,0
+2177,6,1,0,6,Days,1,Asian,Male,,0
+2177,7,1,0,4,Days,1,Hispanic,Female,,0
+2177,8,1,0,5,Days,0,,,,0
+2177,9,1,0,5,Days,0,,,,0
+2177,10,1,0,6,Days,0,,,,0
+213899999,1,0,1,10,Days,1,Asian,Female,,1
+213899999,2,0,1,10,Days,1,Asian,Female,,1
+213899999,3,1,0,9,Days,1,Asian,Female,,1
+213899999,4,1,0,11,Days,1,Asian,Male,,1
+213899999,5,0,1,1,Days,1,Asian,Male,,1
+213899999,6,1,0,15,Days,1,Asian,Female,,1
+213899999,7,0,1,13,Days,1,Asian,Female,,1
+213899999,8,1,0,14,Days,1,Asian,Female,,1
+213899999,9,1,0,16,Days,1,Asian,Male,,1
+213899999,10,1,0,19,Days,1,Asian,Male,,1
+6243,1,0,1,50,Days,1,Asian,Female,,0
+6243,2,0,1,50,Days,1,Asian,Female,,0
+6243,3,1,0,562,Days,1,Asian,Female,,0
+6243,4,0,1,578,Days,1,Asian,Female,,0
+6243,5,0,1,584,Days,1,Asian,Male,,0
+6243,6,1,0,775,Days,1,Asian,Female,,0
+6243,7,0,1,906,Days,1,White,Female,,0
+6243,8,0,1,906,Days,1,White,Female,,0
+6243,9,0,1,906,Days,1,White,Female,,0
+6243,10,0,1,906,Days,1,Asian,Male,,0
+7660,1,1,0,1,days,1,white,female,,0
+7660,2,1,0,1,days,1,white,female,,0
+7660,3,1,0,2,days,1,black or African American,male,,0
+7660,4,1,0,2,days,1,white,female,,0
+7660,5,0,1,2,days,1,black or African American,male,,0
+7660,6,1,0,2,days,1,white,female,,0
+7660,7,1,0,4,days,1,white,female,,0
+7660,8,0,1,6,days,1,white,male,,0
+7660,9,1,0,6,days,1,white,female,,0
+7660,10,1,0,6,days,1,white,female,,0
+1937,1,1,0,2,days,1,asian,male,,0
+1937,2,1,0,2,days,1,asian,male,,0
+1937,3,1,0,2,days,1,black or African American,male,,0
+1937,4,1,0,1,days,1,asian,male,,0
+1937,5,0,1,2,days,1,asian,male,,0
+1937,6,0,1,2,days,1,asian,male,,0
+1937,7,1,0,1,days,1,asian,male,,0
+1937,8,1,0,2,days,1,asian,female,,0
+1937,9,1,0,1,days,1,asian,male,,0
+1937,10,1,0,3,days,1,white,male,,0
+5458,1,1,0,2,hours,1,asian,female,,0
+5458,2,1,0,20,hours,1,white,female,,0
+5458,3,1,0,18,hours,1,asian,male,,0
+5458,4,1,0,3,days,1,white,male,,0
+5458,5,1,0,20,hours,1,asian,female,,0
+5458,6,1,0,2,days,1,white,male,,0
+5458,7,0,1,21,hours,1,white,male,,0
+5458,8,0,1,21,hours,1,asian,female,,0
+5458,9,1,0,21,hours,1,white,male,,0
+5458,10,1,0,1,days,0,,,,0
+9287,1,1,0,3,Days,1,Asian,Female,,0
+9287,2,1,0,6,Days,1,White,Male,,0
+9287,3,0,1,7,Days,1,White,Male,,0
+9287,4,1,0,15,Days,1,White,Male,,0
+9287,5,1,1,16,Days,1,Asian,Male,,0
+9287,6,1,0,13,Days,1,White,Male,,0
+9287,7,1,1,19,Days,1,Black or African American,Female,,0
+9287,8,1,0,23,Days,1,White,Female,,0
+9287,9,1,0,26,Days,1,White,Female,,0
+9287,10,1,0,36,Days,1,White,Male,,0
+8464,1,1,0,9,Days,1,Black or African American,Female,,0
+8464,2,1,0,5,Days,1,White,Female,,0
+8464,3,1,0,5,Days,0,,,,0
+8464,4,1,0,7,Days,1,White,Male,,0
+8464,5,1,0,8,Days,1,White,Female,,0
+8464,6,1,0,9,Days,1,White,Female,,0
+8464,7,1,0,9,Days,1,White,Male,,0
+8464,8,1,0,10,Days,1,White,Male,,0
+8464,9,1,0,12,Days,1,White,Female,,0
+8464,10,1,0,13,Days,1,Hispanic,Female,,0
+3038,1,1,0,1,Days,1,White,Female,,0
+3038,2,1,0,15,Hours,1,Asian,Male,,0
+3038,3,1,0,1,Days,1,Asian,Male,,0
+3038,4,1,0,3,Days,1,Asian,Male,,0
+3038,5,1,0,3,Days,1,White,Male,,0
+3038,6,1,0,3,Days,1,Asian,Female,,0
+3038,7,1,0,3,Days,1,Asian,Male,,0
+3038,8,1,0,4,Days,1,Asian,Female,,0
+3038,9,1,0,4,Days,1,Asian,Female,,0
+3038,10,1,0,5,Days,1,Asian,Female,,0
+7866,1,1,0,3,Days,1,Black or African American,Female,,0
+7866,2,1,0,4,Days,1,Black or African American,Female,,0
+7866,3,1,0,5,Days,1,Black or African American,Female,,0
+7866,4,1,0,9,Days,1,Black or African American,Female,,0
+7866,5,1,0,5,Days,1,White,Male,,0
+7866,6,1,0,14,Days,1,Black or African American,Female,,0
+7866,7,1,0,15,Days,0,,,,0
+7866,8,1,0,14,Days,1,Black or African American,Female,,0
+7866,9,1,0,16,Days,1,White,Male,,0
+7866,10,1,0,16,Days,1,Black or African American,Female,,0
+6639,1,1,0,3,days,0,,,,0
+6639,2,1,0,3,days,1,asian,male,,0
+6639,3,1,0,4,days,1,black or African American,male,,0
+6639,4,1,0,4,days,1,asian,male,,0
+6639,5,0,1,5,days,1,white,male,,0
+6639,6,1,0,5,days,1,white,female,,0
+6639,7,0,1,8,days,1,white,female,,0
+6639,8,0,1,8,days,0,,,,0
+6639,9,1,0,8,days,1,white,female,,0
+6639,10,0,1,10,days,1,white,female,,0
+5449,1,1,0,,,1,Asian,Male,"Tenure - reacted to a post from July 1st, 2019",0
+5449,2,1,0,,,1,Asian,Female,Tenure - reacted to a post from about 4 years ago,0
+5449,3,1,0,,,0,Asian,Male,"Celebrity's Page; Tenure - reacted to a post from April 30th, 2018",0
+5449,4,1,0,,,1,Asian,Male,"Tenure - reacted to a post from December 20th, 2017",0
+5449,5,1,0,,,0,Asian,Male,"Celebrity's Page; Tenure - reacted to a post from December 10th, 2017",0
+5449,6,1,0,,,0,Asian,Male,"Celebrity's Page; Tenure - reacted to a post from December 7th, 2017",0
+5449,7,1,0,,,1,Asian,Female,"Tenure - reacted to a post from Decemebr 6th, 2017",0
+5449,8,1,0,,,0,Asian,Male,"Celebrity's Page; Tenure - reacted to a post from November 28th, 2017",0
+5449,9,1,0,,,0,Asian,Male,"Celebrity's Page; Tenure - reacted to a post from November 27th, 2017",0
+5449,10,0,1,,,1,Asian,Male,"Tenure - commented on a post from October 23rd, 2017",0
+1989,1,0,1,2,Days,1,White,Female,,0
+1989,2,1,0,2,Days,1,White,Female,,0
+1989,3,0,1,9,Days,1,White,Female,,0
+1989,4,1,0,9,Days,1,White,Female,,0
+1989,5,0,1,26,Days,1,White,Female,,0
+1989,6,1,0,26,Days,1,White,Female,,0
+1989,7,0,1,27,Days,1,White,Female,,0
+1989,8,0,1,27,Days,1,White,Female,,0
+1989,9,1,0,36,Days,1,White,Female,,0
+1989,10,1,0,36,Days,1,White,Female,,0
+8968,1,1,0,3,Days,1,Asian,Female,,0
+8968,2,0,1,4,Days,1,Asian,Female,,0
+8968,3,0,1,4,Days,1,Asian,Female,,0
+8968,4,1,0,4,Days,1,Asian,Female,,0
+8968,5,0,1,5,Days,1,Asian,Female,,0
+8968,6,0,1,6,Days,1,Asian,Female,,0
+8968,7,1,0,6,Days,1,Asian,Female,,0
+8968,8,1,0,6,Days,1,White,Female,,0
+8968,9,0,1,7,Days,1,White,Female,,0
+8968,10,1,0,7,Days,1,White,Female,,0
+4810,1,1,0,6,Days,0,,,,0
+4810,2,0,1,8,Days,1,White,Female,,0
+4810,3,1,0,6,Days,1,White,Male,,0
+4810,4,1,0,8,Days,1,White,Male,,0
+4810,5,1,0,11,Days,1,White,Female,,0
+4810,6,1,0,14,Days,1,White,Female,,0
+4810,7,1,0,16,Days,1,White,Female,,0
+4810,8,1,0,18,Days,1,White,Female,,0
+4810,9,1,0,19,Days,1,White,Female,,0
+4810,10,1,0,22,Days,0,,,,0
+2574,1,1,0,3,Days,1,Hispanic,Female,,0
+2574,2,1,0,3,Days,1,White,Female,,0
+2574,3,0,1,5,Days,0,,,,0
+2574,4,0,1,3,Days,1,White,Female,,0
+2574,5,0,1,4,Days,1,White,Female,,0
+2574,6,0,1,4,Days,1,White,Female,,0
+2574,7,0,1,4,Days,1,White,Female,,0
+2574,8,1,0,7,Days,0,,,,0
+2574,9,0,1,8,Days,1,White,Female,,0
+2574,10,1,0,9,Days,1,White,Female,,0
+3313,1,0,1,1,Days,1,Asian,Female,,0
+3313,2,1,0,3,Days,1,White,Female,,0
+3313,3,0,1,4,Days,1,White,Female,,0
+3313,4,0,1,3,Days,1,Asian,Female,,0
+3313,5,0,1,4,Days,1,White,Female,,0
+3313,6,0,1,4,Days,1,White,Female,,0
+3313,7,0,1,4,Days,1,White,Female,,0
+3313,8,0,1,4,Days,1,Asian,Female,,0
+3313,9,0,1,5,Days,1,Black or African American,Male,,0
+3313,10,0,1,5,Days,0,,,,0
+7031,1,1,0,2,days,1,white,male,,0
+7031,2,1,0,2,days,1,white,female,,0
+7031,3,1,0,3,days,1,white,female,,0
+7031,4,1,0,2,days,1,white,female,,0
+7031,5,1,0,10,days,0,,,,0
+7031,6,1,0,2,weeks,1,white,male,,0
+7031,7,1,0,2,weeks,1,white,female,,0
+7031,8,1,0,3,weeks,0,,,,0
+7031,9,1,0,5,weeks,1,white,male,,0
+7031,10,1,0,5,weeks,1,white,female,,0
+5775,1,1,0,1,days,1,white,female,,0
+5775,2,1,0,1,days,1,white,female,,0
+5775,3,1,0,1,days,1,white,male,,0
+5775,4,1,0,1,days,1,hispanic,female,,0
+5775,5,1,0,1,days,1,white,female,,0
+5775,6,1,0,1,days,1,white,female,,0
+5775,7,1,0,1,days,1,asian,female,,0
+5775,8,1,0,2,days,1,white,male,,0
+5775,9,1,0,2,days,1,white,male,,0
+5775,10,1,0,3,days,1,white,female,,0
+6164,1,1,0,14,days,1,asian,male,,0
+6164,2,1,0,17,days,1,asian,male,,0
+6164,3,1,0,25,days,1,asian,female,,0
+6164,4,1,0,1,months,0,,,,0
+6164,5,1,0,4,months,0,,,,0
+6164,6,1,0,1,year,1,asian,male,,0
+6164,7,0,1,2,year,0,,,,0
+6164,8,1,0,2,year,0,,,,0
+6164,9,1,0,2,year,1,asian,male,,0
+6164,10,1,0,2,year,1,asian,male,,0
+9706,1,1,0,6,days,1,white,female,,0
+9706,2,1,0,12,days,1,white,male,,0
+9706,3,1,0,12,days,1,white,female,,0
+9706,4,1,0,23,days,1,asian,female,,0
+9706,5,1,0,23,days,1,asian,female,,0
+9706,6,1,0,24,days,0,,,,0
+9706,7,1,0,25,days,1,asian,male,,0
+9706,8,1,0,27,days,1,white,female,,0
+9706,9,1,0,32,days,1,black or African American,female,,0
+9706,10,1,0,36,days,1,asian,male,,0
+4463,1,1,0,1,days,1,asian,female,,0
+4463,2,1,0,1,days,1,asian,male,,0
+4463,3,1,0,3,days,0,,,,0
+4463,4,1,0,3,days,1,asian,male,,0
+4463,5,1,0,3,days,1,asian,female,,0
+4463,6,1,0,3,days,1,asian,male,,0
+4463,7,1,0,4,days,1,asian,female,,0
+4463,8,1,0,4,days,0,,,,0
+4463,9,1,0,4,days,1,white,female,,0
+4463,10,1,0,5,days,1,white,female,,0
+3984,1,1,0,1,days,0,,,,0
+3984,2,1,0,1,days,0,,,,0
+3984,3,1,0,1,days,0,,,,0
+3984,4,1,0,1,days,1,white,female,,0
+3984,5,1,0,2,days,1,white,female,,0
+3984,6,0,1,3,days,1,white,male,,0
+3984,7,1,0,2,days,1,hispanic,male,,0
+3984,8,1,0,2,days,1,hispanic,female,,0
+3984,9,1,0,3,days,1,hispanic,male,,0
+3984,10,1,0,2,year,0,,,,0
+7618,1,1,0,4,Hours,0,,,society and culture website,0
+7618,2,1,0,23,Hours,1,White,Male,,0
+7618,3,1,0,2,Days,1,White,Female,,0
+7618,4,1,0,4,Days,1,White,Female,,0
+7618,5,1,1,6,Days,1,White,Male,in turkish,0
+7618,6,1,0,10,Days,1,White,Female,,0
+7618,7,1,0,10,Days,1,White,Female,in turkish,0
+7618,8,1,0,12,Days,1,White,Female,,0
+7618,9,1,0,16,Days,1,White,Male,,0
+7618,10,1,0,16,Days,1,White,Male,,0
+4877,1,1,0,1,Days,1,White,Female,,0
+4877,2,1,0,4,Days,1,White,Female,,0
+4877,3,1,0,7,Days,1,Hispanic,Female,,0
+4877,4,1,0,8,Days,1,Black or African American,Female,,0
+4877,5,1,0,8,Days,1,Hispanic,Female,,0
+4877,6,1,0,10,Days,1,Hispanic,Female,,0
+4877,7,1,0,12,Days,1,Hispanic,Female,,0
+4877,8,1,0,11,Days,1,Black or African American,Female,,0
+4877,9,1,0,10,Days,1,Asian,Female,,0
+4877,10,1,0,,Days,1,Hispanic,Female,493 days ago. Wouldn't let me enter it,0
+7124,1,1,0,1,days,1,asian,female,,0
+7124,2,1,0,1,days,1,asian,male,,0
+7124,3,1,0,2,days,1,asian,male,,0
+7124,4,1,0,2,days,1,asian,female,,0
+7124,5,1,0,2,days,1,asian,female,,0
+7124,6,1,0,2,days,1,asian,female,,0
+7124,7,1,0,3,days,1,white,female,,0
+7124,8,1,0,5,days,1,asian,male,,0
+7124,9,0,1,7,days,1,asian,male,,0
+7124,10,1,0,7,days,1,asian,male,,0
+3637,1,1,0,1,days,0,,,,0
+3637,2,1,0,2,days,1,white,male,,0
+3637,3,1,0,2,days,1,white,female,,0
+3637,4,0,1,3,days,1,white,female,,0
+3637,5,1,0,3,days,1,white,female,,0
+3637,6,1,0,3,days,1,white,female,,0
+3637,7,1,0,3,days,1,white,female,,0
+3637,8,1,0,5,days,1,white,female,,0
+3637,9,0,1,5,days,1,white,female,,0
+3637,10,1,0,5,days,1,white,female,,0
+3446,1,1,0,18,hours,1,white,male,,0
+3446,2,1,0,1,days,1,white,female,,0
+3446,3,1,0,1,days,1,asian,female,,0
+3446,4,1,0,22,hours,1,white,female,,0
+3446,5,1,0,1,days,1,white,female,,0
+3446,6,1,0,1,days,1,white,female,,0
+3446,7,1,0,14,days,1,asian,female,,0
+3446,8,0,1,3,days,1,Black or African American,male,,0
+3446,9,1,1,4,days,1,asian,female,,0
+3446,10,1,0,8,days,1,asian,male,,0
+6377,1,0,0,1,Days,1,Hispanic,Female,Participant saved the post,0
+6377,2,1,0,1,Hours,1,White,Male,,0
+6377,3,1,0,2,Hours,1,White,Male,,0
+6377,4,1,0,5,Hours,1,White,Male,,0
+6377,5,0,0,1,Days,1,White,Female,Participant saved a link from the post,0
+6377,6,1,0,20,Hours,1,White,Male,,0
+6377,7,1,0,1,Days,1,White,Female,,0
+6377,8,1,0,20,Hours,1,White,Male,,0
+6377,9,0,0,2,Days,0,,,Participant saved a link from the post,0
+6377,10,1,0,8,Days,1,Asian,Female,Participant also reacted to a comment on the post,0
+4405,1,0,0,2,days,1,asian,female,post was by the participant,0
+4405,2,0,0,2,days,1,asian,female,post was by the participant,0
+4405,3,0,0,2,days,1,asian,female,post was by the participant,0
+4405,4,0,0,2,days,1,asian,female,post was by the participant,0
+4405,5,0,0,3,days,1,asian,female,post was by the participant,0
+4405,6,0,0,5,days,1,asian,female,post was by the participant,0
+4405,7,1,0,5,days,1,white,female,,0
+4405,8,0,0,7,days,1,asian,female,post was by the participant,0
+4405,9,0,0,8,days,1,asian,female,post was by the participant,0
+4405,10,1,0,8,days,1,asian,female,,0
+4904,1,1,0,6,hours,1,black or African American,female,,0
+4904,2,1,0,5,hours,1,asian,male,,0
+4904,3,1,0,4,days,1,asian,male,,0
+4904,4,1,0,6,days,1,asian,female,,0
+4904,5,1,0,3,days,1,hispanic,male,,0
+4904,6,1,0,3,days,1,white,female,,0
+4904,7,1,0,1,days,1,asian,male,,0
+4904,8,1,0,21,hours,1,white,female,,0
+4904,9,1,0,17,hours,1,white,female,,0
+4904,10,1,0,1,days,1,asian,male,,0
+9378,1,1,0,22,Hours,0,,,,0
+9378,2,1,0,22,Hours,1,White,Female,,0
+9378,3,1,1,16,Hours,1,White,Male,,0
+9378,4,1,0,14,Hours,1,White,Female,,0
+9378,5,0,1,1,Days,1,White,Male,"Friend replied to Participant's comment, and participant interacted with the reply as well",0
+9378,6,1,0,22,Hours,1,White,Female,,0
+9378,7,1,0,1,Days,1,Asian,Female,,0
+9378,8,1,0,20,Hours,1,White,Female,,0
+9378,9,1,0,2,Days,1,Black or African American,Male,,0
+9378,10,1,0,2,Days,1,Asian,Female,,0
+2454,1,1,0,1,Days,1,Hispanic,Female,,0
+2454,2,1,0,17,Hours,1,White,Female,,0
+2454,3,1,0,1,Days,1,White,Female,,0
+2454,4,1,0,3,Days,1,White,Female,,0
+2454,5,1,0,7,Days,1,White,Female,,0
+2454,6,1,0,4,Days,1,Hispanic,Female,,0
+2454,7,1,0,5,Days,1,White,Female,,0
+2454,8,1,0,5,Days,1,White,Female,,0
+2454,9,1,0,4,Days,1,White,Female,,0
+2454,10,1,0,5,Days,1,White,Female,,0
+7404,1,1,0,1,Days,1,White,Female,,0
+7404,2,1,0,1,Days,1,White,Female,,0
+7404,3,1,0,2,Days,1,White,Female,Person E,0
+7404,4,1,0,2,Days,1,Asian,Female,,0
+7404,5,1,0,3,Days,1,White,Female,,0
+7404,6,1,0,5,Days,1,White,Female,,0
+7404,7,1,0,5,Days,1,White,Female,,0
+7404,8,1,0,7,Days,1,Asian,Female,,0
+7404,9,1,0,7,Days,1,White,Female,Person A,0
+7404,10,1,0,6,Days,1,White,Female,,0
+6908,1,0,1,6,Hours,1,White,Male,Group A,0
+6908,2,1,0,1,Days,1,Asian,Male,,0
+6908,3,1,0,1,Days,1,Asian,Male,Group A,0
+6908,4,1,0,1,Days,1,Black or African American,Male,Person C,0
+6908,5,1,0,1,Days,1,,,Race/Gender - Unidentifiable,0
+6908,6,1,0,1,Days,1,White,Female,Person B,0
+6908,7,1,0,1,Days,1,Black or African American,Female,Group C,0
+6908,8,0,1,2,Days,1,White,Male,Group A,0
+6908,9,1,0,1,Days,1,Hispanic,Male,Person A,0
+6908,10,1,0,1,Days,1,White,Male,Person E in Group A,0
+8704,1,1,0,14,Days,1,white,male,,0
+8704,2,1,0,14,days,1,asian,female,,0
+8704,3,0,1,14,days,1,asian,male,,0
+8704,4,0,1,14,days,1,asian,female,,0
+8704,5,0,1,14,days,1,asian,female,,0
+8704,6,1,0,20,days,1,asian,female,,0
+8704,7,1,0,21,days,1,asian,female,,0
+8704,8,1,0,21,days,1,asian,female,,0
+8704,9,0,1,21,days,1,asian,female,,0
+8704,10,1,0,37,days,1,asian,female,,0
+2138,1,1,0,1,days,1,white,female,,0
+2138,2,1,0,7,days,1,white,female,her own post,0
+2138,3,1,0,6,days,1,white,female,,0
+2138,4,1,0,6,days,1,white,female,,0
+2138,5,1,0,11,days,1,white,male,,0
+2138,6,1,0,14,days,1,white,female,,0
+2138,7,1,0,15,Days,1,White,female,,0
+2138,8,1,0,17,days,0,,,,0
+2138,9,1,0,17,days,1,white,female,,0
+2138,10,1,0,18,days,1,white,female,,0
+8086,1,1,0,2,days,1,white,female,,0
+8086,2,1,0,2,days,1,white,female,,0
+8086,3,1,0,2,days,1,white,female,,0
+8086,4,1,0,2,days,1,white,female,,0
+8086,5,1,0,5,days,1,hispanic,female,,0
+8086,6,1,0,10,days,0,,,,0
+8086,7,1,0,10,days,0,,,,0
+8086,8,1,0,11,days,1,white,female,,0
+8086,9,1,0,11,days,1,white,female,,0
+8086,10,1,0,17,days,0,,,,0
+8179,1,1,0,2,hours,1,white,female,,0
+8179,2,1,0,4,hours,1,white,male,,0
+8179,3,1,0,22,hours,1,white,female,,0
+8179,4,1,0,2,days,1,black or African American,male,,0
+8179,5,1,0,2,days,1,white,male,,0
+8179,6,1,0,2,days,1,asian,female,,0
+8179,7,1,0,3,days,1,white,female,,0
+8179,8,1,0,4,days,1,white,female,,0
+8179,9,1,0,4,days,1,white,female,,0
+8179,10,1,0,4,days,1,white,female,,0
+7511,1,1,0,3,days,1,white,male,,0
+7511,2,1,0,3,days,1,white,female,,0
+7511,3,1,0,4,days,1,black or African American,female,,0
+7511,4,1,0,4,days,1,white,female,,0
+7511,5,1,0,4,days,1,white,male,,0
+7511,6,1,0,5,days,1,white,male,,0
+7511,7,1,0,5,days,1,hispanic,female,,0
+7511,8,1,0,5,days,1,white,female,,0
+7511,9,1,0,6,days,1,white,male,,0
+7511,10,1,0,9,days,1,white,male,,0
+6696,1,1,0,22,days,1,hispanic,female,,0
+6696,2,1,0,23,days,1,white,female,,0
+6696,3,1,0,25,days,1,asian,female,,0
+6696,4,1,0,30,days,1,asian,female,,0
+6696,5,1,0,54,days,1,asian,female,,0
+6696,6,1,0,28,days,0,,,,0
+6696,7,1,0,34,days,1,asian,male,,0
+6696,8,1,0,34,days,1,asian,female,,0
+6696,9,1,0,47,days,1,asian,male,,0
+6696,10,1,0,50,days,1,asian,female,,0
+3818,1,1,0,1,days,1,white,female,,0
+3818,2,1,0,1,days,1,white,female,,0
+3818,3,1,0,1,days,1,asian,female,,0
+3818,4,1,0,5,days,1,asian,female,,0
+3818,5,1,0,4,days,1,asian,female,,0
+3818,6,1,0,4,days,1,asian,female,,0
+3818,7,1,0,10,days,0,,,,0
+3818,8,1,0,20,days,1,asian,male,,0
+3818,9,1,0,11,days,1,asian,female,skipped one bc it wasn't loading,0
+3818,10,1,0,12,days,1,asian,female,,0
