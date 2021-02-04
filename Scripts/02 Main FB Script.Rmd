@@ -75,7 +75,7 @@ m.pymk.df.all <- m.pymk.df.all %>%
     mutate(pct_friend_rank = order(order(mutual.friends/total_friends, decreasing = T)))
 
 m.pymk.df.all <- m.pymk.df.all %>% group_by(primary.id) %>%
-  mutate(new.rank = order(order(pymk.order, decreasing = T)))
+  mutate(new.rank = order(order(pymk.order, decreasing = F)))
 
 ```
 
@@ -2161,7 +2161,6 @@ ggplot(l.dat, aes(x = factor(group), y=prob.same.race.diff, fill = source)) +
   scale_x_discrete(name ="Ranking Group", 
                    breaks = c("1","2","0", "-1"),
                     labels=c("Top 10", "Top 20", "Top 5", "??"))
-
 
 #t.test((m.newsfeed.df2 %>% filter(nf.order <= 10))$race.in.group, m.recent.df$race.in.group)
 

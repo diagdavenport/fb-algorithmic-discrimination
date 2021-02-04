@@ -104,7 +104,7 @@ m.pymk.df.all <- m.pymk.df.all %>%
     mutate(pct_friend_rank = order(order(mutual.friends/total_friends, decreasing = T)))
 
 m.pymk.df.all <- m.pymk.df.all %>% group_by(primary.id) %>%
-    mutate(new.rank = order(order(pymk.order, decreasing = T)))
+    mutate(new.rank = order(order(pymk.order, decreasing = F)))
 
 ```
 
@@ -2538,7 +2538,7 @@ pd <- position_dodge(0.01)
 topleft <- ggplot(l.dat, aes(x=norm.quartile, y=mean.rating, colour=religion.in.group, group=religion.in.group)) +
   geom_errorbar(aes(ymin=mean.rating-ci, ymax=mean.rating+ci, colour=religion.in.group), width=.1, position=pd) + 
   geom_point(aes(shape = religion.in.group), position=pd, size=3) +
-  geom_line( aes(linetype=religion.in.group, color=religion.in.group) , position=pd) + labs(title = "Newsfeed Ranking by Preference (India)") + 
+  geom_line( aes(linetype=religion.in.group, color=religion.in.group) , position=pd) + labs(title = "PYMK Ranking by Preference (India)") + 
   ylab("Mean number of slots \nabove median rank") + 
   xlab(common.x.lab) +
   scale_colour_manual(values=c("#CC79A7", "#009E73"), 
@@ -2565,7 +2565,7 @@ topright <- ggplot(l.dat, aes(x=norm.quartile, y=prob5, colour=religion.in.group
   geom_errorbar(aes(ymin=prob5-ci, ymax=prob5+ci, colour=religion.in.group), width=.1, position=pd) + 
   geom_point(aes(shape = religion.in.group), position=pd, size=3) +
   geom_line( aes(linetype=religion.in.group, color=religion.in.group) , position=pd) + 
-  labs(title = "Newsfeed Top 5 by Preference (India)") + 
+  labs(title = "PYMK Top 5 by Preference (India)") + 
   ylab("Pr(Top 5)") + 
   xlab("") +
   scale_colour_manual(values=c("#CC79A7", "#009E73"), 
@@ -2588,7 +2588,7 @@ botleft <- ggplot(l.dat, aes(x=norm.quartile, y=prob10, colour=religion.in.group
   geom_errorbar(aes(ymin=prob10-ci, ymax=prob10+ci, colour=religion.in.group), width=.1, position=pd) + 
   geom_point(aes(shape = religion.in.group), position=pd, size=3) +
   geom_line( aes(linetype=religion.in.group, color=religion.in.group) , position=pd) + 
-  labs(title = "Newsfeed Top 10 by Preference (India)") + 
+  labs(title = "PYMK Top 10 by Preference (India)") + 
   ylab("Pr(Top 10)") + 
   xlab("") +
   scale_colour_manual(values=c("#CC79A7", "#009E73"), 
@@ -2611,7 +2611,7 @@ botright <- ggplot(l.dat, aes(x=norm.quartile, y=prob15, colour=religion.in.grou
   geom_errorbar(aes(ymin=prob15-ci, ymax=prob15+ci, colour=religion.in.group), width=.1, position=pd) + 
   geom_point(aes(shape = religion.in.group), position=pd, size=3) +
   geom_line( aes(linetype=religion.in.group, color=religion.in.group) , position=pd) + 
-  labs(title = "Newsfeed Top 15 by Preference (India)") + 
+  labs(title = "PYMK Top 15 by Preference (India)") + 
   ylab("Pr(Top 15)") + 
   xlab("") +
   scale_colour_manual(values=c("#CC79A7", "#009E73"), 
