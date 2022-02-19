@@ -30,19 +30,11 @@ theme_set(theme_tufte())
 
 #knitr::opts_chunk$set(cache.extra = rand_seed)
 
-output.dta.early <- read.csv("/Users/diagdavenport/Downloads/Output-2021-08-09.csv")
+output.dta <- read.csv("/Users/diagdavenport/Downloads/Output-2021-09-21.csv")
 
-user.dta.early <- read.csv("/Users/diagdavenport/Downloads/User-2021-08-09.csv")
-
-
-output.dta.r <- read.csv("/Users/diagdavenport/Downloads/Output-2021-09-21.csv")
-
-user.dta.r <- read.csv("/Users/diagdavenport/Downloads/User-2021-09-21.csv")
+user.dta <- read.csv("/Users/diagdavenport/Downloads/User-2021-09-21.csv")
 
 movie.dta <- read.csv("/Users/diagdavenport/Downloads/Movie-2021-09-21.csv")
-
-output.dta <- rbind(output.dta.early, output.dta.r)
-user.dta <- rbind(user.dta.early, user.dta.r)
 
 user.dta <- user.dta %>% filter(user_id != "" & !is.na(time_spent))
 
@@ -129,9 +121,6 @@ sql.data$same.gender <- as.character(sql.data$user_gender) == as.character(sql.d
 sql.data$in.group.strict <- sql.data$in.group & sql.data$same.gender
 
 sql.data$in.group.lax <- sql.data$in.group | sql.data$same.gender
-
-sql.data$in.group.lax <- sql.data$in.group
-
 
 sql.data$group.combo <- paste(sql.data$same.gender, sql.data$in.group)
 
@@ -763,7 +752,6 @@ ggplot(l.dat, aes(x=factor(psych), y=mean.rating, colour=in.group.lax, group=in.
    scale_shape_discrete(name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup"))
-
 
 l.dat <- rbind(l.dat.fast.2, l.dat.slow.2)
 
