@@ -34,6 +34,8 @@ options(ggplot2.continuous.fill = "viridis")
 
 knitr::opts_knit$set(root.dir = '/Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown')
 
+outgroup.ingroup.colors <- c("#DC3220", "#005AB5")
+
 ```
 
 
@@ -256,7 +258,7 @@ pd <- position_dodge(0.1)
 ggplot(l.dat, aes(x=factor(chron_group), fill = religion.in.group, y=rate)) + 
   geom_bar(stat="identity", position="dodge", aes(fill = religion.in.group)) + 
     geom_errorbar(aes(ymin=rate-ci, ymax=rate+ci), colour="black", width=.1, position=position_dodge(.9)) + labs(title = "Ranking group errors") + ylab("Mean ranking boost above chronological rank") + 
-  scale_fill_manual(values=c("#CC79A7", "#009E73"), 
+  scale_fill_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) +
@@ -288,7 +290,7 @@ pd <- position_dodge(0.1)
 ggplot(l.dat, aes(x=norm.quartile, fill = religion.in.group, y=rate)) + 
   geom_bar(stat="identity", position="dodge", aes(fill = religion.in.group)) + 
     geom_errorbar(aes(ymin=rate-ci, ymax=rate+ci), colour="black", width=.1, position=position_dodge(.9)) + labs(title = "Ranking group errors") + ylab("Mean ranking boost above chronological rank") + 
-  scale_fill_manual(values=c("#CC79A7", "#009E73"), 
+  scale_fill_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + facet_wrap(.~clean.login)
@@ -304,7 +306,7 @@ pd <- position_dodge(0.1)
 ggplot(l.dat, aes(x=preference, fill = religion.in.group, y=rate)) + 
   geom_bar(stat="identity", position="dodge", aes(fill = religion.in.group)) + 
     geom_errorbar(aes(ymin=rate-ci, ymax=rate+ci), colour="black", width=.1, position=position_dodge(.9)) + labs(title = "Ranking group errors") + ylab("Mean ranking boost above chronological rank") + 
-  scale_fill_manual(values=c("#CC79A7", "#009E73"), 
+  scale_fill_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup"))
@@ -320,7 +322,7 @@ pd <- position_dodge(0.1)
 ggplot(l.dat, aes(x=norm.quartile, fill = religion.in.group, y=rate)) + 
   geom_bar(stat="identity", position="dodge", aes(fill = religion.in.group)) + 
     geom_errorbar(aes(ymin=rate-ci, ymax=rate+ci), colour="black", width=.1, position=position_dodge(.9)) + labs(title = "Ranking group errors") + ylab("Mean ranking boost above chronological rank") + 
-  scale_fill_manual(values=c("#CC79A7", "#009E73"), 
+  scale_fill_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup"))
@@ -472,7 +474,7 @@ pd <- position_dodge(0.1)
 ggplot(l.dat, aes(x=factor(connect.group), fill = religion.in.group, y=rate)) + 
   geom_bar(stat="identity", position="dodge", aes(fill = religion.in.group)) + 
     geom_errorbar(aes(ymin=rate-ci, ymax=rate+ci), colour="black", width=.1, position=position_dodge(.9)) + labs(title = "Ranking group errors") + ylab("Mean ranking boost above mutual friend rank") + 
-  scale_fill_manual(values=c("#CC79A7", "#009E73"), 
+  scale_fill_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) +
@@ -531,11 +533,11 @@ ggplot(newsfeed.with.misranks, aes(x=new.metric, fill=religion.in.group)) +
   geom_histogram(aes(y=..density..), boundary = 0, alpha=0.7, position="identity") +
   geom_vline(data=mu, aes(xintercept=grp.mean, color=religion.in.group, linetype = religion.in.group)) +
   xlab("Slots above expectation \n(higher numbers=higher ranking relative to expectation)") +
-  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+  scale_colour_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
-  scale_fill_manual(values=c("#CC79A7", "#009E73"), 
+  scale_fill_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
@@ -557,7 +559,7 @@ pd <- position_dodge(0.1)
 ggplot(l.dat, aes(x=religion.in.group, y=rate)) + 
   geom_bar(stat="identity", position="dodge", aes(fill = religion.in.group)) + 
     geom_errorbar(aes(ymin=rate-ci, ymax=rate+ci), colour="black", width=.1, position=position_dodge(.9)) + labs(title = "Ranking group errors") + ylab("Mean ranking boost above expectation") + 
-  scale_fill_manual(values=c("#CC79A7", "#009E73"), 
+  scale_fill_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) +
@@ -574,11 +576,11 @@ ggplot(l.dat, aes(x=factor(preference), y=rate, fill = religion.in.group)) +
   geom_bar(stat="identity", position="dodge") + 
     geom_errorbar(aes(ymin=rate-ci, ymax=rate+ci), colour="black", width=.1, position=position_dodge(.9)) + labs(title = "Ranking group errors") + ylab("Mean ranking boost above expectation") +
   xlab("Stated Preference Rating (7=Most preferred)") +
-  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+  scale_colour_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
-  scale_fill_manual(values=c("#CC79A7", "#009E73"), 
+  scale_fill_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup"))
@@ -590,11 +592,11 @@ ggplot(l.dat %>% filter(preference == 1 & religion.in.group == F), aes(x=prefere
   geom_bar(stat="identity", position="dodge") + 
     geom_errorbar(aes(ymin=rate-ci, ymax=rate+ci), colour="black", width=.1, position=position_dodge(.9)) + labs(title = "Ranking group errors") + ylab("Mean ranking boost above expectation") +
   xlab("Stated Preference Rating (7=Most preferred)") +
-  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+  scale_colour_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
-  scale_fill_manual(values=c("#CC79A7", "#009E73"), 
+  scale_fill_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + xlim(c(0.4,8)) + ylim(c(-15, 15))
@@ -603,11 +605,11 @@ ggplot(l.dat %>% filter(preference == 1), aes(x=preference, y=rate, fill = relig
   geom_bar(stat="identity", position="dodge") + 
     geom_errorbar(aes(ymin=rate-ci, ymax=rate+ci), colour="black", width=.1, position=position_dodge(.9)) + labs(title = "Ranking group errors") + ylab("Mean ranking boost above expectation") +
   xlab("Stated Preference Rating (7=Most preferred)") +
-  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+  scale_colour_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
-  scale_fill_manual(values=c("#CC79A7", "#009E73"), 
+  scale_fill_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + xlim(c(0.4,8)) + ylim(c(-15, 15))
@@ -626,11 +628,11 @@ ggplot(l.dat, aes(x=factor(norm.quartile), y=rate, fill = religion.in.group)) +
   geom_bar(stat="identity", position="dodge") + 
     geom_errorbar(aes(ymin=rate-ci, ymax=rate+ci), colour="black", width=.1, position=position_dodge(.9)) + labs(title = "Ranking group errors") + ylab("Mean ranking boost above expectation") +
   xlab("Normed Preference Rating Quartile (4=Most preferred)") +
-  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+  scale_colour_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
-  scale_fill_manual(values=c("#CC79A7", "#009E73"), 
+  scale_fill_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup"))
@@ -718,7 +720,7 @@ pd <- position_dodge(0.1)
 ggplot(l.dat, aes(x=norm.quartile, fill = religion.in.group, y=rate)) + 
   geom_bar(stat="identity", position="dodge", aes(fill = religion.in.group)) + 
     geom_errorbar(aes(ymin=rate-ci, ymax=rate+ci), colour="black", width=.1, position=position_dodge(.9)) + labs(title = "Ranking group errors") + ylab("Mean ranking boost above mutual friend pct rank") + 
-  scale_fill_manual(values=c("#CC79A7", "#009E73"), 
+  scale_fill_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup"))
@@ -738,11 +740,11 @@ ggplot(pymk.with.misranks, aes(x=new.metric, fill=religion.in.group)) +
   geom_histogram(aes(y=..density..), boundary = 0, alpha=0.7, position="identity") +
   geom_vline(data=mu, aes(xintercept=grp.mean, color=religion.in.group, linetype = religion.in.group)) +
   xlab("Slots above expectation \n(higher numbers=higher ranking relative to expectation)") +
-  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+  scale_colour_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
-  scale_fill_manual(values=c("#CC79A7", "#009E73"), 
+  scale_fill_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
@@ -763,7 +765,7 @@ pd <- position_dodge(0.1)
 ggplot(l.dat, aes(x=religion.in.group, y=rate)) + 
   geom_bar(stat="identity", position="dodge", aes(fill = religion.in.group)) + 
     geom_errorbar(aes(ymin=rate-ci, ymax=rate+ci), colour="black", width=.1, position=position_dodge(.9)) + labs(title = "Ranking group errors") + ylab("Mean ranking boost above expectation") + 
-  scale_fill_manual(values=c("#CC79A7", "#009E73"), 
+  scale_fill_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) +
@@ -780,11 +782,11 @@ ggplot(l.dat, aes(x=factor(familiarity), y=rate, fill = religion.in.group)) +
   geom_bar(stat="identity", position="dodge") + 
     geom_errorbar(aes(ymin=rate-ci, ymax=rate+ci), colour="black", width=.1, position=position_dodge(.9)) + labs(title = "Ranking group errors") + ylab("Mean ranking boost above expectation") +
   xlab("Stated Preference Rating (7=Most preferred)") +
-  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+  scale_colour_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
-  scale_fill_manual(values=c("#CC79A7", "#009E73"), 
+  scale_fill_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup"))
@@ -796,11 +798,11 @@ ggplot(l.dat %>% filter(familiarity == 1 & religion.in.group == F), aes(x=famili
   geom_bar(stat="identity", position="dodge") + 
     geom_errorbar(aes(ymin=rate-ci, ymax=rate+ci), colour="black", width=.1, position=position_dodge(.9)) + labs(title = "Ranking group errors") + ylab("Mean ranking boost above expectation") +
   xlab("Stated Preference Rating (7=Most preferred)") +
-  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+  scale_colour_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
-  scale_fill_manual(values=c("#CC79A7", "#009E73"), 
+  scale_fill_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + xlim(c(0.4,8)) + ylim(c(-15, 15))
@@ -809,11 +811,11 @@ ggplot(l.dat %>% filter(familiarity == 1), aes(x=familiarity, y=rate, fill = rel
   geom_bar(stat="identity", position="dodge") + 
     geom_errorbar(aes(ymin=rate-ci, ymax=rate+ci), colour="black", width=.1, position=position_dodge(.9)) + labs(title = "Ranking group errors") + ylab("Mean ranking boost above expectation") +
   xlab("Stated Preference Rating (7=Most preferred)") +
-  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+  scale_colour_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
-  scale_fill_manual(values=c("#CC79A7", "#009E73"), 
+  scale_fill_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + xlim(c(0.4,8)) + ylim(c(-15, 15))
@@ -833,11 +835,11 @@ ggplot(l.dat, aes(x=norm.quartile, y=rate, fill = religion.in.group)) +
   geom_bar(stat="identity", position="dodge") + 
     geom_errorbar(aes(ymin=rate-ci, ymax=rate+ci), colour="black", width=.1, position=position_dodge(.9)) + labs(title = "Ranking group errors") + ylab("Mean ranking boost above expectation") +
   xlab("Norm Stated Familiarity Rating Quartile (4=Most familiar)") +
-  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+  scale_colour_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
-  scale_fill_manual(values=c("#CC79A7", "#009E73"), 
+  scale_fill_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup"))
@@ -1468,7 +1470,7 @@ topright <- ggplot(l.dat, aes(x=preference, y=prob5)) +
   labs(title = "Newsfeed Top 5 by Preference (India)") + 
   ylab("Pr(Top 5)") + 
   xlab(common.x.lab) +
-  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+  scale_colour_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
@@ -1491,7 +1493,7 @@ botleft <- ggplot(l.dat, aes(x=preference, y=prob10)) +
   labs(title = "Newsfeed Top 10 by Preference (India)") + 
   ylab("Pr(Top 10)") + 
   xlab(common.x.lab) +
-  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+  scale_colour_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
@@ -1514,7 +1516,7 @@ botright <- ggplot(l.dat, aes(x=preference, y=prob15)) +
   labs(title = "Newsfeed Top 15 by Preference (India)") + 
   ylab("Pr(Top 15)") + 
   xlab(common.x.lab) +
-  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+  scale_colour_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
@@ -1577,7 +1579,7 @@ topright <- ggplot(l.dat, aes(x=norm.quartile, y=prob5)) +
   labs(title = "Newsfeed Top 5 by Preference (India)") + 
   ylab("Pr(Top 5)") + 
   xlab(common.x.lab) +
-  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+  scale_colour_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
@@ -1600,7 +1602,7 @@ botleft <- ggplot(l.dat, aes(x=norm.quartile, y=prob10)) +
   labs(title = "Newsfeed Top 10 by Preference (India)") + 
   ylab("Pr(Top 10)") + 
   xlab(common.x.lab) +
-  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+  scale_colour_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
@@ -1623,7 +1625,7 @@ botright <- ggplot(l.dat, aes(x=norm.quartile, y=prob15)) +
   labs(title = "Newsfeed Top 15 by Preference (India)") + 
   ylab("Pr(Top 15)") + 
   xlab(common.x.lab) +
-  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+  scale_colour_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
@@ -1776,11 +1778,11 @@ mu <- ddply(m.newsfeed.df.all, "religion.in.group", summarise, grp.mean=mean(pre
 ggplot(m.newsfeed.df.all, aes(x=preference, fill=religion.in.group, color = religion.in.group)) +
  geom_histogram(aes(y=..density..), bins=7, alpha=0.5, position="nudge")  + xlab("Stated preference \n(7=Most preferred)") +
   labs(title = "Distribution of stated preference by religion")  + geom_vline(data=mu, aes(xintercept=grp.mean, color=religion.in.group)) +
-  scale_color_manual(values=c("#CC79A7", "#009E73"), 
+  scale_color_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
-   scale_fill_manual(values=c("#CC79A7", "#009E73"),
+   scale_fill_manual(values=outgroup.ingroup.colors,
                      name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
@@ -1836,7 +1838,7 @@ topleft <- ggplot(l.dat, aes(x=preference, y=mean.rating, colour=religion.in.gro
   geom_line( aes(linetype=religion.in.group, color=religion.in.group) , position=pd) + labs(title = "Newsfeed Ranking by Preference (India)") + 
   ylab("Mean number of slots \nabove median rank") + 
   xlab(common.x.lab) +
-  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+  scale_colour_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
@@ -1863,7 +1865,7 @@ topright <- ggplot(l.dat, aes(x=preference, y=prob5, colour=religion.in.group, g
   labs(title = "Newsfeed Top 5 by Preference (India)") + 
   ylab("Pr(Top 5)") + 
   xlab(common.x.lab) +
-  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+  scale_colour_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
@@ -1886,7 +1888,7 @@ botleft <- ggplot(l.dat, aes(x=preference, y=prob10, colour=religion.in.group, g
   labs(title = "Newsfeed Top 10 by Preference (India)") + 
   ylab("Pr(Top 10)") + 
   xlab(common.x.lab) +
-  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+  scale_colour_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
@@ -1909,7 +1911,7 @@ botright <- ggplot(l.dat, aes(x=preference, y=prob15, colour=religion.in.group, 
   labs(title = "Newsfeed Top 15 by Preference (India)") + 
   ylab("Pr(Top 15)") + 
   xlab(common.x.lab) +
-  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+  scale_colour_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
@@ -1950,7 +1952,7 @@ topleft <- ggplot(l.dat, aes(x=norm.quartile, y=mean.rating, colour=religion.in.
   geom_line( aes(linetype=religion.in.group, color=religion.in.group) , position=pd) + labs(title = "Newsfeed Ranking by Preference (India)") + 
   ylab("Mean number of slots \nabove median rank") + 
   xlab(common.x.lab) +
-  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+  scale_colour_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
@@ -1977,7 +1979,7 @@ topright <- ggplot(l.dat, aes(x=norm.quartile, y=prob5, colour=religion.in.group
   labs(title = "Newsfeed Top 5 by Preference (India)") + 
   ylab("Pr(Top 5)") + 
   xlab("") +
-  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+  scale_colour_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
@@ -2000,7 +2002,7 @@ botleft <- ggplot(l.dat, aes(x=norm.quartile, y=prob10, colour=religion.in.group
   labs(title = "Newsfeed Top 10 by Preference (India)") + 
   ylab("Pr(Top 10)") + 
   xlab("") +
-  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+  scale_colour_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
@@ -2023,7 +2025,7 @@ botright <- ggplot(l.dat, aes(x=norm.quartile, y=prob15, colour=religion.in.grou
   labs(title = "Newsfeed Top 15 by Preference (India)") + 
   ylab("Pr(Top 15)") + 
   xlab("") +
-  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+  scale_colour_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
@@ -2062,7 +2064,7 @@ ggplot(l.dat, aes(x=factor(chron_group), y=mean.rating, colour=religion.in.group
   geom_line( aes(linetype=religion.in.group, color=religion.in.group) , position=pd) + labs(title = "Newsfeed Ranking by Age of Post (India)") + 
   ylab("Mean number of slots \nabove median rank") + 
   xlab(common.x.lab) +
-  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+  scale_colour_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
@@ -2096,7 +2098,7 @@ ggplot(l.dat %>% filter(norm.quartile == 1 & religion.in.group == F), aes(x=norm
   geom_line( aes(linetype=religion.in.group, color=religion.in.group) , position=pd) + labs(title = "Newsfeed Ranking by Preference (India)") + xlim(c(.9,4.1)) +
   ylab("Mean number of slots \nabove median rank") + 
   xlab(common.x.lab) +
-  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+  scale_colour_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
@@ -2113,7 +2115,7 @@ ggplot(l.dat %>% filter(norm.quartile == 1), aes(x=norm.quartile, y=mean.rating,
   geom_line( aes(linetype=religion.in.group, color=religion.in.group) , position=pd) + labs(title = "Newsfeed Ranking by Preference (India)") + ylim(c(-2, 6)) + xlim(c(.9,4.1)) +
   ylab("Mean number of slots \nabove median rank") + 
   xlab(common.x.lab) +
-  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+  scale_colour_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
@@ -2130,7 +2132,7 @@ ggplot(l.dat, aes(x=norm.quartile, y=mean.rating, colour=religion.in.group, grou
   geom_line( aes(linetype=religion.in.group, color=religion.in.group) , position=pd) + labs(title = "Newsfeed Ranking by Preference (India)") + ylim(c(-2, 6)) + xlim(c(.9,4.1)) +
   ylab("Mean number of slots \nabove median rank") + 
   xlab(common.x.lab) +
-  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+  scale_colour_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
@@ -2215,11 +2217,11 @@ var(m.newsfeed.df.all %>% dplyr::select(preference))
 ggplot(m.newsfeed.df.all, aes(x=norm.pref, color=religion.in.group)) +
   geom_density() + geom_vline(data=mu, aes(xintercept=grp.mean, color=religion.in.group),
              linetype="dashed") + xlab("Stated Preference (normalized)") + labs(title = "Distribution of normalized preference by religion", subtitle = "Same-religion posts are not rated as more preferred by the user")  +
-  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+  scale_colour_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
-  scale_fill_manual(values=c("#CC79A7", "#009E73"), 
+  scale_fill_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup"))
@@ -2228,7 +2230,7 @@ dev.copy(jpeg,'Output/Graphs/Audit/Stated preferences/India NF pdf norm preferen
 dev.off()
 
 ggplot(m.newsfeed.df.all, aes(x=norm.pref)) + stat_ecdf(aes(colour=religion.in.group)) + xlab("Stated Preference (normalized)") + labs(title = "Cumulative distribution of normalized preference by religion", subtitle = "Same-religion posts are not rated as more preferred by the user") +
-  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+  scale_colour_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup"))
@@ -2303,7 +2305,7 @@ t.test(in.dist$norm.pref, out.dist$norm.pref)
 #   ylab("Average FB Newsfeed ranking (1=top rank, 60=bottom rank)") + 
 #   xlab("User self-reported preferences about posts \n(4=most preferred quartile, 1 = least preferred quartile)") +
 #   scale_y_reverse() + 
-#   scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+#   scale_colour_manual(values=outgroup.ingroup.colors, 
 #                        name="Poster Identity",
 #                        breaks=c("FALSE", "TRUE"),
 #                        labels=c("Outgroup", "Ingroup")) + 
@@ -2391,11 +2393,11 @@ mu <- ddply(m.pymk.df.all, "religion.in.group", summarise, grp.mean=mean(norm.fa
 ggplot(m.pymk.df.all, aes(x=norm.fam, color=religion.in.group)) +
   geom_density() + geom_vline(data=mu, aes(xintercept=grp.mean, color=religion.in.group),
              linetype="dashed") + xlab("Stated Preference (normalized)") + labs(title = "Distribution of normalized preference by religion")  +
-  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+  scale_colour_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
-  scale_fill_manual(values=c("#CC79A7", "#009E73"), 
+  scale_fill_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup"))
@@ -2404,7 +2406,7 @@ dev.copy(jpeg,'Output/Graphs/Audit/Stated preferences/India PYMK pdf norm prefer
 dev.off()
 
 ggplot(m.pymk.df.all, aes(x=norm.fam)) + stat_ecdf(aes(colour=religion.in.group)) + xlab("Stated Preference (normalized)") + labs(title = "Cumulative distribution of normalized preference by religion") +
-  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+  scale_colour_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) 
@@ -2449,7 +2451,7 @@ topright <- ggplot(l.dat, aes(x=familiarity, y=prob5)) +
   labs(title = "PYMK Top 5 by Preference (India)") + 
   ylab("Pr(Top 5)") + 
   xlab(common.x.lab) +
-  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+  scale_colour_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
@@ -2472,7 +2474,7 @@ botleft <- ggplot(l.dat, aes(x=familiarity, y=prob10)) +
   labs(title = "PYMK Top 10 by Preference (India)") + 
   ylab("Pr(Top 10)") + 
   xlab(common.x.lab) +
-  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+  scale_colour_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
@@ -2495,7 +2497,7 @@ botright <- ggplot(l.dat, aes(x=familiarity, y=prob15)) +
   labs(title = "PYMK Top 15 by Preference (India)") + 
   ylab("Pr(Top 15)") + 
   xlab(common.x.lab) +
-  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+  scale_colour_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
@@ -2541,7 +2543,7 @@ topleft <- ggplot(l.dat, aes(x=norm.quartile, y=mean.rating, colour=religion.in.
   geom_line( aes(linetype=religion.in.group, color=religion.in.group) , position=pd) + labs(title = "PYMK Ranking by Preference (India)") + 
   ylab("Mean number of slots \nabove median rank") + 
   xlab(common.x.lab) +
-  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+  scale_colour_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
@@ -2568,7 +2570,7 @@ topright <- ggplot(l.dat, aes(x=norm.quartile, y=prob5, colour=religion.in.group
   labs(title = "PYMK Top 5 by Preference (India)") + 
   ylab("Pr(Top 5)") + 
   xlab("") +
-  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+  scale_colour_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
@@ -2591,7 +2593,7 @@ botleft <- ggplot(l.dat, aes(x=norm.quartile, y=prob10, colour=religion.in.group
   labs(title = "PYMK Top 10 by Preference (India)") + 
   ylab("Pr(Top 10)") + 
   xlab("") +
-  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+  scale_colour_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
@@ -2614,7 +2616,7 @@ botright <- ggplot(l.dat, aes(x=norm.quartile, y=prob15, colour=religion.in.grou
   labs(title = "PYMK Top 15 by Preference (India)") + 
   ylab("Pr(Top 15)") + 
   xlab("") +
-  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+  scale_colour_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
@@ -2670,7 +2672,7 @@ ggplot(l.dat, aes(x=norm.quartile, y=mean.rating, colour=religion.in.group, grou
   geom_line( aes(linetype=religion.in.group, color=religion.in.group) , position=pd) + labs(title = "PYMK Ranking by Familiarity (India)") + ylim(c(-2, 6)) + xlim(c(.9,4.1)) +
   ylab("Mean number of slots \nabove median rank") + 
   xlab("User reported normed familiarity quartile \n(4=Most familiar)") +
-  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+  scale_colour_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
@@ -2729,7 +2731,7 @@ ggplot(l.dat, aes(x=friend.group, y=mean.rating, colour=religion.in.group, group
   geom_line( aes(linetype=religion.in.group, color=religion.in.group) , position=pd) + labs(title = "PYMK Ranking by Familiarity (India)") + ylim(c(-2, 6)) +
   ylab("Mean number of slots \nabove median rank") + 
   xlab("Mutual friend quartiles") +
-  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+  scale_colour_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
@@ -2760,7 +2762,7 @@ ggplot(l.dat, aes(x=mutual.friends.pct.quartile, y=mean.rating, colour=religion.
   geom_line( aes(linetype=religion.in.group, color=religion.in.group) , position=pd) + labs(title = "PYMK Ranking by Familiarity (India)") + ylim(c(-2, 6)) +
   ylab("Mean number of slots \nabove median rank") + 
   xlab("Mutual friend/Total friends quartiles") +
-  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+  scale_colour_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
