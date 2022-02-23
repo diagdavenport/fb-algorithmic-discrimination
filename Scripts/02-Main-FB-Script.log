@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  15 FEB 2022 16:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  21 FEB 2022 21:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1604,8 +1604,8 @@ Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
 roup-1.pdf  used on input line 323.
 (pdftex.def)             Requested size: 461.72388pt x 311.16174pt.
 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
-wn PDFs/02-Main-FB-Script_files/figure-latex/Excess ingroup-2.pdf, id=591, 415.
-5525pt x 309.155pt>
+wn PDFs/02-Main-FB-Script_files/figure-latex/Excess ingroup-2.pdf, id=591, 459.
+7175pt x 309.155pt>
 File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
 arkdown PDFs/02-Main-FB-Script_files/figure-latex/Excess ingroup-2.pdf Graphic 
 file (type pdf)
@@ -1614,7 +1614,7 @@ rkdown PDFs/02-Main-FB-Script_files/figure-latex/Excess ingroup-2.pdf>
 Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
 /Lockdown/Scripts/Markdown PDFs/02-Main-FB-Script_files/figure-latex/Excess ing
 roup-2.pdf  used on input line 324.
-(pdftex.def)             Requested size: 415.5705pt x 309.16838pt.
+(pdftex.def)             Requested size: 459.74442pt x 309.1731pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 323--325
 [][]
@@ -2154,16 +2154,16 @@ Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
 nal mean diff pymk-1.pdf  used on input line 779.
 (pdftex.def)             Requested size: 357.35048pt x 316.19493pt.
 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
-wn PDFs/02-Main-FB-Script_files/figure-latex/unnamed-chunk-4-1.pdf, id=983, 457
+wn PDFs/02-Main-FB-Script_files/figure-latex/unnamed-chunk-3-1.pdf, id=983, 457
 .71pt x 316.18124pt>
 File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
-arkdown PDFs/02-Main-FB-Script_files/figure-latex/unnamed-chunk-4-1.pdf Graphic
+arkdown PDFs/02-Main-FB-Script_files/figure-latex/unnamed-chunk-3-1.pdf Graphic
  file (type pdf)
 <use /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
-rkdown PDFs/02-Main-FB-Script_files/figure-latex/unnamed-chunk-4-1.pdf>
+rkdown PDFs/02-Main-FB-Script_files/figure-latex/unnamed-chunk-3-1.pdf>
 Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
 /Lockdown/Scripts/Markdown PDFs/02-Main-FB-Script_files/figure-latex/unnamed-ch
-unk-4-1.pdf  used on input line 781.
+unk-3-1.pdf  used on input line 781.
 (pdftex.def)             Requested size: 457.72984pt x 316.19493pt.
 [52 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
 rkdown PDFs/02-Main-FB-Script_files/figure-latex/Unconditional mean diff pymk-1
@@ -2200,7 +2200,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 783--785
  []
 
 [53 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
-rkdown PDFs/02-Main-FB-Script_files/figure-latex/unnamed-chunk-4-1.pdf> </Users
+rkdown PDFs/02-Main-FB-Script_files/figure-latex/unnamed-chunk-3-1.pdf> </Users
 /diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdown PDFs
 /02-Main-FB-Script_files/figure-latex/pymk rankings by mutual friends and ingro
 up-1.pdf>]
@@ -2272,7 +2272,7 @@ ype1/public/lm/lmr7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/
 lm/lmri10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmsy10.
 pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/l
 ocal/texlive/2018/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on 02-Main-FB-Script.pdf (59 pages, 1890585 bytes).
+Output written on 02-Main-FB-Script.pdf (59 pages, 1890705 bytes).
 PDF statistics:
  1141 PDF objects out of 1200 (max. 8388607)
  765 compressed objects within 8 object streams

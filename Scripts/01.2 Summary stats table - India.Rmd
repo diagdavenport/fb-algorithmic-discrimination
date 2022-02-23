@@ -61,16 +61,15 @@ nf.data.raw$standard.time <- with(nf.data.raw, time.normalizer*post.tenure)
 
 ```{r}
 
-participant.data <- participant.data %>% select(self.race,
+participant.data <- participant.data %>% dplyr::select(self.race,
                              gender,
                              age,
                              education,
                              covid.usage,
                              last.login,
                              pre.covid.usage,
-                             subject_race_RA,
-                             subject_gender_RA, source, total_friends,
-                             recorded.posts,
+                             subject_religion_RA,
+                             subject_gender_RA,
                              mean.rating,
                              sd.rating,
                              median.rating,
@@ -80,7 +79,7 @@ participant.data <- participant.data %>% select(self.race,
                              pymk.median.rating,
                              primary.id)
 
-nf.data <- nf.data.raw %>% select(subject_race_RA,
+nf.data <- nf.data.raw %>% dplyr::select(subject_religion_RA,
                              subject_gender_RA,
                              total_friends,
                              nf.order,

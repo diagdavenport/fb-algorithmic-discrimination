@@ -34,6 +34,9 @@ options(ggplot2.continuous.colour="viridis")
 knitr::opts_knit$set(root.dir = '/Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown')
 
 color.scaling <- c(0, 0.8, 0.9, 0.95, 1)
+
+outgroup.ingroup.colors <- c("#DC3220", "#005AB5")
+
 ```
 
 ```{r call in the data}
@@ -236,7 +239,7 @@ pd <- position_dodge(0.1)
 ggplot(l.dat, aes(x=factor(chron_group), fill = race.in.group, y=rate)) + 
   geom_bar(stat="identity", position="dodge", aes(fill = race.in.group)) + 
     geom_errorbar(aes(ymin=rate-ci, ymax=rate+ci), colour="black", width=.1, position=position_dodge(.9)) + labs(title = "Ranking group errors") + ylab("Mean ranking boost above chronological rank") + 
-  scale_fill_manual(values=c("#CC79A7", "#009E73"), 
+  scale_fill_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) +
@@ -266,7 +269,7 @@ pd <- position_dodge(0.1)
 ggplot(l.dat, aes(x=norm.quartile, fill = race.in.group, y=rate)) + 
   geom_bar(stat="identity", position="dodge", aes(fill = race.in.group)) + 
     geom_errorbar(aes(ymin=rate-ci, ymax=rate+ci), colour="black", width=.1, position=position_dodge(.9)) + labs(title = "Ranking group errors") + ylab("Mean ranking boost above chronological rank") + 
-  scale_fill_manual(values=c("#CC79A7", "#009E73"), 
+  scale_fill_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + facet_wrap(.~clean.login)
@@ -282,7 +285,7 @@ pd <- position_dodge(0.1)
 ggplot(l.dat, aes(x=preference, fill = race.in.group, y=rate)) + 
   geom_bar(stat="identity", position="dodge", aes(fill = race.in.group)) + 
     geom_errorbar(aes(ymin=rate-ci, ymax=rate+ci), colour="black", width=.1, position=position_dodge(.9)) + labs(title = "Ranking group errors") + ylab("Mean ranking boost above chronological rank") + 
-  scale_fill_manual(values=c("#CC79A7", "#009E73"), 
+  scale_fill_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup"))
@@ -298,7 +301,7 @@ pd <- position_dodge(0.1)
 ggplot(l.dat, aes(x=norm.quartile, fill = race.in.group, y=rate)) + 
   geom_bar(stat="identity", position="dodge", aes(fill = race.in.group)) + 
     geom_errorbar(aes(ymin=rate-ci, ymax=rate+ci), colour="black", width=.1, position=position_dodge(.9)) + labs(title = "Ranking group errors") + ylab("Mean ranking boost above chronological rank") + 
-  scale_fill_manual(values=c("#CC79A7", "#009E73"), 
+  scale_fill_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) +
@@ -449,7 +452,7 @@ pd <- position_dodge(0.1)
 ggplot(l.dat, aes(x=factor(connect.group), fill = race.in.group, y=rate)) + 
   geom_bar(stat="identity", position="dodge", aes(fill = race.in.group)) + 
     geom_errorbar(aes(ymin=rate-ci, ymax=rate+ci), colour="black", width=.1, position=position_dodge(.9)) + labs(title = "Ranking group errors") + ylab("Mean ranking boost above mutual friend pct rank") + 
-  scale_fill_manual(values=c("#CC79A7", "#009E73"), 
+  scale_fill_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) +
@@ -468,7 +471,7 @@ pd <- position_dodge(0.1)
 ggplot(l.dat, aes(x=norm.quartile, fill = race.in.group, y=rate)) + 
   geom_bar(stat="identity", position="dodge", aes(fill = race.in.group)) + 
     geom_errorbar(aes(ymin=rate-ci, ymax=rate+ci), colour="black", width=.1, position=position_dodge(.9)) + labs(title = "Ranking group errors") + ylab("Mean ranking boost above mutual friend pct rank") + 
-  scale_fill_manual(values=c("#CC79A7", "#009E73"), 
+  scale_fill_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup"))
@@ -521,11 +524,11 @@ ggplot(newsfeed.with.misranks, aes(x=new.metric, fill=race.in.group)) +
   geom_histogram(aes(y=..density..), boundary = 0, alpha=0.7, position="identity") +
   geom_vline(data=mu, aes(xintercept=grp.mean, color=race.in.group, linetype = race.in.group)) +
   xlab("Slots above expectation \n(higher numbers=higher ranking relative to expectation)") +
-  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+  scale_colour_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
-  scale_fill_manual(values=c("#CC79A7", "#009E73"), 
+  scale_fill_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
@@ -547,7 +550,7 @@ pd <- position_dodge(0.1)
 ggplot(l.dat, aes(x=race.in.group, y=rate)) + 
   geom_bar(stat="identity", position="dodge", aes(fill = race.in.group)) + 
     geom_errorbar(aes(ymin=rate-ci, ymax=rate+ci), colour="black", width=.1, position=position_dodge(.9)) + labs(title = "Ranking group errors") + ylab("Mean ranking boost above expectation") + 
-  scale_fill_manual(values=c("#CC79A7", "#009E73"), 
+  scale_fill_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) +
@@ -564,11 +567,11 @@ ggplot(l.dat, aes(x=factor(preference), y=rate, fill = race.in.group)) +
   geom_bar(stat="identity", position="dodge") + 
     geom_errorbar(aes(ymin=rate-ci, ymax=rate+ci), colour="black", width=.1, position=position_dodge(.9)) + labs(title = "Ranking group errors") + ylab("Mean ranking boost above expectation") +
   xlab("Stated Preference Rating (7=Most preferred)") +
-  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+  scale_colour_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
-  scale_fill_manual(values=c("#CC79A7", "#009E73"), 
+  scale_fill_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup"))
@@ -580,11 +583,11 @@ ggplot(l.dat %>% filter(preference == 1 & race.in.group == F), aes(x=preference,
   geom_bar(stat="identity", position="dodge") + 
     geom_errorbar(aes(ymin=rate-ci, ymax=rate+ci), colour="black", width=.1, position=position_dodge(.9)) + labs(title = "Ranking group errors") + ylab("Mean ranking boost above expectation") +
   xlab("Stated Preference Rating (7=Most preferred)") +
-  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+  scale_colour_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
-  scale_fill_manual(values=c("#CC79A7", "#009E73"), 
+  scale_fill_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + xlim(c(0.4,8)) + ylim(c(-15, 15))
@@ -593,11 +596,11 @@ ggplot(l.dat %>% filter(preference == 1), aes(x=preference, y=rate, fill = race.
   geom_bar(stat="identity", position="dodge") + 
     geom_errorbar(aes(ymin=rate-ci, ymax=rate+ci), colour="black", width=.1, position=position_dodge(.9)) + labs(title = "Ranking group errors") + ylab("Mean ranking boost above expectation") +
   xlab("Stated Preference Rating (7=Most preferred)") +
-  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+  scale_colour_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
-  scale_fill_manual(values=c("#CC79A7", "#009E73"), 
+  scale_fill_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + xlim(c(0.4,8)) + ylim(c(-15, 15))
@@ -616,11 +619,11 @@ ggplot(l.dat, aes(x=factor(norm.quartile), y=rate, fill = race.in.group)) +
   geom_bar(stat="identity", position="dodge") + 
     geom_errorbar(aes(ymin=rate-ci, ymax=rate+ci), colour="black", width=.1, position=position_dodge(.9)) + labs(title = "Ranking group errors") + ylab("Mean ranking boost above expectation") +
   xlab("Normed Preference Rating Quartile (4=Most preferred)") +
-  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+  scale_colour_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
-  scale_fill_manual(values=c("#CC79A7", "#009E73"), 
+  scale_fill_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup"))
@@ -706,11 +709,11 @@ ggplot(pymk.with.misranks, aes(x=new.metric, fill=race.in.group)) +
   geom_histogram(aes(y=..density..), boundary = 0, alpha=0.7, position="identity") +
   geom_vline(data=mu, aes(xintercept=grp.mean, color=race.in.group, linetype = race.in.group)) +
   xlab("Slots above expectation \n(higher numbers=higher ranking relative to expectation)") +
-  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+  scale_colour_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
-  scale_fill_manual(values=c("#CC79A7", "#009E73"), 
+  scale_fill_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
@@ -731,7 +734,7 @@ pd <- position_dodge(0.1)
 ggplot(l.dat, aes(x=race.in.group, y=rate)) + 
   geom_bar(stat="identity", position="dodge", aes(fill = race.in.group)) + 
     geom_errorbar(aes(ymin=rate-ci, ymax=rate+ci), colour="black", width=.1, position=position_dodge(.9)) + labs(title = "Ranking group errors") + ylab("Mean ranking boost above expectation") + 
-  scale_fill_manual(values=c("#CC79A7", "#009E73"), 
+  scale_fill_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) +
@@ -748,11 +751,11 @@ ggplot(l.dat, aes(x=factor(familiarity), y=rate, fill = race.in.group)) +
   geom_bar(stat="identity", position="dodge") + 
     geom_errorbar(aes(ymin=rate-ci, ymax=rate+ci), colour="black", width=.1, position=position_dodge(.9)) + labs(title = "Ranking group errors") + ylab("Mean ranking boost above expectation") +
   xlab("Stated Preference Rating (7=Most preferred)") +
-  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+  scale_colour_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
-  scale_fill_manual(values=c("#CC79A7", "#009E73"), 
+  scale_fill_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup"))
@@ -764,11 +767,11 @@ ggplot(l.dat %>% filter(familiarity == 1 & race.in.group == F), aes(x=familiarit
   geom_bar(stat="identity", position="dodge") + 
     geom_errorbar(aes(ymin=rate-ci, ymax=rate+ci), colour="black", width=.1, position=position_dodge(.9)) + labs(title = "Ranking group errors") + ylab("Mean ranking boost above expectation") +
   xlab("Stated Preference Rating (7=Most preferred)") +
-  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+  scale_colour_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
-  scale_fill_manual(values=c("#CC79A7", "#009E73"), 
+  scale_fill_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + xlim(c(0.4,8)) + ylim(c(-15, 15))
@@ -777,11 +780,11 @@ ggplot(l.dat %>% filter(familiarity == 1), aes(x=familiarity, y=rate, fill = rac
   geom_bar(stat="identity", position="dodge") + 
     geom_errorbar(aes(ymin=rate-ci, ymax=rate+ci), colour="black", width=.1, position=position_dodge(.9)) + labs(title = "Ranking group errors") + ylab("Mean ranking boost above expectation") +
   xlab("Stated Preference Rating (7=Most preferred)") +
-  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+  scale_colour_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
-  scale_fill_manual(values=c("#CC79A7", "#009E73"), 
+  scale_fill_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + xlim(c(0.4,8)) + ylim(c(-15, 15))
@@ -801,11 +804,11 @@ ggplot(l.dat, aes(x=norm.quartile, y=rate, fill = race.in.group)) +
   geom_bar(stat="identity", position="dodge") + 
     geom_errorbar(aes(ymin=rate-ci, ymax=rate+ci), colour="black", width=.1, position=position_dodge(.9)) + labs(title = "Ranking group errors") + ylab("Mean ranking boost above expectation") +
   xlab("Norm Stated Familiarity Rating Quartile (4=Most familiar)") +
-  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+  scale_colour_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
-  scale_fill_manual(values=c("#CC79A7", "#009E73"), 
+  scale_fill_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup"))
@@ -1169,7 +1172,7 @@ topright <- ggplot(l.dat, aes(x=preference, y=prob5)) +
   labs(title = "Newsfeed Top 5 by Preference") + 
   ylab("Pr(Top 5)") + 
   xlab(common.x.lab) +
-  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+  scale_colour_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
@@ -1192,7 +1195,7 @@ botleft <- ggplot(l.dat, aes(x=preference, y=prob10)) +
   labs(title = "Newsfeed Top 10 by Preference") + 
   ylab("Pr(Top 10)") + 
   xlab(common.x.lab) +
-  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+  scale_colour_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
@@ -1215,7 +1218,7 @@ botright <- ggplot(l.dat, aes(x=preference, y=prob15)) +
   labs(title = "Newsfeed Top 15 by Preference") + 
   ylab("Pr(Top 15)") + 
   xlab(common.x.lab) +
-  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+  scale_colour_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
@@ -1278,7 +1281,7 @@ topright <- ggplot(l.dat, aes(x=norm.quartile, y=prob5)) +
   labs(title = "Newsfeed Top 5 by Preference") + 
   ylab("Pr(Top 5)") + 
   xlab(common.x.lab) +
-  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+  scale_colour_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
@@ -1301,7 +1304,7 @@ botleft <- ggplot(l.dat, aes(x=norm.quartile, y=prob10)) +
   labs(title = "Newsfeed Top 10 by Preference") + 
   ylab("Pr(Top 10)") + 
   xlab(common.x.lab) +
-  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+  scale_colour_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
@@ -1324,7 +1327,7 @@ botright <- ggplot(l.dat, aes(x=norm.quartile, y=prob15)) +
   labs(title = "Newsfeed Top 15 by Preference") + 
   ylab("Pr(Top 15)") + 
   xlab(common.x.lab) +
-  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+  scale_colour_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
@@ -1437,6 +1440,27 @@ ggplot(dat, aes(x = nf.order.round, y = excess)) + geom_bar(stat = "identity") +
 
 
 
+
+#bootstrap estimates
+
+holder <- NULL
+
+for (boot.n in 1:1000) {
+  dat <- slice_sample(m.newsfeed.df.all, n =nrow(m.newsfeed.df.all), replace = T)%>% group_by(nf.order.round, race.in.group) %>% dplyr::summarise(n= n()) %>%
+  pivot_wider(names_from = race.in.group, values_from = n)
+  
+  dat$pctFALSE <- dat$`FALSE`/sum(dat$`FALSE`, na.rm = T)
+dat$pctTRUE <- dat$`TRUE`/sum(dat$`TRUE`, na.rm = T)
+
+dat$excess <- (dat$pctTRUE - dat$pctFALSE)/dat$pctFALSE
+
+holder <- rbind(holder, dat)
+
+dat.se <- holder %>% group_by(nf.order.round) %>% dplyr::summarise(sd= sd(excess))
+
+}
+
+
 dat <- m.newsfeed.df.all %>% group_by(nf.order.round, race.in.group) %>% dplyr::summarise(n= n()) %>%
   pivot_wider(names_from = race.in.group, values_from = n)
 
@@ -1445,12 +1469,10 @@ dat$pctTRUE <- dat$`TRUE`/sum(dat$`TRUE`, na.rm = T)
 
 dat$excess <- (dat$pctTRUE - dat$pctFALSE)/dat$pctFALSE
 
-dat$Tsd <- dat$pctTRUE*(1-dat$pctTRUE)
-dat$Fsd <- dat$pctFALSE*(1-dat$pctFALSE)
+dat <- merge(dat, dat.se)
 
-dat$ci <- ((dat$Tsd/sqrt(dat$`TRUE`)) + (dat$Fsd/sqrt(dat$`FALSE`)))*1.96
+dat$ci <-dat$sd*1.96
              
-
 dat$nf.order.round <- factor(dat$nf.order.round, levels = c("5", "4", "3", "2", "1", "0"))
 
 ggplot(dat, aes(x = nf.order.round, y = excess)) + geom_bar(stat = "identity") +
@@ -1459,7 +1481,7 @@ ggplot(dat, aes(x = nf.order.round, y = excess)) + geom_bar(stat = "identity") +
   xlab("Newsfeed rank sextile (Groups of 10 posts)")  +
   scale_x_discrete(name ="Actual Newsfeed Ranking Group", 
                    breaks = c("1","2","3","4","5","0"),
-                    labels=c("11-20","21-30", "31-40", "41-50", "51-60", "Top 10")) + ylim(c(-.17,.17)) +
+                    labels=c("11-20","21-30", "31-40", "41-50", "51-60", "Top 10")) + ylim(c(-.19,.19)) +
   coord_flip()
 
 dev.copy(jpeg,'Output/Graphs/Audit/Excess mass/US NF excess mass by ranking group.jpg')
@@ -1478,11 +1500,11 @@ mu <- ddply(m.newsfeed.df.all, "race.in.group", summarise, grp.mean=mean(prefere
 ggplot(m.newsfeed.df.all, aes(x=preference, fill=race.in.group, color = race.in.group)) +
  geom_histogram(aes(y=..density..), bins=7, alpha=0.5, position="nudge")  + xlab("Stated preference \n(7=Most preferred)") +
   labs(title = "Distribution of stated preference by race")  + geom_vline(data=mu, aes(xintercept=grp.mean, color=race.in.group)) +
-  scale_color_manual(values=c("#CC79A7", "#009E73"), 
+  scale_color_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
-   scale_fill_manual(values=c("#CC79A7", "#009E73"),
+   scale_fill_manual(values=outgroup.ingroup.colors,
                      name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
@@ -1538,7 +1560,7 @@ topleft <- ggplot(l.dat, aes(x=preference, y=mean.rating, colour=race.in.group, 
   geom_line( aes(linetype=race.in.group, color=race.in.group) , position=pd) + labs(title = "Newsfeed Ranking by Preference") + 
   ylab("Mean number of slots \nabove median rank") + 
   xlab(common.x.lab) +
-  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+  scale_colour_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
@@ -1565,7 +1587,7 @@ topright <- ggplot(l.dat, aes(x=preference, y=prob5, colour=race.in.group, group
   labs(title = "Newsfeed Top 5 by Preference") + 
   ylab("Pr(Top 5)") + 
   xlab(common.x.lab) +
-  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+  scale_colour_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
@@ -1588,7 +1610,7 @@ botleft <- ggplot(l.dat, aes(x=preference, y=prob10, colour=race.in.group, group
   labs(title = "Newsfeed Top 10 by Preference") + 
   ylab("Pr(Top 10)") + 
   xlab(common.x.lab) +
-  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+  scale_colour_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
@@ -1611,7 +1633,7 @@ botright <- ggplot(l.dat, aes(x=preference, y=prob15, colour=race.in.group, grou
   labs(title = "Newsfeed Top 15 by Preference") + 
   ylab("Pr(Top 15)") + 
   xlab(common.x.lab) +
-  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+  scale_colour_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
@@ -1652,7 +1674,7 @@ topleft <- ggplot(l.dat, aes(x=norm.quartile, y=mean.rating, colour=race.in.grou
   geom_line( aes(linetype=race.in.group, color=race.in.group) , position=pd) + labs(title = "Newsfeed Ranking by Preference") + 
   ylab("Mean number of slots \nabove median rank") + 
   xlab(common.x.lab) +
-  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+  scale_colour_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
@@ -1679,7 +1701,7 @@ topright <- ggplot(l.dat, aes(x=norm.quartile, y=prob5, colour=race.in.group, gr
   labs(title = "Newsfeed Top 5 by Preference") + 
   ylab("Pr(Top 5)") + 
   xlab("") +
-  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+  scale_colour_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
@@ -1702,7 +1724,7 @@ botleft <- ggplot(l.dat, aes(x=norm.quartile, y=prob10, colour=race.in.group, gr
   labs(title = "Newsfeed Top 10 by Preference") + 
   ylab("Pr(Top 10)") + 
   xlab("") +
-  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+  scale_colour_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
@@ -1725,7 +1747,7 @@ botright <- ggplot(l.dat, aes(x=norm.quartile, y=prob15, colour=race.in.group, g
   labs(title = "Newsfeed Top 15 by Preference") + 
   ylab("Pr(Top 15)") + 
   xlab("") +
-  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+  scale_colour_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
@@ -1764,7 +1786,7 @@ ggplot(l.dat, aes(x=factor(chron_group), y=mean.rating, colour=race.in.group, gr
   geom_line( aes(linetype=race.in.group, color=race.in.group) , position=pd) + labs(title = "Newsfeed Ranking by Age of Post") + 
   ylab("Mean number of slots \nabove median rank") + 
   xlab(common.x.lab) +
-  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+  scale_colour_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
@@ -1798,7 +1820,7 @@ ggplot(l.dat %>% filter(norm.quartile == 1 & race.in.group == F), aes(x=norm.qua
   geom_line( aes(linetype=race.in.group, color=race.in.group) , position=pd) + labs(title = "Newsfeed Ranking by Preference") + xlim(c(.9,4.1)) +
   ylab("Mean number of slots \nabove median rank") + 
   xlab(common.x.lab) +
-  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+  scale_colour_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
@@ -1815,7 +1837,7 @@ ggplot(l.dat %>% filter(norm.quartile == 1), aes(x=norm.quartile, y=mean.rating,
   geom_line( aes(linetype=race.in.group, color=race.in.group) , position=pd) + labs(title = "Newsfeed Ranking by Preference") + ylim(c(-2, 6)) + xlim(c(.9,4.1)) +
   ylab("Mean number of slots \nabove median rank") + 
   xlab(common.x.lab) +
-  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+  scale_colour_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
@@ -1832,7 +1854,7 @@ ggplot(l.dat, aes(x=norm.quartile, y=mean.rating, colour=race.in.group, group=ra
   geom_line( aes(linetype=race.in.group, color=race.in.group) , position=pd) + labs(title = "Newsfeed Ranking by Preference") + ylim(c(-2, 6)) + xlim(c(.9,4.1)) +
   ylab("Mean number of slots \nabove median rank") + 
   xlab(common.x.lab) +
-  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+  scale_colour_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
@@ -1886,11 +1908,11 @@ var(m.newsfeed.df.all %>% dplyr::select(preference))
 ggplot(m.newsfeed.df.all, aes(x=norm.pref, color=race.in.group)) +
   geom_density() + geom_vline(data=mu, aes(xintercept=grp.mean, color=race.in.group),
              linetype="dashed") + xlab("Stated Preference (normalized)") + labs(title = "Distribution of normalized preference by race", subtitle = "Same-race posts are not rated as more preferred by the user")  +
-  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+  scale_colour_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
-  scale_fill_manual(values=c("#CC79A7", "#009E73"), 
+  scale_fill_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup"))
@@ -1899,7 +1921,7 @@ dev.copy(jpeg,'Output/Graphs/Audit/Stated preferences/US NF pdf norm preferences
 dev.off()
 
 ggplot(m.newsfeed.df.all, aes(x=norm.pref)) + stat_ecdf(aes(colour=race.in.group)) + xlab("Stated Preference (normalized)") + labs(title = "Cumulative distribution of normalized preference by race", subtitle = "Same-race posts are not rated as more preferred by the user") +
-  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+  scale_colour_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup"))
@@ -1916,94 +1938,148 @@ t.test(in.dist$norm.pref, out.dist$norm.pref)
 ```
 
 
+```{r Recent Activity bootstrap}
 
-```{r}
-# l.dat <- m.newsfeed.df.all %>% group_by(norm.quartile, race.in.group) %>% dplyr::summarise(mean.rating = mean(nf.order, na.rm = T), sd = sd(nf.order, na.rm = T), n= n()) 
-# 
-# left <- ggplot(m.newsfeed.df.all, aes(x=race.in.group, y=nf.order)) + 
-#   geom_boxplot() + scale_y_reverse()  + coord_cartesian(ylim = c(46, 14)) + labs(title = "Distribution of Newsfeed Ranking by \nPoster Identity (US)") + ylab("Average FB Newsfeed ranking (1=top rank, 60=bottom rank)") +
-#    xlab("Poster Identity") + scale_x_discrete(labels= c("Outgroup", "Ingroup"))
-# 
-# right <- ggplot(m.newsfeed.df.all, aes(x=factor(norm.quartile), y=nf.order)) + 
-#   geom_boxplot() + scale_y_reverse()  + coord_cartesian(ylim = c(46, 14)) + labs(title = "Distribution of Newsfeed Ranking by \nPreference (US)") + 
-#   ylab("") + 
-#   xlab("User self-reported preferences about posts \n(4=most preferred quartile)")
-# 
-# ggarrange(left, right, 
-#           labels = c("A", "B"),
-#           ncol = 2, nrow = 1)
-# 
-# l.dat <- m.newsfeed.df.all %>% group_by(race.in.group) %>% dplyr::summarise(mean.rating = mean(nf.order, na.rm = T), sd = sd(nf.order, na.rm = T), n= n())
-# 
-# l.dat$ci <- (l.dat$sd/sqrt(l.dat$n))*1.96
-# pd <- position_dodge(0.01)
-# 
-# left <- ggplot(l.dat, aes(x=race.in.group, y=mean.rating)) + 
-#     geom_errorbar(aes(ymin=mean.rating-ci, ymax=mean.rating+ci), colour="black", width=.1, position=pd) + geom_point(position=pd, size=3) + scale_y_reverse() + labs(title = "Distribution of Newsfeed Ranking by \nPreference (US)") + 
-#   ylab("") + 
-#   xlab("User self-reported preferences about posts \n(4=most preferred quartile)") + scale_y_reverse() + labs(title = "Distribution of Newsfeed Ranking by \nPoster Identity (US)") + ylab("Average FB Newsfeed ranking (1=top rank, 60=bottom rank)") +
-#    xlab("Poster Identity") + scale_x_discrete(labels= c("Outgroup", "Ingroup")) +
-#   coord_cartesian(ylim = c(32, 27))
-# 
-# l.dat <- m.newsfeed.df.all %>% group_by(norm.quartile) %>% dplyr::summarise(mean.rating = mean(nf.order, na.rm = T), sd = sd(nf.order, na.rm = T), n= n()) 
-# 
-# l.dat$ci <- (l.dat$sd/sqrt(l.dat$n))*1.96
-# pd <- position_dodge(0.01)
-# 
-# right <- ggplot(l.dat, aes(x=factor(norm.quartile), y=mean.rating)) + 
-#   geom_errorbar(aes(ymin=mean.rating-ci, ymax=mean.rating+ci), colour="black", width=.1, position=pd) + 
-#   geom_point(position=pd, size=3) + 
-#   scale_y_reverse()  +  
-#   labs(title = "Distribution of Newsfeed Ranking by \nPreference (US)") + 
-#   ylab("") + 
-#   xlab("User self-reported preferences about posts \n(4=most preferred quartile)") + coord_cartesian(ylim = c(32, 27))
-# 
-# ggarrange(left, right, 
-#           labels = c("A", "B"),
-#           ncol = 2, nrow = 1)
-# 
-# l.dat <- m.newsfeed.df.all %>% group_by(norm.quartile, race.in.group) %>% dplyr::summarise(mean.rating = mean(nf.order, na.rm = T), sd = sd(nf.order, na.rm = T), n= n()) 
-# 
-# l.dat$ci <- (l.dat$sd/sqrt(l.dat$n))*1.96
-# pd <- position_dodge(0.01)
-# 
-# ggplot(l.dat, aes(x=norm.quartile, y=mean.rating, colour=race.in.group, group=race.in.group)) +
-#   geom_errorbar(aes(ymin=mean.rating-ci, ymax=mean.rating+ci, colour=race.in.group), width=.1, position=pd) + 
-#   geom_point(aes(shape = race.in.group), position=pd, size=3) +
-#   geom_line( aes(linetype=race.in.group, color=race.in.group) , position=pd) + labs(title = "Newsfeed Ranking by Preference (US)", subtitle = "Same-race posts need to meet a lower bar to get closer to the top") + 
-#   ylab("Average FB Newsfeed ranking (1=top rank, 60=bottom rank)") + 
-#   xlab("User self-reported preferences about posts \n(4=most preferred quartile, 1 = least preferred quartile)") +
-#   scale_y_reverse() + 
-#   scale_colour_manual(values=c("#CC79A7", "#009E73"), 
-#                        name="Poster Identity",
-#                        breaks=c("FALSE", "TRUE"),
-#                        labels=c("Outgroup", "Ingroup")) + 
-#    scale_shape_discrete(name="Poster Identity",
-#                        breaks=c("FALSE", "TRUE"),
-#                        labels=c("Outgroup", "Ingroup")) + 
-#    scale_linetype_discrete(name="Poster Identity",
-#                        breaks=c("FALSE", "TRUE"),
-#                        labels=c("Outgroup", "Ingroup"))
+holder <- NULL
+
+for (b in 1:1000) {
   
+  #m.recent.df <- read.csv("Temp/Clean US Data Recent.csv")
+  m.recent.df <- read.csv("/Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Temp/Clean US Data Recent.csv")
+  m.recent.df <- sample_n(m.recent.df, nrow(m.recent.df), replace = T) %>% filter(human == 1)
+  
+  # recent.summ.all <- m.recent.df %>% dplyr::summarise(prob.same.race = mean(race.in.group, na.rm = T), sd = sd(race.in.group, na.rm = T), n= n())
+  # recent.summ.all$ci <- (recent.summ.all$sd/sqrt(recent.summ.all$n))*1.96
+  # recent.summ.all$source <- "All Recent Interactions"
+  # recent.summ.all$group <- -1
+  
+  dat <- m.recent.df %>% filter(react == 1) %>% group_by(race.in.group) %>% dplyr::summarise(n= n()) %>%
+    pivot_wider(names_from = race.in.group, values_from = n)
+  
+  dat$pctFALSE <- dat$`FALSE`/sum(dat$`FALSE`)
+  dat$pctTRUE <- dat$`TRUE`/sum(dat$`TRUE`)
+  
+  dat$excess <- (dat$pctTRUE - dat$pctFALSE)/dat$pctFALSE
+   
+  
+  recent.summ.i <- m.recent.df %>% dplyr::summarise(prob.same.race = mean(race.in.group, na.rm = T), sd = sd(race.in.group, na.rm = T), n= n())
+  recent.summ.i$source <- "Interactions"
+  recent.summ.i$group <- -3
+  
+  recent.summ.r <- m.recent.df %>% filter(react == 1) %>% dplyr::summarise(prob.same.race = mean(race.in.group, na.rm = T), sd = sd(race.in.group, na.rm = T), n= n())
+  recent.summ.r$source <- "Interactions"
+  recent.summ.r$group <- -2
+  
+  recent.summ.c <- m.recent.df %>% filter(comment == 1) %>% dplyr::summarise(prob.same.race = mean(race.in.group, na.rm = T), sd = sd(race.in.group, na.rm = T), n= n())
+  recent.summ.c$source <- "Interactions"
+  recent.summ.c$group <- -1
+  
+  m.newsfeed.df.all <- dplyr::ungroup(m.newsfeed.df.all)
+  m.newsfeed.df.all.b <- sample_n(m.newsfeed.df.all, nrow(m.newsfeed.df.all), replace = T)
+  
+  
+  base.rate <- mean((m.newsfeed.df.all.b %>%
+    filter(source %in% c("CDR 2", "CDR 4")) %>% 
+    dplyr::select(race.in.group))$race.in.group, na.rm = T)
+  
+  base.rate.all <- mean((m.newsfeed.df.all.b %>%
+    dplyr::select(race.in.group))$race.in.group, na.rm = T)
+  
+  nf.5 <- m.newsfeed.df.all.b %>% filter(source %in% c("CDR 2", "CDR 4")) %>%
+    filter(new.rank <= 5) %>% 
+    dplyr::summarise(prob.same.race = mean(race.in.group, na.rm = T), sd = sd(race.in.group, na.rm = T), n= n()) %>%
+    dplyr::mutate(group = 0)
+  nf.5$source <- "Actual Newsfeed Ranking"
+  
+  nf.10 <- m.newsfeed.df.all.b %>% filter(source %in% c("CDR 2", "CDR 4")) %>%
+    filter(new.rank <= 10) %>% 
+    dplyr::summarise(prob.same.race = mean(race.in.group, na.rm = T), sd = sd(race.in.group, na.rm = T), n= n()) %>%
+    dplyr::mutate(group = 1)
+  nf.10$source <- "Actual Newsfeed Ranking"
+  
+  nf.20 <- m.newsfeed.df.all.b %>% filter(source %in% c("CDR 2", "CDR 4")) %>%
+    filter(new.rank <= 20) %>% 
+    dplyr::summarise(prob.same.race = mean(race.in.group, na.rm = T), sd = sd(race.in.group, na.rm = T), n= n()) %>%
+    dplyr::mutate(group = 2)
+  nf.20$source <- "Actual Newsfeed Ranking"
+  
+  
+  
+  pref.5 <- m.newsfeed.df.all.b %>% filter(source %in% c("CDR 2", "CDR 4")) %>%
+    filter(norm.pctle >= (1-(5/60))) %>% 
+    dplyr::summarise(prob.same.race = mean(race.in.group, na.rm = T), sd = sd(race.in.group, na.rm = T), n= n()) %>%
+    dplyr::mutate(group = 0)
+  pref.5$source <- "Preference Ranking"
+  
+  pref.10 <- m.newsfeed.df.all.b %>% filter(source %in% c("CDR 2", "CDR 4")) %>%
+    filter(norm.pctle >= (1-(10/60))) %>% 
+    dplyr::summarise(prob.same.race = mean(race.in.group, na.rm = T), sd = sd(race.in.group, na.rm = T), n= n()) %>%
+    dplyr::mutate(group = 1)
+  pref.10$source <- "Preference Ranking"
+  
+  pref.20 <- m.newsfeed.df.all.b %>% filter(source %in% c("CDR 2", "CDR 4")) %>%
+    filter(norm.pctle >= (1-(20/60))) %>% 
+    dplyr::summarise(prob.same.race = mean(race.in.group, na.rm = T), sd = sd(race.in.group, na.rm = T), n= n()) %>%
+    dplyr::mutate(group = 2)
+  pref.20$source <- "Preference Ranking"
+  
+  
+  pref.5.all <- m.newsfeed.df.all.b %>%
+    filter(norm.pctle >= (1-(5/60))) %>% 
+    dplyr::summarise(prob.same.race = mean(race.in.group, na.rm = T), sd = sd(race.in.group, na.rm = T), n= n()) %>%
+    dplyr::mutate(group = 0)
+  pref.5.all$source <- "Preference Ranking (All)"
+  
+  pref.10.all <- m.newsfeed.df.all.b %>%
+    filter(norm.pctle >= (1-(10/60))) %>% 
+    dplyr::summarise(prob.same.race = mean(race.in.group, na.rm = T), sd = sd(race.in.group, na.rm = T), n= n()) %>%
+    dplyr::mutate(group = 1)
+  pref.10.all$source <- "Preference Ranking (All)"
+  
+  pref.20.all <- m.newsfeed.df.all.b %>%
+    filter(norm.pctle >= (1-(20/60))) %>% 
+    dplyr::summarise(prob.same.race = mean(race.in.group, na.rm = T), sd = sd(race.in.group, na.rm = T), n= n()) %>%
+    dplyr::mutate(group = 2)
+  pref.20.all$source <- "Preference Ranking (All)"
+  
+  chron.5 <- m.newsfeed.df.all.b %>% filter(source %in% c("CDR 2", "CDR 4")) %>%
+    filter(time_rank <= 5) %>% 
+    dplyr::summarise(prob.same.race = mean(race.in.group, na.rm = T), sd = sd(race.in.group, na.rm = T), n= n()) %>%
+    dplyr::mutate(group = 0)
+  chron.5$source <- "Chronological Ranking"
+  
+  chron.10 <- m.newsfeed.df.all.b %>% filter(source %in% c("CDR 2", "CDR 4")) %>%
+    filter(time_rank <= 10) %>% 
+    dplyr::summarise(prob.same.race = mean(race.in.group, na.rm = T), sd = sd(race.in.group, na.rm = T), n= n()) %>%
+    dplyr::mutate(group = 1)
+  chron.10$source <- "Chronological Ranking"
+  
+  chron.20 <- m.newsfeed.df.all.b %>% filter(source %in% c("CDR 2", "CDR 4")) %>%
+    filter(time_rank <= 20) %>% 
+    dplyr::summarise(prob.same.race = mean(race.in.group, na.rm = T), sd = sd(race.in.group, na.rm = T), n= n()) %>%
+    dplyr::mutate(group = 2)
+  chron.20$source <- "Chronological Ranking"
+  
+  l.dat <- rbind(nf.5, nf.10, nf.20, recent.summ.i)
+  
+  l.dat$prob.same.race.rate <- (l.dat$prob.same.race/base.rate) - 1
+  
+  
+  l.dat$prob.same.race.diff <- ifelse(l.dat$source == "Preference Ranking (All)",
+                                      (l.dat$prob.same.race/base.rate) - 1,
+                                      (l.dat$prob.same.race/base.rate.all) - 1)
+
+holder <- rbind(holder, l.dat)
+
+}
+
+l.dat.se <- holder %>% group_by(group, source) %>% dplyr::summarise(sd.rate = sd(prob.same.race.rate), sd.diff = sd(prob.same.race.diff))
+
 ```
 
+
 ```{r Recent Activity attempt 2}
-
-dat <- m.newsfeed.df.all %>% group_by(preference, race.in.group) %>% dplyr::summarise(n= n()) %>%
-  pivot_wider(names_from = race.in.group, values_from = n)
-
-dat$pctFALSE <- dat$`FALSE`/sum(dat$`FALSE`)
-dat$pctTRUE <- dat$`TRUE`/sum(dat$`TRUE`)
-
-dat$excess <- (dat$pctTRUE - dat$pctFALSE)/dat$pctFALSE
-
-dat$Tsd <- dat$pctTRUE*(1-dat$pctTRUE)
-dat$Fsd <- dat$pctFALSE*(1-dat$pctFALSE)
-
-dat$ci <- ((dat$Tsd/sqrt(dat$`TRUE`)) + (dat$Fsd/sqrt(dat$`FALSE`)))*1.96
-
-
-m.recent.df <- read.csv("Temp/Clean US Data Recent.csv")
+m.recent.df <- read.csv("/Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Temp/Clean US Data Recent.csv")
 m.recent.df <- m.recent.df %>% filter(human == 1)
 
 # recent.summ.all <- m.recent.df %>% dplyr::summarise(prob.same.race = mean(race.in.group, na.rm = T), sd = sd(race.in.group, na.rm = T), n= n())
@@ -2021,17 +2097,14 @@ dat$excess <- (dat$pctTRUE - dat$pctFALSE)/dat$pctFALSE
  
 
 recent.summ.i <- m.recent.df %>% dplyr::summarise(prob.same.race = mean(race.in.group, na.rm = T), sd = sd(race.in.group, na.rm = T), n= n())
-recent.summ.i$ci <- (recent.summ.i$sd/sqrt(recent.summ.i$n))*1.96
 recent.summ.i$source <- "Interactions"
 recent.summ.i$group <- -3
 
 recent.summ.r <- m.recent.df %>% filter(react == 1) %>% dplyr::summarise(prob.same.race = mean(race.in.group, na.rm = T), sd = sd(race.in.group, na.rm = T), n= n())
-recent.summ.r$ci <- (recent.summ.r$sd/sqrt(recent.summ.r$n))*1.96
 recent.summ.r$source <- "Interactions"
 recent.summ.r$group <- -2
 
 recent.summ.c <- m.recent.df %>% filter(comment == 1) %>% dplyr::summarise(prob.same.race = mean(race.in.group, na.rm = T), sd = sd(race.in.group, na.rm = T), n= n())
-recent.summ.c$ci <- (recent.summ.c$sd/sqrt(recent.summ.c$n))*1.96
 recent.summ.c$source <- "Interactions"
 recent.summ.c$group <- -1
 
@@ -2048,21 +2121,18 @@ nf.5 <- m.newsfeed.df.all %>% filter(source %in% c("CDR 2", "CDR 4")) %>%
   filter(new.rank <= 5) %>% 
   dplyr::summarise(prob.same.race = mean(race.in.group, na.rm = T), sd = sd(race.in.group, na.rm = T), n= n()) %>%
   dplyr::mutate(group = 0)
-nf.5$ci <- (nf.5$sd/sqrt(nf.5$n))*1.96
 nf.5$source <- "Actual Newsfeed Ranking"
 
 nf.10 <- m.newsfeed.df.all %>% filter(source %in% c("CDR 2", "CDR 4")) %>%
   filter(new.rank <= 10) %>% 
   dplyr::summarise(prob.same.race = mean(race.in.group, na.rm = T), sd = sd(race.in.group, na.rm = T), n= n()) %>%
   dplyr::mutate(group = 1)
-nf.10$ci <- (nf.10$sd/sqrt(nf.10$n))*1.96
 nf.10$source <- "Actual Newsfeed Ranking"
 
 nf.20 <- m.newsfeed.df.all %>% filter(source %in% c("CDR 2", "CDR 4")) %>%
   filter(new.rank <= 20) %>% 
   dplyr::summarise(prob.same.race = mean(race.in.group, na.rm = T), sd = sd(race.in.group, na.rm = T), n= n()) %>%
   dplyr::mutate(group = 2)
-nf.20$ci <- (nf.20$sd/sqrt(nf.20$n))*1.96
 nf.20$source <- "Actual Newsfeed Ranking"
 
 
@@ -2071,21 +2141,18 @@ pref.5 <- m.newsfeed.df.all %>% filter(source %in% c("CDR 2", "CDR 4")) %>%
   filter(norm.pctle >= (1-(5/60))) %>% 
   dplyr::summarise(prob.same.race = mean(race.in.group, na.rm = T), sd = sd(race.in.group, na.rm = T), n= n()) %>%
   dplyr::mutate(group = 0)
-pref.5$ci <- (pref.5$sd/sqrt(pref.5$n))*1.96
 pref.5$source <- "Preference Ranking"
 
 pref.10 <- m.newsfeed.df.all %>% filter(source %in% c("CDR 2", "CDR 4")) %>%
   filter(norm.pctle >= (1-(10/60))) %>% 
   dplyr::summarise(prob.same.race = mean(race.in.group, na.rm = T), sd = sd(race.in.group, na.rm = T), n= n()) %>%
   dplyr::mutate(group = 1)
-pref.10$ci <- (pref.10$sd/sqrt(pref.10$n))*1.96
 pref.10$source <- "Preference Ranking"
 
 pref.20 <- m.newsfeed.df.all %>% filter(source %in% c("CDR 2", "CDR 4")) %>%
   filter(norm.pctle >= (1-(20/60))) %>% 
   dplyr::summarise(prob.same.race = mean(race.in.group, na.rm = T), sd = sd(race.in.group, na.rm = T), n= n()) %>%
   dplyr::mutate(group = 2)
-pref.20$ci <- (pref.20$sd/sqrt(pref.20$n))*1.96
 pref.20$source <- "Preference Ranking"
 
 
@@ -2093,42 +2160,36 @@ pref.5.all <- m.newsfeed.df.all %>%
   filter(norm.pctle >= (1-(5/60))) %>% 
   dplyr::summarise(prob.same.race = mean(race.in.group, na.rm = T), sd = sd(race.in.group, na.rm = T), n= n()) %>%
   dplyr::mutate(group = 0)
-pref.5.all$ci <- (pref.5.all$sd/sqrt(pref.5.all$n))*1.96
 pref.5.all$source <- "Preference Ranking (All)"
 
 pref.10.all <- m.newsfeed.df.all %>%
   filter(norm.pctle >= (1-(10/60))) %>% 
   dplyr::summarise(prob.same.race = mean(race.in.group, na.rm = T), sd = sd(race.in.group, na.rm = T), n= n()) %>%
   dplyr::mutate(group = 1)
-pref.10.all$ci <- (pref.10.all$sd/sqrt(pref.10.all$n))*1.96
 pref.10.all$source <- "Preference Ranking (All)"
 
 pref.20.all <- m.newsfeed.df.all %>%
   filter(norm.pctle >= (1-(20/60))) %>% 
   dplyr::summarise(prob.same.race = mean(race.in.group, na.rm = T), sd = sd(race.in.group, na.rm = T), n= n()) %>%
   dplyr::mutate(group = 2)
-pref.20.all$ci <- (pref.20.all$sd/sqrt(pref.20.all$n))*1.96
 pref.20.all$source <- "Preference Ranking (All)"
 
 chron.5 <- m.newsfeed.df.all %>% filter(source %in% c("CDR 2", "CDR 4")) %>%
   filter(time_rank <= 5) %>% 
   dplyr::summarise(prob.same.race = mean(race.in.group, na.rm = T), sd = sd(race.in.group, na.rm = T), n= n()) %>%
   dplyr::mutate(group = 0)
-chron.5$ci <- (chron.5$sd/sqrt(chron.5$n))*1.96
 chron.5$source <- "Chronological Ranking"
 
 chron.10 <- m.newsfeed.df.all %>% filter(source %in% c("CDR 2", "CDR 4")) %>%
   filter(time_rank <= 10) %>% 
   dplyr::summarise(prob.same.race = mean(race.in.group, na.rm = T), sd = sd(race.in.group, na.rm = T), n= n()) %>%
   dplyr::mutate(group = 1)
-chron.10$ci <- (chron.10$sd/sqrt(chron.10$n))*1.96
 chron.10$source <- "Chronological Ranking"
 
 chron.20 <- m.newsfeed.df.all %>% filter(source %in% c("CDR 2", "CDR 4")) %>%
   filter(time_rank <= 20) %>% 
   dplyr::summarise(prob.same.race = mean(race.in.group, na.rm = T), sd = sd(race.in.group, na.rm = T), n= n()) %>%
   dplyr::mutate(group = 2)
-chron.20$ci <- (chron.20$sd/sqrt(chron.20$n))*1.96
 chron.20$source <- "Chronological Ranking"
 
 l.dat <- rbind(nf.5, nf.10, nf.20, recent.summ.i)
@@ -2139,6 +2200,10 @@ l.dat$prob.same.race.rate <- (l.dat$prob.same.race/base.rate) - 1
 l.dat$prob.same.race.diff <- ifelse(l.dat$source == "Preference Ranking (All)",
                                     (l.dat$prob.same.race/base.rate) - 1,
                                     (l.dat$prob.same.race/base.rate.all) - 1)
+
+l.dat <- merge(l.dat, l.dat.se)
+l.dat$ci.diff <- l.dat$sd.diff*1.96
+l.dat$ci.rate <- l.dat$sd.rate*1.96
 
 # l.dat$source <- factor(l.dat$source,levels = c("All posts",
 #                                                "Top 3 quartiles",
@@ -2154,7 +2219,7 @@ pd <- position_dodge(0.6)
 
 ggplot(l.dat, aes(x = factor(group), y=prob.same.race.rate, fill = source)) + 
     geom_bar(stat="identity", position=pd) +
-  geom_errorbar(aes(ymin=prob.same.race.rate-ci, ymax=prob.same.race.rate+ci), width=.1, position=pd) + labs(title = "Ingroup preferences in interactions") + ylab("Share of posts that are in-group \ndivided by base rate") + 
+  geom_errorbar(aes(ymin=prob.same.race.rate-ci.rate, ymax=prob.same.race.rate+ci.rate), width=.1, position=pd) + labs(title = "Ingroup preferences in interactions") + ylab("Share of posts that are in-group \ndivided by base rate") + 
   scale_x_discrete(name ="Ranking Group", 
                    breaks = c("1","2","0", "-1", "-2", "-3"),
                     labels=c("Top 10", "Top 20", "Top 5", "Comments", "React", "10 most recent")) + 
@@ -2172,31 +2237,12 @@ pd <- position_dodge(0.6)
 
 ggplot(l.dat, aes(x = factor(group), y=prob.same.race.diff, fill = source)) + 
     geom_bar(stat="identity", position=pd) +
-  geom_errorbar(aes(ymin=prob.same.race.diff-ci, ymax=prob.same.race.diff+ci), width=.1, position=pd) + labs(title = "Ingroup preferences in interactions") + ylab("Share of posts that are in-group \nminus base rate") + 
+  geom_errorbar(aes(ymin=prob.same.race.diff-ci.diff, ymax=prob.same.race.diff+ci.diff), width=.1, position=pd) + labs(title = "Ingroup preferences in interactions") + ylab("Share of posts that are in-group \nminus base rate") + 
   scale_x_discrete(name ="Ranking Group", 
                    breaks = c("1","2","0", "-1"),
                     labels=c("Top 10", "Top 20", "Top 5", "??"))
 
 #t.test((m.newsfeed.df2 %>% filter(nf.order <= 10))$race.in.group, m.recent.df$race.in.group)
-
-```
-
-```{r Recent activity heterogeneity}
-# 
-# recent.in.group <- m.recent.df %>% group_by(participant.id) %>%
-#   dplyr::summarise(mean.recent.in.group = mean(race.in.group, na.rm = T))
-# 
-# nf.in.group <- m.newsfeed.df2 %>% group_by(participant.id) %>%
-#   dplyr::summarise(mean.nf.in.group = mean(race.in.group, na.rm = T))
-# 
-# p <- merge(recent.in.group, nf.in.group, by = "participant.id")
-# 
-# p$implicit.bias.measure <- p$mean.recent.in.group -  p$mean.nf.in.group
-# p$above.median.implicit.bias.measure <- p$implicit.bias.measure > median(p$implicit.bias.measure, na.rm = T)
-# 
-# reg.dta <- merge(m.newsfeed.df.all, p, by = "participant.id", all.x = F, all.y = T)
-# 
-# summary(lm(nf.order ~ race.in.group*implicit.bias.measure + I(100*norm.pctle), data = reg.dta))
 
 ```
 
@@ -2422,11 +2468,11 @@ mu <- ddply(m.pymk.df.all, "race.in.group", summarise, grp.mean=mean(norm.fam, n
 ggplot(m.pymk.df.all, aes(x=norm.fam, color=race.in.group)) +
   geom_density() + geom_vline(data=mu, aes(xintercept=grp.mean, color=race.in.group),
              linetype="dashed") + xlab("Stated Preference (normalized)") + labs(title = "Distribution of normalized preference by race")  +
-  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+  scale_colour_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
-  scale_fill_manual(values=c("#CC79A7", "#009E73"), 
+  scale_fill_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup"))
@@ -2435,7 +2481,7 @@ dev.copy(jpeg,'Output/Graphs/Audit/Stated preferences/US PYMK pdf norm preferenc
 dev.off()
 
 ggplot(m.pymk.df.all, aes(x=norm.fam)) + stat_ecdf(aes(colour=race.in.group)) + xlab("Stated Preference (normalized)") + labs(title = "Cumulative distribution of normalized preference by race") +
-  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+  scale_colour_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) 
@@ -2462,7 +2508,7 @@ topleft <- ggplot(l.dat, aes(x=norm.quartile, y=mean.rating, colour=race.in.grou
   geom_line( aes(linetype=race.in.group, color=race.in.group) , position=pd) + labs(title = "Newsfeed Ranking by Preference") + 
   ylab("Mean number of slots \nabove median rank") + 
   xlab(common.x.lab) +
-  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+  scale_colour_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
@@ -2489,7 +2535,7 @@ topright <- ggplot(l.dat, aes(x=norm.quartile, y=prob5, colour=race.in.group, gr
   labs(title = "Newsfeed Top 5 by Preference") + 
   ylab("Pr(Top 5)") + 
   xlab("") +
-  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+  scale_colour_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
@@ -2512,7 +2558,7 @@ botleft <- ggplot(l.dat, aes(x=norm.quartile, y=prob10, colour=race.in.group, gr
   labs(title = "Newsfeed Top 10 by Preference") + 
   ylab("Pr(Top 10)") + 
   xlab("") +
-  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+  scale_colour_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
@@ -2535,7 +2581,7 @@ botright <- ggplot(l.dat, aes(x=norm.quartile, y=prob15, colour=race.in.group, g
   labs(title = "Newsfeed Top 15 by Preference") + 
   ylab("Pr(Top 15)") + 
   xlab("") +
-  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+  scale_colour_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
@@ -2594,7 +2640,7 @@ topright <- ggplot(l.dat, aes(x=familiarity, y=prob5)) +
   labs(title = "PYMK Top 5 by Preference") + 
   ylab("Pr(Top 5)") + 
   xlab(common.x.lab) +
-  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+  scale_colour_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
@@ -2617,7 +2663,7 @@ botleft <- ggplot(l.dat, aes(x=familiarity, y=prob10)) +
   labs(title = "PYMK Top 10 by Preference") + 
   ylab("Pr(Top 10)") + 
   xlab(common.x.lab) +
-  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+  scale_colour_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
@@ -2640,7 +2686,7 @@ botright <- ggplot(l.dat, aes(x=familiarity, y=prob15)) +
   labs(title = "PYMK Top 15 by Preference") + 
   ylab("Pr(Top 15)") + 
   xlab(common.x.lab) +
-  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+  scale_colour_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
@@ -2701,7 +2747,7 @@ ggplot(l.dat, aes(x=norm.quartile, y=mean.rating, colour=race.in.group, group=ra
   geom_line( aes(linetype=race.in.group, color=race.in.group) , position=pd) + labs(title = "PYMK Ranking by Familiarity") + ylim(c(-2, 6)) + xlim(c(.9,4.1)) +
   ylab("Mean number of slots \nabove median rank") + 
   xlab("User reported normed familiarity quartile \n(4=Most familiar)") +
-  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+  scale_colour_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
@@ -2760,7 +2806,7 @@ ggplot(l.dat, aes(x=friend.group, y=mean.rating, colour=race.in.group, group=rac
   geom_line( aes(linetype=race.in.group, color=race.in.group) , position=pd) + labs(title = "PYMK Ranking by Familiarity") + ylim(c(-2, 6)) +
   ylab("Mean number of slots \nabove median rank") + 
   xlab("Mutual friend quartiles") +
-  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+  scale_colour_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
@@ -2791,7 +2837,7 @@ ggplot(l.dat, aes(x=mutual.friends.pct.quartile, y=mean.rating, colour=race.in.g
   geom_line( aes(linetype=race.in.group, color=race.in.group) , position=pd) + labs(title = "PYMK Ranking by Familiarity") + ylim(c(-2, 6)) +
   ylab("Mean number of slots \nabove median rank") + 
   xlab("Mutual friend/Total friends quartiles") +
-  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+  scale_colour_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 

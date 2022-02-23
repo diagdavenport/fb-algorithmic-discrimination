@@ -2,6 +2,7 @@
 # comment
 .DS_Store
 
+.git
 .gitattributes
 .gitignore
 .DS_Store

@@ -19,6 +19,8 @@ options(ggplot2.continuous.fill = "plasma")
 
 knitr::opts_knit$set(root.dir = '/Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown')
 
+colors <- c("#E1BE6A", "#40B0A6")
+
 ```
 
 ```{r import data}
@@ -188,7 +190,7 @@ l.dat$cat <- factor(l.dat$cat,levels = c("intention", "access", "awareness", "co
    geom_text(data = label.df,
              label = c("NS", "**", "***", "***", "***", "***", "NS", "***"))  +
    scale_x_discrete(labels= automaticity.labels) + coord_flip() +
-   scale_fill_manual(values=c("#39568CFF", "#FDE725FF"),
+   scale_fill_manual(values=colors,
                        name="Target",
                        breaks=c("nf", "pymk"),
                        labels=c("Newsfeed", "PYMK"))
@@ -388,7 +390,7 @@ l.dat$target <- with(l.dat, ifelse(target == "nf", "Newsfeed", "PYMK"))
    geom_errorbar(aes(ymin=mean-ci, ymax=mean+ci), colour="black", width=.1, position=pd) +
    theme(axis.text.x = element_text(angle = 45, hjust = 1)) + xlab("Measure") +
    ylab("Percent giving more automatic answer") + xlab("") + labs(title = "Rate of Affirming Automaticity by Target") + facet_wrap(~ cat, scales = "free", labeller = fun_labeller) +
-   scale_fill_manual(values=c("#39568CFF", "#FDE725FF"))
+   scale_fill_manual(values=colors)
  
   dev.copy(jpeg,'Output/Graphs/Experiments/Automaticity/bar chart binary measures.jpg')
 dev.off()
@@ -426,7 +428,7 @@ dev.off()
 m.long %>% filter(cat == "speed") %>% 
   mutate(Seconds = ifelse(val > 60, 60, val)) %>%
 ggplot(aes(x=Seconds)) + stat_ecdf(aes(colour=target)) +
-   scale_color_manual(values=c("#39568CFF", "#FDE725FF")) + ylab("Cumulative Density")
+   scale_color_manual(values=colors) + ylab("Cumulative Density")
 
 dev.copy(jpeg,'Output/Graphs/Experiments/Automaticity/speed cdf - bin over 60.jpg')
 dev.off()
