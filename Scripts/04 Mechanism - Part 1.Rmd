@@ -1,0 +1,789 @@
+---
+title: "Process mech part 1"
+author: "ddd"
+date: "5/25/2021"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = F) 
+library(dplyr)
+library(stargazer)
+library(lubridate)
+library(tidyr)
+library(ggplot2)
+library(glmnet)
+library(mltools)
+library(data.table)
+library(naivebayes)
+library(randomForest)
+library(rpart.plot)
+library(ggthemes)
+theme_set(theme_tufte())
+
+```
+
+## R Markdown
+
+```{r}
+
+
+#knitr::opts_chunk$set(cache.extra = rand_seed)
+
+output.dta <- read.csv("/Users/diagdavenport/Downloads/Output-2021-09-21.csv")
+
+user.dta <- read.csv("/Users/diagdavenport/Downloads/User-2021-09-21.csv")
+
+movie.dta <- read.csv("/Users/diagdavenport/Downloads/Movie-2021-09-21.csv")
+
+user.dta <- user.dta %>% filter(user_id != "" & !is.na(time_spent))
+
+sql.data <- merge(user.dta, output.dta, by = "user_id")
+
+sql.data$date <- as.Date(sql.data$timestamp)
+
+sql.data$good.data <- sql.data$date == ymd("2021-09-21") # Full run 1
+#sql.data$good.data <- sql.data$date == ymd("2021-09-13") Pilot 
+
+sql.data <- sql.data %>% dplyr::filter(good.data == 1) # Drop old data
+
+#sql.data <- sql.data %>% dplyr::filter(user_age > 28) # Drop young tik tokers
+
+sql.data <- merge(sql.data, movie.dta, by.x =  "movie_title", by.y = "title")
+
+sql.data <- sql.data %>% separate(user_race, c("race.cat.1", "race.cat.2"), ",", remove = F)
+
+sql.data <- sql.data %>% separate(genre, c("genre.1", "genre.2", "genre.3"), ", ", remove = F)
+
+sql.data$genre.2 <- ifelse(is.na(sql.data$genre.2),
+                              "BLANK",
+                              sql.data$genre.2)
+
+sql.data$genre.3 <- ifelse(is.na(sql.data$genre.3),
+                              "BLANK",
+                              sql.data$genre.3)
+
+sql.data$genre.match <- ifelse(sql.data$user_genre == sql.data$genre.1 | 
+                                 sql.data$user_genre == sql.data$genre.2 |
+                                 sql.data$user_genre == sql.data$genre.3 ,
+                              1,
+                              0)
+
+sql.data$genre.match <- ifelse(sql.data$user_genre == "Action and adventure" & 
+                                 (sql.data$genre.1 %in% c("Action", "Adventure")|
+                                  sql.data$genre.2 %in% c("Action", "Adventure")|
+                                  sql.data$genre.3 %in% c("Action", "Adventure")) ,
+                              1,
+                              sql.data$genre.match)
+
+sql.data$genre.match <- ifelse(sql.data$user_genre == "Historical" & 
+                                 (sql.data$genre.1 %in% c("Documentary", "Biography")|
+                                  sql.data$genre.2 %in% c("Documentary", "Biography")|
+                                  sql.data$genre.3 %in% c("Documentary", "Biography")) ,
+                              1,
+                              sql.data$genre.match)
+
+sql.data$genre.match <- ifelse(sql.data$user_genre == "Science Fiction" & 
+                                 (sql.data$genre.1 %in% c("Sci-Fi")|
+                                  sql.data$genre.2 %in% c("Sci-Fi")|
+                                  sql.data$genre.3 %in% c("Sci-Fi")) ,
+                              1,
+                              sql.data$genre.match)
+
+sql.data$opened <- sql.data$readmore_count > 0
+
+sql.data$race.cat.2 <- ifelse(is.na(sql.data$race.cat.2),
+                              "BLANK",
+                              sql.data$race.cat.2)
+
+sql.data$race.simple <- "Other"
+
+sql.data$race.simple <- ifelse(sql.data$race.cat.1 == "White" | sql.data$race.cat.2 == "White",
+                              "White",
+                              sql.data$race.simple)
+
+sql.data$race.simple <- ifelse(sql.data$race.cat.1 == "Black" | sql.data$race.cat.2 == "Black",
+                              "Black",
+                              sql.data$race.simple)
+
+sql.data$race.simple <- ifelse(sql.data$race.cat.1 == "Hispanic" | sql.data$race.cat.2 == "Hispanic",
+                              "Hispanic",
+                              sql.data$race.simple)
+
+#sql.data <- sql.data %>% filter(race.simple != "Other")
+
+sql.data <- sql.data %>% filter(user_gender %in% c("Female", "Male"))
+  
+sql.data$in.group <- sql.data$race.simple == sql.data$rec_race
+
+sql.data$same.gender <- as.character(sql.data$user_gender) == as.character(sql.data$rec_gender)
+
+sql.data$in.group.strict <- sql.data$in.group & sql.data$same.gender
+
+sql.data$in.group.lax <- sql.data$in.group | sql.data$same.gender
+
+sql.data$group.combo <- paste(sql.data$same.gender, sql.data$in.group)
+
+
+sql.data$rec_race <- factor(sql.data$rec_race, levels = c("White", "Asian", "Black", "Hispanic"))
+
+sql.data$clean_edu <- ""
+
+sql.data$clean_edu <- with(sql.data,
+                 ifelse(user_education %in% c("Graduated high school", "Some college, no degree", "Associate degree", "Did not graduate high school"),
+                        "less.than.bachelors",
+                        clean_edu))
+
+sql.data$clean_edu <- with(sql.data,
+                 ifelse(user_education %in% c("Bachelor degree"),
+                        "bachelors",
+                        clean_edu))
+
+sql.data$clean_edu <- with(sql.data,
+                 ifelse(user_education %in% c("Master degree", "Doctoral degree", "Professional degree"),
+                        "more.than.bachelors",
+                        clean_edu))
+
+sql.data$clean_edu <- factor(sql.data$clean_edu, levels = c("less.than.bachelors", "bachelors", "more.than.bachelors"))
+
+#sql.data <- sql.data %>% filter(movie_title %in% good.movies)
+
+# smry <- sql.data %>% group_by(user_id, timed) %>% summarise(last = max(order_no, na.rm = T),
+#                                                             clicks = sum(clicked, na.rm = T),
+#                                                             in.group.rate.views = mean(in.group, na.rm = T)) %>%
+#   group_by(timed) %>% summarise(n.participants = n(),
+#                                 avg.seen = mean(last, na.rm = T),
+#                                 avg.clicks = mean(clicks, na.rm = T),
+#                                 avg.in.group.views = mean(in.group.rate.views, na.rm = T))
+# 
+# lst.row <- sql.data %>% filter(clicked == 1) %>% group_by(user_id, timed) %>%
+#   summarise(in.group.rate.clicks = mean(in.group, na.rm = T)) %>%
+#   group_by(timed) %>% summarise(avg.in.group.clicks = mean(in.group.rate.clicks, na.rm = T))
+# 
+# stargazer(t(cbind(smry, lst.row$avg.in.group.clicks)), summary = FALSE)
+
+#sql.data <- sql.data %>%filter(order_no < 10)
+
+#sql.data <- sql.data %>% filter(race.simple == "White" & user_gender == "Male")
+
+```
+
+```{r}
+# 
+# barplot(prop.table(table(sql.data %>% filter(clicked == 1) %>% select(movie_title)))) 
+# 
+# ggplot(sql.data %>% filter(clicked == 1), aes(x= movie_title)) + geom_bar() + theme(axis.text.x = element_text(angle = 90, hjust = 1))
+# 
+# ggplot(sql.data %>% filter(clicked == 1), aes(x= rec_race, fill = factor(timed))) + geom_bar(position=position_dodge()) + theme(axis.text.x = element_text(angle = 90, hjust = 1))
+# 
+# ggplot(sql.data %>% filter(clicked == 1), aes(x= order_no, fill = factor(timed))) + geom_bar(position=position_dodge()) + theme(axis.text.x = element_text(angle = 90, hjust = 1))
+# 
+# ggplot(sql.data %>% filter(clicked == 1), aes(x= rating, fill = factor(timed))) + geom_bar(position=position_dodge()) + theme(axis.text.x = element_text(angle = 90, hjust = 1))
+# 
+# summary(lm(clicked ~ timed*in.group, data = sql.data))
+# 
+# summary(lm(clicked ~ timed*rec_race + date*timed , data = 
+#              sql.data %>% filter(race.cat.1 == "White" & race.cat.2 == "BLANK")))
+# 
+# stargazer(lm(clicked ~ timed*rec_race + order_no +I(order_no^2), data = sql.data %>% filter(race.cat.1 == "White")), type = "text")
+# 
+# stargazer(lm(clicked ~ timed*rec_race, data = sql.data), type = "text")
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# l.dat <- sql.data %>% group_by(movie_title, in.group, timed, user_education) %>% dplyr::summarise(mean = mean(clicked, na.rm = T), sd = sd(clicked, na.rm = T), n= n())
+# 
+# select.list <- l.dat %>% select(movie_title, in.group, mean, timed) %>% pivot_wider(names_from = c(in.group, timed), values_from = mean)
+# 
+# select.list$diff <- (select.list$`1_1` - select.list$`1_0`) - (select.list$`0_1` - select.list$`0_0`)
+# 
+# select.list$diff2 <- (select.list$`1_1` - select.list$`1_0`)
+# 
+# select.list$flag <- (select.list$diff > 0) | (select.list$diff2 > 0)
+#                      
+# good.movies <- (select.list %>% filter(flag == 1))$movie_title
+# 
+# bad.movies <- (select.list %>% filter(flag == 0))$movie_title
+# 
+# #l.dat <- l.dat %>% filter(movie_title %in% bad.movies)
+# 
+# l.dat$ci <- (l.dat$sd/sqrt(l.dat$n))*1.96
+# pd <- position_dodge(0.01)
+# 
+# ggplot(l.dat, aes(x=movie_title, y=mean, fill = factor(in.group))) + ylab("pr(click)") + geom_bar(stat="identity", position=position_dodge(), width = .8)  +
+#   geom_errorbar(aes(ymin=mean-ci, ymax=mean+ci), width=.05, position=position_dodge(.8)) + labs(fill = "Ingroup") + xlab("") + geom_hline(yintercept = mean(sql.data$in.group, na.rm = T), linetype = "dotted") + theme(axis.text.x = element_text(angle = 90, hjust = 1)) + facet_wrap(~ user_education)
+# 
+# 
+# 
+# 
+# l.dat <- sql.data %>% group_by(in.group, timed, user_education) %>% dplyr::summarise(mean = mean(clicked, na.rm = T), sd = sd(clicked, na.rm = T), n= n())
+# 
+# l.dat$ci <- (l.dat$sd/sqrt(l.dat$n))*1.96
+# pd <- position_dodge(0.01)
+# 
+# ggplot(l.dat, aes(x=factor(in.group), y=mean, fill = factor(timed))) + ylab("pr(click)") + geom_bar(stat="identity", position=position_dodge(), width = .8)  +
+#   geom_errorbar(aes(ymin=mean-ci, ymax=mean+ci), width=.05, position=position_dodge(.8)) + labs(fill = "Rushed") + xlab("") + geom_hline(yintercept = mean(sql.data$in.group, na.rm = T), linetype = "dotted") + theme(axis.text.x = element_text(angle = 90, hjust = 1)) + facet_wrap(~ user_education)
+```
+
+```{r sum stats}
+
+length(unique(sql.data$user_id))
+
+sum(sql.data$clicked)
+
+stat.holder <- sql.data %>% dplyr::select(user_id, user_gender, user_age, user_race, race.simple, clean_edu) %>%
+  distinct()
+
+table(stat.holder$user_gender)/nrow(stat.holder)
+
+mean(stat.holder$user_age)
+
+table(stat.holder$race.simple)/nrow(stat.holder)
+
+table(stat.holder$clean_edu)/nrow(stat.holder)
+
+```
+
+```{r for jens}
+
+l.dat <- sql.data %>% filter(clicked == 1) %>% group_by(timed, in.group.lax) %>% dplyr::summarise(count= n()) %>% group_by(timed) %>% mutate(percent = count/sum(count), T = sum(count))
+
+l.dat$sd <- l.dat$percent * (1-l.dat$percent)
+l.dat$ci <- (l.dat$sd/sqrt(l.dat$T))*1.96
+pd <- position_dodge(0.01)
+
+ggplot(l.dat, aes(x=factor(timed), y=percent, fill = in.group.lax)) + ylab("% of clicks") + geom_bar(stat="identity", position=position_dodge(), width = .8)  +
+  geom_errorbar(aes(ymin=percent-ci, ymax=percent+ci), width=.05, position=position_dodge(.8)) + xlab("Rushed?") + theme(axis.text.x = element_text(angle = 90, hjust = 1)) + labs(fill = "In-group (Same gender or same race)")
+
+
+l.dat <- sql.data %>% group_by(timed, in.group.lax) %>% dplyr::summarise(mean = mean(clicked, na.rm = T), sd = sd(clicked, na.rm = T), n= n())
+
+l.dat$ci <- (l.dat$sd/sqrt(l.dat$n))*1.96
+pd <- position_dodge(0.01)
+
+ggplot(l.dat, aes(x=factor(timed), y=mean, fill = in.group.lax)) + ylab("pr(click)") + geom_bar(stat="identity", position=position_dodge(), width = .8)  +
+  geom_errorbar(aes(ymin=mean-ci, ymax=mean+ci), width=.05, position=position_dodge(.8)) + xlab("Rushed?") +
+  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+                       name="Poster Identity",
+                       breaks=c("FALSE", "TRUE"),
+                       labels=c("Outgroup", "Ingroup")) + 
+   scale_fill_manual(values=c("#CC79A7", "#009E73"),
+                     name="Poster Identity",
+                       breaks=c("FALSE", "TRUE"),
+                       labels=c("Outgroup", "Ingroup")) + scale_x_discrete(labels=c("0" = "No", "1" = "Yes"))
+
+```
+
+```{r jens stargazer, results='asis'}
+
+sql.data$deliberate <- sql.data$timed == 0
+stargazer(lm(clicked ~ in.group.lax*deliberate, data = sql.data))
+
+```
+
+```{r clean graphs}
+
+l.dat <- sql.data %>% filter(clicked == 1) %>% group_by(timed, race.simple, group.combo) %>% dplyr::summarise(count= n()) %>% group_by(timed, race.simple) %>% mutate(percent = count/sum(count), T = sum(count))
+
+l.dat$sd <- l.dat$percent * (1-l.dat$percent)
+l.dat$ci <- (l.dat$sd/sqrt(l.dat$T))*1.96
+pd <- position_dodge(0.01)
+
+ggplot(l.dat, aes(x=factor(timed), y=percent, fill = group.combo)) + ylab("% of clicks") + geom_bar(stat="identity", position=position_dodge(), width = .8)  +
+  geom_errorbar(aes(ymin=percent-ci, ymax=percent+ci), width=.05, position=position_dodge(.8)) + xlab("Rushed?") + facet_grid(~race.simple)  + theme(axis.text.x = element_text(angle = 90, hjust = 1)) + labs(fill = "Same gender - Same race")
+
+
+l.dat <- sql.data %>% group_by(timed, group.combo) %>% dplyr::summarise(mean = mean(clicked, na.rm = T), sd = sd(clicked, na.rm = T), n= n())
+
+l.dat$ci <- (l.dat$sd/sqrt(l.dat$n))*1.96
+pd <- position_dodge(0.01)
+
+ggplot(l.dat, aes(x=factor(timed), y=mean, fill = factor(group.combo))) + ylab("pr(click)") + geom_bar(stat="identity", position=position_dodge(), width = .8)  +
+  geom_errorbar(aes(ymin=mean-ci, ymax=mean+ci), width=.05, position=position_dodge(.8)) + xlab("Rushed?") + theme(axis.text.x = element_text(angle = 90, hjust = 1))  + labs(fill = "Same gender - Same race")
+
+
+sql.data$order_no.ceiling <- floor(sql.data$order_no/15)
+
+sql.data$order_no.ceiling <- ifelse(sql.data$timed ==0,
+                                    sql.data$order_no.ceiling - .12,
+                                    sql.data$order_no.ceiling)
+
+sql.data$order_no.ceiling <- ifelse(sql.data$timed == 1,
+                                    sql.data$order_no.ceiling + .12,
+                                    sql.data$order_no.ceiling)
+
+
+l.dat <- sql.data %>% group_by(in.group.lax, timed, race.simple, order_no.ceiling) %>% dplyr::summarise(mean = mean(clicked, na.rm = T), sd = sd(clicked, na.rm = T), n= n())
+
+l.dat$ci <- (l.dat$sd/sqrt(l.dat$n))*1.96
+pd <- position_dodge(0.01)
+
+ggplot(l.dat, aes(x=order_no.ceiling, y=mean, color = factor(timed), shape = factor(in.group.lax))) + ylab("pr(click)") + geom_point()  +
+   labs(fill = "Rushed") + xlab("") + theme(axis.text.x = element_text(angle = 90, hjust = 1)) + facet_wrap(~ race.simple) + coord_flip() + scale_x_reverse()
+
+
+
+l.dat <- sql.data %>% filter(user_gender == "Male") %>% group_by(timed, in.group.lax, race.simple) %>% dplyr::summarise(mean = mean(clicked, na.rm = T), sd = sd(clicked, na.rm = T), n= n())
+
+l.dat$ci <- (l.dat$sd/sqrt(l.dat$n))*1.96
+pd <- position_dodge(0.01)
+
+ggplot(l.dat, aes(x=factor(timed), y=mean, fill = factor(in.group.lax))) + ylab("pr(click)") + geom_bar(stat="identity", position=position_dodge(), width = .8)  +
+  geom_errorbar(aes(ymin=mean-ci, ymax=mean+ci), width=.05, position=position_dodge(.8)) + xlab("Rushed?") + theme(axis.text.x = element_text(angle = 90, hjust = 1))  + labs(fill = "In-group?") + facet_wrap(.~race.simple)
+
+
+```
+
+```{r clean graphs 2}
+
+l.dat <- sql.data %>% filter(clicked == 1) %>% group_by(timed, race.simple, group.combo) %>% dplyr::summarise(count= n()) %>% group_by(timed, race.simple) %>% mutate(percent = count/sum(count), T = sum(count))
+
+l.dat$sd <- l.dat$percent * (1-l.dat$percent)
+l.dat$ci <- (l.dat$sd/sqrt(l.dat$T))*1.96
+pd <- position_dodge(0.01)
+
+ggplot(l.dat, aes(x=factor(timed), y=percent, fill = group.combo)) + ylab("% of clicks") + geom_bar(stat="identity", position=position_dodge(), width = .8)  +
+  geom_errorbar(aes(ymin=percent-ci, ymax=percent+ci), width=.05, position=position_dodge(.8)) + xlab("Rushed?") + facet_grid(~race.simple)  + theme(axis.text.x = element_text(angle = 90, hjust = 1)) + labs(fill = "Same gender - Same race")
+
+
+l.dat <- sql.data %>% group_by(timed, group.combo) %>% dplyr::summarise(mean = mean(clicked, na.rm = T), sd = sd(clicked, na.rm = T), n= n())
+
+l.dat$ci <- (l.dat$sd/sqrt(l.dat$n))*1.96
+pd <- position_dodge(0.01)
+
+ggplot(l.dat, aes(x=factor(timed), y=mean, fill = factor(group.combo))) + ylab("pr(click)") + geom_bar(stat="identity", position=position_dodge(), width = .8)  +
+  geom_errorbar(aes(ymin=mean-ci, ymax=mean+ci), width=.05, position=position_dodge(.8)) + xlab("Rushed?") + theme(axis.text.x = element_text(angle = 90, hjust = 1))  + labs(fill = "Same gender - Same race")
+
+
+sql.data$order_no.ceiling <- floor(sql.data$order_no/15)
+
+sql.data$order_no.ceiling <- ifelse(sql.data$timed ==0,
+                                    sql.data$order_no.ceiling - .12,
+                                    sql.data$order_no.ceiling)
+
+sql.data$order_no.ceiling <- ifelse(sql.data$timed == 1,
+                                    sql.data$order_no.ceiling + .12,
+                                    sql.data$order_no.ceiling)
+
+
+l.dat <- sql.data %>% group_by(in.group.lax, timed, race.simple, order_no.ceiling) %>% dplyr::summarise(mean = mean(clicked, na.rm = T), sd = sd(clicked, na.rm = T), n= n())
+
+l.dat$ci <- (l.dat$sd/sqrt(l.dat$n))*1.96
+pd <- position_dodge(0.01)
+
+ggplot(l.dat, aes(x=order_no.ceiling, y=mean, color = factor(timed), shape = factor(in.group.lax))) + ylab("pr(click)") + geom_point()  +
+   labs(fill = "Rushed") + xlab("") + theme(axis.text.x = element_text(angle = 90, hjust = 1)) + facet_wrap(~ race.simple) + coord_flip() + scale_x_reverse()
+
+
+
+l.dat <- sql.data %>% filter(user_gender == "Male") %>% group_by(timed, in.group.lax, race.simple) %>% dplyr::summarise(mean = mean(clicked, na.rm = T), sd = sd(clicked, na.rm = T), n= n())
+
+l.dat$ci <- (l.dat$sd/sqrt(l.dat$n))*1.96
+pd <- position_dodge(0.01)
+
+ggplot(l.dat, aes(x=factor(timed), y=mean, fill = factor(in.group.lax))) + ylab("pr(click)") + geom_bar(stat="identity", position=position_dodge(), width = .8)  +
+  geom_errorbar(aes(ymin=mean-ci, ymax=mean+ci), width=.05, position=position_dodge(.8)) + xlab("Rushed?") + theme(axis.text.x = element_text(angle = 90, hjust = 1))  + labs(fill = "In-group?") + facet_wrap(.~race.simple)
+
+
+```
+
+
+
+readmore_presses
+
+
+```{r, results='asis'}
+
+mdl.slow <- lm(clicked ~ rec_gender*rec_race, data = sql.data %>% filter(timed == 0))
+mdl.fast <- lm(clicked ~ rec_gender*rec_race , data = sql.data %>% filter(timed == 1))
+
+stargazer(mdl.slow, mdl.fast, omit = c("movie_title", "user_id", "rating", "order_no"),
+          omit.stat = c("f",    "ser")
+          ,column.labels = c("Slow", "Fast")
+          #,covariate.labels = c("Same Race", "Same Gender", "Same Race x Same Gender")
+          )
+
+mdl.slow <- lm(clicked ~ in.group*same.gender, data = sql.data %>% filter(timed == 0))
+mdl.fast <- lm(clicked ~ in.group*same.gender , data = sql.data %>% filter(timed == 1))
+
+mdl.slow.g <- lm(clicked ~ in.group*same.gender + genre.match, data = sql.data %>% filter(timed == 0))
+mdl.fast.g <- lm(clicked ~ in.group*same.gender + genre.match, data = sql.data %>% filter(timed == 1))
+
+stargazer(mdl.slow, mdl.slow.g, mdl.fast, mdl.fast.g, omit = c("movie_title", "user_id", "rating", "order_no"),
+          omit.stat = c("f",    "ser")
+          ,column.labels = c("Slow","Slow", "Fast", "Fast")
+          ,covariate.labels = c("Same Race", "Same Gender", "Preferred Genre", "Same Race x Same Gender")
+          )
+
+mdl.slow <- lm(clicked ~ in.group + same.gender, data = sql.data %>% filter(timed == 0))
+mdl.fast <- lm(clicked ~ in.group + same.gender , data = sql.data %>% filter(timed == 1))
+
+stargazer(mdl.slow, mdl.fast, omit = c("movie_title", "user_id", "rating", "order_no"),
+          omit.stat = c("f",    "ser")
+          ,column.labels = c("Slow", "Fast")
+          ,covariate.labels = c("Same Race", "Same Gender")
+          )
+
+mdl.race <- lm(clicked ~ in.group*timed, data = sql.data)
+mdl.gender <- lm(clicked ~ same.gender*timed, data = sql.data)
+mdl.lax <- lm(clicked ~ in.group.lax*timed, data = sql.data)
+mdl.strict <- lm(clicked ~ in.group.strict*timed, data = sql.data)
+
+stargazer(mdl.race, mdl.gender, mdl.lax, mdl.strict,
+          type = "text", omit = c("movie_title", "user_id", "rating", "order_no"),
+          omit.stat = c("f",    "ser")
+          ,column.labels = c("Same Race", "Same Gender", "Race or Gender", "Race and Gender")
+          #,covariate.labels = c("Same Race", "Same Gender", "Same Race x Same Gender")
+          )
+
+
+
+# mdl.all <- lm(clicked ~ in.group*timed + same.gender*timed, data = sql.data)
+# mdl.white <- lm(clicked ~ in.group*timed + same.gender*timed, data = sql.data %>% filter(race.simple == "White"))
+# mdl.hispanic <- lm(clicked ~ in.group*timed + same.gender*timed, data = sql.data  %>% filter(race.simple == "Hispanic"))
+# mdl.black <- lm(clicked ~ in.group*timed + same.gender*timed, data = sql.data  %>% filter(race.simple == "Black"))
+# 
+# stargazer(mdl.all, mdl.white, mdl.hispanic, mdl.black, omit = c("movie_title", "user_id", "rating", "order_no"),
+#           omit.stat = c("f",    "ser")
+#           ,column.labels = c("All", "White", "Hispanic", "Black")
+#           ,covariate.labels = c("Same Race", "Rushed/Automatic", "Same Gender", "Same Race x Rushed", "Same Gender x Rushed")
+#           )
+# 
+# 
+# mdl.all <- lm(clicked ~ in.group.strict*timed, data = sql.data)
+# mdl.white <- lm(clicked ~ in.group.strict*timed, data = sql.data %>% filter(race.simple == "White"))
+# mdl.hispanic <- lm(clicked ~ in.group.strict*timed, data = sql.data  %>% filter(race.simple == "Hispanic"))
+# mdl.black <- lm(clicked ~ in.group.strict*timed, data = sql.data  %>% filter(race.simple == "Black"))
+# 
+# stargazer(mdl.all, mdl.white, mdl.hispanic, mdl.black, omit = c("movie_title", "user_id", "rating", "order_no"),
+#           omit.stat = c("f",    "ser")
+#           ,column.labels = c("All", "White", "Hispanic", "Black")
+#           # ,covariate.labels = c("Same Race", "Rushed/Automatic", "Same Gender", "Same Race x Rushed", "Same Gender x Rushed")
+#           )
+# 
+# 
+# mdl.all <- lm(clicked ~ in.group.lax*timed, data = sql.data)
+# mdl.white <- lm(clicked ~ in.group.lax*timed, data = sql.data %>% filter(race.simple == "White"))
+# mdl.hispanic <- lm(clicked ~ in.group.lax*timed, data = sql.data  %>% filter(race.simple == "Hispanic"))
+# mdl.black <- lm(clicked ~ in.group.lax*timed, data = sql.data  %>% filter(race.simple == "Black"))
+# 
+# stargazer(mdl.all, mdl.white, mdl.hispanic, mdl.black, omit = c("movie_title", "user_id", "rating", "order_no"),
+#           omit.stat = c("f",    "ser")
+#           ,column.labels = c("All", "White", "Hispanic", "Black")
+#           # ,covariate.labels = c("Same Race", "Rushed/Automatic", "Same Gender", "Same Race x Rushed", "Same Gender x Rushed")
+#           )
+# 
+# mdl.all <- lm(clicked ~ in.group.lax*timed, data = sql.data)
+# mdl.male <- lm(clicked ~ in.group.lax*timed, data = sql.data %>% filter(user_gender == "Male"))
+# mdl.female <- lm(clicked ~ in.group.lax*timed, data = sql.data  %>% filter(user_gender == "Female"))
+# 
+# stargazer(mdl.all, mdl.female, mdl.male, omit = c("movie_title", "user_id", "rating", "order_no"),
+#           omit.stat = c("f",    "ser")
+#           ,column.labels = c("All", "Female", "Male")
+#           # ,covariate.labels = c("Same Race", "Rushed/Automatic", "Same Gender", "Same Race x Rushed", "Same Gender x Rushed")
+#           )
+# 
+# mdl.all <- lm(clicked ~ in.group*timed, data = sql.data)
+# mdl.same.g <- lm(clicked ~ in.group*timed, data = sql.data %>% filter(same.gender == 1))
+# mdl.diff.g <- lm(clicked ~ in.group*timed, data = sql.data  %>% filter(same.gender == 0))
+# 
+# stargazer(mdl.all, mdl.same.g, mdl.diff.g, omit = c("movie_title", "user_id", "rating", "order_no"),
+#           omit.stat = c("f",    "ser")
+#           ,column.labels = c("All", "Same Gender", "Diff Gender")
+#           # ,covariate.labels = c("Same Race", "Rushed/Automatic", "Same Gender", "Same Race x Rushed", "Same Gender x Rushed")
+#           )
+# 
+# mdl.all <- lm(clicked ~ in.group*timed, data = sql.data)
+# mdl.white <- lm(clicked ~ in.group*timed, data = sql.data %>% filter(race.simple == "White"))
+# mdl.hispanic <- lm(clicked ~ in.group*timed, data = sql.data  %>% filter(race.simple == "Hispanic"))
+# mdl.black <- lm(clicked ~ in.group*timed, data = sql.data  %>% filter(race.simple == "Black"))
+# 
+# stargazer(mdl.all, mdl.white, mdl.hispanic, mdl.black, omit = c("movie_title", "user_id", "rating", "order_no"),
+#           omit.stat = c("f",    "ser")
+#           ,column.labels = c("All", "White", "Hispanic", "Black")
+#           #,covariate.labels = c("Same Race", "Rushed/Automatic", "Same Gender", "Same Race x Rushed", "Same Gender x Rushed")
+#           )
+
+# 
+# 
+# mdl.all <- lm(clicked ~ in.group.lax*timed + genre.match, data = sql.data)
+# mdl.white <- lm(clicked ~ in.group.lax*timed + genre.match, data = sql.data %>% filter(race.simple == "White"))
+# mdl.hispanic <- lm(clicked ~ in.group.lax*timed + genre.match, data = sql.data  %>% filter(race.simple == "Hispanic"))
+# mdl.black <- lm(clicked ~ in.group.lax*timed + genre.match, data = sql.data  %>% filter(race.simple == "Black"))
+# 
+# stargazer(mdl.all, mdl.white, mdl.hispanic, mdl.black, omit = c("movie_title", "user_id", "rating", "order_no"),
+#           omit.stat = c("f",    "ser")
+#           ,column.labels = c("All", "White subjects", "Hispanic", "Black", "Two or more")
+#           , add.lines = list(
+#                              c("Genre match controls?", "X", "X", "X", "X")
+#                              )
+#           #,covariate.labels = c("In-group", "Rushed/Automatic", "In-group x Rushed")
+#           )
+
+```
+
+
+```{r}
+# 
+# mdl2 <- lm(clicked ~ in.group*timed*genre.match, data = sql.data )
+# mdl <- lm(clicked ~ in.group*timed *genre.match, data = sql.data)
+# mdl.person <- lm(clicked ~ in.group*timed*genre.match, data = sql.data)
+# mdl.movie <- lm(clicked ~ in.group*timed*genre.match, data = sql.data)
+# mdl.with.count.outcome <- lm(opened ~ in.group*timed + order_no + I(order_no^2), data = sql.data)
+# 
+# stargazer(mdl2, mdl.person, mdl.movie, mdl, mdl.with.count.outcome,
+#           type = "text", omit = c("movie_title", "user_id", "rating", "order_no"),
+#           omit.stat = c("f",    "ser"),
+#           add.lines=list(c("User FE?", "", "X", "", "X", ""),
+#                          c("Movie FE?", "", "", "X", "X", "X"),
+#                          c("Rating", "", "", "X", "X", "X"))
+#           #,covariate.labels = c("In-group", "Rushed/Automatic", "In-group x Rushed")
+#           )
+
+```
+
+
+```{r}
+# 
+# l.dat <- sql.data %>% group_by(timed) %>% dplyr::summarise(mean = mean(in.group, na.rm = T), sd = sd(in.group, na.rm = T), n= n()) %>% mutate(stat = "Views")
+# 
+# l.dat2 <- sql.data %>% filter(readmore_count > 0) %>% group_by(timed) %>% dplyr::summarise(mean = mean(in.group, na.rm = T), sd = sd(in.group, na.rm = T), n= n()) %>% mutate(stat = "Read More")
+# 
+# l.dat3 <- sql.data %>% filter(clicked == 1) %>% group_by(timed) %>% dplyr::summarise(mean = mean(in.group, na.rm = T), sd = sd(in.group, na.rm = T), n= n()) %>% mutate(stat = "Clicks")
+# 
+# l.dat <- rbind(l.dat, l.dat2, l.dat3)
+# 
+# l.dat$ci <- (l.dat$sd/sqrt(l.dat$n))*1.96
+# pd <- position_dodge(0.01)
+# 
+# # l.dat <- data.frame(timed = c(0,1,0,1), 
+# #            mean = c(.59, .59, .61, .84), 
+# #            stat = c("Views", "Views", "Clicks", "Clicks"),
+# #            ci = .05
+# # )
+# 
+# ggplot(l.dat, aes(x=factor(timed), y=mean, fill = stat))+ xlab("Rushed") + ylab("In group rate") + geom_bar(stat="identity", position=position_dodge(), width = .8)  +
+#   geom_errorbar(aes(ymin=mean-ci, ymax=mean+ci), width=.05, position=position_dodge(.8)) + labs(fill = "Action")
+
+
+
+
+```
+
+user.dta %>% group_by(test_timed) %>% summarise(mean(as.numeric(feedback_relay), na.rm = T))
+
+user.dta %>% group_by(test_timed) %>% summarise(mean(as.numeric(feedback_satisfied), na.rm = T))
+
+
+```{r}
+# 
+# l.dat <- user.dta %>% group_by(test_type) %>% dplyr::summarise(mean = mean(feedback_rate, na.rm = T), sd = sd(feedback_rate, na.rm = T), n= n()) %>% mutate(stat = "Rate the selection")
+# 
+# l.dat2 <- user.dta %>% group_by(test_type) %>% dplyr::summarise(mean = mean(feedback_satisfied, na.rm = T), sd = sd(feedback_satisfied, na.rm = T), n= n()) %>% mutate(stat = "Satisfied with choice")
+# 
+# l.dat3 <- user.dta %>% group_by(test_type) %>% dplyr::summarise(mean = mean(feedback_rely, na.rm = T), sd = sd(feedback_rely, na.rm = T), n= n()) %>% mutate(stat = "Rely on recommendations")
+# 
+# l.dat4 <- user.dta %>% group_by(test_type) %>% dplyr::summarise(mean = mean(feedback_likely, na.rm = T), sd = sd(feedback_likely, na.rm = T), n= n()) %>% mutate(stat = "Likely to rent")
+# 
+# l.dat <- rbind(l.dat, l.dat2, l.dat3, l.dat4)
+# 
+# l.dat$ci <- (l.dat$sd/sqrt(l.dat$n))*1.96
+# pd <- position_dodge(0.01)
+# 
+# ggplot(l.dat, aes(x=stat, y=mean, fill = factor(test_type))) + ylab("Average star rating") + geom_bar(stat="identity", position=position_dodge(), width = .8)  +
+#   geom_errorbar(aes(ymin=mean-ci, ymax=mean+ci), width=.05, position=position_dodge(.8)) + labs(fill = "Timed") + xlab("")
+
+```
+
+```{r identify test and train}
+
+set.seed(1234)
+
+sql.data$race.simple.f <- as.factor(sql.data$race.simple)
+
+sql.data.slow <- sql.data %>% filter(timed == 0)
+
+# Split the data into training and test set
+training.samples <- sample(sql.data.slow$user_id, .7*length(unique(sql.data$user_id)))
+
+train.data.slow <- sql.data.slow %>% filter(user_id %in% training.samples)
+test.data.slow <- sql.data.slow %>% filter(!(user_id %in% training.samples))
+
+sql.data.fast <- sql.data %>% filter(timed == 1)
+
+# Split the data into training and test set
+training.samples <- sample(sql.data.fast$user_id, .7*length(unique(sql.data$user_id)))
+
+train.data.fast <- sql.data.fast %>% filter(user_id %in% training.samples)
+test.data.fast <- sql.data.fast %>% filter(!(user_id %in% training.samples))
+
+test.data <- rbind(test.data.fast, test.data.slow)
+
+
+vars.of.interest <- c("user_age", "clean_edu", "user_frequency", "user_genre", "genre.match", "rating.y", "rec_gender", "rec_race", "clicked", "race.simple.f","user_gender")
+
+#"race.simple.f","user_gender",
+
+
+d.test <- test.data %>%
+      dplyr::select(!!!enquos(vars.of.interest), user_id, in.group.lax)
+
+```
+
+
+```{r build a slow algo}
+
+d <- train.data.slow  %>%
+      dplyr::select(!!!enquos(vars.of.interest))
+
+d$clicked <- as.factor(d$clicked)
+
+result.summ <- data.frame(num.var = NULL, cv.error = NULL, ntree = NULL)
+for (treecount in c(500, 1000, 1500, 2000, 2500)) {
+#for (treecount in c(1, 500)) { #this is for testing
+  
+ c.v. <- rfcv(d %>% dplyr::select(-clicked), d$clicked, ntree = treecount)
+ result.summ <- rbind(result.summ,
+                      data.frame(num.var = c.v.$n.var, cv.error = c.v.$error.cv, ntree = treecount))
+ 
+}
+
+ggplot(result.summ, aes(x=num.var, y=cv.error, group=factor(ntree))) +
+  geom_line(aes(linetype=factor(ntree)))+
+  geom_point(aes(shape=factor(ntree)))
+
+best.mtry <- result.summ[which.min(result.summ$cv.error),"num.var"]
+best.tree <- result.summ[which.min(result.summ$cv.error),"ntree"]
+
+tree.mdl.slow <- randomForest(clicked ~ ., data = d, mtry = best.mtry, ntree = best.tree)
+
+d.test$prediction.slow <- predict(tree.mdl.slow, d.test %>%
+      dplyr::select(!!!enquos(vars.of.interest)), type = "prob")[,2]
+
+d.test <- d.test %>%
+    group_by(user_id) %>% 
+    mutate(rank.slow = rank(-prediction.slow, ties.method = "random"))
+
+l.dat.slow <- d.test %>% group_by(in.group.lax) %>% dplyr::summarise(mean.rating = mean(rank.slow, na.rm = T), sd = sd(rank.slow, na.rm = T), n= n())  %>% mutate(psych = "Non-rushed")
+
+d.test$top <- d.test$rank.slow <= 6
+
+l.dat.slow.2 <- d.test %>% group_by(in.group.lax) %>% dplyr::summarise(mean.rating = mean(top, na.rm = T), sd = sd(top, na.rm = T), n= n())  %>% mutate(psych = "Non-rushed")
+
+full.slow.data <- d.test %>% mutate(psych = "Non-rushed")
+
+```
+
+```{r build a fast algo}
+
+d <- train.data.fast %>%
+      dplyr::select(!!!enquos(vars.of.interest))
+
+d$clicked <- as.factor(d$clicked)
+
+#nb.mdl.fast <- naive_bayes(clicked ~ ., data = d, usekernel = F)
+
+result.summ <- data.frame(num.var = NULL, cv.error = NULL, ntree = NULL)
+for (treecount in c(500, 1000, 1500, 2000, 2500)) {
+#for (treecount in c(1, 500)) { #this is for testing
+  
+ c.v. <- rfcv(d %>% dplyr::select(-clicked), d$clicked, ntree = treecount)
+ result.summ <- rbind(result.summ,
+                      data.frame(num.var = c.v.$n.var, cv.error = c.v.$error.cv, ntree = treecount))
+ 
+}
+
+ggplot(result.summ, aes(x=num.var, y=cv.error, group=factor(ntree))) +
+  geom_line(aes(linetype=factor(ntree)))+
+  geom_point(aes(shape=factor(ntree)))
+
+best.mtry <- result.summ[which.min(result.summ$cv.error),"num.var"]
+best.tree <- result.summ[which.min(result.summ$cv.error),"ntree"]
+
+tree.mdl.fast <- randomForest(clicked ~ ., data = d, mtry = best.mtry, ntree = best.tree)
+
+# rpart.plot(tree.mdl.fast)
+
+d.test$prediction.fast <- predict(tree.mdl.fast, d.test, type = "prob")[,2]
+
+d.test <- d.test %>%
+    group_by(user_id) %>% 
+    mutate(rank.fast = rank(-prediction.fast, ties.method = "random"))
+
+```
+
+
+```{r graph results}
+
+
+
+l.dat.fast <- d.test %>% group_by(in.group.lax) %>% dplyr::summarise(mean.rating = mean(rank.fast, na.rm = T), sd = sd(rank.fast, na.rm = T), n= n()) %>% mutate(psych = "Rushed")
+
+d.test$top <- d.test$rank.fast <= 6
+
+l.dat.fast.2 <- d.test %>% group_by(in.group.lax) %>% dplyr::summarise(mean.rating = mean(top, na.rm = T), sd = sd(top, na.rm = T), n= n()) %>% mutate(psych = "Rushed")
+
+full.fast.data <- d.test %>% mutate(psych = "Rushed")
+
+l.dat <- rbind(l.dat.fast, l.dat.slow)
+
+l.dat$psych <- factor(l.dat$psych, levels = c("Non-rushed", "Rushed"))
+
+l.dat$mean.rating <- (l.dat$mean.rating - mean(test.data$order_no))*-1
+
+l.dat$ci <- (l.dat$sd/sqrt(l.dat$n))*1.96
+pd <- position_dodge(0.01)
+
+ggplot(l.dat, aes(x=factor(psych), y=mean.rating, colour=in.group.lax, group=in.group.lax)) +
+  geom_errorbar(aes(ymin=mean.rating-ci, ymax=mean.rating+ci, colour=in.group.lax), width=.1, position=pd) + 
+  geom_point(aes(shape = in.group.lax), position=pd, size=3) +
+  ylab("Mean number of slots \nabove average rank") + 
+  xlab("Mindset of users in training data") +
+  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+                       name="Poster Identity",
+                       breaks=c("FALSE", "TRUE"),
+                       labels=c("Outgroup", "Ingroup")) + 
+   scale_shape_discrete(name="Poster Identity",
+                       breaks=c("FALSE", "TRUE"),
+                       labels=c("Outgroup", "Ingroup"))
+
+l.dat <- rbind(l.dat.fast.2, l.dat.slow.2)
+
+l.dat$psych <- factor(l.dat$psych, levels = c("Non-rushed", "Rushed"))
+
+l.dat$ci <- (l.dat$sd/sqrt(l.dat$n))*1.96
+pd <- position_dodge(0.01)
+
+ggplot(l.dat, aes(x=factor(psych), y=mean.rating, fill=in.group.lax)) + 
+  geom_bar(aes(colour=in.group.lax), stat="identity", position=position_dodge()) +
+  ylab("Pr(Top 6)") + 
+  xlab("Mindset of users in training data")+
+  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+                       name="Poster Identity",
+                       breaks=c("FALSE", "TRUE"),
+                       labels=c("Outgroup", "Ingroup")) + 
+   scale_fill_manual(values=c("#CC79A7", "#009E73"),
+                     name="Poster Identity",
+                       breaks=c("FALSE", "TRUE"),
+                       labels=c("Outgroup", "Ingroup"))  +
+  geom_errorbar(aes(ymin=mean.rating-ci, ymax=mean.rating+ci), width=.1, position=position_dodge(.9)) 
+
+```
+
+
+```{r, results='asis'}
+
+full.data <- rbind(full.fast.data %>% rename(rank = rank.fast), full.slow.data %>% rename(rank = rank.slow))
+
+first.mdl <- lm(rank ~ in.group.lax*psych, data = full.data)
+sec.mdl <- lm(top ~ in.group.lax*psych , data = full.data)
+  
+stargazer(first.mdl, sec.mdl)
+
+```
+
+

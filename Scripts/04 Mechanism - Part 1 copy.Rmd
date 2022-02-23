@@ -1,0 +1,262 @@
+---
+title: "Process mech part 1"
+author: "ddd"
+date: "5/25/2021"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = F) 
+library(dplyr)
+library(stargazer)
+library(lubridate)
+library(tidyr)
+library(ggplot2)
+library(glmnet)
+library(mltools)
+library(data.table)
+library(naivebayes)
+library(randomForest)
+library(rpart.plot)
+library(ggthemes)
+theme_set(theme_tufte())
+
+```
+
+## R Markdown
+
+```{r}
+
+#knitr::opts_chunk$set(cache.extra = rand_seed)
+
+output.dta <- read.csv("/Users/diagdavenport/Downloads/Output-2022-02-22.csv")
+
+user.dta <- read.csv("/Users/diagdavenport/Downloads/User-2022-02-22.csv")
+
+movie.dta <- read.csv("/Users/diagdavenport/Downloads/Movie-2021-09-21.csv")
+
+#user.dta <- user.dta %>% filter(user_id != "" & !is.na(time_spent))
+
+sql.data <- merge(user.dta, output.dta, by = "user_id")
+
+sql.data$date <- as.Date(sql.data$timestamp)
+
+sql.data$good.data <- sql.data$date >= ymd("2022-02-20") # Full run 1
+#sql.data$good.data <- sql.data$date == ymd("2021-09-13") Pilot 
+
+sql.data <- sql.data %>% dplyr::filter(good.data == 1) # Drop old data
+
+#sql.data <- sql.data %>% dplyr::filter(user_age > 28) # Drop young tik tokers
+
+sql.data <- merge(sql.data, movie.dta, by.x =  "movie_title", by.y = "title")
+
+sql.data <- sql.data %>% separate(user_race, c("race.cat.1", "race.cat.2"), ",", remove = F)
+
+sql.data <- sql.data %>% separate(genre, c("genre.1", "genre.2", "genre.3"), ", ", remove = F)
+
+sql.data$genre.2 <- ifelse(is.na(sql.data$genre.2),
+                              "BLANK",
+                              sql.data$genre.2)
+
+sql.data$genre.3 <- ifelse(is.na(sql.data$genre.3),
+                              "BLANK",
+                              sql.data$genre.3)
+
+sql.data$genre.match <- ifelse(sql.data$user_genre == sql.data$genre.1 | 
+                                 sql.data$user_genre == sql.data$genre.2 |
+                                 sql.data$user_genre == sql.data$genre.3 ,
+                              1,
+                              0)
+
+sql.data$genre.match <- ifelse(sql.data$user_genre == "Action and adventure" & 
+                                 (sql.data$genre.1 %in% c("Action", "Adventure")|
+                                  sql.data$genre.2 %in% c("Action", "Adventure")|
+                                  sql.data$genre.3 %in% c("Action", "Adventure")) ,
+                              1,
+                              sql.data$genre.match)
+
+sql.data$genre.match <- ifelse(sql.data$user_genre == "Historical" & 
+                                 (sql.data$genre.1 %in% c("Documentary", "Biography")|
+                                  sql.data$genre.2 %in% c("Documentary", "Biography")|
+                                  sql.data$genre.3 %in% c("Documentary", "Biography")) ,
+                              1,
+                              sql.data$genre.match)
+
+sql.data$genre.match <- ifelse(sql.data$user_genre == "Science Fiction" & 
+                                 (sql.data$genre.1 %in% c("Sci-Fi")|
+                                  sql.data$genre.2 %in% c("Sci-Fi")|
+                                  sql.data$genre.3 %in% c("Sci-Fi")) ,
+                              1,
+                              sql.data$genre.match)
+
+sql.data$opened <- sql.data$readmore_count > 0
+
+sql.data$race.cat.2 <- ifelse(is.na(sql.data$race.cat.2),
+                              "BLANK",
+                              sql.data$race.cat.2)
+
+sql.data$race.simple <- "Other"
+
+sql.data$race.simple <- ifelse(sql.data$race.cat.1 == "White" | sql.data$race.cat.2 == "White",
+                              "White",
+                              sql.data$race.simple)
+
+sql.data$race.simple <- ifelse(sql.data$race.cat.1 == "Black" | sql.data$race.cat.2 == "Black",
+                              "Black",
+                              sql.data$race.simple)
+
+sql.data$race.simple <- ifelse(sql.data$race.cat.1 == "Hispanic" | sql.data$race.cat.2 == "Hispanic",
+                              "Hispanic",
+                              sql.data$race.simple)
+
+#sql.data <- sql.data %>% filter(race.simple != "Other")
+
+sql.data <- sql.data %>% filter(user_gender %in% c("Female", "Male"))
+  
+sql.data$in.group <- sql.data$race.simple == sql.data$rec_race
+
+sql.data$same.gender <- as.character(sql.data$user_gender) == as.character(sql.data$rec_gender)
+
+sql.data$in.group.strict <- sql.data$in.group & sql.data$same.gender
+
+sql.data$in.group.lax <- sql.data$in.group | sql.data$same.gender
+
+sql.data$group.combo <- paste(sql.data$same.gender, sql.data$in.group)
+
+
+sql.data$rec_race <- factor(sql.data$rec_race, levels = c("White", "Asian", "Black", "Hispanic"))
+
+sql.data$clean_edu <- ""
+
+sql.data$clean_edu <- with(sql.data,
+                 ifelse(user_education %in% c("Graduated high school", "Some college, no degree", "Associate degree", "Did not graduate high school"),
+                        "less.than.bachelors",
+                        clean_edu))
+
+sql.data$clean_edu <- with(sql.data,
+                 ifelse(user_education %in% c("Bachelor degree"),
+                        "bachelors",
+                        clean_edu))
+
+sql.data$clean_edu <- with(sql.data,
+                 ifelse(user_education %in% c("Master degree", "Doctoral degree", "Professional degree"),
+                        "more.than.bachelors",
+                        clean_edu))
+
+sql.data$clean_edu <- factor(sql.data$clean_edu, levels = c("less.than.bachelors", "bachelors", "more.than.bachelors"))
+
+#sql.data <- sql.data %>% filter(movie_title %in% good.movies)
+
+# smry <- sql.data %>% group_by(user_id, timed) %>% summarise(last = max(order_no, na.rm = T),
+#                                                             clicks = sum(clicked, na.rm = T),
+#                                                             in.group.rate.views = mean(in.group, na.rm = T)) %>%
+#   group_by(timed) %>% summarise(n.participants = n(),
+#                                 avg.seen = mean(last, na.rm = T),
+#                                 avg.clicks = mean(clicks, na.rm = T),
+#                                 avg.in.group.views = mean(in.group.rate.views, na.rm = T))
+# 
+# lst.row <- sql.data %>% filter(clicked == 1) %>% group_by(user_id, timed) %>%
+#   summarise(in.group.rate.clicks = mean(in.group, na.rm = T)) %>%
+#   group_by(timed) %>% summarise(avg.in.group.clicks = mean(in.group.rate.clicks, na.rm = T))
+# 
+# stargazer(t(cbind(smry, lst.row$avg.in.group.clicks)), summary = FALSE)
+
+#sql.data <- sql.data %>%filter(order_no < 10)
+
+#sql.data <- sql.data %>% filter(race.simple == "White" & user_gender == "Male")
+
+```
+
+```{r sum stats}
+
+length(unique(sql.data$user_id))
+
+sum(sql.data$clicked)
+
+stat.holder <- sql.data %>% dplyr::select(user_id, user_gender, user_age, user_race, race.simple, clean_edu) %>%
+  distinct()
+
+table(stat.holder$user_gender)/nrow(stat.holder)
+
+mean(stat.holder$user_age)
+
+table(stat.holder$race.simple)/nrow(stat.holder)
+
+table(stat.holder$clean_edu)/nrow(stat.holder)
+
+```
+
+```{r for jens, results='asis'}
+
+l.dat <- sql.data %>% group_by(timed) %>% filter(clicked == 1) %>% dplyr::summarise(mean = mean(in.group.lax, na.rm = T), sd = sd(in.group.lax, na.rm = T), n= n())
+
+l.dat$ci <- (l.dat$sd/sqrt(l.dat$n))*1.96
+pd <- position_dodge(0.01)
+
+ggplot(l.dat, aes(x=factor(timed), y=mean)) + ylab("% ingroup") + geom_bar(stat="identity", position=position_dodge(), width = .8)  +
+  geom_errorbar(aes(ymin=mean-ci, ymax=mean+ci), width=.05, position=position_dodge(.8)) + xlab("Rushed?") 
+
+sql.data$order_no.ceiling <- floor(sql.data$order_no/6)
+
+l.dat <- sql.data %>% group_by(timed, order_no.ceiling) %>% dplyr::summarise(mean = mean(in.group.lax, na.rm = T), sd = sd(in.group.lax, na.rm = T), n= n())
+
+l.dat$ci <- (l.dat$sd/sqrt(l.dat$n))*1.96
+pd <- position_dodge(0.01)
+
+ggplot(l.dat, aes(x=factor(timed), y=mean, fill = factor(order_no.ceiling))) + ylab("% ingroup") + geom_bar(stat="identity", position=position_dodge(), width = .8)  +
+  geom_errorbar(aes(ymin=mean-ci, ymax=mean+ci), width=.05, position=position_dodge(.8)) + xlab("Rushed?") 
+
+
+
+l.dat <- sql.data %>% group_by(timed, order_no.ceiling) %>% dplyr::summarise(mean = mean(in.group, na.rm = T), sd = sd(in.group, na.rm = T), n= n())
+
+l.dat$ci <- (l.dat$sd/sqrt(l.dat$n))*1.96
+pd <- position_dodge(0.01)
+
+ggplot(l.dat, aes(x=factor(timed), y=mean, fill = factor(order_no.ceiling))) + ylab("% same race") + geom_bar(stat="identity", position=position_dodge(), width = .8)  +
+  geom_errorbar(aes(ymin=mean-ci, ymax=mean+ci), width=.05, position=position_dodge(.8)) + xlab("Rushed?") 
+
+
+
+
+l.dat <- sql.data %>% group_by(timed, order_no.ceiling) %>% dplyr::summarise(mean = mean(same.gender, na.rm = T), sd = sd(same.gender, na.rm = T), n= n())
+
+l.dat$ci <- (l.dat$sd/sqrt(l.dat$n))*1.96
+pd <- position_dodge(0.01)
+
+ggplot(l.dat, aes(x=factor(timed), y=mean, fill = factor(order_no.ceiling))) + ylab("% same gender") + geom_bar(stat="identity", position=position_dodge(), width = .8)  +
+  geom_errorbar(aes(ymin=mean-ci, ymax=mean+ci), width=.05, position=position_dodge(.8)) + xlab("Rushed?") 
+
+
+
+l.dat <- sql.data %>% group_by(timed, order_no.ceiling) %>% dplyr::summarise(mean = mean(genre.match, na.rm = T), sd = sd(genre.match, na.rm = T), n= n())
+
+l.dat$ci <- (l.dat$sd/sqrt(l.dat$n))*1.96
+pd <- position_dodge(0.01)
+
+ggplot(l.dat, aes(x=factor(timed), y=mean, fill = factor(order_no.ceiling))) + ylab("% genre match") + geom_bar(stat="identity", position=position_dodge(), width = .8)  +
+  geom_errorbar(aes(ymin=mean-ci, ymax=mean+ci), width=.05, position=position_dodge(.8)) + xlab("Rushed?") 
+
+
+l.dat <- sql.data %>% group_by(timed, order_no.ceiling) %>% dplyr::summarise(mean = mean(clicked, na.rm = T), sd = sd(clicked, na.rm = T), n= n())
+
+l.dat$ci <- (l.dat$sd/sqrt(l.dat$n))*1.96
+pd <- position_dodge(0.01)
+
+ggplot(l.dat, aes(x=factor(timed), y=mean, fill = factor(order_no.ceiling))) + ylab("Pr(click)") + geom_bar(stat="identity", position=position_dodge(), width = .8)  +
+  geom_errorbar(aes(ymin=mean-ci, ymax=mean+ci), width=.05, position=position_dodge(.8)) + xlab("Rushed?") 
+
+
+
+mdl.fast.g <- lm(order_no ~ (in.group.lax
+                 +genre.match), data = sql.data %>% filter(timed == 1))
+mdl.fast.g1 <- lm(order_no ~ (in.group.lax
+                 +genre.match), data = sql.data %>% filter(timed == 0))
+mdl.fast.g2 <- lm(in.group.lax ~ timed*order_no.ceiling, data = sql.data %>% filter(clicked == 1))
+
+stargazer(mdl.fast.g, mdl.fast.g1, mdl.fast.g2,
+          omit.stat = c("f",    "ser"), type = "text"
+          )
+
+```
+
