@@ -40,13 +40,10 @@ movie.dta <- read.csv("/Users/diagdavenport/Downloads/Movie-2021-09-21.csv")
 sql.data <- merge(user.dta, output.dta, by = "user_id")
 
 sql.data$date <- as.Date(sql.data$timestamp)
-
-sql.data$good.data <- sql.data$date >= ymd("2022-02-20") # Full run 1
-#sql.data$good.data <- sql.data$date == ymd("2021-09-13") Pilot 
+jjnjb
+sql.data$good.data <- sql.data$date >= ymd("2022-02-21") # Full run 1
 
 sql.data <- sql.data %>% dplyr::filter(good.data == 1) # Drop old data
-
-#sql.data <- sql.data %>% dplyr::filter(user_age > 28) # Drop young tik tokers
 
 sql.data <- merge(sql.data, movie.dta, by.x =  "movie_title", by.y = "title")
 
@@ -110,6 +107,8 @@ sql.data$race.simple <- ifelse(sql.data$race.cat.1 == "Hispanic" | sql.data$race
                               sql.data$race.simple)
 
 #sql.data <- sql.data %>% filter(race.simple != "Other")
+
+sql.data$isWhite <- sql.data$race.simple == "White"
 
 sql.data <- sql.data %>% filter(user_gender %in% c("Female", "Male"))
   
@@ -188,71 +187,69 @@ table(stat.holder$clean_edu)/nrow(stat.holder)
 
 ```{r for jens, results='asis'}
 
-l.dat <- sql.data %>% group_by(timed) %>% filter(clicked == 1) %>% dplyr::summarise(mean = mean(in.group.lax, na.rm = T), sd = sd(in.group.lax, na.rm = T), n= n())
+l.dat <- sql.data %>% group_by(sorting) %>% filter(clicked == 1) %>% dplyr::summarise(mean = mean(in.group.lax, na.rm = T), sd = sd(in.group.lax, na.rm = T), n= n())
 
 l.dat$ci <- (l.dat$sd/sqrt(l.dat$n))*1.96
 pd <- position_dodge(0.01)
 
-ggplot(l.dat, aes(x=factor(timed), y=mean)) + ylab("% ingroup") + geom_bar(stat="identity", position=position_dodge(), width = .8)  +
-  geom_errorbar(aes(ymin=mean-ci, ymax=mean+ci), width=.05, position=position_dodge(.8)) + xlab("Rushed?") 
+ggplot(l.dat, aes(x=factor(sorting), y=mean)) + ylab("% ingroup") + geom_bar(stat="identity", position=position_dodge(), width = .8)  +
+  geom_errorbar(aes(ymin=mean-ci, ymax=mean+ci), width=.05, position=position_dodge(.8)) + xlab("Sorting") 
 
 sql.data$order_no.ceiling <- floor(sql.data$order_no/6)
 
-l.dat <- sql.data %>% group_by(timed, order_no.ceiling) %>% dplyr::summarise(mean = mean(in.group.lax, na.rm = T), sd = sd(in.group.lax, na.rm = T), n= n())
+l.dat <- sql.data %>% group_by(sorting, order_no.ceiling) %>% dplyr::summarise(mean = mean(in.group.lax, na.rm = T), sd = sd(in.group.lax, na.rm = T), n= n())
 
 l.dat$ci <- (l.dat$sd/sqrt(l.dat$n))*1.96
 pd <- position_dodge(0.01)
 
-ggplot(l.dat, aes(x=factor(timed), y=mean, fill = factor(order_no.ceiling))) + ylab("% ingroup") + geom_bar(stat="identity", position=position_dodge(), width = .8)  +
-  geom_errorbar(aes(ymin=mean-ci, ymax=mean+ci), width=.05, position=position_dodge(.8)) + xlab("Rushed?") 
+ggplot(l.dat, aes(x=factor(sorting), y=mean, fill = factor(order_no.ceiling))) + ylab("% ingroup") + geom_bar(stat="identity", position=position_dodge(), width = .8)  +
+  geom_errorbar(aes(ymin=mean-ci, ymax=mean+ci), width=.05, position=position_dodge(.8)) + xlab("Sorting") 
 
 
 
-l.dat <- sql.data %>% group_by(timed, order_no.ceiling) %>% dplyr::summarise(mean = mean(in.group, na.rm = T), sd = sd(in.group, na.rm = T), n= n())
-
-l.dat$ci <- (l.dat$sd/sqrt(l.dat$n))*1.96
-pd <- position_dodge(0.01)
-
-ggplot(l.dat, aes(x=factor(timed), y=mean, fill = factor(order_no.ceiling))) + ylab("% same race") + geom_bar(stat="identity", position=position_dodge(), width = .8)  +
-  geom_errorbar(aes(ymin=mean-ci, ymax=mean+ci), width=.05, position=position_dodge(.8)) + xlab("Rushed?") 
-
-
-
-
-l.dat <- sql.data %>% group_by(timed, order_no.ceiling) %>% dplyr::summarise(mean = mean(same.gender, na.rm = T), sd = sd(same.gender, na.rm = T), n= n())
+l.dat <- sql.data %>% group_by(sorting, order_no.ceiling) %>% dplyr::summarise(mean = mean(in.group, na.rm = T), sd = sd(in.group, na.rm = T), n= n())
 
 l.dat$ci <- (l.dat$sd/sqrt(l.dat$n))*1.96
 pd <- position_dodge(0.01)
 
-ggplot(l.dat, aes(x=factor(timed), y=mean, fill = factor(order_no.ceiling))) + ylab("% same gender") + geom_bar(stat="identity", position=position_dodge(), width = .8)  +
-  geom_errorbar(aes(ymin=mean-ci, ymax=mean+ci), width=.05, position=position_dodge(.8)) + xlab("Rushed?") 
+ggplot(l.dat, aes(x=factor(sorting), y=mean, fill = factor(order_no.ceiling))) + ylab("% same race") + geom_bar(stat="identity", position=position_dodge(), width = .8)  +
+  geom_errorbar(aes(ymin=mean-ci, ymax=mean+ci), width=.05, position=position_dodge(.8)) + xlab("Sorting") 
 
 
-
-l.dat <- sql.data %>% group_by(timed, order_no.ceiling) %>% dplyr::summarise(mean = mean(genre.match, na.rm = T), sd = sd(genre.match, na.rm = T), n= n())
-
-l.dat$ci <- (l.dat$sd/sqrt(l.dat$n))*1.96
-pd <- position_dodge(0.01)
-
-ggplot(l.dat, aes(x=factor(timed), y=mean, fill = factor(order_no.ceiling))) + ylab("% genre match") + geom_bar(stat="identity", position=position_dodge(), width = .8)  +
-  geom_errorbar(aes(ymin=mean-ci, ymax=mean+ci), width=.05, position=position_dodge(.8)) + xlab("Rushed?") 
-
-
-l.dat <- sql.data %>% group_by(timed, order_no.ceiling) %>% dplyr::summarise(mean = mean(clicked, na.rm = T), sd = sd(clicked, na.rm = T), n= n())
+l.dat <- sql.data %>% group_by(sorting, order_no.ceiling) %>% dplyr::summarise(mean = mean(same.gender, na.rm = T), sd = sd(same.gender, na.rm = T), n= n())
 
 l.dat$ci <- (l.dat$sd/sqrt(l.dat$n))*1.96
 pd <- position_dodge(0.01)
 
-ggplot(l.dat, aes(x=factor(timed), y=mean, fill = factor(order_no.ceiling))) + ylab("Pr(click)") + geom_bar(stat="identity", position=position_dodge(), width = .8)  +
-  geom_errorbar(aes(ymin=mean-ci, ymax=mean+ci), width=.05, position=position_dodge(.8)) + xlab("Rushed?") 
+ggplot(l.dat, aes(x=factor(sorting), y=mean, fill = factor(order_no.ceiling))) + ylab("% same gender") + geom_bar(stat="identity", position=position_dodge(), width = .8)  +
+  geom_errorbar(aes(ymin=mean-ci, ymax=mean+ci), width=.05, position=position_dodge(.8)) + xlab("Sorting") 
+
+
+
+l.dat <- sql.data %>% group_by(sorting, order_no.ceiling) %>% dplyr::summarise(mean = mean(genre.match, na.rm = T), sd = sd(genre.match, na.rm = T), n= n())
+
+l.dat$ci <- (l.dat$sd/sqrt(l.dat$n))*1.96
+pd <- position_dodge(0.01)
+
+ggplot(l.dat, aes(x=factor(sorting), y=mean, fill = factor(order_no.ceiling))) + ylab("% genre match") + geom_bar(stat="identity", position=position_dodge(), width = .8)  +
+  geom_errorbar(aes(ymin=mean-ci, ymax=mean+ci), width=.05, position=position_dodge(.8)) + xlab("Sorting") 
+
+
+l.dat <- sql.data %>% group_by(sorting, order_no.ceiling) %>% dplyr::summarise(mean = mean(clicked, na.rm = T), sd = sd(clicked, na.rm = T), n= n())
+
+l.dat$ci <- (l.dat$sd/sqrt(l.dat$n))*1.96
+pd <- position_dodge(0.01)
+
+ggplot(l.dat, aes(x=factor(sorting), y=mean, fill = factor(order_no.ceiling))) + ylab("Pr(click)") + geom_bar(stat="identity", position=position_dodge(), width = .8)  +
+  geom_errorbar(aes(ymin=mean-ci, ymax=mean+ci), width=.05, position=position_dodge(.8)) + xlab("Sorting") 
 
 
 
 mdl.fast.g <- lm(order_no ~ (in.group.lax
-                 +genre.match), data = sql.data %>% filter(timed == 1))
+                 +genre.match), data = sql.data %>% filter(sorting == "algorithm"))
 mdl.fast.g1 <- lm(order_no ~ (in.group.lax
-                 +genre.match), data = sql.data %>% filter(timed == 0))
-mdl.fast.g2 <- lm(in.group.lax ~ timed*order_no.ceiling, data = sql.data %>% filter(clicked == 1))
+                 +genre.match), data = sql.data %>% filter(sorting == "random"))
+mdl.fast.g2 <- lm(in.group.lax ~ sorting*order_no.ceiling, data = sql.data %>% filter(clicked == 1))
 
 stargazer(mdl.fast.g, mdl.fast.g1, mdl.fast.g2,
           omit.stat = c("f",    "ser"), type = "text"
