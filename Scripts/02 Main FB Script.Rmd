@@ -880,13 +880,11 @@ dev.off()
 ```{r alluvials pymk}
 
 m.pymk.df.all$new.order4 <- trunc(m.pymk.df.all$pymk.order/15)
-m.pymk.df.all$new.order4 <- ifelse(m.pymk.df.all$new.order4 == 4, 3, m.pymk.df.all$new.order4)
+m.pymk.df.all$new.order4 <- ifelse(m.pymk.df.all$new.order4 == 4, 3, m.pymk.df.all$new.order4) + 1
 m.pymk.df.all$friend.order4 <- trunc(m.pymk.df.all$pct_friend_rank/15)
-m.pymk.df.all$friend.order4 <- ifelse(m.pymk.df.all$friend.order4 == 4, 3, m.pymk.df.all$friend.order4)
+m.pymk.df.all$friend.order4 <- ifelse(m.pymk.df.all$friend.order4 == 4, 3, m.pymk.df.all$friend.order4) + 1
 
-m.pymk.df.all$newquartile4 <- 3 - (m.pymk.df.all$norm.quartile - 1)
-
-
+m.pymk.df.all$newquartile4 <- 3 - (m.pymk.df.all$norm.quartile - 1) + 1
 
 l.dat <- m.pymk.df.all %>% group_by(newquartile4, new.order4) %>% dplyr::summarise(freq = n())
 
@@ -897,8 +895,11 @@ ggplot(as.data.frame(l.dat),
   geom_alluvium(aes(fill = factor(newquartile4)), width = 1/12) +
   geom_stratum(width = 1/12, fill = "white", color = "grey") +
   geom_label(stat = "stratum", aes(label = after_stat(stratum))) +
-  scale_x_discrete(limits = c("Ranking Group*(-1)", "Actual PYMK Ranking"), expand = c(.05, .05)) + theme(legend.position="bottom") + 
-  scale_fill_manual(values=rev(brewer.pal(n = 5, name = "Blues")[2:5])) 
+  scale_x_discrete(limits = c("Ranking Group*(-1)", "Actual PYMK Ranking"), expand = c(.05, .05), position = "top")
+  scale_fill_manual(values=rev(brewer.pal(n = 5, name = "Blues")[2:5])) + 
+  theme(axis.title.y =element_blank(),
+        axis.text.y =element_blank(),
+        axis.ticks.y = element_blank(), legend.position="none")
 
 dev.copy(jpeg,'Output/Graphs/Audit/Sankey flows/US PYMK norm quartile to actual.jpg')
 dev.off()
@@ -918,8 +919,11 @@ ggplot(as.data.frame(l.dat),
   geom_alluvium(aes(fill = factor(friend.order4)), width = 1/12) +
   geom_stratum(width = 1/12, fill = "white", color = "grey") +
   geom_label(stat = "stratum", aes(label = after_stat(stratum))) +
-  scale_x_discrete(limits = c("Pct Friend Group", "Actual NF Ranking"), expand = c(.05, .05)) + theme(legend.position="bottom") + 
-  scale_fill_manual(values=rev(brewer.pal(n = 5, name = "Blues")[2:5]))
+  scale_x_discrete(limits = c("Pct Friend Group", "Actual PYMK Ranking"), expand = c(.05, .05), position = "top") +
+  scale_fill_manual(values=rev(brewer.pal(n = 5, name = "Blues")[2:5])) + 
+  theme(axis.title.y =element_blank(),
+        axis.text.y =element_blank(),
+        axis.ticks.y = element_blank(), legend.position="none")
 
 dev.copy(jpeg,'Output/Graphs/Audit/Sankey flows/US PYMK pct friend to actual.jpg')
 dev.off()
@@ -1117,13 +1121,16 @@ dev.off()
 
 ```{r pymk heatmaps}
 
+heatmap.label.pymk.order <- "Actual PYMK Ranking"
+#heatmap.label.complete_time_rank <- "Chronological Ranking"
+#heatmap.label.norm_pctle <- "User's Self-Reported Preferences"
 
 ggplot(m.pymk.df.all, aes(x=norm.pctle, pymk.order)) + stat_density_2d(
   geom = "raster",
   aes(fill = after_stat(density)),
   contour = F
 ) + scale_y_reverse() + scale_fill_gradientn(colors = brewer.pal(n = 5, name = "Blues"),
-                             values = color.scaling)
+                             values = color.scaling) + ylab(heatmap.label.pymk.order)
 
 dev.copy(jpeg,'Output/Graphs/Audit/Heatmaps/US PYMK norm pref rank by pymk rank - smooth.jpg')
 dev.off()
@@ -1131,7 +1138,7 @@ dev.off()
 m.pymk.df.all$holder <- 1
 
 ggplot(m.pymk.df.all, aes(factor(holder), pymk.order)) + stat_density(aes(fill = after_stat(density)), geom = "raster", position = "identity") + facet_grid(.~race.in.group, scales = "free_y") + scale_y_reverse() + scale_fill_gradientn(colors = brewer.pal(n = 5, name = "Blues"),
-                             values = color.scaling)
+                             values = color.scaling) + ylab(heatmap.label.pymk.order)
 
 dev.copy(jpeg,'Output/Graphs/Audit/Heatmaps/US PYMK pymk rank by ingroup - smooth.jpg')
 dev.off()

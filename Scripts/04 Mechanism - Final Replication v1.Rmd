@@ -28,6 +28,8 @@ theme_set(theme_tufte())
 
 ```{r}
 
+outgroup.ingroup.colors <- c("#DC3220", "#005AB5")
+
 output.dta <- read.csv("/Users/diagdavenport/Downloads/Output-2021-12-27.csv")
 
 user.dta <- read.csv("/Users/diagdavenport/Downloads/User-2021-12-27.csv")
@@ -231,11 +233,11 @@ pd <- position_dodge(0.01)
 
 ggplot(l.dat, aes(x=factor(timed), y=mean, fill = in.group.lax)) + ylab("pr(click)") + geom_bar(stat="identity", position=position_dodge(), width = .8)  +
   geom_errorbar(aes(ymin=mean-ci, ymax=mean+ci), width=.05, position=position_dodge(.8)) + xlab("Rushed?") +
-  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+  scale_colour_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
-   scale_fill_manual(values=c("#CC79A7", "#009E73"),
+   scale_fill_manual(values=outgroup.ingroup.colors,
                      name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + scale_x_discrete(labels=c("0" = "No", "1" = "Yes"))
@@ -248,11 +250,11 @@ pd <- position_dodge(0.01)
 
 ggplot(l.dat, aes(x=factor(timed), y=mean, fill = in.group.lax)) + ylab("pr(click)") + geom_bar(stat="identity", position=position_dodge(), width = .8)  +
   geom_errorbar(aes(ymin=mean-ci, ymax=mean+ci), width=.05, position=position_dodge(.8)) + xlab("Rushed?") +
-  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+  scale_colour_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
-   scale_fill_manual(values=c("#CC79A7", "#009E73"),
+   scale_fill_manual(values=outgroup.ingroup.colors,
                      name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + scale_x_discrete(labels=c("0" = "No", "1" = "Yes")) + facet_grid(.~genre.match)
@@ -812,7 +814,7 @@ ggplot(l.dat, aes(x=factor(psych), y=mean.rating, colour=in.group.lax, group=in.
   geom_point(aes(shape = in.group.lax), position=pd, size=3) +
   ylab("Mean number of slots \nabove average rank") + 
   xlab("Mindset of users in training data") +
-  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+  scale_colour_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
@@ -832,11 +834,11 @@ ggplot(l.dat, aes(x=factor(psych), y=mean.rating, fill=in.group.lax)) +
   geom_bar(aes(colour=in.group.lax), stat="identity", position=position_dodge()) +
   ylab("Pr(Top 6)") + 
   xlab("Mindset of users in training data")+
-  scale_colour_manual(values=c("#CC79A7", "#009E73"), 
+  scale_colour_manual(values=outgroup.ingroup.colors, 
                        name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + 
-   scale_fill_manual(values=c("#CC79A7", "#009E73"),
+   scale_fill_manual(values=outgroup.ingroup.colors,
                      name="Poster Identity",
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup"))  +
