@@ -3,6 +3,8 @@ title: "Process mech part 1 - vary time, white men, demo first (slow validation)
 author: "ddd"
 date: "5/25/2021"
 output: pdf_document
+knit: (function(inputFile, encoding) {
+  rmarkdown::render(inputFile, encoding = encoding, output_dir = "Markdown PDFs") })
 ---
 
 ```{r setup, include=FALSE}
@@ -22,6 +24,7 @@ library(ggthemes)
 library(r2pmml)
 theme_set(theme_tufte())
 
+knitr::opts_knit$set(root.dir = '/Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown')
 ```
 
 ## R Markdown
@@ -225,6 +228,8 @@ pd <- position_dodge(0.01)
 ggplot(l.dat, aes(x=factor(timed), y=percent, fill = in.group.lax)) + ylab("% of clicks") + geom_bar(stat="identity", position=position_dodge(), width = .8)  +
   geom_errorbar(aes(ymin=percent-ci, ymax=percent+ci), width=.05, position=position_dodge(.8)) + xlab("Rushed?") + theme(axis.text.x = element_text(angle = 90, hjust = 1)) + labs(fill = "In-group (Same gender or same race)")
 
+dev.copy(jpeg,'Output/Graphs/Experiments/Movie Mechanism/Replication/Lax ingroup percent of clicks.jpg')
+dev.off()
 
 l.dat <- sql.data %>% group_by(timed, in.group.lax) %>% dplyr::summarise(mean = mean(clicked, na.rm = T), sd = sd(clicked, na.rm = T), n= n())
 
@@ -242,6 +247,8 @@ ggplot(l.dat, aes(x=factor(timed), y=mean, fill = in.group.lax)) + ylab("pr(clic
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup")) + scale_x_discrete(labels=c("0" = "No", "1" = "Yes"))
 
+dev.copy(jpeg,'Output/Graphs/Experiments/Movie Mechanism/Replication/Lax ingroup click rate.jpg')
+dev.off()
 
 l.dat <- sql.data %>% group_by(timed, in.group.lax, genre.match) %>% dplyr::summarise(mean = mean(clicked, na.rm = T), sd = sd(clicked, na.rm = T), n= n())
 
@@ -264,7 +271,9 @@ ggplot(l.dat, aes(x=factor(timed), y=mean, fill = in.group.lax)) + ylab("pr(clic
 ```{r jens stargazer, results='asis'}
 
 sql.data$deliberate <- sql.data$timed == 0
-stargazer(lm(clicked ~ in.group.lax*deliberate, data = sql.data))
+stargazer(lm(clicked ~ in.group.lax*deliberate, data = sql.data),
+          title = "Experiment 2, Human Bias",
+          out = "Output/Tex/Main results/Experiment 2, Human Bias.tex")
 
 ```
 
@@ -769,11 +778,11 @@ best.tree <- result.summ[which.min(result.summ$cv.error),"ntree"]
 
 tree.mdl.fast <- randomForest(clicked ~ ., data = d, mtry = best.mtry, ntree = best.tree)
 
-file = "/Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/05 - deep model.pmml"
-r2pmml(tree.mdl.fast, file)
+#file = "/Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/05 - deep model.pmml"
+#r2pmml(tree.mdl.fast, file)
 
-file = "/Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/05 - shallow model.pmml"
-r2pmml(tree.mdl.fast, file, compact = T)
+#file = "/Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/05 - shallow model.pmml"
+#r2pmml(tree.mdl.fast, file, compact = T)
 
 # rpart.plot(tree.mdl.fast)
 
@@ -822,6 +831,8 @@ ggplot(l.dat, aes(x=factor(psych), y=mean.rating, colour=in.group.lax, group=in.
                        breaks=c("FALSE", "TRUE"),
                        labels=c("Outgroup", "Ingroup"))
 
+dev.copy(jpeg,'Output/Graphs/Experiments/Movie Mechanism/Replication/Lax ingroup mean algorithm ranking.jpg')
+dev.off()
 
 l.dat <- rbind(l.dat.fast.2, l.dat.slow.2)
 
@@ -844,6 +855,9 @@ ggplot(l.dat, aes(x=factor(psych), y=mean.rating, fill=in.group.lax)) +
                        labels=c("Outgroup", "Ingroup"))  +
   geom_errorbar(aes(ymin=mean.rating-ci, ymax=mean.rating+ci), width=.1, position=position_dodge(.9))
 
+dev.copy(jpeg,'Output/Graphs/Experiments/Movie Mechanism/Replication/Lax ingroup top 6 algorithm.jpg')
+dev.off()
+
 ```
 
 
@@ -858,9 +872,9 @@ first.mdl.c <- lm(rank ~ in.group.lax*psych + genre.match, data = full.data)
 sec.mdl.c <- lm(top ~ in.group.lax*psych + genre.match, data = full.data)
   
 stargazer(first.mdl, sec.mdl, first.mdl.c, sec.mdl.c,
-          add.lines = list(
-                              c("Genre match controls?", "", "", "X", "X")
-                              ))
+          omit.stat = c("f",    "ser", "rsq"),
+          title = "Experiment 2, Algorithmic Bias",
+          out = "Output/Tex/Main results/Experiment 2 Algorithmic Bias.tex")
 
 ```
 

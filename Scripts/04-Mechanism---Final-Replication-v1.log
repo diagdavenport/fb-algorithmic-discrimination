@@ -1,9 +1,12 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  19 FEB 2022 20:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  4 MAR 2022 09:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**04-Mechanism---Final-Replication-v1.tex
-(./04-Mechanism---Final-Replication-v1.tex
+**"/Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Mark
+down PDFs/04-Mechanism---Final-Replication-v1.tex"
+
+(/Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
+wn PDFs/04-Mechanism---Final-Replication-v1.tex
 LaTeX2e <2018-04-01> patch level 2
 Babel <3.18> and hyphenation patterns for 84 language(s) loaded.
 (/usr/local/texlive/2018/texmf-dist/tex/latex/base/article.cls
@@ -652,27 +655,39 @@ LaTeX Font Info:    Try loading font information for TS1+lmtt on input line 86.
 (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/ts1lmtt.fd
 File: ts1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-<04-Mechanism---Final-Replication-v1_files/figure-latex/for jens-1.pdf, id=8, 4
-57.71pt x 300.12125pt>
-File: 04-Mechanism---Final-Replication-v1_files/figure-latex/for jens-1.pdf Gra
-phic file (type pdf)
-<use 04-Mechanism---Final-Replication-v1_files/figure-latex/for jens-1.pdf>
-Package pdftex.def Info: 04-Mechanism---Final-Replication-v1_files/figure-latex
-/for jens-1.pdf  used on input line 128.
+</Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
+wn PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/for jens-1.pdf, 
+id=8, 457.71pt x 300.12125pt>
+File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
+arkdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/for jens-1.
+pdf Graphic file (type pdf)
+<use /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
+rkdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/for jens-1.p
+df>
+Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
+/Lockdown/Scripts/Markdown PDFs/04-Mechanism---Final-Replication-v1_files/figur
+e-latex/for jens-1.pdf  used on input line 128.
 (pdftex.def)             Requested size: 457.72984pt x 300.13425pt.
 [1
 
 {/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-<04-Mechanism---Final-Replication-v1_files/figure-latex/for jens-2.pdf, id=20, 
-453.695pt x 300.12125pt>
-File: 04-Mechanism---Final-Replication-v1_files/figure-latex/for jens-2.pdf Gra
-phic file (type pdf)
-<use 04-Mechanism---Final-Replication-v1_files/figure-latex/for jens-2.pdf>
-Package pdftex.def Info: 04-Mechanism---Final-Replication-v1_files/figure-latex
-/for jens-2.pdf  used on input line 134.
+</Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
+wn PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/for jens-2.pdf, 
+id=20, 453.695pt x 300.12125pt>
+File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
+arkdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/for jens-2.
+pdf Graphic file (type pdf)
+<use /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
+rkdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/for jens-2.p
+df>
+Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
+/Lockdown/Scripts/Markdown PDFs/04-Mechanism---Final-Replication-v1_files/figur
+e-latex/for jens-2.pdf  used on input line 144.
 (pdftex.def)             Requested size: 453.6939pt x 300.12051pt.
-
-Overfull \hbox (34.24352pt too wide) in paragraph at lines 138--138
+[2 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Mar
+kdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/for jens-1.pd
+f>]
+Overfull \hbox (34.24352pt too wide) in paragraph at lines 158--158
 []\T1/lmtt/m/n/10 ## \TS1/lmtt/m/n/10 `\T1/lmtt/m/n/10 summarise()\TS1/lmtt/m/n
 /10 ` \T1/lmtt/m/n/10 regrouping output by \TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ti
 med\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 , \TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 in.gro
@@ -680,24 +695,30 @@ up.lax\TS1/lmtt/m/n/10 ' \T1/lmtt/m/n/10 (override with \TS1/lmtt/m/n/10 `\T1/l
 mtt/m/n/10 .groups\TS1/lmtt/m/n/10 ` \T1/lmtt/m/n/10 argument)[] 
  []
 
-<04-Mechanism---Final-Replication-v1_files/figure-latex/for jens-3.pdf, id=21, 
-453.695pt x 308.15125pt>
-File: 04-Mechanism---Final-Replication-v1_files/figure-latex/for jens-3.pdf Gra
-phic file (type pdf)
-<use 04-Mechanism---Final-Replication-v1_files/figure-latex/for jens-3.pdf>
-Package pdftex.def Info: 04-Mechanism---Final-Replication-v1_files/figure-latex
-/for jens-3.pdf  used on input line 140.
+</Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
+wn PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/for jens-3.pdf, 
+id=32, 453.695pt x 308.15125pt>
+File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
+arkdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/for jens-3.
+pdf Graphic file (type pdf)
+<use /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
+rkdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/for jens-3.p
+df>
+Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
+/Lockdown/Scripts/Markdown PDFs/04-Mechanism---Final-Replication-v1_files/figur
+e-latex/for jens-3.pdf  used on input line 160.
 (pdftex.def)             Requested size: 453.6939pt x 308.15048pt.
-[2 <./04-Mechanism---Final-Replication-v1_files/figure-latex/for jens-1.pdf> <.
-/04-Mechanism---Final-Replication-v1_files/figure-latex/for jens-2.pdf>]
+[3 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Mar
+kdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/for jens-2.pd
+f>]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 149.
+(Font)              <10> on input line 169.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 149.
+(Font)              <7> on input line 169.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 149.
+(Font)              <5> on input line 169.
 
-Overfull \hbox (28.99353pt too wide) in paragraph at lines 182--182
+Overfull \hbox (28.99353pt too wide) in paragraph at lines 202--202
 []\T1/lmtt/m/n/10 ## \TS1/lmtt/m/n/10 `\T1/lmtt/m/n/10 summarise()\TS1/lmtt/m/n
 /10 ` \T1/lmtt/m/n/10 regrouping output by \TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ti
 med\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 , \TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 race.s
@@ -705,28 +726,39 @@ imple\TS1/lmtt/m/n/10 ' \T1/lmtt/m/n/10 (override with \TS1/lmtt/m/n/10 `\T1/lm
 tt/m/n/10 .groups\TS1/lmtt/m/n/10 ` \T1/lmtt/m/n/10 argument)[] 
  []
 
-[3 <./04-Mechanism---Final-Replication-v1_files/figure-latex/for jens-3.pdf>]
-<04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs-1.pdf, id=
-57, 457.71pt x 308.15125pt>
-File: 04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs-1.pdf
- Graphic file (type pdf)
-<use 04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs-1.pdf>
-
-Package pdftex.def Info: 04-Mechanism---Final-Replication-v1_files/figure-latex
-/clean graphs-1.pdf  used on input line 184.
+[4 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Mar
+kdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/for jens-3.pd
+f>]
+</Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
+wn PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs-1.p
+df, id=61, 457.71pt x 308.15125pt>
+File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
+arkdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/clean graph
+s-1.pdf Graphic file (type pdf)
+<use /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
+rkdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs
+-1.pdf>
+Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
+/Lockdown/Scripts/Markdown PDFs/04-Mechanism---Final-Replication-v1_files/figur
+e-latex/clean graphs-1.pdf  used on input line 204.
 (pdftex.def)             Requested size: 457.72984pt x 308.16458pt.
-<04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs-2.pdf, id=
-58, 453.695pt x 309.155pt>
-File: 04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs-2.pdf
- Graphic file (type pdf)
-<use 04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs-2.pdf>
-
-Package pdftex.def Info: 04-Mechanism---Final-Replication-v1_files/figure-latex
-/clean graphs-2.pdf  used on input line 190.
+</Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
+wn PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs-2.p
+df, id=62, 453.695pt x 309.155pt>
+File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
+arkdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/clean graph
+s-2.pdf Graphic file (type pdf)
+<use /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
+rkdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs
+-2.pdf>
+Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
+/Lockdown/Scripts/Markdown PDFs/04-Mechanism---Final-Replication-v1_files/figur
+e-latex/clean graphs-2.pdf  used on input line 210.
 (pdftex.def)             Requested size: 453.6939pt x 309.15424pt.
-[4 <./04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs-1.pdf
->]
-Overfull \hbox (28.99353pt too wide) in paragraph at lines 194--194
+[5 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Mar
+kdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs-
+1.pdf>]
+Overfull \hbox (28.99353pt too wide) in paragraph at lines 214--214
 []\T1/lmtt/m/n/10 ## \TS1/lmtt/m/n/10 `\T1/lmtt/m/n/10 summarise()\TS1/lmtt/m/n
 /10 ` \T1/lmtt/m/n/10 regrouping output by \TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ti
 med\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 , \TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 group.
@@ -734,49 +766,68 @@ combo\TS1/lmtt/m/n/10 ' \T1/lmtt/m/n/10 (override with \TS1/lmtt/m/n/10 `\T1/lm
 tt/m/n/10 .groups\TS1/lmtt/m/n/10 ` \T1/lmtt/m/n/10 argument)[] 
  []
 
-<04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs-3.pdf, id=
-70, 453.695pt x 308.15125pt>
-File: 04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs-3.pdf
- Graphic file (type pdf)
-<use 04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs-3.pdf>
-
-Package pdftex.def Info: 04-Mechanism---Final-Replication-v1_files/figure-latex
-/clean graphs-3.pdf  used on input line 196.
+</Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
+wn PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs-3.p
+df, id=74, 453.695pt x 308.15125pt>
+File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
+arkdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/clean graph
+s-3.pdf Graphic file (type pdf)
+<use /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
+rkdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs
+-3.pdf>
+Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
+/Lockdown/Scripts/Markdown PDFs/04-Mechanism---Final-Replication-v1_files/figur
+e-latex/clean graphs-3.pdf  used on input line 216.
 (pdftex.def)             Requested size: 453.6939pt x 308.15048pt.
-[5 <./04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs-2.pdf
-> <./04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs-3.pdf>
-]
-<04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs-4.pdf, id=
-89, 453.695pt x 302.12875pt>
-File: 04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs-4.pdf
- Graphic file (type pdf)
-<use 04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs-4.pdf>
-
-Package pdftex.def Info: 04-Mechanism---Final-Replication-v1_files/figure-latex
-/clean graphs-4.pdf  used on input line 202.
+[6 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Mar
+kdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs-
+2.pdf> </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts
+/Markdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/clean gra
+phs-3.pdf>]
+</Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
+wn PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs-4.p
+df, id=93, 453.695pt x 302.12875pt>
+File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
+arkdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/clean graph
+s-4.pdf Graphic file (type pdf)
+<use /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
+rkdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs
+-4.pdf>
+Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
+/Lockdown/Scripts/Markdown PDFs/04-Mechanism---Final-Replication-v1_files/figur
+e-latex/clean graphs-4.pdf  used on input line 222.
 (pdftex.def)             Requested size: 453.6939pt x 302.128pt.
-<04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs-5.pdf, id=
-90, 457.71pt x 302.12875pt>
-File: 04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs-5.pdf
- Graphic file (type pdf)
-<use 04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs-5.pdf>
-
-Package pdftex.def Info: 04-Mechanism---Final-Replication-v1_files/figure-latex
-/clean graphs-5.pdf  used on input line 208.
+</Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
+wn PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs-5.p
+df, id=94, 457.71pt x 302.12875pt>
+File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
+arkdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/clean graph
+s-5.pdf Graphic file (type pdf)
+<use /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
+rkdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs
+-5.pdf>
+Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
+/Lockdown/Scripts/Markdown PDFs/04-Mechanism---Final-Replication-v1_files/figur
+e-latex/clean graphs-5.pdf  used on input line 228.
 (pdftex.def)             Requested size: 457.7089pt x 302.128pt.
-[6 <./04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs-4.pdf
->]
-<04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs-6.pdf, id=
-105, 457.71pt x 302.12875pt>
-File: 04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs-6.pdf
- Graphic file (type pdf)
-<use 04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs-6.pdf>
-
-Package pdftex.def Info: 04-Mechanism---Final-Replication-v1_files/figure-latex
-/clean graphs-6.pdf  used on input line 214.
+[7 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Mar
+kdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs-
+4.pdf>]
+</Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
+wn PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs-6.p
+df, id=110, 457.71pt x 302.12875pt>
+File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
+arkdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/clean graph
+s-6.pdf Graphic file (type pdf)
+<use /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
+rkdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs
+-6.pdf>
+Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
+/Lockdown/Scripts/Markdown PDFs/04-Mechanism---Final-Replication-v1_files/figur
+e-latex/clean graphs-6.pdf  used on input line 234.
 (pdftex.def)             Requested size: 457.7089pt x 302.128pt.
 
-Overfull \hbox (55.24345pt too wide) in paragraph at lines 218--218
+Overfull \hbox (55.24345pt too wide) in paragraph at lines 238--238
 []\T1/lmtt/m/n/10 ## \TS1/lmtt/m/n/10 `\T1/lmtt/m/n/10 summarise()\TS1/lmtt/m/n
 /10 ` \T1/lmtt/m/n/10 regrouping output by \TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ti
 med\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 , \TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 order_
@@ -784,29 +835,39 @@ no.group.6\TS1/lmtt/m/n/10 ' \T1/lmtt/m/n/10 (override with \TS1/lmtt/m/n/10 `\
 T1/lmtt/m/n/10 .groups\TS1/lmtt/m/n/10 ` \T1/lmtt/m/n/10 argument)[] 
  []
 
-<04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs-7.pdf, id=
-106, 457.71pt x 310.15875pt>
-File: 04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs-7.pdf
- Graphic file (type pdf)
-<use 04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs-7.pdf>
-
-Package pdftex.def Info: 04-Mechanism---Final-Replication-v1_files/figure-latex
-/clean graphs-7.pdf  used on input line 220.
+</Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
+wn PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs-7.p
+df, id=111, 457.71pt x 310.15875pt>
+File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
+arkdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/clean graph
+s-7.pdf Graphic file (type pdf)
+<use /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
+rkdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs
+-7.pdf>
+Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
+/Lockdown/Scripts/Markdown PDFs/04-Mechanism---Final-Replication-v1_files/figur
+e-latex/clean graphs-7.pdf  used on input line 240.
 (pdftex.def)             Requested size: 457.7089pt x 310.15799pt.
-[7 <./04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs-5.pdf
-> <./04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs-6.pdf>
-]
-<04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs-8.pdf, id=
-126, 453.695pt x 302.12875pt>
-File: 04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs-8.pdf
- Graphic file (type pdf)
-<use 04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs-8.pdf>
-
-Package pdftex.def Info: 04-Mechanism---Final-Replication-v1_files/figure-latex
-/clean graphs-8.pdf  used on input line 226.
+[8 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Mar
+kdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs-
+5.pdf> </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts
+/Markdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/clean gra
+phs-6.pdf>]
+</Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
+wn PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs-8.p
+df, id=130, 453.695pt x 302.12875pt>
+File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
+arkdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/clean graph
+s-8.pdf Graphic file (type pdf)
+<use /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
+rkdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs
+-8.pdf>
+Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
+/Lockdown/Scripts/Markdown PDFs/04-Mechanism---Final-Replication-v1_files/figur
+e-latex/clean graphs-8.pdf  used on input line 246.
 (pdftex.def)             Requested size: 453.6939pt x 302.128pt.
 
-Overfull \hbox (34.24352pt too wide) in paragraph at lines 230--230
+Overfull \hbox (34.24352pt too wide) in paragraph at lines 250--250
 []\T1/lmtt/m/n/10 ## \TS1/lmtt/m/n/10 `\T1/lmtt/m/n/10 summarise()\TS1/lmtt/m/n
 /10 ` \T1/lmtt/m/n/10 regrouping output by \TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ti
 med\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 , \TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 in.gro
@@ -814,20 +875,26 @@ up.lax\TS1/lmtt/m/n/10 ' \T1/lmtt/m/n/10 (override with \TS1/lmtt/m/n/10 `\T1/l
 mtt/m/n/10 .groups\TS1/lmtt/m/n/10 ` \T1/lmtt/m/n/10 argument)[] 
  []
 
-[8 <./04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs-7.pdf
-> <./04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs-8.pdf>
-]
-<04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs-9.pdf, id=
-145, 453.695pt x 308.15125pt>
-File: 04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs-9.pdf
- Graphic file (type pdf)
-<use 04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs-9.pdf>
-
-Package pdftex.def Info: 04-Mechanism---Final-Replication-v1_files/figure-latex
-/clean graphs-9.pdf  used on input line 232.
+[9 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Mar
+kdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs-
+7.pdf> </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts
+/Markdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/clean gra
+phs-8.pdf>]
+</Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
+wn PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs-9.p
+df, id=149, 453.695pt x 308.15125pt>
+File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
+arkdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/clean graph
+s-9.pdf Graphic file (type pdf)
+<use /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
+rkdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs
+-9.pdf>
+Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
+/Lockdown/Scripts/Markdown PDFs/04-Mechanism---Final-Replication-v1_files/figur
+e-latex/clean graphs-9.pdf  used on input line 252.
 (pdftex.def)             Requested size: 453.6939pt x 308.15048pt.
 
-Overfull \hbox (139.24321pt too wide) in paragraph at lines 236--236
+Overfull \hbox (139.24321pt too wide) in paragraph at lines 256--256
 []\T1/lmtt/m/n/10 ## \TS1/lmtt/m/n/10 `\T1/lmtt/m/n/10 summarise()\TS1/lmtt/m/n
 /10 ` \T1/lmtt/m/n/10 regrouping output by \TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ti
 med\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 , \TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 in.gro
@@ -836,18 +903,23 @@ er_no.group.6\TS1/lmtt/m/n/10 ' \T1/lmtt/m/n/10 (override with \TS1/lmtt/m/n/10
  `\T1/lmtt/m/n/10 .groups\TS1/lmtt/m/n/10 ` \T1/lmtt/m/n/10 argument)[] 
  []
 
-<04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs-10.pdf, id
-=146, 453.695pt x 310.15875pt>
-File: 04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs-10.pd
-f Graphic file (type pdf)
-<use 04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs-10.pdf
->
-Package pdftex.def Info: 04-Mechanism---Final-Replication-v1_files/figure-latex
-/clean graphs-10.pdf  used on input line 238.
+</Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
+wn PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs-10.
+pdf, id=150, 453.695pt x 310.15875pt>
+File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
+arkdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/clean graph
+s-10.pdf Graphic file (type pdf)
+<use /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
+rkdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs
+-10.pdf>
+Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
+/Lockdown/Scripts/Markdown PDFs/04-Mechanism---Final-Replication-v1_files/figur
+e-latex/clean graphs-10.pdf  used on input line 258.
 (pdftex.def)             Requested size: 453.6939pt x 310.15799pt.
-[9 <./04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs-9.pdf
->]
-Overfull \hbox (112.99329pt too wide) in paragraph at lines 242--242
+[10 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
+rkdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs
+-9.pdf>]
+Overfull \hbox (112.99329pt too wide) in paragraph at lines 262--262
 []\T1/lmtt/m/n/10 ## \TS1/lmtt/m/n/10 `\T1/lmtt/m/n/10 summarise()\TS1/lmtt/m/n
 /10 ` \T1/lmtt/m/n/10 regrouping output by \TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ti
 med\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 , \TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 in.gro
@@ -856,17 +928,21 @@ re.match\TS1/lmtt/m/n/10 ' \T1/lmtt/m/n/10 (override with \TS1/lmtt/m/n/10 `\T1
 /lmtt/m/n/10 .groups\TS1/lmtt/m/n/10 ` \T1/lmtt/m/n/10 argument)[] 
  []
 
-<04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs-11.pdf, id
-=158, 453.695pt x 310.15875pt>
-File: 04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs-11.pd
-f Graphic file (type pdf)
-<use 04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs-11.pdf
->
-Package pdftex.def Info: 04-Mechanism---Final-Replication-v1_files/figure-latex
-/clean graphs-11.pdf  used on input line 244.
+</Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
+wn PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs-11.
+pdf, id=162, 453.695pt x 310.15875pt>
+File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
+arkdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/clean graph
+s-11.pdf Graphic file (type pdf)
+<use /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
+rkdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs
+-11.pdf>
+Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
+/Lockdown/Scripts/Markdown PDFs/04-Mechanism---Final-Replication-v1_files/figur
+e-latex/clean graphs-11.pdf  used on input line 264.
 (pdftex.def)             Requested size: 453.6939pt x 310.15799pt.
 
-Overfull \hbox (102.49332pt too wide) in paragraph at lines 248--248
+Overfull \hbox (102.49332pt too wide) in paragraph at lines 268--268
 []\T1/lmtt/m/n/10 ## \TS1/lmtt/m/n/10 `\T1/lmtt/m/n/10 summarise()\TS1/lmtt/m/n
 /10 ` \T1/lmtt/m/n/10 regrouping output by \TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ti
 med\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 , \TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 in.gro
@@ -875,20 +951,26 @@ er.age\TS1/lmtt/m/n/10 ' \T1/lmtt/m/n/10 (override with \TS1/lmtt/m/n/10 `\T1/l
 mtt/m/n/10 .groups\TS1/lmtt/m/n/10 ` \T1/lmtt/m/n/10 argument)[] 
  []
 
-[10 <./04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs-10.p
-df> <./04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs-11.p
-df>]
-<04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs-12.pdf, id
-=178, 453.695pt x 310.15875pt>
-File: 04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs-12.pd
-f Graphic file (type pdf)
-<use 04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs-12.pdf
->
-Package pdftex.def Info: 04-Mechanism---Final-Replication-v1_files/figure-latex
-/clean graphs-12.pdf  used on input line 250.
+[11 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
+rkdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs
+-10.pdf> </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scrip
+ts/Markdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/clean g
+raphs-11.pdf>]
+</Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
+wn PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs-12.
+pdf, id=182, 453.695pt x 310.15875pt>
+File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
+arkdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/clean graph
+s-12.pdf Graphic file (type pdf)
+<use /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
+rkdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs
+-12.pdf>
+Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
+/Lockdown/Scripts/Markdown PDFs/04-Mechanism---Final-Replication-v1_files/figur
+e-latex/clean graphs-12.pdf  used on input line 270.
 (pdftex.def)             Requested size: 453.6939pt x 310.15799pt.
 
-Overfull \hbox (65.74342pt too wide) in paragraph at lines 254--254
+Overfull \hbox (65.74342pt too wide) in paragraph at lines 274--274
 []\T1/lmtt/m/n/10 ## \TS1/lmtt/m/n/10 `\T1/lmtt/m/n/10 summarise()\TS1/lmtt/m/n
 /10 ` \T1/lmtt/m/n/10 regrouping output by \TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 in
 .group.lax\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 , \TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10
@@ -896,38 +978,52 @@ Overfull \hbox (65.74342pt too wide) in paragraph at lines 254--254
 `\T1/lmtt/m/n/10 .groups\TS1/lmtt/m/n/10 ` \T1/lmtt/m/n/10 argument)[] 
  []
 
-<04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs-13.pdf, id
-=179, 453.695pt x 286.06876pt>
-File: 04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs-13.pd
-f Graphic file (type pdf)
-<use 04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs-13.pdf
->
-Package pdftex.def Info: 04-Mechanism---Final-Replication-v1_files/figure-latex
-/clean graphs-13.pdf  used on input line 256.
+</Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
+wn PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs-13.
+pdf, id=183, 453.695pt x 286.06876pt>
+File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
+arkdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/clean graph
+s-13.pdf Graphic file (type pdf)
+<use /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
+rkdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs
+-13.pdf>
+Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
+/Lockdown/Scripts/Markdown PDFs/04-Mechanism---Final-Replication-v1_files/figur
+e-latex/clean graphs-13.pdf  used on input line 276.
 (pdftex.def)             Requested size: 453.6939pt x 286.06805pt.
-[11 <./04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs-12.p
-df> <./04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs-13.p
-df>]
-<04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs-14.pdf, id
-=198, 453.695pt x 306.14375pt>
-File: 04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs-14.pd
-f Graphic file (type pdf)
-<use 04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs-14.pdf
->
-Package pdftex.def Info: 04-Mechanism---Final-Replication-v1_files/figure-latex
-/clean graphs-14.pdf  used on input line 262.
+[12 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
+rkdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs
+-12.pdf> </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scrip
+ts/Markdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/clean g
+raphs-13.pdf>]
+</Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
+wn PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs-14.
+pdf, id=202, 453.695pt x 306.14375pt>
+File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
+arkdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/clean graph
+s-14.pdf Graphic file (type pdf)
+<use /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
+rkdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs
+-14.pdf>
+Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
+/Lockdown/Scripts/Markdown PDFs/04-Mechanism---Final-Replication-v1_files/figur
+e-latex/clean graphs-14.pdf  used on input line 282.
 (pdftex.def)             Requested size: 453.6939pt x 306.14299pt.
-<04-Mechanism---Final-Replication-v1_files/figure-latex/person heterogeneity-1.
-pdf, id=199, 451.6875pt x 309.155pt>
-File: 04-Mechanism---Final-Replication-v1_files/figure-latex/person heterogenei
-ty-1.pdf Graphic file (type pdf)
-<use 04-Mechanism---Final-Replication-v1_files/figure-latex/person heterogeneit
-y-1.pdf>
-Package pdftex.def Info: 04-Mechanism---Final-Replication-v1_files/figure-latex
-/person heterogeneity-1.pdf  used on input line 264.
+</Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
+wn PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/person heterogen
+eity-1.pdf, id=203, 451.6875pt x 309.155pt>
+File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
+arkdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/person hete
+rogeneity-1.pdf Graphic file (type pdf)
+<use /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
+rkdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/person heter
+ogeneity-1.pdf>
+Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
+/Lockdown/Scripts/Markdown PDFs/04-Mechanism---Final-Replication-v1_files/figur
+e-latex/person heterogeneity-1.pdf  used on input line 284.
 (pdftex.def)             Requested size: 451.71394pt x 309.1731pt.
 
-Overfull \hbox (7.99359pt too wide) in paragraph at lines 268--268
+Overfull \hbox (7.99359pt too wide) in paragraph at lines 288--288
 []\T1/lmtt/m/n/10 ## \TS1/lmtt/m/n/10 `\T1/lmtt/m/n/10 summarise()\TS1/lmtt/m/n
 /10 ` \T1/lmtt/m/n/10 regrouping output by \TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 us
 er_id\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 , \TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 time
@@ -935,20 +1031,26 @@ d\TS1/lmtt/m/n/10 ' \T1/lmtt/m/n/10 (override with \TS1/lmtt/m/n/10 `\T1/lmtt/m
 /n/10 .groups\TS1/lmtt/m/n/10 ` \T1/lmtt/m/n/10 argument)[] 
  []
 
-[12 <./04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs-14.p
-df> <./04-Mechanism---Final-Replication-v1_files/figure-latex/person heterogene
-ity-1.pdf>]
-<04-Mechanism---Final-Replication-v1_files/figure-latex/person heterogeneity-2.
-pdf, id=218, 451.6875pt x 310.15875pt>
-File: 04-Mechanism---Final-Replication-v1_files/figure-latex/person heterogenei
-ty-2.pdf Graphic file (type pdf)
-<use 04-Mechanism---Final-Replication-v1_files/figure-latex/person heterogeneit
-y-2.pdf>
-Package pdftex.def Info: 04-Mechanism---Final-Replication-v1_files/figure-latex
-/person heterogeneity-2.pdf  used on input line 270.
+[13 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
+rkdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/clean graphs
+-14.pdf> </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scrip
+ts/Markdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/person 
+heterogeneity-1.pdf>]
+</Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
+wn PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/person heterogen
+eity-2.pdf, id=223, 451.6875pt x 310.15875pt>
+File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
+arkdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/person hete
+rogeneity-2.pdf Graphic file (type pdf)
+<use /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
+rkdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/person heter
+ogeneity-2.pdf>
+Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
+/Lockdown/Scripts/Markdown PDFs/04-Mechanism---Final-Replication-v1_files/figur
+e-latex/person heterogeneity-2.pdf  used on input line 290.
 (pdftex.def)             Requested size: 451.68639pt x 310.15799pt.
 
-Overfull \hbox (7.99359pt too wide) in paragraph at lines 274--274
+Overfull \hbox (7.99359pt too wide) in paragraph at lines 294--294
 []\T1/lmtt/m/n/10 ## \TS1/lmtt/m/n/10 `\T1/lmtt/m/n/10 summarise()\TS1/lmtt/m/n
 /10 ` \T1/lmtt/m/n/10 regrouping output by \TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 us
 er_id\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 , \TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 time
@@ -956,32 +1058,41 @@ d\TS1/lmtt/m/n/10 ' \T1/lmtt/m/n/10 (override with \TS1/lmtt/m/n/10 `\T1/lmtt/m
 /n/10 .groups\TS1/lmtt/m/n/10 ` \T1/lmtt/m/n/10 argument)[] 
  []
 
-<04-Mechanism---Final-Replication-v1_files/figure-latex/person heterogeneity-3.
-pdf, id=219, 451.6875pt x 310.15875pt>
-File: 04-Mechanism---Final-Replication-v1_files/figure-latex/person heterogenei
-ty-3.pdf Graphic file (type pdf)
-<use 04-Mechanism---Final-Replication-v1_files/figure-latex/person heterogeneit
-y-3.pdf>
-Package pdftex.def Info: 04-Mechanism---Final-Replication-v1_files/figure-latex
-/person heterogeneity-3.pdf  used on input line 276.
+</Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
+wn PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/person heterogen
+eity-3.pdf, id=224, 451.6875pt x 310.15875pt>
+File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
+arkdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/person hete
+rogeneity-3.pdf Graphic file (type pdf)
+<use /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
+rkdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/person heter
+ogeneity-3.pdf>
+Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
+/Lockdown/Scripts/Markdown PDFs/04-Mechanism---Final-Replication-v1_files/figur
+e-latex/person heterogeneity-3.pdf  used on input line 296.
 (pdftex.def)             Requested size: 451.68639pt x 310.15799pt.
-<04-Mechanism---Final-Replication-v1_files/figure-latex/person heterogeneity-4.
-pdf, id=220, 453.695pt x 302.12875pt>
-File: 04-Mechanism---Final-Replication-v1_files/figure-latex/person heterogenei
-ty-4.pdf Graphic file (type pdf)
-<use 04-Mechanism---Final-Replication-v1_files/figure-latex/person heterogeneit
-y-4.pdf>
-Package pdftex.def Info: 04-Mechanism---Final-Replication-v1_files/figure-latex
-/person heterogeneity-4.pdf  used on input line 277.
+</Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
+wn PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/person heterogen
+eity-4.pdf, id=225, 453.695pt x 302.12875pt>
+File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
+arkdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/person hete
+rogeneity-4.pdf Graphic file (type pdf)
+<use /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
+rkdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/person heter
+ogeneity-4.pdf>
+Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
+/Lockdown/Scripts/Markdown PDFs/04-Mechanism---Final-Replication-v1_files/figur
+e-latex/person heterogeneity-4.pdf  used on input line 297.
 (pdftex.def)             Requested size: 453.6939pt x 302.128pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 276--278
+Underfull \hbox (badness 10000) in paragraph at lines 296--298
 [][]
  []
 
-[13 <./04-Mechanism---Final-Replication-v1_files/figure-latex/person heterogene
-ity-2.pdf>]
-Overfull \hbox (7.99359pt too wide) in paragraph at lines 281--281
+[14 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
+rkdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/person heter
+ogeneity-2.pdf>]
+Overfull \hbox (7.99359pt too wide) in paragraph at lines 301--301
 []\T1/lmtt/m/n/10 ## \TS1/lmtt/m/n/10 `\T1/lmtt/m/n/10 summarise()\TS1/lmtt/m/n
 /10 ` \T1/lmtt/m/n/10 regrouping output by \TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 us
 er_id\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 , \TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 time
@@ -989,19 +1100,25 @@ d\TS1/lmtt/m/n/10 ' \T1/lmtt/m/n/10 (override with \TS1/lmtt/m/n/10 `\T1/lmtt/m
 /n/10 .groups\TS1/lmtt/m/n/10 ` \T1/lmtt/m/n/10 argument)[] 
  []
 
-<04-Mechanism---Final-Replication-v1_files/figure-latex/person heterogeneity-5.
-pdf, id=233, 451.6875pt x 308.15125pt>
-File: 04-Mechanism---Final-Replication-v1_files/figure-latex/person heterogenei
-ty-5.pdf Graphic file (type pdf)
-<use 04-Mechanism---Final-Replication-v1_files/figure-latex/person heterogeneit
-y-5.pdf>
-Package pdftex.def Info: 04-Mechanism---Final-Replication-v1_files/figure-latex
-/person heterogeneity-5.pdf  used on input line 283.
+</Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
+wn PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/person heterogen
+eity-5.pdf, id=237, 451.6875pt x 308.15125pt>
+File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
+arkdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/person hete
+rogeneity-5.pdf Graphic file (type pdf)
+<use /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
+rkdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/person heter
+ogeneity-5.pdf>
+Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
+/Lockdown/Scripts/Markdown PDFs/04-Mechanism---Final-Replication-v1_files/figur
+e-latex/person heterogeneity-5.pdf  used on input line 303.
 (pdftex.def)             Requested size: 451.71394pt x 308.16928pt.
-[14 <./04-Mechanism---Final-Replication-v1_files/figure-latex/person heterogene
-ity-3.pdf> <./04-Mechanism---Final-Replication-v1_files/figure-latex/person het
-erogeneity-4.pdf>]
-Overfull \hbox (7.99359pt too wide) in paragraph at lines 287--287
+[15 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
+rkdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/person heter
+ogeneity-3.pdf> </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdow
+n/Scripts/Markdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/
+person heterogeneity-4.pdf>]
+Overfull \hbox (7.99359pt too wide) in paragraph at lines 307--307
 []\T1/lmtt/m/n/10 ## \TS1/lmtt/m/n/10 `\T1/lmtt/m/n/10 summarise()\TS1/lmtt/m/n
 /10 ` \T1/lmtt/m/n/10 regrouping output by \TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 us
 er_id\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 , \TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 time
@@ -1009,70 +1126,96 @@ d\TS1/lmtt/m/n/10 ' \T1/lmtt/m/n/10 (override with \TS1/lmtt/m/n/10 `\T1/lmtt/m
 /n/10 .groups\TS1/lmtt/m/n/10 ` \T1/lmtt/m/n/10 argument)[] 
  []
 
-<04-Mechanism---Final-Replication-v1_files/figure-latex/person heterogeneity-6.
-pdf, id=255, 451.6875pt x 308.15125pt>
-File: 04-Mechanism---Final-Replication-v1_files/figure-latex/person heterogenei
-ty-6.pdf Graphic file (type pdf)
-<use 04-Mechanism---Final-Replication-v1_files/figure-latex/person heterogeneit
-y-6.pdf>
-Package pdftex.def Info: 04-Mechanism---Final-Replication-v1_files/figure-latex
-/person heterogeneity-6.pdf  used on input line 289.
+</Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
+wn PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/person heterogen
+eity-6.pdf, id=259, 451.6875pt x 308.15125pt>
+File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
+arkdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/person hete
+rogeneity-6.pdf Graphic file (type pdf)
+<use /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
+rkdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/person heter
+ogeneity-6.pdf>
+Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
+/Lockdown/Scripts/Markdown PDFs/04-Mechanism---Final-Replication-v1_files/figur
+e-latex/person heterogeneity-6.pdf  used on input line 309.
 (pdftex.def)             Requested size: 451.71394pt x 308.16928pt.
-[15 <./04-Mechanism---Final-Replication-v1_files/figure-latex/person heterogene
-ity-5.pdf> <./04-Mechanism---Final-Replication-v1_files/figure-latex/person het
-erogeneity-6.pdf>]
-<04-Mechanism---Final-Replication-v1_files/figure-latex/person heterogeneity-7.
-pdf, id=274, 451.6875pt x 305.14pt>
-File: 04-Mechanism---Final-Replication-v1_files/figure-latex/person heterogenei
-ty-7.pdf Graphic file (type pdf)
-<use 04-Mechanism---Final-Replication-v1_files/figure-latex/person heterogeneit
-y-7.pdf>
-Package pdftex.def Info: 04-Mechanism---Final-Replication-v1_files/figure-latex
-/person heterogeneity-7.pdf  used on input line 299.
+[16 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
+rkdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/person heter
+ogeneity-5.pdf> </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdow
+n/Scripts/Markdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/
+person heterogeneity-6.pdf>]
+</Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
+wn PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/person heterogen
+eity-7.pdf, id=278, 451.6875pt x 305.14pt>
+File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
+arkdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/person hete
+rogeneity-7.pdf Graphic file (type pdf)
+<use /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
+rkdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/person heter
+ogeneity-7.pdf>
+Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
+/Lockdown/Scripts/Markdown PDFs/04-Mechanism---Final-Replication-v1_files/figur
+e-latex/person heterogeneity-7.pdf  used on input line 319.
 (pdftex.def)             Requested size: 451.70706pt x 305.1532pt.
-<04-Mechanism---Final-Replication-v1_files/figure-latex/person heterogeneity-8.
-pdf, id=275, 453.695pt x 303.1325pt>
-File: 04-Mechanism---Final-Replication-v1_files/figure-latex/person heterogenei
-ty-8.pdf Graphic file (type pdf)
-<use 04-Mechanism---Final-Replication-v1_files/figure-latex/person heterogeneit
-y-8.pdf>
-Package pdftex.def Info: 04-Mechanism---Final-Replication-v1_files/figure-latex
-/person heterogeneity-8.pdf  used on input line 305.
+</Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
+wn PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/person heterogen
+eity-8.pdf, id=279, 453.695pt x 303.1325pt>
+File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
+arkdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/person hete
+rogeneity-8.pdf Graphic file (type pdf)
+<use /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
+rkdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/person heter
+ogeneity-8.pdf>
+Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
+/Lockdown/Scripts/Markdown PDFs/04-Mechanism---Final-Replication-v1_files/figur
+e-latex/person heterogeneity-8.pdf  used on input line 325.
 (pdftex.def)             Requested size: 453.6939pt x 303.13176pt.
-<04-Mechanism---Final-Replication-v1_files/figure-latex/person heterogeneity-9.
-pdf, id=276, 453.695pt x 314.17375pt>
-File: 04-Mechanism---Final-Replication-v1_files/figure-latex/person heterogenei
-ty-9.pdf Graphic file (type pdf)
-<use 04-Mechanism---Final-Replication-v1_files/figure-latex/person heterogeneit
-y-9.pdf>
-Package pdftex.def Info: 04-Mechanism---Final-Replication-v1_files/figure-latex
-/person heterogeneity-9.pdf  used on input line 306.
+</Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
+wn PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/person heterogen
+eity-9.pdf, id=280, 453.695pt x 314.17375pt>
+File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
+arkdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/person hete
+rogeneity-9.pdf Graphic file (type pdf)
+<use /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
+rkdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/person heter
+ogeneity-9.pdf>
+Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
+/Lockdown/Scripts/Markdown PDFs/04-Mechanism---Final-Replication-v1_files/figur
+e-latex/person heterogeneity-9.pdf  used on input line 326.
 (pdftex.def)             Requested size: 453.6939pt x 314.17297pt.
-<04-Mechanism---Final-Replication-v1_files/figure-latex/person heterogeneity-10
-.pdf, id=277, 453.695pt x 314.17375pt>
-File: 04-Mechanism---Final-Replication-v1_files/figure-latex/person heterogenei
-ty-10.pdf Graphic file (type pdf)
-<use 04-Mechanism---Final-Replication-v1_files/figure-latex/person heterogeneit
-y-10.pdf>
-Package pdftex.def Info: 04-Mechanism---Final-Replication-v1_files/figure-latex
-/person heterogeneity-10.pdf  used on input line 307.
+</Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
+wn PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/person heterogen
+eity-10.pdf, id=281, 453.695pt x 314.17375pt>
+File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
+arkdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/person hete
+rogeneity-10.pdf Graphic file (type pdf)
+<use /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
+rkdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/person heter
+ogeneity-10.pdf>
+Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
+/Lockdown/Scripts/Markdown PDFs/04-Mechanism---Final-Replication-v1_files/figur
+e-latex/person heterogeneity-10.pdf  used on input line 327.
 (pdftex.def)             Requested size: 453.6939pt x 314.17297pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 305--308
+Underfull \hbox (badness 10000) in paragraph at lines 325--328
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 305--308
+Underfull \hbox (badness 10000) in paragraph at lines 325--328
 []
  []
 
-[16 <./04-Mechanism---Final-Replication-v1_files/figure-latex/person heterogene
-ity-7.pdf>] [17 <./04-Mechanism---Final-Replication-v1_files/figure-latex/perso
-n heterogeneity-8.pdf> <./04-Mechanism---Final-Replication-v1_files/figure-late
-x/person heterogeneity-9.pdf>] [18 <./04-Mechanism---Final-Replication-v1_files
-/figure-latex/person heterogeneity-10.pdf>]
-Overfull \hbox (7.99359pt too wide) in paragraph at lines 355--355
+[17 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
+rkdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/person heter
+ogeneity-7.pdf>] [18 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lo
+ckdown/Scripts/Markdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-l
+atex/person heterogeneity-8.pdf> </Users/diagdavenport/Desktop/Synced Research/
+Ludwig/FB/Lockdown/Scripts/Markdown PDFs/04-Mechanism---Final-Replication-v1_fi
+les/figure-latex/person heterogeneity-9.pdf>] [19 </Users/diagdavenport/Desktop
+/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdown PDFs/04-Mechanism---Final-
+Replication-v1_files/figure-latex/person heterogeneity-10.pdf>]
+Overfull \hbox (7.99359pt too wide) in paragraph at lines 375--375
 []\T1/lmtt/m/n/10 ## \TS1/lmtt/m/n/10 `\T1/lmtt/m/n/10 summarise()\TS1/lmtt/m/n
 /10 ` \T1/lmtt/m/n/10 regrouping output by \TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 us
 er_id\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 , \TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 time
@@ -1080,17 +1223,21 @@ d\TS1/lmtt/m/n/10 ' \T1/lmtt/m/n/10 (override with \TS1/lmtt/m/n/10 `\T1/lmtt/m
 /n/10 .groups\TS1/lmtt/m/n/10 ` \T1/lmtt/m/n/10 argument)[] 
  []
 
-<04-Mechanism---Final-Replication-v1_files/figure-latex/person heterogeneity-11
-.pdf, id=328, 453.695pt x 310.15875pt>
-File: 04-Mechanism---Final-Replication-v1_files/figure-latex/person heterogenei
-ty-11.pdf Graphic file (type pdf)
-<use 04-Mechanism---Final-Replication-v1_files/figure-latex/person heterogeneit
-y-11.pdf>
-Package pdftex.def Info: 04-Mechanism---Final-Replication-v1_files/figure-latex
-/person heterogeneity-11.pdf  used on input line 357.
+</Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
+wn PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/person heterogen
+eity-11.pdf, id=333, 453.695pt x 310.15875pt>
+File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
+arkdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/person hete
+rogeneity-11.pdf Graphic file (type pdf)
+<use /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
+rkdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/person heter
+ogeneity-11.pdf>
+Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
+/Lockdown/Scripts/Markdown PDFs/04-Mechanism---Final-Replication-v1_files/figur
+e-latex/person heterogeneity-11.pdf  used on input line 377.
 (pdftex.def)             Requested size: 453.6939pt x 310.15799pt.
 
-Overfull \hbox (7.99359pt too wide) in paragraph at lines 361--361
+Overfull \hbox (7.99359pt too wide) in paragraph at lines 381--381
 []\T1/lmtt/m/n/10 ## \TS1/lmtt/m/n/10 `\T1/lmtt/m/n/10 summarise()\TS1/lmtt/m/n
 /10 ` \T1/lmtt/m/n/10 regrouping output by \TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 us
 er_id\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 , \TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 time
@@ -1098,79 +1245,96 @@ d\TS1/lmtt/m/n/10 ' \T1/lmtt/m/n/10 (override with \TS1/lmtt/m/n/10 `\T1/lmtt/m
 /n/10 .groups\TS1/lmtt/m/n/10 ` \T1/lmtt/m/n/10 argument)[] 
  []
 
-<04-Mechanism---Final-Replication-v1_files/figure-latex/person heterogeneity-12
-.pdf, id=329, 453.695pt x 310.15875pt>
-File: 04-Mechanism---Final-Replication-v1_files/figure-latex/person heterogenei
-ty-12.pdf Graphic file (type pdf)
-<use 04-Mechanism---Final-Replication-v1_files/figure-latex/person heterogeneit
-y-12.pdf>
-Package pdftex.def Info: 04-Mechanism---Final-Replication-v1_files/figure-latex
-/person heterogeneity-12.pdf  used on input line 363.
+</Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
+wn PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/person heterogen
+eity-12.pdf, id=334, 453.695pt x 310.15875pt>
+File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
+arkdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/person hete
+rogeneity-12.pdf Graphic file (type pdf)
+<use /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
+rkdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/person heter
+ogeneity-12.pdf>
+Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
+/Lockdown/Scripts/Markdown PDFs/04-Mechanism---Final-Replication-v1_files/figur
+e-latex/person heterogeneity-12.pdf  used on input line 383.
 (pdftex.def)             Requested size: 453.6939pt x 310.15799pt.
-[19 <./04-Mechanism---Final-Replication-v1_files/figure-latex/person heterogene
-ity-11.pdf>] [20 <./04-Mechanism---Final-Replication-v1_files/figure-latex/pers
-on heterogeneity-12.pdf>] [21] [22] [23] [24] [25]
-<04-Mechanism---Final-Replication-v1_files/figure-latex/build a slow algo-1.pdf
-, id=384, 451.6875pt x 302.12875pt>
-File: 04-Mechanism---Final-Replication-v1_files/figure-latex/build a slow algo-
-1.pdf Graphic file (type pdf)
-<use 04-Mechanism---Final-Replication-v1_files/figure-latex/build a slow algo-1
-.pdf>
-Package pdftex.def Info: 04-Mechanism---Final-Replication-v1_files/figure-latex
-/build a slow algo-1.pdf  used on input line 749.
+[20 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
+rkdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/person heter
+ogeneity-11.pdf>] [21 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/L
+ockdown/Scripts/Markdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-
+latex/person heterogeneity-12.pdf>] [22] [23] [24] [25] [26]
+</Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
+wn PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/build a slow alg
+o-1.pdf, id=388, 451.6875pt x 302.12875pt>
+File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
+arkdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/build a slo
+w algo-1.pdf Graphic file (type pdf)
+<use /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
+rkdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/build a slow
+ algo-1.pdf>
+Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
+/Lockdown/Scripts/Markdown PDFs/04-Mechanism---Final-Replication-v1_files/figur
+e-latex/build a slow algo-1.pdf  used on input line 769.
 (pdftex.def)             Requested size: 451.68639pt x 302.128pt.
-[26] [27 <./04-Mechanism---Final-Replication-v1_files/figure-latex/build a slow
- algo-1.pdf>] [28] [29]
-<04-Mechanism---Final-Replication-v1_files/figure-latex/build a fast algo-1.pdf
-, id=408, 451.6875pt x 302.12875pt>
-File: 04-Mechanism---Final-Replication-v1_files/figure-latex/build a fast algo-
-1.pdf Graphic file (type pdf)
-<use 04-Mechanism---Final-Replication-v1_files/figure-latex/build a fast algo-1
-.pdf>
-Package pdftex.def Info: 04-Mechanism---Final-Replication-v1_files/figure-latex
-/build a fast algo-1.pdf  used on input line 961.
+[27] [28 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scrip
+ts/Markdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/build a
+ slow algo-1.pdf>] [29] [30]
+</Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
+wn PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/build a fast alg
+o-1.pdf, id=412, 451.6875pt x 302.12875pt>
+File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
+arkdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/build a fas
+t algo-1.pdf Graphic file (type pdf)
+<use /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
+rkdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/build a fast
+ algo-1.pdf>
+Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
+/Lockdown/Scripts/Markdown PDFs/04-Mechanism---Final-Replication-v1_files/figur
+e-latex/build a fast algo-1.pdf  used on input line 981.
 (pdftex.def)             Requested size: 451.68639pt x 302.128pt.
-<04-Mechanism---Final-Replication-v1_files/figure-latex/graph results-1.pdf, id
-=409, 457.71pt x 317.185pt>
-File: 04-Mechanism---Final-Replication-v1_files/figure-latex/graph results-1.pd
-f Graphic file (type pdf)
-<use 04-Mechanism---Final-Replication-v1_files/figure-latex/graph results-1.pdf
->
-Package pdftex.def Info: 04-Mechanism---Final-Replication-v1_files/figure-latex
-/graph results-1.pdf  used on input line 973.
+</Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
+wn PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/graph results-1.
+pdf, id=413, 457.71pt x 317.185pt>
+File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
+arkdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/graph resul
+ts-1.pdf Graphic file (type pdf)
+<use /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
+rkdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/graph result
+s-1.pdf>
+Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
+/Lockdown/Scripts/Markdown PDFs/04-Mechanism---Final-Replication-v1_files/figur
+e-latex/graph results-1.pdf  used on input line 993.
 (pdftex.def)             Requested size: 457.72984pt x 317.19872pt.
-<04-Mechanism---Final-Replication-v1_files/figure-latex/graph results-2.pdf, id
-=410, 457.71pt x 303.1325pt>
-File: 04-Mechanism---Final-Replication-v1_files/figure-latex/graph results-2.pd
-f Graphic file (type pdf)
-<use 04-Mechanism---Final-Replication-v1_files/figure-latex/graph results-2.pdf
->
-Package pdftex.def Info: 04-Mechanism---Final-Replication-v1_files/figure-latex
-/graph results-2.pdf  used on input line 974.
+[31 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
+rkdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/build a fast
+ algo-1.pdf>]
+</Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Markdo
+wn PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/graph results-2.
+pdf, id=426, 457.71pt x 303.1325pt>
+File: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/M
+arkdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/graph resul
+ts-2.pdf Graphic file (type pdf)
+<use /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
+rkdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/graph result
+s-2.pdf>
+Package pdftex.def Info: /Users/diagdavenport/Desktop/Synced Research/Ludwig/FB
+/Lockdown/Scripts/Markdown PDFs/04-Mechanism---Final-Replication-v1_files/figur
+e-latex/graph results-2.pdf  used on input line 1005.
 (pdftex.def)             Requested size: 457.71587pt x 303.13638pt.
+[32 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
+rkdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/graph result
+s-1.pdf>]
 
-Underfull \hbox (badness 10000) in paragraph at lines 973--975
-[][]
- []
+LaTeX Warning: Float too large for page by 158.80946pt on input line 1135.
 
-[30 <./04-Mechanism---Final-Replication-v1_files/figure-latex/build a fast algo
--1.pdf>]
-Overfull \hbox (197.6345pt too wide) in paragraph at lines 983--1017
- [][] 
- []
-
-[31 <./04-Mechanism---Final-Replication-v1_files/figure-latex/graph results-1.p
-df> <./04-Mechanism---Final-Replication-v1_files/figure-latex/graph results-2.p
-df>]
-
-LaTeX Warning: Float too large for page by 158.80946pt on input line 1098.
-
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1114.
-[32] [33]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1114.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1151.
+[33 </Users/diagdavenport/Desktop/Synced Research/Ludwig/FB/Lockdown/Scripts/Ma
+rkdown PDFs/04-Mechanism---Final-Replication-v1_files/figure-latex/graph result
+s-2.pdf>] [34] [35]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1151.
 (./04-Mechanism---Final-Replication-v1.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1114.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1114.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1151.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1151.
 
 Package rerunfilecheck Info: File `04-Mechanism---Final-Replication-v1.out' has
  not changed.
@@ -1178,16 +1342,16 @@ Package rerunfilecheck Info: File `04-Mechanism---Final-Replication-v1.out' has
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1114.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1151.
  ) 
 Here is how much of TeX's memory you used:
- 12129 strings out of 492649
- 187591 string characters out of 6129622
+ 12132 strings out of 492649
+ 199215 string characters out of 6129622
  298592 words of memory out of 5000000
  15795 multiletter control sequences out of 15000+600000
  46693 words of font info for 65 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 32i,9n,38p,260b,460s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 32i,9n,38p,500b,460s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/lo
 cal/texlive/2018/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/20
 18/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2018/texmf-d
@@ -1201,11 +1365,11 @@ st/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2018/texmf-dist/fonts/typ
 e1/public/lm/lmri10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/
 lm/lmsy10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmsy7.p
 fb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on 04-Mechanism---Final-Replication-v1.pdf (33 pages, 430506 byt
+Output written on 04-Mechanism---Final-Replication-v1.pdf (35 pages, 433773 byt
 es).
 PDF statistics:
- 503 PDF objects out of 1000 (max. 8388607)
- 355 compressed objects within 4 object streams
- 42 named destinations out of 1000 (max. 500000)
+ 512 PDF objects out of 1000 (max. 8388607)
+ 362 compressed objects within 4 object streams
+ 44 named destinations out of 1000 (max. 500000)
  12462 words of extra memory for PDF output out of 14400 (max. 10000000)
 
