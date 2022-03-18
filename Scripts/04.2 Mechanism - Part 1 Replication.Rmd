@@ -740,6 +740,8 @@ d.test <- d.test %>%
     group_by(user_id) %>% 
     mutate(rank.slow = rank(-prediction.slow, ties.method = "random"))
 
+write.csv(d.test, file = "Temp/Part 1 replication - Full slow algortithm data.csv")
+
 l.dat.slow <- d.test %>% group_by(in.group.lax) %>% dplyr::summarise(mean.rating = mean(rank.slow, na.rm = T), sd = sd(rank.slow, na.rm = T), n= n())  %>% mutate(psych = "Non-rushed")
 
 d.test$top <- d.test$rank.slow <= 6
@@ -792,7 +794,7 @@ d.test <- d.test %>%
     group_by(user_id) %>% 
     mutate(rank.fast = rank(-prediction.fast, ties.method = "random"))
 
-
+write.csv(d.test, file = "Temp/Part 1 replication - Full fast algortithm data.csv")
 
 ```
 

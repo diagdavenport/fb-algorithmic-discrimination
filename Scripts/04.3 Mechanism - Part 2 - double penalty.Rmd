@@ -262,7 +262,9 @@ pd <- position_dodge(0.01)
 ggplot(l.dat, aes(x=factor(sorting), y=mean, fill = factor(in.group.lax))) + ylab("Pr(click)") + geom_bar(stat="identity", position=position_dodge(), width = .8)  +
   geom_errorbar(aes(ymin=mean-ci, ymax=mean+ci), width=.05, position=position_dodge(.8)) + xlab("Sorting") + facet_grid(.~genre.match)
 
+```
 
+```{r, results='asis'}
 
 mdl.fast.g <- lm(order_no ~ (in.group.lax
                  +genre.match), data = sql.data %>% filter(sorting == "algorithm"))
