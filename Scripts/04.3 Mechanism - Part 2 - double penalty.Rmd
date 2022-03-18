@@ -1,5 +1,5 @@
 ---
-title: "Process mech part 1"
+title: "Process mech part 2"
 author: "ddd"
 date: "5/25/2021"
 output: pdf_document
@@ -29,19 +29,19 @@ theme_set(theme_tufte())
 
 #knitr::opts_chunk$set(cache.extra = rand_seed)
 
-output.dta <- read.csv("/Users/diagdavenport/Downloads/Output-2022-02-22.csv")
+output.dta <- read.csv("/Users/diagdavenport/Downloads/Output-2022-03-12.csv")
 
-user.dta <- read.csv("/Users/diagdavenport/Downloads/User-2022-02-22.csv")
+user.dta <- read.csv("/Users/diagdavenport/Downloads/User-2022-03-12.csv")
 
 movie.dta <- read.csv("/Users/diagdavenport/Downloads/Movie-2021-09-21.csv")
 
-#user.dta <- user.dta %>% filter(user_id != "" & !is.na(time_spent))
+user.dta <- user.dta %>% filter(user_id != "" & !is.na(time_spent))
 
 sql.data <- merge(user.dta, output.dta, by = "user_id")
 
 sql.data$date <- as.Date(sql.data$timestamp)
-jjnjb
-sql.data$good.data <- sql.data$date >= ymd("2022-02-21") # Full run 1
+
+sql.data$good.data <- as_datetime(sql.data$timestamp) >= ymd_hm("2022-03-11 22:00") # Full run 1
 
 sql.data <- sql.data %>% dplyr::filter(good.data == 1) # Drop old data
 
@@ -187,6 +187,8 @@ table(stat.holder$clean_edu)/nrow(stat.holder)
 
 ```{r for jens, results='asis'}
 
+sql.data <- sql.data %>% filter(order_no<43)
+
 l.dat <- sql.data %>% group_by(sorting) %>% filter(clicked == 1) %>% dplyr::summarise(mean = mean(in.group.lax, na.rm = T), sd = sd(in.group.lax, na.rm = T), n= n())
 
 l.dat$ci <- (l.dat$sd/sqrt(l.dat$n))*1.96
@@ -195,7 +197,7 @@ pd <- position_dodge(0.01)
 ggplot(l.dat, aes(x=factor(sorting), y=mean)) + ylab("% ingroup") + geom_bar(stat="identity", position=position_dodge(), width = .8)  +
   geom_errorbar(aes(ymin=mean-ci, ymax=mean+ci), width=.05, position=position_dodge(.8)) + xlab("Sorting") 
 
-sql.data$order_no.ceiling <- floor(sql.data$order_no/6)
+sql.data$order_no.ceiling <- floor((sql.data$order_no-1)/14)
 
 l.dat <- sql.data %>% group_by(sorting, order_no.ceiling) %>% dplyr::summarise(mean = mean(in.group.lax, na.rm = T), sd = sd(in.group.lax, na.rm = T), n= n())
 
@@ -244,12 +246,29 @@ ggplot(l.dat, aes(x=factor(sorting), y=mean, fill = factor(order_no.ceiling))) +
   geom_errorbar(aes(ymin=mean-ci, ymax=mean+ci), width=.05, position=position_dodge(.8)) + xlab("Sorting") 
 
 
+l.dat <- sql.data %>% group_by(sorting, in.group.lax) %>% dplyr::summarise(mean = mean(clicked, na.rm = T), sd = sd(clicked, na.rm = T), n= n())
+
+l.dat$ci <- (l.dat$sd/sqrt(l.dat$n))*1.96
+pd <- position_dodge(0.01)
+
+ggplot(l.dat, aes(x=factor(sorting), y=mean, fill = factor(in.group.lax))) + ylab("Pr(click)") + geom_bar(stat="identity", position=position_dodge(), width = .8)  +
+  geom_errorbar(aes(ymin=mean-ci, ymax=mean+ci), width=.05, position=position_dodge(.8)) + xlab("Sorting")
+
+l.dat <- sql.data %>% group_by(sorting, genre.match, in.group.lax) %>% dplyr::summarise(mean = mean(clicked, na.rm = T), sd = sd(clicked, na.rm = T), n= n())
+
+l.dat$ci <- (l.dat$sd/sqrt(l.dat$n))*1.96
+pd <- position_dodge(0.01)
+
+ggplot(l.dat, aes(x=factor(sorting), y=mean, fill = factor(in.group.lax))) + ylab("Pr(click)") + geom_bar(stat="identity", position=position_dodge(), width = .8)  +
+  geom_errorbar(aes(ymin=mean-ci, ymax=mean+ci), width=.05, position=position_dodge(.8)) + xlab("Sorting") + facet_grid(.~genre.match)
+
+
 
 mdl.fast.g <- lm(order_no ~ (in.group.lax
                  +genre.match), data = sql.data %>% filter(sorting == "algorithm"))
 mdl.fast.g1 <- lm(order_no ~ (in.group.lax
                  +genre.match), data = sql.data %>% filter(sorting == "random"))
-mdl.fast.g2 <- lm(in.group.lax ~ sorting*order_no.ceiling, data = sql.data %>% filter(clicked == 1))
+mdl.fast.g2 <- lm(in.group.lax ~ sorting, data = sql.data %>% filter(clicked == 1))
 
 stargazer(mdl.fast.g, mdl.fast.g1, mdl.fast.g2,
           omit.stat = c("f",    "ser"), type = "text"
